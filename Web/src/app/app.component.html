@@ -1,0 +1,29 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <a id="homeLogo" rel="noopener" routerLink="/home">
+    <img
+      src="assets/logo.svg"
+    />
+  </a>
+  <span>TECBox</span>
+  <div class="spacer"></div>
+  <div class="toolbarButton">
+    <a id="aboutButton" rel="noopener" routerLink="/about">ABOUT</a>
+  </div>
+  <div class="toolbarButton">
+    <a id="productsButton" rel="noopener" routerLink="/products">PRODUCTS</a>
+  </div>
+  <div class="toolbarButton">
+    <a id="tracking" rel="noopener" routerLink="/tracking">TRACKING</a>
+  </div>
+  <div class="spacer"></div>
+  <a id="logInButton" rel="noopener" routerLink="/login">
+    <img
+      width="180px"
+      src="assets/logInButton.svg"
+    />
+  </a>
+</div>
+
+
+<router-outlet></router-outlet>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="245" height="123" viewBox="0 0 245 123">
+  <defs>
+    <filter id="Rectangle_1" x="0" y="0" width="245" height="123" filterUnits="userSpaceOnUse">
+      <feOffset dy="20" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="logInButton" transform="translate(-226.5 -165.5)">
+    <g transform="matrix(1, 0, 0, 1, 226.5, 165.5)" filter="url(#Rectangle_1)">
+      <g id="Rectangle_1-2" data-name="Rectangle 1" transform="translate(22.5 2.5)" fill="#c4c4c4" stroke="#fff" stroke-width="3">
+        <rect width="200" height="78" rx="30" stroke="none"/>
+        <rect x="1.5" y="1.5" width="197" height="75" rx="28.5" fill="none"/>
+      </g>
+    </g>
+    <text id="Log_In" data-name="Log In" transform="translate(349 215)" fill="#707070" font-size="24" font-family="Avenir-Medium, Avenir" font-weight="500"><tspan x="0" y="0">Log In</tspan></text>
+    <line id="Line_1" data-name="Line 1" y2="71" transform="translate(325.5 172.5)" fill="none" stroke="#fff" stroke-width="3"/>
+    <g id="single-01" transform="translate(271 186)">
+      <path id="Path_1" data-name="Path 1" d="M34.921,43.276A41.763,41.763,0,0,0,20.774,41,41.763,41.763,0,0,0,6.627,43.276,5.523,5.523,0,0,0,3,48.461v5.409a.613.613,0,0,0,.613.613H37.935a.613.613,0,0,0,.613-.613V48.461A5.523,5.523,0,0,0,34.921,43.276Z" transform="translate(0 -15.484)" fill="#111"/>
+      <path id="Path_2" data-name="Path 2" d="M26.194,21.839a9.2,9.2,0,0,0,9.194-9.194V10.194a9.194,9.194,0,1,0-18.387,0v2.452A9.2,9.2,0,0,0,26.194,21.839Z" transform="translate(-5.419)" fill="#111"/>
+    </g>
+  </g>
+</svg>
