@@ -1,29 +1,18 @@
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
-  <a id="homeLogo" rel="noopener" routerLink="/home">
-    <img
-      src="assets/logo.svg"
-    />
-  </a>
-  <span>TECBox</span>
-  <div class="spacer"></div>
-  <div class="toolbarButton">
-    <a id="aboutButton" rel="noopener" routerLink="/about">ABOUT</a>
+<header>
+  <div class="container">
+    <a routerLink="/home" class="logo">TECBox</a>
+    <nav>
+      <ul>
+        <li><a href="#" routerLink="/home">Home</a></li>
+        <li><a href="#" routerLink="/products">Products</a></li>
+        <li><a href="#" routerLink="/tracking">Tracking</a></li>
+        <li><a href="#" routerLink="/about">About</a></li>
+        <li><a href="#" routerLink="/login">User Access</a></li>
+      </ul>
+    </nav>
   </div>
-  <div class="toolbarButton">
-    <a id="productsButton" rel="noopener" routerLink="/products">PRODUCTS</a>
-  </div>
-  <div class="toolbarButton">
-    <a id="tracking" rel="noopener" routerLink="/tracking">TRACKING</a>
-  </div>
-  <div class="spacer"></div>
-  <a id="logInButton" rel="noopener" routerLink="/login">
-    <img
-      width="180px"
-      src="assets/logInButton.svg"
-    />
-  </a>
+</header>
+
+<div class="container">
+  <router-outlet></router-outlet>
 </div>
-
-
-<router-outlet></router-outlet>

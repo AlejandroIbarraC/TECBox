@@ -10,7 +10,6 @@ export class AboutComponent implements OnInit {
   title: string;
 
   constructor() { 
-    this.title = AppComponent.title;
   }
 
   ngOnInit(): void {
