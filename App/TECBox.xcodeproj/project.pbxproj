@@ -3,27 +3,63 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20EB863C147484185D84F13D /* Pods_TECBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70896B201D956A8BA16F1ADF /* Pods_TECBox.framework */; };
+		A901B3EB241353C000242EAA /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901B3EA241353C000242EAA /* MotherView.swift */; };
+		A901B3ED241354B100242EAA /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901B3EC241354B100242EAA /* Session.swift */; };
+		A901B3EF2413566F00242EAA /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901B3EE2413566F00242EAA /* MenuView.swift */; };
+		A908EE0D2414241C00050401 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A908EE0C2414241C00050401 /* Connection.swift */; };
+		A908EE132414246600050401 /* Holder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A908EE122414246600050401 /* Holder.swift */; };
+		A908EE15241432A000050401 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A908EE14241432A000050401 /* GoogleService-Info.plist */; };
+		A908EE1B24143EA300050401 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A908EE1A24143EA300050401 /* User.swift */; };
+		A908EE1D2414551D00050401 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A908EE1C2414551D00050401 /* SettingsView.swift */; };
+		A908EE1F2414573C00050401 /* PackageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A908EE1E2414573C00050401 /* PackageView.swift */; };
+		A961657424145AA3004569BF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A961657324145AA3004569BF /* Extensions.swift */; };
+		A961657624145B61004569BF /* packages.json in Resources */ = {isa = PBXBuildFile; fileRef = A961657524145B61004569BF /* packages.json */; };
+		A961657824145CF6004569BF /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = A961657724145CF5004569BF /* Package.swift */; };
+		A961657E24145DBE004569BF /* PackageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A961657D24145DBE004569BF /* PackageRow.swift */; };
+		A961658024146AFB004569BF /* PackageDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A961657F24146AFB004569BF /* PackageDetail.swift */; };
+		A961658224148020004569BF /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A961658124148020004569BF /* Styles.swift */; };
 		A9C7CAE42411D30D000F1CD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CAE32411D30D000F1CD7 /* AppDelegate.swift */; };
 		A9C7CAE62411D30D000F1CD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CAE52411D30D000F1CD7 /* SceneDelegate.swift */; };
-		A9C7CAE82411D30D000F1CD7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CAE72411D30D000F1CD7 /* ContentView.swift */; };
+		A9C7CAE82411D30D000F1CD7 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CAE72411D30D000F1CD7 /* LogInView.swift */; };
 		A9C7CAEA2411D30E000F1CD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C7CAE92411D30E000F1CD7 /* Assets.xcassets */; };
 		A9C7CAED2411D30E000F1CD7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C7CAEC2411D30E000F1CD7 /* Preview Assets.xcassets */; };
 		A9C7CAF02411D30E000F1CD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C7CAEE2411D30E000F1CD7 /* LaunchScreen.storyboard */; };
+		A9EFB99E2412E9A1005BDB25 /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EFB99D2412E9A1005BDB25 /* KeyboardResponder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4FB4538BDDB17AF1DE96E439 /* Pods-TECBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TECBox.debug.xcconfig"; path = "Target Support Files/Pods-TECBox/Pods-TECBox.debug.xcconfig"; sourceTree = "<group>"; };
+		594403D342C3546A2D31C27A /* Pods-TECBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TECBox.release.xcconfig"; path = "Target Support Files/Pods-TECBox/Pods-TECBox.release.xcconfig"; sourceTree = "<group>"; };
+		70896B201D956A8BA16F1ADF /* Pods_TECBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TECBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A901B3EA241353C000242EAA /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
+		A901B3EC241354B100242EAA /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		A901B3EE2413566F00242EAA /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		A908EE0C2414241C00050401 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		A908EE122414246600050401 /* Holder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holder.swift; sourceTree = "<group>"; };
+		A908EE14241432A000050401 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A908EE1A24143EA300050401 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A908EE1C2414551D00050401 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A908EE1E2414573C00050401 /* PackageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageView.swift; sourceTree = "<group>"; };
+		A961657324145AA3004569BF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A961657524145B61004569BF /* packages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = packages.json; sourceTree = "<group>"; };
+		A961657724145CF5004569BF /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		A961657D24145DBE004569BF /* PackageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageRow.swift; sourceTree = "<group>"; };
+		A961657F24146AFB004569BF /* PackageDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetail.swift; sourceTree = "<group>"; };
+		A961658124148020004569BF /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		A9C7CAE02411D30D000F1CD7 /* TECBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TECBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C7CAE32411D30D000F1CD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9C7CAE52411D30D000F1CD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A9C7CAE72411D30D000F1CD7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A9C7CAE72411D30D000F1CD7 /* LogInView.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; tabWidth = 4; };
 		A9C7CAE92411D30E000F1CD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9C7CAEC2411D30E000F1CD7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A9C7CAEF2411D30E000F1CD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9C7CAF12411D30E000F1CD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9EFB99D2412E9A1005BDB25 /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +67,68 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20EB863C147484185D84F13D /* Pods_TECBox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5699A9D9D3011F5F7DE29C7E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70896B201D956A8BA16F1ADF /* Pods_TECBox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A901B3F02413568B00242EAA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A961657924145D94004569BF /* Subviews */,
+				A9C7CAE72411D30D000F1CD7 /* LogInView.swift */,
+				A901B3EE2413566F00242EAA /* MenuView.swift */,
+				A908EE1C2414551D00050401 /* SettingsView.swift */,
+				A908EE1E2414573C00050401 /* PackageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A908EE0B241422F800050401 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				A908EE0C2414241C00050401 /* Connection.swift */,
+				A908EE122414246600050401 /* Holder.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		A908EE1924143E9600050401 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A908EE1A24143EA300050401 /* User.swift */,
+				A961657524145B61004569BF /* packages.json */,
+				A961657724145CF5004569BF /* Package.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A961657924145D94004569BF /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				A961657D24145DBE004569BF /* PackageRow.swift */,
+				A961657F24146AFB004569BF /* PackageDetail.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		A9C7CAD72411D30D000F1CD7 = {
 			isa = PBXGroup;
 			children = (
 				A9C7CAE22411D30D000F1CD7 /* TECBox */,
 				A9C7CAE12411D30D000F1CD7 /* Products */,
+				F53BF171731C38BA47D4A762 /* Pods */,
+				5699A9D9D3011F5F7DE29C7E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,12 +143,17 @@
 		A9C7CAE22411D30D000F1CD7 /* TECBox */ = {
 			isa = PBXGroup;
 			children = (
+				A908EE1924143E9600050401 /* Data */,
+				A908EE0B241422F800050401 /* Server */,
+				A901B3F02413568B00242EAA /* Views */,
+				A9EFB99F2412ED4F005BDB25 /* Util */,
 				A9C7CAE32411D30D000F1CD7 /* AppDelegate.swift */,
 				A9C7CAE52411D30D000F1CD7 /* SceneDelegate.swift */,
-				A9C7CAE72411D30D000F1CD7 /* ContentView.swift */,
+				A901B3EA241353C000242EAA /* MotherView.swift */,
 				A9C7CAE92411D30E000F1CD7 /* Assets.xcassets */,
 				A9C7CAEE2411D30E000F1CD7 /* LaunchScreen.storyboard */,
 				A9C7CAF12411D30E000F1CD7 /* Info.plist */,
+				A908EE14241432A000050401 /* GoogleService-Info.plist */,
 				A9C7CAEB2411D30E000F1CD7 /* Preview Content */,
 			);
 			path = TECBox;
@@ -75,6 +167,26 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		A9EFB99F2412ED4F005BDB25 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A9EFB99D2412E9A1005BDB25 /* KeyboardResponder.swift */,
+				A901B3EC241354B100242EAA /* Session.swift */,
+				A961657324145AA3004569BF /* Extensions.swift */,
+				A961658124148020004569BF /* Styles.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		F53BF171731C38BA47D4A762 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4FB4538BDDB17AF1DE96E439 /* Pods-TECBox.debug.xcconfig */,
+				594403D342C3546A2D31C27A /* Pods-TECBox.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -82,9 +194,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9C7CAF42411D30E000F1CD7 /* Build configuration list for PBXNativeTarget "TECBox" */;
 			buildPhases = (
+				1F3D389A6ABB77A4C9D04677 /* [CP] Check Pods Manifest.lock */,
 				A9C7CADC2411D30D000F1CD7 /* Sources */,
 				A9C7CADD2411D30D000F1CD7 /* Frameworks */,
 				A9C7CADE2411D30D000F1CD7 /* Resources */,
+				9893CAAA04E6CAF27581AE1C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,7 +247,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A961657624145B61004569BF /* packages.json in Resources */,
 				A9C7CAF02411D30E000F1CD7 /* LaunchScreen.storyboard in Resources */,
+				A908EE15241432A000050401 /* GoogleService-Info.plist in Resources */,
 				A9C7CAED2411D30E000F1CD7 /* Preview Assets.xcassets in Resources */,
 				A9C7CAEA2411D30E000F1CD7 /* Assets.xcassets in Resources */,
 			);
@@ -141,14 +257,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1F3D389A6ABB77A4C9D04677 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TECBox-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9893CAAA04E6CAF27581AE1C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TECBox/Pods-TECBox-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TECBox/Pods-TECBox-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TECBox/Pods-TECBox-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A9C7CADC2411D30D000F1CD7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A901B3EF2413566F00242EAA /* MenuView.swift in Sources */,
 				A9C7CAE42411D30D000F1CD7 /* AppDelegate.swift in Sources */,
+				A908EE132414246600050401 /* Holder.swift in Sources */,
+				A961657E24145DBE004569BF /* PackageRow.swift in Sources */,
+				A908EE1F2414573C00050401 /* PackageView.swift in Sources */,
+				A9EFB99E2412E9A1005BDB25 /* KeyboardResponder.swift in Sources */,
+				A908EE0D2414241C00050401 /* Connection.swift in Sources */,
 				A9C7CAE62411D30D000F1CD7 /* SceneDelegate.swift in Sources */,
-				A9C7CAE82411D30D000F1CD7 /* ContentView.swift in Sources */,
+				A901B3ED241354B100242EAA /* Session.swift in Sources */,
+				A961657424145AA3004569BF /* Extensions.swift in Sources */,
+				A9C7CAE82411D30D000F1CD7 /* LogInView.swift in Sources */,
+				A961657824145CF6004569BF /* Package.swift in Sources */,
+				A961658224148020004569BF /* Styles.swift in Sources */,
+				A901B3EB241353C000242EAA /* MotherView.swift in Sources */,
+				A961658024146AFB004569BF /* PackageDetail.swift in Sources */,
+				A908EE1B24143EA300050401 /* User.swift in Sources */,
+				A908EE1D2414551D00050401 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +454,7 @@
 		};
 		A9C7CAF52411D30E000F1CD7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FB4538BDDB17AF1DE96E439 /* Pods-TECBox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +475,7 @@
 		};
 		A9C7CAF62411D30E000F1CD7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 594403D342C3546A2D31C27A /* Pods-TECBox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
