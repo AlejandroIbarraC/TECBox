@@ -1,0 +1,9 @@
+<h3 class="title1">Products:</h3>
+<br>
+<div class="homebg">
+    <ul class="items">
+        <li (click)="onSelect(product)" *ngFor="let product of products">
+            <span class="badge">{{product.id}}</span>{{product.name}}
+        </li>
+    </ul>
+</div>
