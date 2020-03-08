@@ -21,6 +21,8 @@
 		A961657624145B61004569BF /* packages.json in Resources */ = {isa = PBXBuildFile; fileRef = A961657524145B61004569BF /* packages.json */; };
 		A961657824145CF6004569BF /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = A961657724145CF5004569BF /* Package.swift */; };
 		A961657E24145DBE004569BF /* PackageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A961657D24145DBE004569BF /* PackageRow.swift */; };
+		A961658024146AFB004569BF /* PackageDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A961657F24146AFB004569BF /* PackageDetail.swift */; };
+		A961658224148020004569BF /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A961658124148020004569BF /* Styles.swift */; };
 		A9C7CAE42411D30D000F1CD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CAE32411D30D000F1CD7 /* AppDelegate.swift */; };
 		A9C7CAE62411D30D000F1CD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CAE52411D30D000F1CD7 /* SceneDelegate.swift */; };
 		A9C7CAE82411D30D000F1CD7 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C7CAE72411D30D000F1CD7 /* LogInView.swift */; };
@@ -47,6 +49,8 @@
 		A961657524145B61004569BF /* packages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = packages.json; sourceTree = "<group>"; };
 		A961657724145CF5004569BF /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		A961657D24145DBE004569BF /* PackageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageRow.swift; sourceTree = "<group>"; };
+		A961657F24146AFB004569BF /* PackageDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetail.swift; sourceTree = "<group>"; };
+		A961658124148020004569BF /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		A9C7CAE02411D30D000F1CD7 /* TECBox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TECBox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C7CAE32411D30D000F1CD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9C7CAE52411D30D000F1CD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				A961657D24145DBE004569BF /* PackageRow.swift */,
+				A961657F24146AFB004569BF /* PackageDetail.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 				A9EFB99D2412E9A1005BDB25 /* KeyboardResponder.swift */,
 				A901B3EC241354B100242EAA /* Session.swift */,
 				A961657324145AA3004569BF /* Extensions.swift */,
+				A961658124148020004569BF /* Styles.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -310,7 +316,9 @@
 				A961657424145AA3004569BF /* Extensions.swift in Sources */,
 				A9C7CAE82411D30D000F1CD7 /* LogInView.swift in Sources */,
 				A961657824145CF6004569BF /* Package.swift in Sources */,
+				A961658224148020004569BF /* Styles.swift in Sources */,
 				A901B3EB241353C000242EAA /* MotherView.swift in Sources */,
+				A961658024146AFB004569BF /* PackageDetail.swift in Sources */,
 				A908EE1B24143EA300050401 /* User.swift in Sources */,
 				A908EE1D2414551D00050401 /* SettingsView.swift in Sources */,
 			);

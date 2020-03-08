@@ -55,7 +55,7 @@ struct LogInView: View {
                 }
 
                 Button(action: logIn) {
-                    LogInButtonContent()
+                    NeomorphicButtonContent(text: "Log In")
                 }
                 
             }
@@ -80,47 +80,6 @@ struct LogInView: View {
 struct LogInView_Previews: PreviewProvider {
     static var previews: some View {
         LogInView().environmentObject(Session())
-    }
-}
-
-struct AppLogo: View {
-    var body: some View {
-        Image("logo-transparent")
-            .resizable()
-            .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fit/*@END_MENU_TOKEN@*/)
-            .frame(width: /*@START_MENU_TOKEN@*/150.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/150.0/*@END_MENU_TOKEN@*/)
-            .padding(/*@START_MENU_TOKEN@*/.bottom, 18.0/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct WelcomeText: View {
-    var body: some View {
-        Text("TECBox")
-            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            .fontWeight(.bold)
-            .padding(.bottom, 20)
-    }
-}
-
-struct WelcomeSubText: View {
-    var body: some View {
-        Text("Your packages. Delivered.")
-            .font(.subheadline)
-            .padding(EdgeInsets(top: 0, leading: 0, bottom: 70, trailing: 0))
-    }
-}
-
-struct LogInButtonContent: View {
-    var body: some View {
-        Text("Log In")
-            .font(/*@START_MENU_TOKEN@*/.headline/*@END_MENU_TOKEN@*/)
-            .foregroundColor(Color("TextColor"))
-            .padding()
-            .frame(width: /*@START_MENU_TOKEN@*/220.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/60.0/*@END_MENU_TOKEN@*/)
-            .background(Color("Background"))
-            .cornerRadius(/*@START_MENU_TOKEN@*/20.0/*@END_MENU_TOKEN@*/)
-            .shadow(color: Color("LightShadow"), radius: 8, x: -8, y: -8)
-            .shadow(color: Color("DarkShadow"), radius: 8, x: 8, y: 8)
     }
 }
 

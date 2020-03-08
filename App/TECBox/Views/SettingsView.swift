@@ -22,8 +22,22 @@ struct SettingsView: View {
     }
     
     var body: some View {
-        Button(action: logOut) {
-            LogOutButtonContent()
+        ZStack {
+            Color("Background").edgesIgnoringSafeArea(.all)
+            VStack {
+                AppLogo()
+                WelcomeText()
+                    .frame(width: 150.0)
+                WelcomeSubText()
+                
+                Text("Schlafenhase. 2020\nMade in Costa Rica")
+                    .font(.footnote)
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 70, trailing: 0))
+                
+                Button(action: logOut) {
+                    NeomorphicButtonContent(text: "Log Out")
+                }
+            }
         }
     }
 }
@@ -31,19 +45,5 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView().environmentObject(Session())
-    }
-}
-
-struct LogOutButtonContent: View {
-    var body: some View {
-        Text("Log Out")
-            .font(/*@START_MENU_TOKEN@*/.headline/*@END_MENU_TOKEN@*/)
-            .foregroundColor(Color("TextColor"))
-            .padding()
-            .frame(width: /*@START_MENU_TOKEN@*/220.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/60.0/*@END_MENU_TOKEN@*/)
-            .background(Color("Background"))
-            .cornerRadius(/*@START_MENU_TOKEN@*/20.0/*@END_MENU_TOKEN@*/)
-            .shadow(color: Color("LightShadow"), radius: 8, x: -8, y: -8)
-            .shadow(color: Color("DarkShadow"), radius: 8, x: 8, y: 8)
     }
 }

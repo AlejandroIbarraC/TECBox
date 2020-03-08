@@ -11,6 +11,12 @@ import SwiftUI
 struct PackageView: View {
     let packages = Bundle.main.decode([PackageSection].self, from: "packages.json")
     
+    init() {
+        UITableView.appearance().backgroundColor = UIColor(named: "Background")
+        UITableViewCell.appearance().backgroundColor = UIColor(named: "Background")
+        UITableView.appearance().tableFooterView = UIView()
+    }
+    
     var body: some View {
         NavigationView {
             List {
