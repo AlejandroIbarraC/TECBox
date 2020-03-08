@@ -15,7 +15,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 
 const routes: Routes = [
   { path: 'about', component: AboutComponent },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'login', component: LoginComponent },
   { path: 'package-control', component: PackageControlComponent },
@@ -24,8 +24,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'report', component: ReportComponent },
   { path: 'tracking', component: TrackingComponent },
-
-  { path: 'error', component: PageNotFoundComponent}
+  { path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
@@ -33,3 +32,16 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+export const routingComponents = [
+  AboutComponent,
+  HomeComponent,
+  AdminComponent,
+  LoginComponent,
+  PackageControlComponent,
+  ProductsComponent,
+  ProductDetailComponent,
+  RegisterComponent,
+  ReportComponent,
+  TrackingComponent,
+  PageNotFoundComponent
+]
