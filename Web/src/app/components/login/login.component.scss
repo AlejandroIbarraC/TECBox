@@ -1,0 +1,27 @@
+.base {
+    display: flex;
+    background: #EAF0F8;
+    box-shadow: 0px -30px 60px rgba(248, 252, 255, 0.5), 0px 30px 60px rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+}
+
+.flexed {
+
+    width: 50%;
+    background: #EAF0F8;
+    box-shadow: 0px -30px 60px rgba(248, 252, 255, 0.5), 0px 30px 60px rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+}
+
+.title1 {
+    
+    left: 89px;
+    top: 237px;
+    
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 80px;
+    
+    color: #515F6A;
+}
