@@ -9,9 +9,9 @@ import { Router } from '@angular/router';
 export class ProductsComponent implements OnInit {
 
   products = [
-    {"id": 1, "name": "Papel"},
-    {"id": 2, "name": "Animal"},
-    {"id": 3, "name": "Gorro"}
+    {"id": 1, "name": "Papel higénico"},
+    {"id": 2, "name": "Animalcrossing"},
+    {"id": 3, "name": "Gorro de lana"}
   ]
 
   constructor(public router: Router) { }

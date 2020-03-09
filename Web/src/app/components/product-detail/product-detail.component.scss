@@ -1,0 +1,56 @@
+.title1 {
+    
+    left: 89px;
+    top: 237px;
+    
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 60px;
+    
+    color: rgb(37, 45, 51);
+}
+
+.base {
+
+    display: flex;
+    background: #EAF0F8;
+    box-shadow: 0px -30px 60px rgba(248, 252, 255, 0.5), 0px 30px 60px rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+}
+
+.class1 {
+
+    width: 256px;
+    height: 256px;
+    
+    background: url(src\images\Papel.PNG) no-repeat top left;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px -12px 16px #FFFFFF, 0px 12px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.class2 {
+
+    width: 256px;
+    height: 256px;
+
+    background: url(src\images\Animal.PNG) no-repeat top left;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px -12px 16px #FFFFFF, 0px 12px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+
+.class3 {
+
+    width: 256px;
+    height: 256px;
+
+    background: url(src\images\Gorro.PNG) no-repeat top left;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px -12px 16px #FFFFFF, 0px 12px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
