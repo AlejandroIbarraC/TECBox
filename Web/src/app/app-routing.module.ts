@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'products/:id', component: ProductDetailComponent },
   { path: 'report', component: ReportComponent },
   { path: 'tracking', component: TrackingComponent },
-  { path: 'user-console', component: UserProfileComponent },
+  { path: 'user-profile', component: UserProfileComponent },
   { path: 'warehouse-console', component: WarehouseConsoleComponent },
   { path: 'delivery-console', component: DeliveryConsoleComponent },
   { path: 'cart', component: CartComponent },
@@ -46,5 +46,8 @@ export const routingComponents = [
   ProductDetailComponent,
   ReportComponent,
   TrackingComponent,
-  PageNotFoundComponent
+  PageNotFoundComponent,
+  UserProfileComponent,
+  WarehouseConsoleComponent,
+  DeliveryConsoleComponent
 ]
