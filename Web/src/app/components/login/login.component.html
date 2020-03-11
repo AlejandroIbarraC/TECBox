@@ -23,13 +23,9 @@
                 Email
             </p>
             &nbsp;
-<<<<<<< HEAD
             <div class="formGroup">
-                <input type="text" class="formControl" placeholder="Username" #userName required>
+                <input type="text" class="formControl" placeholder="Username" #userName required class="entry">
             </div>
-=======
-            <input type="" class="entry">
->>>>>>> master
         </div>
         <br>
         <div class="base">
@@ -38,25 +34,16 @@
                 Password
             </p>
             &nbsp;
-<<<<<<< HEAD
             <div class="formGroup">
-                <input type="password" class="formControl" placeholder="Password" #userPassword required>
+                <input type="password" class="formControl" placeholder="Password" #userPassword required class="entry">
             </div>
         </div>
-        <br>
-        <div class="formGroup">
-            <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
-        </div>
-        <br>
-=======
-            <input type="password" class="entry">
-        </div>
-        <div style="text-align: center;">
-            <button style="background-color: rgba(0, 0, 0, 0);" class="btn">
+        <div class="formGroup" style="text-align: center;">
+            <button style="background-color: rgba(0, 0, 0, 0);" class="btn" (click)="authService.SignIn(userName.value, userPassword.value)">
                 <img src="../../../assets/logInUserAccessButton.svg" alt="">
             </button>
         </div>
->>>>>>> master
+        <br>
         <p align="center">
             Part of our team? Welcome back!
         </p>

@@ -12,6 +12,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { WarehouseConsoleComponent } from './components/warehouse-console/warehouse-console.component';
 import { DeliveryConsoleComponent } from './components/delivery-console/delivery-console.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'user-console', component: UserProfileComponent },
   { path: 'warehouse-console', component: WarehouseConsoleComponent },
   { path: 'delivery-console', component: DeliveryConsoleComponent },
+  { path: 'cart', component: CartComponent },
 
   { path: '**', component: PageNotFoundComponent}
 ];
