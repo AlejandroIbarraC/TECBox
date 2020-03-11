@@ -18,7 +18,9 @@
                 Email
             </p>
             &nbsp;
-            <input type="">
+            <div class="formGroup">
+                <input type="text" class="formControl" placeholder="Username" #userName required>
+            </div>
         </div>
         <br>
         <div class="base">
@@ -26,12 +28,14 @@
                 Password
             </p>
             &nbsp;
-            <input type="password">
+            <div class="formGroup">
+                <input type="password" class="formControl" placeholder="Password" #userPassword required>
+            </div>
         </div>
         <br>
-        <button class="btn">
-            Log In
-        </button>
+        <div class="formGroup">
+            <input type="button" class="btn btnPrimary" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
+        </div>
         <br>
         <p align="center">
             Part of our team? Welcome back!

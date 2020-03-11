@@ -4,13 +4,14 @@ import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { LoginComponent } from './components/login/login.component';
-import { PackageControlComponent } from './components/package-control/package-control.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
-import { RegisterComponent } from './components/register/register.component';
 import { ReportComponent } from './components/report/report.component';
 import { TrackingComponent } from './components/tracking/tracking.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { WarehouseConsoleComponent } from './components/warehouse-console/warehouse-console.component';
+import { DeliveryConsoleComponent } from './components/delivery-console/delivery-console.component';
 
 
 const routes: Routes = [
@@ -18,12 +19,14 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'admin', component: AdminComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'package-control', component: PackageControlComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'products/:id', component: ProductDetailComponent },
-  { path: 'register', component: RegisterComponent },
   { path: 'report', component: ReportComponent },
   { path: 'tracking', component: TrackingComponent },
+  { path: 'user-console', component: UserProfileComponent },
+  { path: 'warehouse-console', component: WarehouseConsoleComponent },
+  { path: 'delivery-console', component: DeliveryConsoleComponent },
+
   { path: '**', component: PageNotFoundComponent}
 ];
 
@@ -37,10 +40,8 @@ export const routingComponents = [
   HomeComponent,
   AdminComponent,
   LoginComponent,
-  PackageControlComponent,
   ProductsComponent,
   ProductDetailComponent,
-  RegisterComponent,
   ReportComponent,
   TrackingComponent,
   PageNotFoundComponent
