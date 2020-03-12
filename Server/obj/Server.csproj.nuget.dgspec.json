@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\skryf\\Source\\Repos\\AlejandroIbarraC\\TECBox\\Server\\Server.csproj": {}
+    "C:\\Users\\skryf\\source\\repos\\AlejandroIbarraC\\TECBox\\Server\\Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\skryf\\Source\\Repos\\AlejandroIbarraC\\TECBox\\Server\\Server.csproj": {
+    "C:\\Users\\skryf\\source\\repos\\AlejandroIbarraC\\TECBox\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\skryf\\Source\\Repos\\AlejandroIbarraC\\TECBox\\Server\\Server.csproj",
+        "projectUniqueName": "C:\\Users\\skryf\\source\\repos\\AlejandroIbarraC\\TECBox\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "C:\\Users\\skryf\\Source\\Repos\\AlejandroIbarraC\\TECBox\\Server\\Server.csproj",
+        "projectPath": "C:\\Users\\skryf\\source\\repos\\AlejandroIbarraC\\TECBox\\Server\\Server.csproj",
         "packagesPath": "C:\\Users\\skryf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\skryf\\Source\\Repos\\AlejandroIbarraC\\TECBox\\Server\\obj\\",
+        "outputPath": "C:\\Users\\skryf\\source\\repos\\AlejandroIbarraC\\TECBox\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\skryf\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -37,6 +37,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

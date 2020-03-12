@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Server.Source
+{
+    public class Packages
+    {
+        public int trackingID { get; set; }
+        public string client { get; set; }
+        public string description { get; set; }
+        public string deliveryDate { get; set; }
+        public string status { get; set; }
+
+        public Packages()
+        {
+        }
+
+        public Packages(int packageTrackingID, string packageClient, string packageDescription, string packageDeliveryDate, string packagesStatus)
+        {
+            trackingID = packageTrackingID;
+            client = packageClient;
+            description = packageDescription;
+            deliveryDate = packageDeliveryDate;
+            status = packagesStatus;
+        }
+    }
+}
