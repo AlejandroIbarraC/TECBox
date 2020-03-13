@@ -13,6 +13,7 @@ import { WarehouseConsoleComponent } from './components/warehouse-console/wareho
 import { DeliveryConsoleComponent } from './components/delivery-console/delivery-console.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,11 @@ import { DeliveryConsoleComponent } from './components/delivery-console/delivery
     AngularFireAuthModule,
     AngularFirestoreModule,
   ],
-  providers: [AuthService],
-  bootstrap: [AppComponent]
+  providers: [
+    AuthService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

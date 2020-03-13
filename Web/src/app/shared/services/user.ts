@@ -1,7 +1,13 @@
+export type Role = 'admin' | 'warehouse' | 'delivery' | 'user';
+
 export interface User {
     uid: string;
     email: string;
     displayName: string;
-    photoURL: string;
-    emailVerified: boolean;
+    role: Role;
+    ID: number;
+    phone: number;
+    address: string;
+    province: string;
+    city: string;
 }
