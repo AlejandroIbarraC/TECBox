@@ -24,7 +24,7 @@
             </p>
             &nbsp;
             <div class="formGroup">
-                <input type="text" class="formControl" placeholder="Username" #userName required class="entry">
+                <input type="text" class="formControl" #userEmail required class="entry">
             </div>
         </div>
         <br>
@@ -35,11 +35,11 @@
             </p>
             &nbsp;
             <div class="formGroup">
-                <input type="password" class="formControl" placeholder="Password" #userPassword required class="entry">
+                <input type="password" class="formControl" #userPassword required class="entry">
             </div>
         </div>
         <div class="formGroup" style="text-align: center;">
-            <button style="background-color: rgba(0, 0, 0, 0);" class="btn" (click)="authService.SignIn(userName.value, userPassword.value)">
+            <button style="background-color: rgba(0, 0, 0, 0);" class="btn" (click)="logIn(userEmail.value, userPassword.value, 0)">
                 <img src="../../../assets/logInUserAccessButton.svg" alt="">
             </button>
         </div>
@@ -69,34 +69,28 @@
             &nbsp;
             I work in:
         </p>
-        <div class="base">
-            &nbsp;
-            <input type="checkbox">
-            &nbsp;
-            <p>
-                Administration
-            </p>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="radioButton" id="adminRadio" value="admin" checked>
+            <label class="form-check-label" for="adminRadio">
+              Admin
+            </label>
         </div>
-        <br>
-        <div class="base">
-            &nbsp;
-            <input type="checkbox" style="position: middle;">
-            &nbsp;
-            <p>
-                Delivery
-            </p>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radioButton" id="warehouseRadio" value="warehouse">
+            <label class="form-check-label" for="warehouseRadio">
+              Warehouse
+            </label>
         </div>
-        <br>
-        <div class="base">
-            &nbsp;
-            <input type="checkbox">
-            &nbsp;
-            <p>
-                Warehouse
-            </p>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="radioButton" id="deliveryRadio" value="delivery">
+            <label class="form-check-label" for="deliveryRadio">
+              Delivery
+            </label>
         </div>
+
         <div style="text-align: center;">
-            <button style="background-color: rgba(0, 0, 0, 0);" class="btn">
+            <button style="background-color: rgba(0, 0, 0, 0);" class="btn" (click)="logIn(userEmail.value, userPassword.value, 0)">
                 <img src="../../../assets/logInTeamButton.svg" alt="">
             </button>
         </div>

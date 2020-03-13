@@ -1,6 +1,6 @@
 export type Role = 'admin' | 'warehouse' | 'delivery' | 'user';
 
-export interface User {
+export interface FullUser {
     uid: string;
     email: string;
     displayName: string;

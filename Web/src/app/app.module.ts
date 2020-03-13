@@ -13,7 +13,6 @@ import { WarehouseConsoleComponent } from './components/warehouse-console/wareho
 import { DeliveryConsoleComponent } from './components/delivery-console/delivery-console.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

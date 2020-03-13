@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+// Components
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
@@ -13,18 +15,22 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { WarehouseConsoleComponent } from './components/warehouse-console/warehouse-console.component';
 import { DeliveryConsoleComponent } from './components/delivery-console/delivery-console.component';
 import { CartComponent } from './components/cart/cart.component';
+import { SecureInnerPagesGuard } from './shared/guard/secure-inner-pages.guard';
+import { AuthGuard } from './shared/guard/auth.guard';
+
+// Auth Guard
 
 
 const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: '', component: HomeComponent },
   { path: 'admin', component: AdminComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, canActivate: [SecureInnerPagesGuard]},
   { path: 'products', component: ProductsComponent },
   { path: 'products/:id', component: ProductDetailComponent },
   { path: 'report', component: ReportComponent },
   { path: 'tracking', component: TrackingComponent },
-  { path: 'user-profile', component: UserProfileComponent },
+  { path: 'user-profile', component: UserProfileComponent, canActivate: [AuthGuard]},
   { path: 'warehouse-console', component: WarehouseConsoleComponent },
   { path: 'delivery-console', component: DeliveryConsoleComponent },
   { path: 'cart', component: CartComponent },
