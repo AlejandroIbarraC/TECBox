@@ -33,17 +33,12 @@ export class AuthService {
     }
 
     // Sign in with email/password
-    SignIn(email, password, userType) {
+    SignIn(email, password) {
         console.log("Authenticated");
         return this.afAuth.auth.signInWithEmailAndPassword(email, password)
         .then((result) => {
             this.ngZone.run(() => {
-            if (userType == 0) {
-                // Normal User
-                this.router.navigate(['user-profile']);
-            } else {
-                console.log("Not a user")
-            }
+            this.router.navigate(['user-profile']);
             });
             this.SetUserData(result.user);
         }).catch((error) => {
