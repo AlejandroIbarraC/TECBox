@@ -38,7 +38,7 @@ export class AuthService {
         return this.afAuth.auth.signInWithEmailAndPassword(email, password)
         .then((result) => {
             this.ngZone.run(() => {
-            this.router.navigate(['user-profile']);
+                this.router.navigate(['user-profile']);
             });
             this.SetUserData(result.user);
         }).catch((error) => {
@@ -111,8 +111,12 @@ export class AuthService {
         uid: user.uid,
         email: user.email,
         displayName: user.displayName,
-        photoURL: user.photoURL,
-        emailVerified: user.emailVerified
+        role: user.role,
+        ID: user.ID,
+        phone: user.phone,
+        address: user.address,
+        province: user.province,
+        city: user.city
         }
         return userRef.set(userData, {
         merge: true
