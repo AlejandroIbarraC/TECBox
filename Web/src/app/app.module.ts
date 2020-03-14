@@ -11,7 +11,6 @@ import { AuthService } from './shared/services/auth.service';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { WarehouseConsoleComponent } from './components/warehouse-console/warehouse-console.component';
 import { DeliveryConsoleComponent } from './components/delivery-console/delivery-console.component';
-import { TableComponent } from './table/table.component';
 
 
 
@@ -22,7 +21,6 @@ import { TableComponent } from './table/table.component';
     UserProfileComponent,
     WarehouseConsoleComponent,
     DeliveryConsoleComponent,
-    TableComponent
   ],
   imports: [
     BrowserModule,
