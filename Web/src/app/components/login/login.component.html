@@ -39,7 +39,7 @@
             </div>
         </div>
         <div class="formGroup" style="text-align: center;">
-            <button style="background-color: rgba(0, 0, 0, 0);" class="btn" (click)="logIn(userEmail.value, userPassword.value, 0)">
+            <button style="background-color: rgba(0, 0, 0, 0);" class="btn" (click)="logIn(userEmail.value, userPassword.value, 'user')">
                 <img src="../../../assets/logInUserAccessButton.svg" alt="">
             </button>
         </div>
@@ -75,14 +75,12 @@
             <label class="form-check-label" for="adminRadio">
               Admin
             </label>
-        </div>
-          <div class="form-check">
+            <br>
             <input class="form-check-input" type="radio" name="radioButton" id="warehouseRadio" value="warehouse">
             <label class="form-check-label" for="warehouseRadio">
               Warehouse
             </label>
-        </div>
-          <div class="form-check">
+            <br>
             <input class="form-check-input" type="radio" name="radioButton" id="deliveryRadio" value="delivery">
             <label class="form-check-label" for="deliveryRadio">
               Delivery
@@ -90,7 +88,7 @@
         </div>
 
         <div style="text-align: center;">
-            <button style="background-color: rgba(0, 0, 0, 0);" class="btn" (click)="logIn(userEmail.value, userPassword.value, 0)">
+            <button style="background-color: rgba(0, 0, 0, 0);" class="btn" (click)="logIn(userEmail.value, userPassword.value, 'admin')">
                 <img src="../../../assets/logInTeamButton.svg" alt="">
             </button>
         </div>

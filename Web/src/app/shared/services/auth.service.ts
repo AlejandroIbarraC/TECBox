@@ -33,11 +33,19 @@ export class AuthService {
   }
 
   // Sign in with email/password
-  SignIn(email, password) {
+  SignIn(email, password, userType) {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['user-profile']);
+          if (userType=="user") {
+            this.router.navigate(['user-profile']);
+          } else if (userType=="admin") {
+            this.router.navigate(['admin']);
+          } else if (userType=="warehouse") {
+            this.router.navigate(['warehouse-console']);
+          } else if (userType=="delivery") {
+            this.router.navigate(['delivery-console']);
+          }
         });
         this.SetUserData(result.user);
       }).catch((error) => {
