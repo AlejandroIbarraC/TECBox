@@ -11,6 +11,9 @@ import { AuthService } from './shared/services/auth.service';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { WarehouseConsoleComponent } from './components/warehouse-console/warehouse-console.component';
 import { DeliveryConsoleComponent } from './components/delivery-console/delivery-console.component';
+import { KeysPipe } from './components/admin/keys.pipe';
+import { FormsModule } from '@angular/forms';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 
@@ -21,6 +24,8 @@ import { DeliveryConsoleComponent } from './components/delivery-console/delivery
     UserProfileComponent,
     WarehouseConsoleComponent,
     DeliveryConsoleComponent,
+    KeysPipe,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -28,12 +33,14 @@ import { DeliveryConsoleComponent } from './components/delivery-console/delivery
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    FormsModule,
   ],
   providers: [
     AuthService
   ],
   bootstrap: [
-    AppComponent
+    AppComponent,
+    AdminComponent,
   ]
 })
 export class AppModule { }
