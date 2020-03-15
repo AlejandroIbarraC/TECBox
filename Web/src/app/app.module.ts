@@ -5,14 +5,15 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import {FormsModule} from '@angular/forms';
-
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CartComponent } from './components/cart/cart.component';
 import { AuthService } from './shared/services/auth.service';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { WarehouseConsoleComponent } from './components/warehouse-console/warehouse-console.component';
 import { DeliveryConsoleComponent } from './components/delivery-console/delivery-console.component';
-
+import { CartProductComponent } from './components/cartProduct/cartProduct.component';
+import { ProductService } from './services/product.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { DeliveryConsoleComponent } from './components/delivery-console/delivery
     routingComponents,
     UserProfileComponent,
     WarehouseConsoleComponent,
-    DeliveryConsoleComponent
+    DeliveryConsoleComponent,
+    CartProductComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -28,10 +31,11 @@ import { DeliveryConsoleComponent } from './components/delivery-console/delivery
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
-    AuthService
+    AuthService,
+    ProductService
   ],
   bootstrap: [
     AppComponent
