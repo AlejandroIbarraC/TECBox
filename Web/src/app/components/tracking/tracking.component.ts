@@ -12,4 +12,8 @@ export class TrackingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  track(trackingNumber: number) {
+
+  }
+
 }

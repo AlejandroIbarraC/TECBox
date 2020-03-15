@@ -1,3 +1,52 @@
+$secondary: #EAF0F8;
+$terciary: #F61067;
+
 .container {
-    padding-bottom: 15px;
+    padding: 15px;
+    max-width: 100%;
+}
+
+.col-2 {
+    text-align: center;
+    a {
+        img {
+            height: 120px;
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+}
+
+.card {
+    height: 90px;
+
+    .content {
+        padding: 0px;
+        padding-top: 15px;
+        padding-left: 10px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.button {
+    height: 50px;
+    width: 180px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
+    
+    img {
+        height: 25px;
+    }
+}
+
+.entry {
+    width: 160px;
+    margin-right: 10px;
+    margin-top: 7px;
+    margin-left: 5px;
 }

@@ -1,1 +1,32 @@
-<p>tracking works!</p>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="content">
+                <div class="title">Package Status:</div>
+                <div class="card-secondary">
+                    <div class="content">
+                        <div class="formGroup">
+                            Tracking Number:
+                            <input type="text" class="formControl" #trackingNumber class="entry">
+                        </div>
+                    </div>
+                </div>
+                <div class="centerer">
+                    <button class="button" (click)="track(trackingNumber)">
+                        Check status
+                        <img src="assets/tracking/packageIcon.svg">
+                    </button>
+                </div>
+                <div class="card-secondary">
+                    <div class="content">
+                        <img src="assets/tracking/infoIcon.svg">
+                        Status:
+                        <div class="label-status">
+                            $STATUS
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

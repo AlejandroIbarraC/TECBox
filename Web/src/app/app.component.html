@@ -1,34 +1,63 @@
 <!-- Navigation Bar -->
+
 <header>
   <div class="container">
-    <div class="navbar">
-      <a routerLink="/">
-        <img src="../assets/homeLogo.svg" alt="" align="top" style="width: 100px;
-        height: 100px;">
-      </a>
-      <nav>
-        <ul>
-          <li><a href="#" routerLink="/">
-            <img src="../assets/homeButton.svg" alt="" align="top"></a>
-          </li>
-          <li><a href="#" routerLink="/products">
-            <img src="../assets/homeProductsButton.svg" alt="" align="top"></a>
-          </li>
-          <li><a href="#" routerLink="/tracking">
-            <img src="../assets/homeTrackingButton.svg" alt="" align="top"></a>
-          </li>
-          <li><a href="#" routerLink="/about">
-            <img src="../assets/homeAboutButton.svg" alt="" align="top"></a>
-          </li>
-          
-          <li><a href="#" routerLink="/cart">
+    <div class="row">
+      <div class="col-2">
+        <a routerLink="/">
+          <img src="../assets/homeLogo.svg">
+        </a>
+      </div>
+      <div class="col-6">
+        <div class="card">
+          <div class=content>
+            <a routerLink="/">
+              <div class="button">
+                <img src="assets/navbar/houseIcon.svg">
+                Home
+              </div>
+            </a>
+            <a routerLink="products">
+              <div class="button">
+                <img src="assets/navbar/diamondIcon.svg">
+                Products
+              </div>
+            </a>
+            <a routerLink="/tracking">
+              <div class="button">
+                <img src="assets/navbar/barcodeIcon.svg">
+                Tracking
+              </div>
+            </a>
+            <a routerLink="/about">
+              <div class="button">
+                <img src="assets/navbar/lightbulbIcon.svg">
+                About
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <div class="content">
+            <input type="text" class="formControl" #searchTerm class="entry">
+            <a routerLink="">
+              <img src="assets/navbar/searchIcon.svg">
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card">
+          <a href="#" routerLink="/cart">
             <img src="../assets/cartHomeButton.svg" alt="" align="top"></a>
-          </li>
+          
           <li style="display: initial;"><a href="#" routerLink="/login">
             <img src="../assets/userAccessHomeButton.svg" alt="" align="top"></a>
           </li>
-        </ul>
-      </nav>
+        </div>
+      </div>
     </div>
   </div>
 </header>

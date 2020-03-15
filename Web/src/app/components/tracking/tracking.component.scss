@@ -1,0 +1,24 @@
+$terciary: #F61067;
+
+.container {
+    max-width: 50%;
+}
+
+.entry {
+    width: 300px;
+}
+
+body {
+    letter-spacing: 2px;
+}
+
+img {
+    padding: 5px
+}
+
+.label-status {
+    float: right;
+    margin-top: 5px;
+    color: $terciary;
+    padding-left: 20px;
+}
