@@ -8,7 +8,7 @@ import { ProductService } from '../../services/product.service';
 
 export class CartProductComponent implements OnInit {
 
-	private cartProducts: Product[];
+	public cartProducts: Product[];
 
 	constructor(
 		private productService: ProductService
