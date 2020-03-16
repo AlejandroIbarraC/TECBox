@@ -1,0 +1,31 @@
+body {
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+.button {
+    font-weight: bold;
+    width: fit-content;
+    float: right;
+    font-size: 18px;
+    margin-top: 0px;
+}
+
+.column {
+    float: left;
+}
+
+.left {
+    width: 40%;
+    margin-right: 5%;
+}
+
+.right {
+    width: 55%;
+}
+
+.card-secondary {
+    text-align: left;
+    width: auto;
+    margin-bottom: 40px;
+}

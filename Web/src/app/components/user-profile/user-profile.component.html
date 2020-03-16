@@ -1,25 +1,45 @@
-<button style="background-color: rgba(0, 0, 0, 0);" class="btn" (click)="authService.SignOut()">
-    <img src="../../../assets/logOutButton.svg" alt="">
-</button>
-
-<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-    <div class="inner-adjust">
-
-      <div class="pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">User Profile</h1>
-      </div>
-      <!-- Show user data when logged in -->
-      <div class="row" *ngIf="authService.userData as user">
-        <div class="col-md-12">
-          <div class="media">
-            <div class="media-body">
-              <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
-              <p>User ID: <strong>{{user.uid}}</strong></p>
-              <p>Email: <strong>{{user.email}}</strong></p>\
+<body>
+  <div class="container" *ngIf="authService.userData as user">
+    <div class="card">
+      <div class="content">
+        <div class="title">Welcome, {{(user.displayName) ? user.displayName : 'User'}}
+          <div class="button" (click)="authService.SignOut()">
+            Log Out
+            <img src="assets/xIcon.svg">
+          </div>
+        </div>
+        <div class="column left">
+          <div class="card-secondary">
+            <div class="content">
+              <div class="subtitle">
+                Your info:
+              </div>
+              ID Number: 
+              <br><br>
+              Email: {{user.email}}
+              <br><br>
+              Phone:
+              <br><br>
+              Address:
+              <br><br>
+              Province:
+              <br><br>
+              City:
+              <br><br>
+              <div class="label-red">
+                Courier Number:
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column right">
+          <div class="card-secondary">
+            <div class="content">
+              <div class="subtitle">Packages:</div>
             </div>
           </div>
         </div>
       </div>
-
     </div>
-</main>
+  </div>
+</body>
