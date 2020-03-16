@@ -22,3 +22,9 @@ img {
     color: $terciary;
     padding-left: 20px;
 }
+
+@media (prefers-color-scheme: dark) {
+    #infoIcon {
+        filter: invert(1);
+    }
+}
