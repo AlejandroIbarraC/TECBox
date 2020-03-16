@@ -2,3 +2,363 @@
 <button style="background-color: rgba(0, 0, 0, 0);" class="btn" (click)="authService.SignOut()">
     <img src="../../../assets/logOutButton.svg" alt="">
 </button>
+<br>
+
+
+<div class="main">
+    <div class="title">
+        <p class="title1">
+            Administration Console:
+        </p>
+    </div>
+    <div class="grayBox">
+        <div class="form">
+            <div class = "referenceTittle">
+                <p class="title2">
+                    Employees
+                </p>
+    
+            </div>
+            <div class="formData">
+                <h5 class="boxTitle">Write the worker information below, please</h5>
+                <input type="text" class="boxInput" placeholder="Name" #userName required>
+                <p class = "textInput">Name</p>
+                <br>
+                <input type="text" class="boxInput" placeholder="Department" #userName required>
+                <p class = "textInput">Deparment</p>
+            </div>
+
+
+            <div class="addButton">
+                <input type="button" class="addData">
+            </div>
+        </div>
+        <div class="boton">
+            <input type="button" class="deleteData">
+            <input type="button" class="modifieData">
+        </div>
+        <div class="table">
+            <div class = "TableView">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Deparment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Kevin</td>
+                        <td>Cordero</td>
+                        <td>Administrator</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Alejandro</td>
+                        <td>Ibarra</td>
+                        <td>Administrator</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Jose</td>
+                        <td>David</td>
+                        <td>Administrator</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="grayBox">
+        <div class="form">
+            <div class = "referenceTittle">
+                <p class="title2">
+                    Branches
+                </p>
+            </div>
+            <div class="formData">
+                <h5 class="boxTitle">Write the information of the branches below, please</h5>
+                <input type="text" class="boxInput" placeholder="Name" #userName required>
+                <p class = "textInput">Name</p>
+                <br>
+                <input type="text" class="boxInput" placeholder="Address" #userAddress required>
+                <br>
+                <p class = "textInput">Address</p>
+                <br>
+                <input type="text" class="boxInput" placeholder="Province" #userAddress required>
+                <br>
+                <p class = "textInput">Province</p>
+                <br>
+                <input type="text" class="boxInput" placeholder="Phone" #userPhone required>
+                <br>
+                <p class = "textInput">Phone</p>
+                <br>
+                <input type="text" class="boxInput" placeholder="Boss" #userName required>
+                <br>
+                <input type="text" class="boxInput" placeholder="City" #userName required>
+                <p class = "textInput">City</p>
+                <input type="text" class="boxInput" placeholder="Boss" #userName required>
+                <p class = "textInput">Boss</p>
+            </div>
+
+
+            <div class="addButton">
+                <input type="button" class="addData">
+            </div>
+        </div>
+        <div class="boton">
+            <input type="button" class="deleteData">
+            <input type="button" class="modifieData">
+        </div>
+        <div class="table">
+            <div class = "TableView">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Deparment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Kevin</td>
+                        <td>Cordero</td>
+                        <td>Administrator</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Alejandro</td>
+                        <td>Ibarra</td>
+                        <td>Administrator</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Jose</td>
+                        <td>David</td>
+                        <td>Administrator</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        <br>
+    <br>
+</div>
+    <div class="grayBox">
+        <div class="form">
+            <div class = "referenceTittle">
+                <p class="title2">
+                    Workers
+                </p>
+            </div>
+            <div class="formData">
+                <h5 class="boxTitle">Write the information of the worker below, please</h5>
+                <input type="text" class="boxInput" placeholder="ID number" #userName required>
+                <p class = "textInput">ID number</p>
+                <br>
+                <input type="text" class="boxInput" placeholder="Full Name" #userAddress required>
+                <br>
+                <p class = "textInput">Full name</p>
+                <br>
+                <input type="text" class="boxInput" placeholder="Birthday" #userAddress required>
+                <br>
+                <p class = "textInput">Birthday</p>
+                <br>
+                <input type="text" class="boxInput" placeholder="Entry Day" #userPhone required>
+                <br>
+                <p class = "textInput">Entry Day</p>
+                <br>
+                <input type="text" class="boxInput" placeholder="Branch" #userName required>
+                <br>
+                <input type="text" class="boxInput" placeholder="Branch" #userName required>
+                <p class = "textInput">Branch</p>
+                <input type="text" class="boxInput" placeholder="Hourly Wage" #userName required>
+                <p class = "textInput">Hourly Wage</p>
+                <input type="text" class="boxInput" placeholder="Monthly Wage" #userName required>
+                <p class = "textInput">Monthly Wage</p>
+            </div>
+
+
+            <div class="addButton">
+                <input type="button" class="addData">
+            </div>
+        </div>
+        <div class="boton">
+            <input type="button" class="deleteData">
+            <input type="button" class="modifieData">
+        </div>
+        <div class="table">
+            <div class = "TableView">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Deparment</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Kevin</td>
+                        <td>Cordero</td>
+                        <td>Administrator</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Alejandro</td>
+                        <td>Ibarra</td>
+                        <td>Administrator</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Jose</td>
+                        <td>David</td>
+                        <td>Administrator</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+        <div class="grayBox">
+            <div class="form">
+                <div class = "referenceTittle">
+                    <p class="title2">
+                        Seller
+                    </p>
+        
+                </div>
+                <div class="formData">
+                    <h5 class="boxTitle">Write the Seller information below, please</h5>
+                    <input type="text" class="boxInput" placeholder="Name" #userName required>
+                    <p class = "textInput">Name</p>
+                    <br>
+                    <input type="text" class="boxInput" placeholder="ID Number" #userName required>
+                    <p class = "textInput">ID Number</p>
+                </div>
+    
+    
+                <div class="addButton">
+                    <input type="button" class="addData">
+                </div>
+            </div>
+            <div class="boton">
+                <input type="button" class="deleteData">
+                <input type="button" class="modifieData">
+            </div>
+            <div class="table">
+                <div class = "TableView">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Deparment</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Kevin</td>
+                            <td>Cordero</td>
+                            <td>Administrator</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Alejandro</td>
+                            <td>Ibarra</td>
+                            <td>Administrator</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Jose</td>
+                            <td>David</td>
+                            <td>Administrator</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+        <div class="grayBox">
+            <div class="form">
+                <div class = "referenceTittle">
+                    <p class="title2">
+                        Products
+                    </p>
+                </div>
+                <div class="formData">
+                    <h5 class="boxTitle">Write the information of the Products below, please</h5>
+                    <input type="text" class="boxInput" placeholder="Name" #userName required>
+                    <p class = "textInput">Name</p>
+                    <br>
+                    <input type="text" class="boxInput" placeholder="Description" #userAddress required>
+                    <br>
+                    <p class = "textInput">Description</p>
+                    <br>
+                    <input type="text" class="boxInput" placeholder="Barcode" #userAddress required>
+                    <br>
+                    <p class = "textInput">Barcode</p>
+                    <br>
+                    <input type="text" class="boxInput" placeholder="Seller" #userPhone required>
+                    <br>
+                    <p class = "textInput">Seller</p>
+                    <br>
+                    <input type="text" class="boxInput" placeholder="Price" #userName required>
+                    <br>
+                    <input type="text" class="boxInput" placeholder="Prince" #userName required>
+                    <p class = "textInput">Prince</p>
+                    <input type="text" class="boxInput" placeholder="Pay Taxes?" #userName required>
+                    <p class = "textInput">Pay Taxes?</p>
+                    <input type="text" class="boxInput" placeholder="Percentage Discount" #userName required>
+                    <p class = "textInput">Percentage Discount</p>
+                    <input type="text" class="boxInput" placeholder="Entry Date" #userName required>
+                    <p class = "textInput">Entry Date</p>
+                </div>
+    
+    
+                <div class="addButton">
+                    <input type="button" class="addData">
+                </div>
+            </div>
+            <div class="boton">
+                <input type="button" class="deleteData">
+                <input type="button" class="modifieData">
+            </div>
+            <div class="table">
+                <div class = "TableView">
+                    <table class="table">
+                        <thead>
+                            <tr>           
+                              <th *ngFor="let head of items[0] | keys">
+                                  {{head}}</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let item of items">           
+                              <td *ngFor="let list of item | keys">
+                                  {{item[list]}}</td>
+                            </tr>
+                          </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+
+        
+</div>
+
+
+        
+        
