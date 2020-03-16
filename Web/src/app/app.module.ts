@@ -5,7 +5,6 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { FormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
-import {FormsModule} from '@angular/forms';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CartComponent } from './components/cart/cart.component';
@@ -26,8 +25,8 @@ import { ProductService } from './services/product.service';
     WarehouseConsoleComponent,
     DeliveryConsoleComponent,
     KeysPipe,
-    AdminComponent
-    CartComponent
+    AdminComponent,
+    CartComponent,
     CartProductComponent,
   ],
   imports: [
