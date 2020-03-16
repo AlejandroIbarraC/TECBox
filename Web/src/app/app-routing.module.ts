@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProductsComponent } from './components/products/products.component';
+import { CartProductComponent } from './components/cartProduct/cartProduct.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ReportComponent } from './components/report/report.component';
 import { TrackingComponent } from './components/tracking/tracking.component';
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'warehouse-console', component: WarehouseConsoleComponent },
   { path: 'delivery-console', component: DeliveryConsoleComponent },
   { path: 'cart', component: CartComponent },
+  { path: 'cartProduct', component: CartProductComponent },
 
   { path: '**', component: PageNotFoundComponent}
 ];
