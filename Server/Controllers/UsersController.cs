@@ -23,20 +23,37 @@ namespace Server.Controllers
             string jsonString = System.IO.File.ReadAllText(fileName);
             usersList = JsonSerializer.Deserialize<List<Users>>(jsonString);
 
-            /*Users user1 = new Users("Kevin", 999, "kevin@hola.com", "1234", 88888888, "San Rafael", "Alajuela", "San Ramon");
-            Users user2 = new Users("Ale", 941, "ale@hola.com", "1234", 99999999, "Grecia", "Alajuela", "Grecia");
-            Users user3 = new Users("Jesus", 124, "jesus@hola.com", "1234", 77777777, "Orotina", "Alajuela", "Orotina");
-            Users user4 = new Users("Jose", 654, "jose@hola.com", "1234", 5555555, "La Garita", "Alajuela", "Alajuela");
-
-            usersList.Add(user1);
-            usersList.Add(user2);
-            usersList.Add(user3);
-            usersList.Add(user4);
-            
-            string jsonString = JsonSerializer.Serialize(usersList);
-            System.IO.File.WriteAllText(fileName, jsonString);*/
-
             return usersList;
+        }
+
+
+        [Route("information")]
+        [HttpPost]
+        public Users getUserInformation([FromBody] Users searchUser)
+        {
+            List<Users> usersList = new List<Users>();
+            string fileName = "DataBase/users.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            usersList = JsonSerializer.Deserialize<List<Users>>(jsonString);
+
+            Users user = null;
+            for (int i = 0; i < usersList.Count; i++)
+            {
+                if (usersList[i].eMail == searchUser.eMail)
+                {
+                    user = usersList[i];
+                }
+            }
+            if (user != null)
+            {
+                return user;
+            }
+            else
+            {
+                user = new Users("null", -1, "null", "null", -1, "null", "null", "null");
+                return user;
+            }
         }
 
         [Route("insert")]

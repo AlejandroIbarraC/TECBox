@@ -12,18 +12,22 @@ namespace Server.Source
         public string description { get; set; }
         public string deliveryDate { get; set; }
         public string status { get; set; }
+        public int route { get; set; }
+        public string deliveryMan { get; set; }
 
         public Packages()
         {
         }
 
-        public Packages(int packageTrackingID, string packageClient, string packageDescription, string packageDeliveryDate, string packagesStatus)
+        public Packages(int packageTrackingID, string packageClient, string packageDescription, string packageDeliveryDate, string packagesStatus, int packageRoute, string packageDeliveryMan)
         {
             trackingID = packageTrackingID;
             client = packageClient;
             description = packageDescription;
             deliveryDate = packageDeliveryDate;
             status = packagesStatus;
+            route = packageRoute;
+            deliveryMan = packageDeliveryMan;
         }
     }
 }

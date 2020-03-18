@@ -14,12 +14,14 @@ namespace Server.Source
         public int price { get; set; }
         public bool paysTax { get; set; }
         public int discount { get; set; }
+        public string entryDate { get; set; }
+        public int sales { get; set; }
 
         public Products()
         {
         }
 
-        public Products(string productName, string productDescription, int productBarcode, string productSeller, int productPrice, bool productTax, int productDiscount)
+        public Products(string productName, string productDescription, int productBarcode, string productSeller, int productPrice, bool productTax, int productDiscount, string productEntryDate, int productSales)
         {
             name = productName;
             description = productDescription;
@@ -28,6 +30,8 @@ namespace Server.Source
             price = productPrice;
             paysTax = productTax;
             discount = productDiscount;
+            entryDate = productEntryDate;
+            sales = productSales;
         }
     }
 }

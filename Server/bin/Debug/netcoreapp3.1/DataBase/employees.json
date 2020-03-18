@@ -1,18 +1,26 @@
 [
   {
     "name": "Jose",
-    "department": "Delivery Man"
+    "department": "Delivery",
+    "eMail": "joseda@gmail.com",
+    "password": "4321"
   },
   {
     "name": "Ale",
-    "department": "Grocer"
+    "department": "Warehouse",
+    "eMail": "joseda@gmail.com",
+    "password": "4321"
   },
   {
     "name": "Kevin",
-    "department": "Administrator"
+    "department": "Administration",
+    "eMail": "joseda@gmail.com",
+    "password": "4321"
   },
   {
     "name": "Jesus",
-    "department": "Delivery Man"
+    "department": "Delivery",
+    "eMail": "joseda@gmail.com",
+    "password": "4321"
   }
 ]
