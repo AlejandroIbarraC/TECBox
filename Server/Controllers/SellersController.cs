@@ -28,23 +28,106 @@ namespace Server.Controllers
 
         [Route("insert")]
         [HttpPost]
-        public void insertPost([FromBody] Sellers sellers)
+        public void insertPost([FromBody] Sellers seller)
         {
-            Debug.WriteLine("Vendedor insertado");
+            List<Sellers> sellersList = new List<Sellers>();
+            string fileName = "DataBase/sellers.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            sellersList = JsonSerializer.Deserialize<List<Sellers>>(jsonString);
+
+            bool validation = true;
+
+            for (int i = 0; i < sellersList.Count; i++)
+            {
+                if (sellersList[i].id == seller.id)
+                {
+                    validation = false;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                sellersList.Add(seller);
+
+                jsonString = JsonSerializer.Serialize(sellersList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+
+                Debug.WriteLine("Seller inserted");
+            }
+            else
+            {
+                Debug.WriteLine("Seller has a duplicate id");
+            }
         }
 
         [Route("modify")]
         [HttpPost]
-        public void modifyPost([FromBody] Sellers sellers)
+        public void modifyPost([FromBody] Sellers seller)
         {
-            Debug.WriteLine("Vendedor modificado");
+            List<Sellers> sellersList = new List<Sellers>();
+            string fileName = "DataBase/sellers.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            sellersList = JsonSerializer.Deserialize<List<Sellers>>(jsonString);
+
+            bool validation = false;
+
+            for (int i = 0; i < sellersList.Count; i++)
+            {
+                if (sellersList[i].id == seller.id)
+                {
+                    sellersList[i] = seller;
+                    Debug.WriteLine("Seller modified");
+                    validation = true;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                jsonString = JsonSerializer.Serialize(sellersList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+            }
+            else
+            {
+                Debug.WriteLine("Seller not found");
+            }
         }
 
         [Route("delete")]
         [HttpPost]
-        public void deletePost([FromBody] Sellers sellers)
+        public void deletePost([FromBody] Sellers seller)
         {
-            Debug.WriteLine("Vendedor eliminado");
+            List<Sellers> sellersList = new List<Sellers>();
+            string fileName = "DataBase/sellers.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            sellersList = JsonSerializer.Deserialize<List<Sellers>>(jsonString);
+
+            bool validation = false;
+
+            for (int i = 0; i < sellersList.Count; i++)
+            {
+                if (sellersList[i].id == seller.id)
+                {
+                    sellersList.RemoveAt(i);
+                    Debug.WriteLine("Seller deleted");
+                    validation = true;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                jsonString = JsonSerializer.Serialize(sellersList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+            }
+            else
+            {
+                Debug.WriteLine("Seller not found");
+            }
         }
     }
 }

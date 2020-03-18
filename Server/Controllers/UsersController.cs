@@ -58,23 +58,106 @@ namespace Server.Controllers
 
         [Route("insert")]
         [HttpPost]
-        public void insertPost([FromBody] Users users)
+        public void insertPost([FromBody] Users user)
         {
-            Debug.WriteLine("Cliente insertado");
+            List<Users> usersList = new List<Users>();
+            string fileName = "DataBase/users.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            usersList = JsonSerializer.Deserialize<List<Users>>(jsonString);
+
+            bool validation = true;
+
+            for (int i = 0; i < usersList.Count; i++)
+            {
+                if (usersList[i].idNumber == user.idNumber)
+                {
+                    validation = false;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                usersList.Add(user);
+
+                jsonString = JsonSerializer.Serialize(usersList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+
+                Debug.WriteLine("User inserted");
+            }
+            else
+            {
+                Debug.WriteLine("User has a duplicate id");
+            }
         }
 
         [Route("modify")]
         [HttpPost]
-        public void modifyPost([FromBody] Users users)
+        public void modifyPost([FromBody] Users user)
         {
-            Debug.WriteLine("Cliente modificado");
+            List<Users> usersList = new List<Users>();
+            string fileName = "DataBase/users.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            usersList = JsonSerializer.Deserialize<List<Users>>(jsonString);
+
+            bool validation = false;
+
+            for (int i = 0; i < usersList.Count; i++)
+            {
+                if (usersList[i].idNumber == user.idNumber)
+                {
+                    usersList[i] = user;
+                    Debug.WriteLine("User modified");
+                    validation = true;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                jsonString = JsonSerializer.Serialize(usersList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+            }
+            else
+            {
+                Debug.WriteLine("User not found");
+            }
         }
 
         [Route("delete")]
         [HttpPost]
-        public void deletePost([FromBody] Users users)
+        public void deletePost([FromBody] Users user)
         {
-            Debug.WriteLine("Cliente eliminado");
+            List<Users> usersList = new List<Users>();
+            string fileName = "DataBase/users.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            usersList = JsonSerializer.Deserialize<List<Users>>(jsonString);
+
+            bool validation = false;
+
+            for (int i = 0; i < usersList.Count; i++)
+            {
+                if (usersList[i].idNumber == user.idNumber)
+                {
+                    usersList.RemoveAt(i);
+                    Debug.WriteLine("User deleted");
+                    validation = true;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                jsonString = JsonSerializer.Serialize(usersList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+            }
+            else
+            {
+                Debug.WriteLine("User not found");
+            }
         }
     }
 }

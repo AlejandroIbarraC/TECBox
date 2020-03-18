@@ -7,22 +7,23 @@ namespace Server.Source
 {
     public class Employees
     {
-
         public string name { get; set; }
         public string department { get; set; }
         public string eMail { get; set; }
         public string password { get; set; }
+        public int id { get; set; }
 
         public Employees()
         {
         }
 
-        public Employees(string employeeName, string employeeDepartment, string employeeEMail, string employeePassword)
+        public Employees(string employeeName, string employeeDepartment, string employeeEMail, string employeePassword, int employeeID)
         {
             name = employeeName;
             department = employeeDepartment;
             eMail = employeeEMail;
             password = employeePassword;
+            id = employeeID;
         }
 
     }

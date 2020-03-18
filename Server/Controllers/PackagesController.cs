@@ -191,23 +191,152 @@ namespace Server.Controllers
 
         [Route("insert")]
         [HttpPost]
-        public void insertPost([FromBody] Packages packages)
+        public void insertPost([FromBody] Packages package)
         {
-            Debug.WriteLine("Paquete insertado");
+            List<Packages> packagesList = new List<Packages>();
+            string fileName = "DataBase/packages.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            packagesList = JsonSerializer.Deserialize<List<Packages>>(jsonString);
+
+            List<Routes> routesList = new List<Routes>();
+            fileName = "DataBase/routes.json";
+
+            jsonString = System.IO.File.ReadAllText(fileName);
+            routesList = JsonSerializer.Deserialize<List<Routes>>(jsonString);
+
+            List<Employees> employeesList = new List<Employees>();
+            fileName = "DataBase/employees.json";
+
+            jsonString = System.IO.File.ReadAllText(fileName);
+            employeesList = JsonSerializer.Deserialize<List<Employees>>(jsonString);
+
+            if (routesList.Count > 0 & employeesList.Count > 0)
+            {
+                bool validation = true;
+                for (int i = 0; i < packagesList.Count; i++)
+                {
+                    if (packagesList[i].trackingID == package.trackingID)
+                    {
+                        validation = false;
+                        break;
+                    }
+                }
+                bool validation2 = true;
+                for (int i = 0; i < routesList.Count; i++)
+                {
+                    if (routesList[i].number == package.route)
+                    {
+                        validation2 = true;
+                        break;
+                    }
+                    else
+                    {
+                        validation2 = false;
+                    }
+                }
+                bool validation3 = true;
+                for (int i = 0; i < employeesList.Count; i++)
+                {
+                    if (employeesList[i].name == package.deliveryMan & employeesList[i].department == "Delivery")
+                    {
+                        validation3 = true;
+                        break;
+                    }
+                    else
+                    {
+                        validation3 = false;
+                    }
+                        
+                }
+                if (validation & validation2 & validation3)
+                {
+                    packagesList.Add(package);
+
+                    fileName = "DataBase/packages.json";
+
+                    jsonString = JsonSerializer.Serialize(packagesList);
+                    System.IO.File.WriteAllText(fileName, jsonString);
+
+                    Debug.WriteLine("Package inserted");
+                }
+                else
+                {
+                    Debug.WriteLine("Package has a duplicate id, the route doesn't exist, or the delivery man doesn't exist");
+                }
+            }
+            else
+            {
+                Debug.WriteLine("There aren't routes or deliver men available at the moment");
+            }
         }
 
         [Route("modify")]
         [HttpPost]
-        public void modifyPost([FromBody] Packages packages)
+        public void modifyPost([FromBody] Packages package)
         {
-            Debug.WriteLine("Paquete modificado");
+            List<Packages> packagesList = new List<Packages>();
+            string fileName = "DataBase/packages.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            packagesList = JsonSerializer.Deserialize<List<Packages>>(jsonString);
+
+            bool validation = false;
+
+            for (int i = 0; i < packagesList.Count; i++)
+            {
+                if (packagesList[i].trackingID == package.trackingID)
+                {
+                    packagesList[i] = package;
+                    Debug.WriteLine("Package modified");
+                    validation = true;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                jsonString = JsonSerializer.Serialize(packagesList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+            }
+            else
+            {
+                Debug.WriteLine("Package not found");
+            }
         }
 
         [Route("delete")]
         [HttpPost]
-        public void deletePost([FromBody] Packages packages)
+        public void deletePost([FromBody] Packages package)
         {
-            Debug.WriteLine("Paquete eliminado");
+            List<Packages> packagesList = new List<Packages>();
+            string fileName = "DataBase/packages.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            packagesList = JsonSerializer.Deserialize<List<Packages>>(jsonString);
+
+            bool validation = false;
+
+            for (int i = 0; i < packagesList.Count; i++)
+            {
+                if (packagesList[i].trackingID == package.trackingID)
+                {
+                    packagesList.RemoveAt(i);
+                    Debug.WriteLine("Package deleted");
+                    validation = true;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                jsonString = JsonSerializer.Serialize(packagesList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+            }
+            else
+            {
+                Debug.WriteLine("Package not found");
+            }
         }
     }
 }

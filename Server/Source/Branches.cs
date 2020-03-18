@@ -13,12 +13,13 @@ namespace Server.Source
         public int phone { get; set; }
         public string boss { get; set; }
         public string city { get; set; }
+        public int id { get; set; }
 
         public Branches()
         {
         }
 
-        public Branches(string branchName, string branchAddress, string branchProvince, int branchPhone, string branchBoss, string branchCity)
+        public Branches(string branchName, string branchAddress, string branchProvince, int branchPhone, string branchBoss, string branchCity, int branchID)
         {
             name = branchName;
             address = branchAddress;
@@ -26,6 +27,7 @@ namespace Server.Source
             phone = branchPhone;
             boss = branchBoss;
             city = branchCity;
+            id = branchID;
         }
 
     }

@@ -105,23 +105,132 @@ namespace Server.Controllers
 
         [Route("insert")]
         [HttpPost]
-        public void insertPost([FromBody] Products products)
+        public void insertPost([FromBody] Products product)
         {
-            Debug.WriteLine("Producto insertado");
+            List<Products> productsList = new List<Products>();
+            string fileName = "DataBase/products.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            productsList = JsonSerializer.Deserialize<List<Products>>(jsonString);
+
+            List<Sellers> sellersList = new List<Sellers>();
+            fileName = "DataBase/sellers.json";
+
+            jsonString = System.IO.File.ReadAllText(fileName);
+            sellersList = JsonSerializer.Deserialize<List<Sellers>>(jsonString);
+
+            if (sellersList.Count > 0)
+            {
+                bool validation = true;
+                for (int i = 0; i < productsList.Count; i++)
+                {
+                    if (productsList[i].barcode == product.barcode)
+                    {
+                        validation = false;
+                        break;
+                    }
+                }
+                bool validation2 = true;
+                for (int i = 0; i < sellersList.Count; i++)
+                {
+                    if (sellersList[i].name == product.seller)
+                    {
+                        validation2 = true;
+                        break;
+                    }
+                    else
+                    {
+                        validation2 = false;
+                    }
+                }
+                if (validation & validation2)
+                {
+                    productsList.Add(product);
+
+                    fileName = "DataBase/products.json";
+
+                    jsonString = JsonSerializer.Serialize(productsList);
+                    System.IO.File.WriteAllText(fileName, jsonString);
+
+                    Debug.WriteLine("Product inserted");
+                }
+                else
+                {
+                    Debug.WriteLine("Product has a duplicate barcode or the seller doesn't exist");
+                }
+            }
+            else
+            {
+                Debug.WriteLine("There aren't any sellers available at the moment");
+            }
         }
 
         [Route("modify")]
         [HttpPost]
-        public void modifyPost([FromBody] Products products)
+        public void modifyPost([FromBody] Products product)
         {
-            Debug.WriteLine("Producto modificado");
+            List<Products> productsList = new List<Products>();
+            string fileName = "DataBase/products.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            productsList = JsonSerializer.Deserialize<List<Products>>(jsonString);
+
+            bool validation = false;
+
+            for (int i = 0; i < productsList.Count; i++)
+            {
+                if (productsList[i].barcode == product.barcode)
+                {
+                    productsList[i] = product;
+                    Debug.WriteLine("Package modified");
+                    validation = true;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                jsonString = JsonSerializer.Serialize(productsList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+            }
+            else
+            {
+                Debug.WriteLine("Product not found");
+            }
         }
 
         [Route("delete")]
         [HttpPost]
-        public void deletePost([FromBody] Products products)
+        public void deletePost([FromBody] Products product)
         {
-            Debug.WriteLine("Producto eliminado");
+            List<Products> productsList = new List<Products>();
+            string fileName = "DataBase/products.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            productsList = JsonSerializer.Deserialize<List<Products>>(jsonString);
+
+            bool validation = false;
+
+            for (int i = 0; i < productsList.Count; i++)
+            {
+                if (productsList[i].barcode == product.barcode)
+                {
+                    productsList.RemoveAt(i);
+                    Debug.WriteLine("Package deleted");
+                    validation = true;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                jsonString = JsonSerializer.Serialize(productsList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+            }
+            else
+            {
+                Debug.WriteLine("Product not found");
+            }
         }
     }
 }

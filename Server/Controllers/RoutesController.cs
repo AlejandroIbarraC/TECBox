@@ -104,23 +104,106 @@ namespace Server.Controllers
 
         [Route("insert")]
         [HttpPost]
-        public void insertPost([FromBody] Routes routes)
+        public void insertPost([FromBody] Routes route)
         {
-            Debug.WriteLine("Ruta insertada");
+            List<Routes> routesList = new List<Routes>();
+            string fileName = "DataBase/routes.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            routesList = JsonSerializer.Deserialize<List<Routes>>(jsonString);
+
+            bool validation = true;
+
+            for (int i = 0; i < routesList.Count; i++)
+            {
+                if (routesList[i].number == route.number)
+                {
+                    validation = false;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                routesList.Add(route);
+
+                jsonString = JsonSerializer.Serialize(routesList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+
+                Debug.WriteLine("Route inserted");
+            }
+            else
+            {
+                Debug.WriteLine("Route has a duplicate number");
+            }
         }
 
         [Route("modify")]
         [HttpPost]
-        public void modifyPost([FromBody] Routes routes)
+        public void modifyPost([FromBody] Routes route)
         {
-            Debug.WriteLine("Ruta modificada");
+            List<Routes> routesList = new List<Routes>();
+            string fileName = "DataBase/routes.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            routesList = JsonSerializer.Deserialize<List<Routes>>(jsonString);
+
+            bool validation = false;
+
+            for (int i = 0; i < routesList.Count; i++)
+            {
+                if (routesList[i].number == route.number)
+                {
+                    routesList[i] = route;
+                    Debug.WriteLine("Route modified");
+                    validation = true;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                jsonString = JsonSerializer.Serialize(routesList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+            }
+            else
+            {
+                Debug.WriteLine("Route not found");
+            }
         }
 
         [Route("delete")]
         [HttpPost]
-        public void deletePost([FromBody] Routes routes)
+        public void deletePost([FromBody] Routes route)
         {
-            Debug.WriteLine("Ruta eliminada");
+            List<Routes> routesList = new List<Routes>();
+            string fileName = "DataBase/routes.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            routesList = JsonSerializer.Deserialize<List<Routes>>(jsonString);
+
+            bool validation = false;
+
+            for (int i = 0; i < routesList.Count; i++)
+            {
+                if (routesList[i].number == route.number)
+                {
+                    routesList.RemoveAt(i);
+                    Debug.WriteLine("Route deleted");
+                    validation = true;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                jsonString = JsonSerializer.Serialize(routesList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+            }
+            else
+            {
+                Debug.WriteLine("Route not found");
+            }
         }
     }
 }

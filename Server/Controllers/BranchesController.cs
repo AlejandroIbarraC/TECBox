@@ -23,41 +23,111 @@ namespace Server.Controllers
             string jsonString = System.IO.File.ReadAllText(fileName);
             branchesList = JsonSerializer.Deserialize<List<Branches>>(jsonString);
 
-            /***Branches branch1 = new Branches("Monge", "500 m sur de la Basilica", "Cartago", 12345678, "Jose", "Cartago");
-            Branches branch2 = new Branches("Gollo", "200 m sur de la Fiesta del Maiz, residencial el Bosque", "Alajuela", 87654321, "Ale", "La Garita");
-            Branches branch3 = new Branches("El Verdugo", "250 m norte del TEC", "Cartago", 132435678, "Jesus", "Cartago");
-            Branches branch4 = new Branches("Artelec", "100 m norte de la casa de Ale", "Alejuela", 90909090, "Kevin", "Grecia");
-
-            rolesList.Add(branch1);
-            rolesList.Add(branch2);
-            rolesList.Add(branch3);
-            rolesList.Add(branch4);
-
-            string jsonString = JsonSerializer.Serialize(rolesList);
-            System.IO.File.WriteAllText(fileName, jsonString);***/
-
             return branchesList;
         }
 
         [Route("insert")]
         [HttpPost]
-        public void insertPost([FromBody] Branches branches)
+        public void insertPost([FromBody] Branches branch)
         {
-            Debug.WriteLine("Sucursal insertada");
+            List<Branches> branchesList = new List<Branches>();
+            string fileName = "DataBase/branches.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            branchesList = JsonSerializer.Deserialize<List<Branches>>(jsonString);
+
+            bool validation = true;
+
+            for (int i = 0; i < branchesList.Count; i++)
+            {
+                if (branchesList[i].id == branch.id)
+                {
+                    validation = false;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                branchesList.Add(branch);
+
+                jsonString = JsonSerializer.Serialize(branchesList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+
+                Debug.WriteLine("Branch inserted");
+            }
+            else
+            {
+                Debug.WriteLine("Branch has a duplicate id");
+            }
         }
 
         [Route("modify")]
         [HttpPost]
-        public void modifyPost([FromBody] Branches branches)
+        public void modifyPost([FromBody] Branches branch)
         {
-            Debug.WriteLine("Sucursal modificada");
+            List<Branches> branchesList = new List<Branches>();
+            string fileName = "DataBase/branches.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            branchesList = JsonSerializer.Deserialize<List<Branches>>(jsonString);
+
+            bool validation = false;
+
+            for (int i = 0; i < branchesList.Count; i++)
+            {
+                if (branchesList[i].id == branch.id)
+                {
+                    branchesList[i] = branch;
+                    Debug.WriteLine("Branch modified");
+                    validation = true;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                jsonString = JsonSerializer.Serialize(branchesList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+            }
+            else
+            {
+                Debug.WriteLine("Branch not found");
+            }
         }
 
         [Route("delete")]
         [HttpPost]
-        public void deletePost([FromBody] Branches branches)
+        public void deletePost([FromBody] Branches branch)
         {
-            Debug.WriteLine("Sucursal eliminada");
+            List<Branches> branchesList = new List<Branches>();
+            string fileName = "DataBase/branches.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            branchesList = JsonSerializer.Deserialize<List<Branches>>(jsonString);
+
+            bool validation = false;
+
+            for (int i = 0; i < branchesList.Count; i++)
+            {
+                if (branchesList[i].id == branch.id)
+                {
+                    branchesList.RemoveAt(i);
+                    Debug.WriteLine("Branch deleted");
+                    validation = true;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                jsonString = JsonSerializer.Serialize(branchesList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+            }
+            else
+            {
+                Debug.WriteLine("Branch not found");
+            }
         }
     }
 }
