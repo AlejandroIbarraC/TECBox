@@ -17,6 +17,22 @@
 		A908EE1B24143EA300050401 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A908EE1A24143EA300050401 /* User.swift */; };
 		A908EE1D2414551D00050401 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A908EE1C2414551D00050401 /* SettingsView.swift */; };
 		A908EE1F2414573C00050401 /* PackageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A908EE1E2414573C00050401 /* PackageView.swift */; };
+		A92B13BE2420190A00F48B3A /* PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B13BD2420190A00F48B3A /* PullToRefresh.swift */; };
+		A92B13C5242022B100F48B3A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A92B13C3242022B100F48B3A /* Interface.storyboard */; };
+		A92B13C7242022B300F48B3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A92B13C6242022B300F48B3A /* Assets.xcassets */; };
+		A92B13CE242022B300F48B3A /* TECBox-Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A92B13CD242022B300F48B3A /* TECBox-Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A92B13D3242022B300F48B3A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B13D2242022B300F48B3A /* ContentView.swift */; };
+		A92B13D5242022B300F48B3A /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B13D4242022B300F48B3A /* HostingController.swift */; };
+		A92B13D7242022B300F48B3A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B13D6242022B300F48B3A /* ExtensionDelegate.swift */; };
+		A92B13D9242022B300F48B3A /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B13D8242022B300F48B3A /* NotificationController.swift */; };
+		A92B13DB242022B300F48B3A /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B13DA242022B300F48B3A /* NotificationView.swift */; };
+		A92B13DD242022B400F48B3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A92B13DC242022B400F48B3A /* Assets.xcassets */; };
+		A92B13E0242022B400F48B3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A92B13DF242022B400F48B3A /* Preview Assets.xcassets */; };
+		A92B13E5242022B400F48B3A /* TECBox-Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A92B13C1242022B100F48B3A /* TECBox-Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A92B13EF242024FB00F48B3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C7CAE92411D30E000F1CD7 /* Assets.xcassets */; };
+		A92B13F02420257000F48B3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C7CAE92411D30E000F1CD7 /* Assets.xcassets */; };
+		A92B13F52420266C00F48B3A /* WatchPackageDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B13F42420266C00F48B3A /* WatchPackageDetail.swift */; };
+		A92B13F72420272400F48B3A /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = A961657724145CF5004569BF /* Package.swift */; };
 		A961657424145AA3004569BF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A961657324145AA3004569BF /* Extensions.swift */; };
 		A961657624145B61004569BF /* packages.json in Resources */ = {isa = PBXBuildFile; fileRef = A961657524145B61004569BF /* packages.json */; };
 		A961657824145CF6004569BF /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = A961657724145CF5004569BF /* Package.swift */; };
@@ -32,6 +48,48 @@
 		A9EFB99E2412E9A1005BDB25 /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EFB99D2412E9A1005BDB25 /* KeyboardResponder.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A92B13CF242022B300F48B3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9C7CAD82411D30D000F1CD7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A92B13CC242022B300F48B3A;
+			remoteInfo = "TECBox-Watch Extension";
+		};
+		A92B13E3242022B400F48B3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9C7CAD82411D30D000F1CD7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A92B13C0242022B100F48B3A;
+			remoteInfo = "TECBox-Watch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A92B13E9242022B400F48B3A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A92B13CE242022B300F48B3A /* TECBox-Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A92B13ED242022B400F48B3A /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				A92B13E5242022B400F48B3A /* TECBox-Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4FB4538BDDB17AF1DE96E439 /* Pods-TECBox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TECBox.debug.xcconfig"; path = "Target Support Files/Pods-TECBox/Pods-TECBox.debug.xcconfig"; sourceTree = "<group>"; };
 		594403D342C3546A2D31C27A /* Pods-TECBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TECBox.release.xcconfig"; path = "Target Support Files/Pods-TECBox/Pods-TECBox.release.xcconfig"; sourceTree = "<group>"; };
@@ -45,6 +103,22 @@
 		A908EE1A24143EA300050401 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A908EE1C2414551D00050401 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A908EE1E2414573C00050401 /* PackageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageView.swift; sourceTree = "<group>"; };
+		A92B13BD2420190A00F48B3A /* PullToRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullToRefresh.swift; sourceTree = "<group>"; };
+		A92B13C1242022B100F48B3A /* TECBox-Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TECBox-Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A92B13C4242022B100F48B3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		A92B13C6242022B300F48B3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A92B13C8242022B300F48B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A92B13CD242022B300F48B3A /* TECBox-Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TECBox-Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A92B13D2242022B300F48B3A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A92B13D4242022B300F48B3A /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		A92B13D6242022B300F48B3A /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		A92B13D8242022B300F48B3A /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		A92B13DA242022B300F48B3A /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		A92B13DC242022B400F48B3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A92B13DF242022B400F48B3A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A92B13E1242022B400F48B3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A92B13E2242022B400F48B3A /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		A92B13F42420266C00F48B3A /* WatchPackageDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPackageDetail.swift; sourceTree = "<group>"; };
 		A961657324145AA3004569BF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A961657524145B61004569BF /* packages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = packages.json; sourceTree = "<group>"; };
 		A961657724145CF5004569BF /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -63,6 +137,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A92B13CA242022B300F48B3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A9C7CADD2411D30D000F1CD7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -113,6 +194,49 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		A92B13C2242022B100F48B3A /* TECBox-Watch */ = {
+			isa = PBXGroup;
+			children = (
+				A92B13C3242022B100F48B3A /* Interface.storyboard */,
+				A92B13C6242022B300F48B3A /* Assets.xcassets */,
+				A92B13C8242022B300F48B3A /* Info.plist */,
+			);
+			path = "TECBox-Watch";
+			sourceTree = "<group>";
+		};
+		A92B13D1242022B300F48B3A /* TECBox-Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A92B13F12420263700F48B3A /* Views */,
+				A92B13D2242022B300F48B3A /* ContentView.swift */,
+				A92B13D4242022B300F48B3A /* HostingController.swift */,
+				A92B13D6242022B300F48B3A /* ExtensionDelegate.swift */,
+				A92B13D8242022B300F48B3A /* NotificationController.swift */,
+				A92B13DA242022B300F48B3A /* NotificationView.swift */,
+				A92B13DC242022B400F48B3A /* Assets.xcassets */,
+				A92B13E1242022B400F48B3A /* Info.plist */,
+				A92B13E2242022B400F48B3A /* PushNotificationPayload.apns */,
+				A92B13DE242022B400F48B3A /* Preview Content */,
+			);
+			path = "TECBox-Watch Extension";
+			sourceTree = "<group>";
+		};
+		A92B13DE242022B400F48B3A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A92B13DF242022B400F48B3A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A92B13F12420263700F48B3A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A92B13F42420266C00F48B3A /* WatchPackageDetail.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A961657924145D94004569BF /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +250,8 @@
 			isa = PBXGroup;
 			children = (
 				A9C7CAE22411D30D000F1CD7 /* TECBox */,
+				A92B13C2242022B100F48B3A /* TECBox-Watch */,
+				A92B13D1242022B300F48B3A /* TECBox-Watch Extension */,
 				A9C7CAE12411D30D000F1CD7 /* Products */,
 				F53BF171731C38BA47D4A762 /* Pods */,
 				5699A9D9D3011F5F7DE29C7E /* Frameworks */,
@@ -136,6 +262,8 @@
 			isa = PBXGroup;
 			children = (
 				A9C7CAE02411D30D000F1CD7 /* TECBox.app */,
+				A92B13C1242022B100F48B3A /* TECBox-Watch.app */,
+				A92B13CD242022B300F48B3A /* TECBox-Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,6 +302,7 @@
 				A901B3EC241354B100242EAA /* Session.swift */,
 				A961657324145AA3004569BF /* Extensions.swift */,
 				A961658124148020004569BF /* Styles.swift */,
+				A92B13BD2420190A00F48B3A /* PullToRefresh.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -190,6 +319,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A92B13C0242022B100F48B3A /* TECBox-Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A92B13EA242022B400F48B3A /* Build configuration list for PBXNativeTarget "TECBox-Watch" */;
+			buildPhases = (
+				A92B13BF242022B100F48B3A /* Resources */,
+				A92B13E9242022B400F48B3A /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A92B13D0242022B300F48B3A /* PBXTargetDependency */,
+			);
+			name = "TECBox-Watch";
+			productName = "TECBox-Watch";
+			productReference = A92B13C1242022B100F48B3A /* TECBox-Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		A92B13CC242022B300F48B3A /* TECBox-Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A92B13E6242022B400F48B3A /* Build configuration list for PBXNativeTarget "TECBox-Watch Extension" */;
+			buildPhases = (
+				A92B13C9242022B300F48B3A /* Sources */,
+				A92B13CA242022B300F48B3A /* Frameworks */,
+				A92B13CB242022B300F48B3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TECBox-Watch Extension";
+			productName = "TECBox-Watch Extension";
+			productReference = A92B13CD242022B300F48B3A /* TECBox-Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		A9C7CADF2411D30D000F1CD7 /* TECBox */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9C7CAF42411D30E000F1CD7 /* Build configuration list for PBXNativeTarget "TECBox" */;
@@ -199,12 +362,16 @@
 				A9C7CADD2411D30D000F1CD7 /* Frameworks */,
 				A9C7CADE2411D30D000F1CD7 /* Resources */,
 				9893CAAA04E6CAF27581AE1C /* [CP] Embed Pods Frameworks */,
+				A92B13ED242022B400F48B3A /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A92B13E4242022B400F48B3A /* PBXTargetDependency */,
 			);
 			name = TECBox;
+			packageProductDependencies = (
+			);
 			productName = TECBox;
 			productReference = A9C7CAE02411D30D000F1CD7 /* TECBox.app */;
 			productType = "com.apple.product-type.application";
@@ -215,10 +382,16 @@
 		A9C7CAD82411D30D000F1CD7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = Schlafenhase;
 				TargetAttributes = {
+					A92B13C0242022B100F48B3A = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					A92B13CC242022B300F48B3A = {
+						CreatedOnToolsVersion = 11.4;
+					};
 					A9C7CADF2411D30D000F1CD7 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
@@ -233,16 +406,40 @@
 				Base,
 			);
 			mainGroup = A9C7CAD72411D30D000F1CD7;
+			packageReferences = (
+			);
 			productRefGroup = A9C7CAE12411D30D000F1CD7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				A9C7CADF2411D30D000F1CD7 /* TECBox */,
+				A92B13C0242022B100F48B3A /* TECBox-Watch */,
+				A92B13CC242022B300F48B3A /* TECBox-Watch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A92B13BF242022B100F48B3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A92B13C7242022B300F48B3A /* Assets.xcassets in Resources */,
+				A92B13F02420257000F48B3A /* Assets.xcassets in Resources */,
+				A92B13C5242022B100F48B3A /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A92B13CB242022B300F48B3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A92B13E0242022B400F48B3A /* Preview Assets.xcassets in Resources */,
+				A92B13EF242024FB00F48B3A /* Assets.xcassets in Resources */,
+				A92B13DD242022B400F48B3A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A9C7CADE2411D30D000F1CD7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -300,6 +497,20 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A92B13C9242022B300F48B3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A92B13D5242022B300F48B3A /* HostingController.swift in Sources */,
+				A92B13D3242022B300F48B3A /* ContentView.swift in Sources */,
+				A92B13D9242022B300F48B3A /* NotificationController.swift in Sources */,
+				A92B13F72420272400F48B3A /* Package.swift in Sources */,
+				A92B13F52420266C00F48B3A /* WatchPackageDetail.swift in Sources */,
+				A92B13D7242022B300F48B3A /* ExtensionDelegate.swift in Sources */,
+				A92B13DB242022B300F48B3A /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A9C7CADC2411D30D000F1CD7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -317,6 +528,7 @@
 				A9C7CAE82411D30D000F1CD7 /* LogInView.swift in Sources */,
 				A961657824145CF6004569BF /* Package.swift in Sources */,
 				A961658224148020004569BF /* Styles.swift in Sources */,
+				A92B13BE2420190A00F48B3A /* PullToRefresh.swift in Sources */,
 				A901B3EB241353C000242EAA /* MotherView.swift in Sources */,
 				A961658024146AFB004569BF /* PackageDetail.swift in Sources */,
 				A908EE1B24143EA300050401 /* User.swift in Sources */,
@@ -326,7 +538,28 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A92B13D0242022B300F48B3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A92B13CC242022B300F48B3A /* TECBox-Watch Extension */;
+			targetProxy = A92B13CF242022B300F48B3A /* PBXContainerItemProxy */;
+		};
+		A92B13E4242022B400F48B3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A92B13C0242022B100F48B3A /* TECBox-Watch */;
+			targetProxy = A92B13E3242022B400F48B3A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		A92B13C3242022B100F48B3A /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A92B13C4242022B100F48B3A /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		A9C7CAEE2411D30E000F1CD7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -338,6 +571,92 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A92B13E7242022B400F48B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"TECBox-Watch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 6UU452CNJ4;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "TECBox-Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = schlafenhase.TECBox.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		A92B13E8242022B400F48B3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"TECBox-Watch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 6UU452CNJ4;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "TECBox-Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = schlafenhase.TECBox.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
+		A92B13EB242022B400F48B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6UU452CNJ4;
+				IBSC_MODULE = TECBox_Watch_Extension;
+				INFOPLIST_FILE = "TECBox-Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = schlafenhase.TECBox.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		A92B13EC242022B400F48B3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6UU452CNJ4;
+				IBSC_MODULE = TECBox_Watch_Extension;
+				INFOPLIST_FILE = "TECBox-Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = schlafenhase.TECBox.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
 		A9C7CAF22411D30E000F1CD7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -497,6 +816,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A92B13E6242022B400F48B3A /* Build configuration list for PBXNativeTarget "TECBox-Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A92B13E7242022B400F48B3A /* Debug */,
+				A92B13E8242022B400F48B3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A92B13EA242022B400F48B3A /* Build configuration list for PBXNativeTarget "TECBox-Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A92B13EB242022B400F48B3A /* Debug */,
+				A92B13EC242022B400F48B3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A9C7CADB2411D30D000F1CD7 /* Build configuration list for PBXProject "TECBox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
