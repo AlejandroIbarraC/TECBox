@@ -17,6 +17,8 @@ import { AdminComponent } from './components/admin/admin.component';
 import { CartProductComponent } from './components/cartProduct/cartProduct.component';
 import { ProductService } from './services/product.service';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +45,6 @@ import { ProductService } from './services/product.service';
   ],
   bootstrap: [
     AppComponent,
-    AdminComponent,
   ]
 })
 export class AppModule { }

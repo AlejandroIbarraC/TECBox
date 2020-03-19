@@ -24,7 +24,7 @@
                 <input type="text" class="boxInput" placeholder="Name" #userName required>
                 <p class = "textInput">Name</p>
                 <br>
-                <input type="text" class="boxInput" placeholder="Department" #userName required>
+                <input type="text" class="boxInput" placeholder="Department" #userDeparment required>
                 <p class = "textInput">Deparment</p>
             </div>
 
@@ -41,33 +41,15 @@
             <div class = "TableView">
                 <table class="table">
                     <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
-                        <th scope="col">Deparment</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Kevin</td>
-                        <td>Cordero</td>
-                        <td>Administrator</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Alejandro</td>
-                        <td>Ibarra</td>
-                        <td>Administrator</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Jose</td>
-                        <td>David</td>
-                        <td>Administrator</td>
-                      </tr>
-                    </tbody>
+                            <tr>           
+                              <th *ngFor="let head of employees[0] | keys">{{head}}</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let item of employees">           
+                              <td *ngFor="let list of item | keys">{{item[list]}}</td>
+                            </tr>
+                          </tbody>
                   </table>
             </div>
         </div>
@@ -84,6 +66,7 @@
             <div class="formData">
                 <h5 class="boxTitle">Write the information of the branches below, please</h5>
                 <input type="text" class="boxInput" placeholder="Name" #userName required>
+                <br>
                 <p class = "textInput">Name</p>
                 <br>
                 <input type="text" class="boxInput" placeholder="Address" #userAddress required>
@@ -98,11 +81,12 @@
                 <br>
                 <p class = "textInput">Phone</p>
                 <br>
+                <input type="text" class="boxInput" placeholder="City" #userName required>
+                <br>
+                <p class = "textInput">City</p>
+                <br>
                 <input type="text" class="boxInput" placeholder="Boss" #userName required>
                 <br>
-                <input type="text" class="boxInput" placeholder="City" #userName required>
-                <p class = "textInput">City</p>
-                <input type="text" class="boxInput" placeholder="Boss" #userName required>
                 <p class = "textInput">Boss</p>
             </div>
 
@@ -118,34 +102,16 @@
         <div class="table">
             <div class = "TableView">
                 <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
-                        <th scope="col">Deparment</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Kevin</td>
-                        <td>Cordero</td>
-                        <td>Administrator</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Alejandro</td>
-                        <td>Ibarra</td>
-                        <td>Administrator</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Jose</td>
-                        <td>David</td>
-                        <td>Administrator</td>
-                      </tr>
-                    </tbody>
+                  <thead>
+                    <tr>           
+                      <th *ngFor="let head of items[0] | keys">{{head}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of items">           
+                      <td *ngFor="let list of item | keys">{{item[list]}}</td>
+                    </tr>
+                  </tbody>
                   </table>
             </div>
         </div>
@@ -162,6 +128,7 @@
             <div class="formData">
                 <h5 class="boxTitle">Write the information of the worker below, please</h5>
                 <input type="text" class="boxInput" placeholder="ID number" #userName required>
+                <br>
                 <p class = "textInput">ID number</p>
                 <br>
                 <input type="text" class="boxInput" placeholder="Full Name" #userAddress required>
@@ -178,11 +145,14 @@
                 <br>
                 <input type="text" class="boxInput" placeholder="Branch" #userName required>
                 <br>
-                <input type="text" class="boxInput" placeholder="Branch" #userName required>
                 <p class = "textInput">Branch</p>
+                <br>
                 <input type="text" class="boxInput" placeholder="Hourly Wage" #userName required>
+                <br>
                 <p class = "textInput">Hourly Wage</p>
+                <br>
                 <input type="text" class="boxInput" placeholder="Monthly Wage" #userName required>
+                <br>
                 <p class = "textInput">Monthly Wage</p>
             </div>
 
@@ -198,34 +168,16 @@
         <div class="table">
             <div class = "TableView">
                 <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
-                        <th scope="col">Deparment</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Kevin</td>
-                        <td>Cordero</td>
-                        <td>Administrator</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Alejandro</td>
-                        <td>Ibarra</td>
-                        <td>Administrator</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Jose</td>
-                        <td>David</td>
-                        <td>Administrator</td>
-                      </tr>
-                    </tbody>
+                  <thead>
+                    <tr>           
+                      <th *ngFor="let head of workers[0] | keys">{{head}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of workers">           
+                      <td *ngFor="let list of item | keys">{{item[list]}}</td>
+                    </tr>
+                  </tbody>
                   </table>
             </div>
         </div>
@@ -241,6 +193,7 @@
                 <div class="formData">
                     <h5 class="boxTitle">Write the Seller information below, please</h5>
                     <input type="text" class="boxInput" placeholder="Name" #userName required>
+                    <br>
                     <p class = "textInput">Name</p>
                     <br>
                     <input type="text" class="boxInput" placeholder="ID Number" #userName required>
@@ -259,34 +212,16 @@
             <div class="table">
                 <div class = "TableView">
                     <table class="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First Name</th>
-                            <th scope="col">Last Name</th>
-                            <th scope="col">Deparment</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Kevin</td>
-                            <td>Cordero</td>
-                            <td>Administrator</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Alejandro</td>
-                            <td>Ibarra</td>
-                            <td>Administrator</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td>Jose</td>
-                            <td>David</td>
-                            <td>Administrator</td>
-                          </tr>
-                        </tbody>
+                      <thead>
+                        <tr>           
+                          <th *ngFor="let head of sellers[0] | keys">{{head}}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let item of sellers">           
+                          <td *ngFor="let list of item | keys">{{item[list]}}</td>
+                        </tr>
+                      </tbody>
                       </table>
                 </div>
             </div>
@@ -315,8 +250,6 @@
                     <br>
                     <p class = "textInput">Seller</p>
                     <br>
-                    <input type="text" class="boxInput" placeholder="Price" #userName required>
-                    <br>
                     <input type="text" class="boxInput" placeholder="Prince" #userName required>
                     <p class = "textInput">Prince</p>
                     <input type="text" class="boxInput" placeholder="Pay Taxes?" #userName required>
@@ -329,7 +262,7 @@
     
     
                 <div class="addButton">
-                    <input type="button" class="addData">
+                    <input type="button" class="addData p type here /p>">
                 </div>
             </div>
             <div class="boton">
@@ -341,14 +274,12 @@
                     <table class="table">
                         <thead>
                             <tr>           
-                              <!-- <th *ngFor="let head of items[0] | keys">
-                                  {{head}}</th> -->
+                              <th *ngFor="let head of products[0] | keys">{{head}}</th>
                             </tr>
                           </thead>
                           <tbody>
-                            <tr *ngFor="let item of items">           
-                              <!-- <td *ngFor="let list of item | keys">
-                                  {{item[list]}}</td> -->
+                            <tr *ngFor="let item of products">           
+                              <td *ngFor="let list of item | keys">{{item[list]}}</td>
                             </tr>
                           </tbody>
                       </table>
