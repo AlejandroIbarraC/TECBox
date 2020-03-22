@@ -29,13 +29,18 @@ struct NeomorphicButtonContent: View {
     var body: some View {
         Text(text)
             .font(/*@START_MENU_TOKEN@*/.headline/*@END_MENU_TOKEN@*/)
-            .foregroundColor(Color("TextColor"))
+            .fontWeight(.bold)
+            .foregroundColor(Color.white)
             .padding()
             .frame(width: /*@START_MENU_TOKEN@*/220.0/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/60.0/*@END_MENU_TOKEN@*/)
-            .background(Color("Background"))
+            .background(Color("Terciary"))
             .cornerRadius(/*@START_MENU_TOKEN@*/20.0/*@END_MENU_TOKEN@*/)
             .shadow(color: Color("LightShadow"), radius: 8, x: -8, y: -8)
             .shadow(color: Color("DarkShadow"), radius: 8, x: 8, y: 8)
+            .overlay(
+                RoundedRectangle(cornerRadius: 20)
+                    .stroke(Color.white, lineWidth: 2)
+            )
     }
 }
 

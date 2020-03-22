@@ -44,7 +44,9 @@ struct LogInView: View {
             VStack {
                 AppLogo()
                 WelcomeText()
-                WelcomeSubText()
+                Text("Delivery App")
+                    .font(.subheadline)
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 70, trailing: 0))
                 UsernameTextField(username: $username)
                 PasswordSecureField(password: $password)
                 

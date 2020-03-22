@@ -13,3 +13,77 @@ padding: 8px;
 tr:nth-child(even) {
 background-color: #dddddd;
 }
+
+// FINAL TABLE STYLES AHEAD
+
+$terciary: #F61067;
+
+body {
+    letter-spacing: 2px;
+}
+
+.container {
+    max-width: 90%;
+}
+
+.column {
+    float: left;
+}
+
+.left {
+    width: 65%;
+}
+
+.right {
+    width: 35%;
+}
+
+.card-secondary {
+    width: auto;
+}
+
+.main {
+    margin-right: 50px;
+}
+
+.small {
+    font-size: 14pt;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.smaller {
+    font-size: 12pt;
+    text-align: left;
+    margin-top: 15px;
+    margin-left: 70px;
+}
+
+.bold {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.red-divider {
+    border: 3px solid $terciary;
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+
+.button {
+    width: fit-content;
+    padding: 0px;
+
+    img {
+        height: 30px;
+        float: right;
+        margin-left: 20px;
+    }
+    
+}
+
+img {
+    height: 50px;
+    margin-bottom: 30px;
+}
