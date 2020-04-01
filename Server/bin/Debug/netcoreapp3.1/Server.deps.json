@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v3.1": {
       "Server/1.0.0": {
         "dependencies": {
+          "AutoFixture": "4.11.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.1",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -160,9 +161,9 @@
           "System.Collections.Immutable.Reference": "1.2.5.0",
           "System.Collections.NonGeneric": "4.1.2.0",
           "System.Collections.Specialized": "4.1.2.0",
-          "System.ComponentModel.Annotations": "4.3.1.0",
+          "System.ComponentModel.Annotations.Reference": "4.3.1.0",
           "System.ComponentModel.DataAnnotations": "4.0.0.0",
-          "System.ComponentModel": "4.0.4.0",
+          "System.ComponentModel.Reference": "4.0.4.0",
           "System.ComponentModel.EventBasedAsync": "4.1.2.0",
           "System.ComponentModel.Primitives": "4.2.2.0",
           "System.ComponentModel.TypeConverter": "4.2.2.0",
@@ -304,6 +305,35 @@
         },
         "compile": {
           "Server.dll": {}
+        }
+      },
+      "AutoFixture/4.11.0": {
+        "dependencies": {
+          "Fare": "2.1.1",
+          "System.ComponentModel.Annotations": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoFixture.dll": {
+            "assemblyVersion": "4.11.0.0",
+            "fileVersion": "4.11.0.549"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoFixture.dll": {}
+        }
+      },
+      "Fare/2.1.1": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Fare.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.1/Fare.dll": {}
         }
       },
       "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
@@ -873,6 +903,26 @@
         }
       },
       "System.Collections.Immutable/1.5.0": {},
+      "System.ComponentModel/4.3.0": {
+        "dependencies": {
+          "System.Runtime": "4.3.0"
+        }
+      },
+      "System.ComponentModel.Annotations/4.3.0": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.ComponentModel": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Reflection.Extensions": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0",
+          "System.Threading": "4.3.0"
+        }
+      },
       "System.Composition/1.0.31": {
         "dependencies": {
           "System.Composition.AttributedModel": "1.0.31",
@@ -2336,7 +2386,7 @@
         },
         "compileOnly": true
       },
-      "System.ComponentModel.Annotations/4.3.1.0": {
+      "System.ComponentModel.Annotations.Reference/4.3.1.0": {
         "compile": {
           "System.ComponentModel.Annotations.dll": {}
         },
@@ -2348,7 +2398,7 @@
         },
         "compileOnly": true
       },
-      "System.ComponentModel/4.0.4.0": {
+      "System.ComponentModel.Reference/4.0.4.0": {
         "compile": {
           "System.ComponentModel.dll": {}
         },
@@ -3172,6 +3222,20 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AutoFixture/4.11.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2C8JcuQU70dJQ8v5YVwkLPyd0pzpcXT5SF6z+K+FwoRb0HWpmLEaNHw1nYx+wpjgf35AyivF+p/7hPhWsBj0YQ==",
+      "path": "autofixture/4.11.0",
+      "hashPath": "autofixture.4.11.0.nupkg.sha512"
+    },
+    "Fare/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HaI8puqA66YU7/9cK4Sgbs1taUTP1Ssa4QT2PIzqJ7GvAbN1QgkjbRsjH+FSbMh1MJdvS0CIwQNLtFT+KF6KpA==",
+      "path": "fare/2.1.1",
+      "hashPath": "fare.2.1.1.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -3500,6 +3564,20 @@
       "sha512": "sha512-EXKiDFsChZW0RjrZ4FYHu9aW6+P4MCgEDCklsVseRfhoO0F+dXeMSsMRAlVXIo06kGJ/zv+2w1a2uc2+kxxSaQ==",
       "path": "system.collections.immutable/1.5.0",
       "hashPath": "system.collections.immutable.1.5.0.nupkg.sha512"
+    },
+    "System.ComponentModel/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VyGn1jGRZVfxnh8EdvDCi71v3bMXrsu8aYJOwoV7SNDLVhiEqwP86pPMyRGsDsxhXAm2b3o9OIqeETfN5qfezw==",
+      "path": "system.componentmodel/4.3.0",
+      "hashPath": "system.componentmodel.4.3.0.nupkg.sha512"
+    },
+    "System.ComponentModel.Annotations/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SY2RLItHt43rd8J9D8M8e8NM4m+9WLN2uUd9G0n1I4hj/7w+v3pzK6ZBjexlG1/2xvLKQsqir3UGVSyBTXMLWA==",
+      "path": "system.componentmodel.annotations/4.3.0",
+      "hashPath": "system.componentmodel.annotations.4.3.0.nupkg.sha512"
     },
     "System.Composition/1.0.31": {
       "type": "package",
@@ -4596,7 +4674,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.ComponentModel.Annotations/4.3.1.0": {
+    "System.ComponentModel.Annotations.Reference/4.3.1.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""
@@ -4606,7 +4684,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.ComponentModel/4.0.4.0": {
+    "System.ComponentModel.Reference/4.0.4.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

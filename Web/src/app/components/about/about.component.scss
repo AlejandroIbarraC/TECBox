@@ -19,19 +19,19 @@ body {
     width: 100%;
     height: 470px;
 
-    #logo {
+    #mainLogo {
         padding-top: 20px;
         width: 300px;
     }
 }
 
-.label-red {
-    color: $terciary;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
 .aligned-left {
     text-align: left;
     padding-left: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+    #gitHubIcon {
+        filter: invert(1);
+    }
 }

@@ -18,19 +18,21 @@ struct PackageView: View {
     }
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(packages) { section in
-                    Section(header: Text(section.name)) {
-                        ForEach(section.items) { item in
-                            PackageRow(package: item)
-                        }
+        RefreshableNavigationView(title: "Packages", action:{
+            self.updatePackages()
+        }){
+            ForEach(self.packages) { section in
+                Section(header: Text(section.name)) {
+                    ForEach(section.items) { item in
+                        PackageRow(package: item)
                     }
                 }
             }
-            .navigationBarTitle("Packages")
-            .listStyle(GroupedListStyle())
         }
+    }
+    
+    func updatePackages() {
+        
     }
 }
 

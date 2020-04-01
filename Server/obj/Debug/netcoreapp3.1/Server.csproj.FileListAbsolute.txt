@@ -106,7 +106,6 @@ C:\Users\skryf\Source\Repos\AlejandroIbarraC\TECBox\Server\bin\Debug\netcoreapp3
 C:\Users\skryf\Source\Repos\AlejandroIbarraC\TECBox\Server\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\skryf\Source\Repos\AlejandroIbarraC\TECBox\Server\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\skryf\Source\Repos\AlejandroIbarraC\TECBox\Server\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\skryf\Source\Repos\AlejandroIbarraC\TECBox\Server\obj\Debug\netcoreapp3.1\Server.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\skryf\Source\Repos\AlejandroIbarraC\TECBox\Server\obj\Debug\netcoreapp3.1\Server.csproj.CopyComplete
 C:\Users\skryf\Source\Repos\AlejandroIbarraC\TECBox\Server\bin\Debug\netcoreapp3.1\DataBase\employees.json
 C:\Users\skryf\Source\Repos\AlejandroIbarraC\TECBox\Server\bin\Debug\netcoreapp3.1\DataBase\branches.json
@@ -116,3 +115,6 @@ C:\Users\skryf\source\repos\AlejandroIbarraC\TECBox\Server\bin\Debug\netcoreapp3
 C:\Users\skryf\source\repos\AlejandroIbarraC\TECBox\Server\bin\Debug\netcoreapp3.1\DataBase\routes.json
 C:\Users\skryf\source\repos\AlejandroIbarraC\TECBox\Server\bin\Debug\netcoreapp3.1\DataBase\packages.json
 C:\Users\skryf\source\repos\AlejandroIbarraC\TECBox\Server\bin\Debug\netcoreapp3.1\DataBase\users.json
+C:\Users\skryf\Source\Repos\AlejandroIbarraC\TECBox\Server\bin\Debug\netcoreapp3.1\AutoFixture.dll
+C:\Users\skryf\Source\Repos\AlejandroIbarraC\TECBox\Server\bin\Debug\netcoreapp3.1\Fare.dll
+C:\Users\skryf\Source\Repos\AlejandroIbarraC\TECBox\Server\obj\Debug\netcoreapp3.1\Server.MvcApplicationPartsAssemblyInfo.cache

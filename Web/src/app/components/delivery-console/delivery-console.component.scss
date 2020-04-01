@@ -1,0 +1,36 @@
+body {
+    letter-spacing: 2px;
+}
+
+.container {
+    width: 60%;
+}
+
+.button {
+    font-weight: bold;
+    font-size: 18px;
+    float: right;
+    margin-top: 0px;
+}
+
+.card-secondary {
+    text-align: left;
+    width: 100%;
+}
+
+.entry {
+    margin-right: 20px;
+}
+
+.button {
+    margin: 0px;
+    float: right;
+
+    img {
+        height: 30px;
+    }
+}
+
+.generate {
+    margin-top: 15px;
+}

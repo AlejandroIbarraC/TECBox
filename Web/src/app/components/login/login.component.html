@@ -1,207 +1,143 @@
-<br>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="content">
+                <div class="title">User Access</div>
+                <div class="column sides">
+                    Already a member? Log in here:
+                    <div class="card-secondary">
+                        <div class="content">
+                            <div class="formGroup">
+                                Email:
+                                <input type="email" class="formControl" #userEmail required class="entry">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-secondary">
+                        <div class="content">
+                            <div class="formGroup">
+                                Password:
+                                <input type="password" class="formControl" #userPassword required class="entry">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="label-red">Forgot password?</div>
+                    <div class="button" (click)="logIn(userEmail.value, userPassword.value, 'user')">
+                        Log In
+                        <img src="assets/user-access/rightArrowIcon.svg">
+                    </div>
+                    Part of our team? Welcome back!
+                    <div class="card-secondary">
+                        <div class="content">
+                            <div class="formGroup">
+                                Email:
+                                <input type="email" class="formControl" #userEmail required class="entry">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-secondary">
+                        <div class="content">
+                            <div class="formGroup">
+                                Password:
+                                <input type="password" class="formControl" #userPassword required class="entry">
+                            </div>
+                        </div>
+                    </div>
 
-<p align="center" class="title1">
-    User Access
-</p>
-<br>
-
-
-<div class="principal">
-
-    <!-- Lado izquierdo-->
-    <br>
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    <div class="flexed">
-        <p align="center">
-            Already a member? Log In here:
-        </p>
-        <div class="base">
-            &nbsp;
-            <p>
-                Email
-            </p>
-            &nbsp;
-            <div class="formGroup">
-                <input type="text" class="formControl" #userEmail required class="entry">
+                    <div class="checkbox-align">
+                        I work in:
+                        <br><br>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radioButton" id="adminRadio" value="admin" checked>
+                            <label class="form-check-label" for="adminRadio">Admin</label>
+                            <br>
+                            <input class="form-check-input" type="radio" name="radioButton" id="warehouseRadio" value="warehouse">
+                            <label class="form-check-label" for="warehouseRadio">Warehouse</label>
+                            <br>
+                            <input class="form-check-input" type="radio" name="radioButton" id="deliveryRadio" value="delivery">
+                            <label class="form-check-label" for="deliveryRadio">Delivery</label>
+                        </div>
+                    </div>
+                    <div class="button grey" (click)="logIn(userEmail.value, userPassword.value, 'user')">
+                        Team Log In
+                        <img src="assets/user-access/badgeIcon.svg">
+                    </div>
+                </div>
+                <div class="column center">
+                    <div class="vdivider"></div>
+                </div>
+                <div class="column sides">
+                    Not part of the club? Register here:
+                    <div class="card-secondary">
+                        <div class="content">
+                            <div class="formGroup">
+                                Name:
+                                <input type="text" class="formControl" #name required class="entry">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-secondary">
+                        <div class="content">
+                            <div class="formGroup">
+                                ID:
+                                <input type="number" class="formControl" #id required class="entry">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-secondary">
+                        <div class="content">
+                            <div class="formGroup">
+                                Email:
+                                <input type="email" class="formControl" #email required class="entry">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-secondary">
+                        <div class="content">
+                            <div class="formGroup">
+                                Password:
+                                <input type="password" class="formControl" #password required class="entry">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-secondary">
+                        <div class="content">
+                            <div class="formGroup">
+                                Phone:
+                                <input type="number" class="formControl" #phone required class="entry">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-secondary">
+                        <div class="content">
+                            <div class="formGroup">
+                                Address:
+                                <input type="text" class="formControl" #address required class="entry">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-secondary">
+                        <div class="content">
+                            <div class="formGroup">
+                                Province:
+                                <input type="text" class="formControl" #province required class="entry">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-secondary">
+                        <div class="content">
+                            <div class="formGroup">
+                                City:
+                                <input type="text" class="formControl" #city required class="entry">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button grey" (click)="authService.SignUp(email.value, password.value)" id="register-button">
+                        Register
+                        <img src="assets/user-access/arrowDownIcon.svg">
+                    </div>
+                </div>
             </div>
-        </div>
-        <br>
-        <div class="base">
-            &nbsp;
-            <p>
-                Password
-            </p>
-            &nbsp;
-            <div class="formGroup">
-                <input type="password" class="formControl" #userPassword required class="entry">
-            </div>
-        </div>
-        <div class="formGroup" style="text-align: center;">
-            <button style="background-color: rgba(0, 0, 0, 0);" class="btn" (click)="logIn(userEmail.value, userPassword.value, 'user')">
-                <img src="../../../assets/logInUserAccessButton.svg" alt="">
-            </button>
-        </div>
-        <br>
-        <p align="center">
-            Part of our team? Welcome back!
-        </p>
-        <div class="base">
-            &nbsp;
-            <p>
-                Email
-            </p>
-            &nbsp;
-            <input type="" class="entry">
-        </div>
-        <br>
-        <div class="base">
-            &nbsp;
-            <p>
-                Password
-            </p>
-            &nbsp;
-            <input type="password"  class="entry">
-        </div>
-        <br>
-        <p align="left">
-            &nbsp;
-            I work in:
-        </p>
-
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="radioButton" id="adminRadio" value="admin" checked>
-            <label class="form-check-label" for="adminRadio">
-              Admin
-            </label>
-            <br>
-            <input class="form-check-input" type="radio" name="radioButton" id="warehouseRadio" value="warehouse">
-            <label class="form-check-label" for="warehouseRadio">
-              Warehouse
-            </label>
-            <br>
-            <input class="form-check-input" type="radio" name="radioButton" id="deliveryRadio" value="delivery">
-            <label class="form-check-label" for="deliveryRadio">
-              Delivery
-            </label>
-        </div>
-
-        <div style="text-align: center;">
-            <button style="background-color: rgba(0, 0, 0, 0);" class="btn" (click)="logIn(userEmail.value, userPassword.value, 'admin')">
-                <img src="../../../assets/logInTeamButton.svg" alt="">
-            </button>
         </div>
     </div>
-    <br>
-    &nbsp;
-
-    <!-- Lado central-->
-    &nbsp;
-    &nbsp;
-    <div class="mid">
-        
-    </div>
-    &nbsp;
-    &nbsp;
-
-    <!-- Lado derecho-->
-    &nbsp;
-    <br>
-    <div class="flexed">
-        <p align="center">
-            Not part of the club? Register here:
-        </p>
-        <div class="base">
-            <p>
-                Name
-            </p>
-            &nbsp;
-            <div class="formGroup">
-                <input type="text" class="formControl" #name required>
-            </div>
-        </div>
-        <br>
-        <div class="base">
-            <p>
-                ID number
-            </p>
-            &nbsp;
-            <div class="formGroup">
-                <input type="number" class="formControl" #idNumber required>
-            </div>
-        </div>
-        <br>
-        <div class="base">
-            <p>
-                Email
-            </p>
-            &nbsp;
-            <div class="formGroup">
-                <input type="email" class="formControl" #userEmail required>
-            </div>
-        </div>
-        <br>
-        <div class="base">
-            <p>
-                Password
-            </p>
-            &nbsp;
-            <div class="formGroup">
-                <input type="password" class="formControl" #userPwd required>
-            </div>
-        </div>
-        <br>
-        <div class="base">
-            <p>
-                Phone
-            </p>
-            &nbsp;
-            <div class="formGroup">
-                <input type="number" class="formControl" #phone required>
-            </div>
-        </div>
-        <br>
-        <div class="base">
-            <p>
-                Address
-            </p>
-            &nbsp;
-            <div class="formGroup">
-                <input type="text" class="formControl" #address required>
-            </div>
-        </div>
-        <br>
-        <div class="base">
-            <p>
-                Province
-            </p>
-            &nbsp;
-            <div class="formGroup">
-                <input type="text" class="formControl" #province required>
-            </div>
-        </div>
-        <br>
-        <div class="base">
-            <p>
-                City
-            </p>
-            &nbsp;
-            <div class="formGroup">
-                <input type="text" class="formControl" #city required>
-            </div>
-        </div>
-        <div class="formGroup">
-            <input type="button" class="btn btnPrimary" value="Register" (click)="authService.SignUp(userEmail.value, userPwd.value)">
-        </div>
-        <br>
-    </div>
-    &nbsp;
-    &nbsp;
-    &nbsp;
-    <br>
-
-</div>
-<br>
-<br>
-<br>
+</body>

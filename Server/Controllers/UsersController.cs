@@ -23,41 +23,141 @@ namespace Server.Controllers
             string jsonString = System.IO.File.ReadAllText(fileName);
             usersList = JsonSerializer.Deserialize<List<Users>>(jsonString);
 
-            /*Users user1 = new Users("Kevin", 999, "kevin@hola.com", "1234", 88888888, "San Rafael", "Alajuela", "San Ramon");
-            Users user2 = new Users("Ale", 941, "ale@hola.com", "1234", 99999999, "Grecia", "Alajuela", "Grecia");
-            Users user3 = new Users("Jesus", 124, "jesus@hola.com", "1234", 77777777, "Orotina", "Alajuela", "Orotina");
-            Users user4 = new Users("Jose", 654, "jose@hola.com", "1234", 5555555, "La Garita", "Alajuela", "Alajuela");
-
-            usersList.Add(user1);
-            usersList.Add(user2);
-            usersList.Add(user3);
-            usersList.Add(user4);
-            
-            string jsonString = JsonSerializer.Serialize(usersList);
-            System.IO.File.WriteAllText(fileName, jsonString);*/
-
             return usersList;
+        }
+
+
+        [Route("information")]
+        [HttpPost]
+        public Users getUserInformation([FromBody] Users searchUser)
+        {
+            List<Users> usersList = new List<Users>();
+            string fileName = "DataBase/users.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            usersList = JsonSerializer.Deserialize<List<Users>>(jsonString);
+
+            Users user = null;
+            for (int i = 0; i < usersList.Count; i++)
+            {
+                if (usersList[i].eMail == searchUser.eMail)
+                {
+                    user = usersList[i];
+                }
+            }
+            if (user != null)
+            {
+                return user;
+            }
+            else
+            {
+                user = new Users("null", -1, "null", "null", -1, "null", "null", "null");
+                return user;
+            }
         }
 
         [Route("insert")]
         [HttpPost]
-        public void insertPost([FromBody] Users users)
+        public void insertPost([FromBody] Users user)
         {
-            Debug.WriteLine("Cliente insertado");
+            List<Users> usersList = new List<Users>();
+            string fileName = "DataBase/users.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            usersList = JsonSerializer.Deserialize<List<Users>>(jsonString);
+
+            bool validation = true;
+
+            for (int i = 0; i < usersList.Count; i++)
+            {
+                if (usersList[i].idNumber == user.idNumber)
+                {
+                    validation = false;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                usersList.Add(user);
+
+                jsonString = JsonSerializer.Serialize(usersList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+
+                Debug.WriteLine("User inserted");
+            }
+            else
+            {
+                Debug.WriteLine("User has a duplicate id");
+            }
         }
 
         [Route("modify")]
         [HttpPost]
-        public void modifyPost([FromBody] Users users)
+        public void modifyPost([FromBody] Users user)
         {
-            Debug.WriteLine("Cliente modificado");
+            List<Users> usersList = new List<Users>();
+            string fileName = "DataBase/users.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            usersList = JsonSerializer.Deserialize<List<Users>>(jsonString);
+
+            bool validation = false;
+
+            for (int i = 0; i < usersList.Count; i++)
+            {
+                if (usersList[i].idNumber == user.idNumber)
+                {
+                    usersList[i] = user;
+                    Debug.WriteLine("User modified");
+                    validation = true;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                jsonString = JsonSerializer.Serialize(usersList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+            }
+            else
+            {
+                Debug.WriteLine("User not found");
+            }
         }
 
         [Route("delete")]
         [HttpPost]
-        public void deletePost([FromBody] Users users)
+        public void deletePost([FromBody] Users user)
         {
-            Debug.WriteLine("Cliente eliminado");
+            List<Users> usersList = new List<Users>();
+            string fileName = "DataBase/users.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            usersList = JsonSerializer.Deserialize<List<Users>>(jsonString);
+
+            bool validation = false;
+
+            for (int i = 0; i < usersList.Count; i++)
+            {
+                if (usersList[i].idNumber == user.idNumber)
+                {
+                    usersList.RemoveAt(i);
+                    Debug.WriteLine("User deleted");
+                    validation = true;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                jsonString = JsonSerializer.Serialize(usersList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+            }
+            else
+            {
+                Debug.WriteLine("User not found");
+            }
         }
     }
 }

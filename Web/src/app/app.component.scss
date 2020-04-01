@@ -19,7 +19,6 @@ $terciary: #F61067;
     }
 }
 
-
 .card {
     height: 90px;
 
@@ -63,4 +62,12 @@ $terciary: #F61067;
     padding-top: 15px;
     margin-right: 20px;
     margin-left: 15px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .button {
+        &:hover {
+            box-shadow: 0px -12px 16px rgba(74, 76, 81, 0.7), 0px 12px 16px #151518;
+        }
+    }
 }
