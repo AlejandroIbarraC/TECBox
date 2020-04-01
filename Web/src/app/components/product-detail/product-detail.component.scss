@@ -54,3 +54,38 @@
     box-shadow: 0px -12px 16px #FFFFFF, 0px 12px 16px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
 }
+
+// FINAL STYLES
+
+.card {
+    min-height: 700px;
+}
+
+.card-secondary {
+    width: auto;
+}
+
+.column {
+    float: left;
+}
+
+.left {
+    width: 40%;
+}
+
+.right {
+    width: 60%;
+}
+
+.title {
+    text-align: center;
+    font-weight: normal;
+}
+
+.half {
+    width: 50%;
+}
+
+#cart-icon {
+    width: 30px;
+}
