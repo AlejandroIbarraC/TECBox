@@ -117,3 +117,4 @@ C:\Users\skryf\source\repos\AlejandroIbarraC\TECBox\Server\bin\Debug\netcoreapp3
 C:\Users\skryf\source\repos\AlejandroIbarraC\TECBox\Server\bin\Debug\netcoreapp3.1\DataBase\users.json
 C:\Users\skryf\Source\Repos\AlejandroIbarraC\TECBox\Server\bin\Debug\netcoreapp3.1\AutoFixture.dll
 C:\Users\skryf\Source\Repos\AlejandroIbarraC\TECBox\Server\bin\Debug\netcoreapp3.1\Fare.dll
+C:\Users\skryf\Source\Repos\AlejandroIbarraC\TECBox\Server\obj\Debug\netcoreapp3.1\Server.MvcApplicationPartsAssemblyInfo.cache
