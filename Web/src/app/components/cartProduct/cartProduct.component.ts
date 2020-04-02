@@ -3,7 +3,8 @@ import { Product } from '../../entities/product.entity';
 import { ProductService } from '../../services/product.service';
 
 @Component({
-	templateUrl: 'index.component.html'
+	templateUrl: 'index.component.html',
+	styleUrls: ['./index.component.scss']
 })
 
 export class CartProductComponent implements OnInit {
