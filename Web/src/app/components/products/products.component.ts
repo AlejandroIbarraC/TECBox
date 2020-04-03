@@ -18,8 +18,6 @@ export class ProductsComponent implements OnInit {
     {"id": null, "name": null, "price":null}
   ]
 
-  
-
   constructor(public router: Router) { }
 
   ngOnInit(){
@@ -27,7 +25,6 @@ export class ProductsComponent implements OnInit {
 
   onSelect(product){
     this.router.navigate(['/products', product.id]);
-
   }
 
 }

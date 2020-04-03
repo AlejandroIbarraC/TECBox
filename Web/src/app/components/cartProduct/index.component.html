@@ -12,7 +12,7 @@
                         <th>Photo</th>
                         <th>Buy</th>
                     </tr>
-                    <tr *ngFor="let cartProduct of cartProducts">
+                    <tr (click)="onSelect(cartProduct)" *ngFor="let cartProduct of cartProducts">
                         <td>{{cartProduct.id}}</td>
                         <td>{{cartProduct.name}}</td>
                         <td>{{cartProduct.price}}</td>
