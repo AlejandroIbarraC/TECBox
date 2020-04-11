@@ -15,6 +15,7 @@ export class CartComponent implements OnInit {
 
 	public items: Item[] = [];
 	public total: number = 0;
+	carThings= [{"Option":1,"ID":"123","Name":"Box","Photo":"BoxImage","Price":"Low", "Quantity": "5", "Sub Total": "500"},{"Option":2,"ID":"234","Name":"Better Box","Photo":"BetterBoxImage","Price":"Not Very Low", "Quantity": "5", "Sub Total": "50000"},{"Option":3,"ID":"345","Name":"The Best Fucking Box","Photo":"TheBestFuckingBoxImage","Price":"You Are Being Robbe", "Quantity": "5", "Sub Total": "5000000"}]
 
 	constructor(
 		private activatedRoute: ActivatedRoute,
