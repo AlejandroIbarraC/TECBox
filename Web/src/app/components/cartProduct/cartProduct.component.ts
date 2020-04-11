@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../entities/product.entity';
-import { ProductService } from '../../services/product.service';
+import { ProductService } from '../../shared/services/product.service';
 import { Router } from '@angular/router';
 
 @Component({
-	templateUrl: 'index.component.html',
-	styleUrls: ['./index.component.scss']
+	templateUrl: 'cartProduct.component.html',
+	styleUrls: ['./cartProduct.component.scss']
 })
 
 export class CartProductComponent implements OnInit {

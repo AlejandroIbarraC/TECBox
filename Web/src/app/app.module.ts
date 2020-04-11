@@ -15,7 +15,7 @@ import { DeliveryConsoleComponent } from './components/delivery-console/delivery
 import { KeysPipe } from './components/admin/keys.pipe';
 import { AdminComponent } from './components/admin/admin.component';
 import { CartProductComponent } from './components/cartProduct/cartProduct.component';
-import { ProductService } from './services/product.service';
+import { ProductService } from './shared/services/product.service';
 
 @NgModule({
   declarations: [

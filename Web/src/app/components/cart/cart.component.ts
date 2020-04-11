@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Product } from '../../entities/product.entity';
 import { Item } from '../../entities/item.entity';
-import { ProductService } from '../../services/product.service';
+import { ProductService } from '../../shared/services/product.service';
 
 @Component({
   selector: 'app-cart',
