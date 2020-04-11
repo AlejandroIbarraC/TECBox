@@ -1,21 +1,30 @@
 <h3>Product List</h3>
-<table border="1">
-    <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Photo</th>
-        <th>Buy</th>
-    </tr>
-    <tr *ngFor="let cartProduct of cartProducts">
-        <td>{{cartProduct.id}}</td>
-        <td>{{cartProduct.name}}</td>
-        <td>{{cartProduct.price}}</td>
-        <td>
-            <img src="assets/http://learningprogramming.net/wp-content/uploads/mean_stack/angular/{{cartProduct.photo}}" width="50">
-        </td>
-        <td>
-            <a [routerLink]="['/cart', { id:cartProduct.id }]">Buy Now</a>
-        </td>
-    </tr>
-</table>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="content">
+                <table border="1">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Photo</th>
+                        <th>Buy</th>
+                    </tr>
+                    <tr (click)="onSelect(cartProduct)" *ngFor="let cartProduct of cartProducts">
+                        <td>{{cartProduct.id}}</td>
+                        <td>{{cartProduct.name}}</td>
+                        <td>{{cartProduct.price}}</td>
+                        <td>
+                            <img src="assets/http://learningprogramming.net/wp-content/uploads/mean_stack/angular/{{cartProduct.photo}}" width="50">
+                        </td>
+                        <td>
+                            <a [routerLink]="['/cart', { id:cartProduct.id }]">Buy Now</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>    
+</body>

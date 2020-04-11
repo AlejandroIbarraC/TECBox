@@ -28,25 +28,139 @@ namespace Server.Controllers
             return employeesList;
         }
 
+        [Route("check")]
+        [HttpPost]
+        public Employees searchEmployee([FromBody] Employees employeeToSearch)
+        {
+            List<Employees> employeesList = new List<Employees>();
+            string fileName = "DataBase/employees.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            employeesList = JsonSerializer.Deserialize<List<Employees>>(jsonString);
+            Employees employee = null;
+
+            for (int i = 0; i < employeesList.Count; i++)
+            {
+                if (employeesList[i].eMail == employeeToSearch.eMail & employeesList[i].password == employeeToSearch.password & employeesList[i].department == employeeToSearch.department)
+                {
+                    employee = employeesList[i];
+                    break;
+                }
+            }
+            
+            if (employee != null)
+            {
+                return employee;
+            }
+            else
+            {
+                employee = new Employees("null", "null", "null", "null", -1);
+                return employee;
+            }
+        }
+
         [Route("insert")]
         [HttpPost]
-        public void insertPost([FromBody] Employees employees)
+        public void insertPost([FromBody] Employees employee)
         {
-            Debug.WriteLine("Rol insertado");
+            List<Employees> employeesList = new List<Employees>();
+            string fileName = "DataBase/employees.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            employeesList = JsonSerializer.Deserialize<List<Employees>>(jsonString);
+
+            bool validation = true;
+
+            for (int i = 0; i < employeesList.Count; i++)
+            {
+                if (employeesList[i].id == employee.id)
+                {
+                    validation = false;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                employeesList.Add(employee);
+
+                jsonString = JsonSerializer.Serialize(employeesList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+
+                Debug.WriteLine("Employee inserted");
+            }
+            else
+            {
+                Debug.WriteLine("Employee has a duplicate id");
+            }
         }
 
         [Route("modify")]
         [HttpPost]
-        public void modifyPost([FromBody] Employees employees)
+        public void modifyPost([FromBody] Employees employee)
         {
-            Debug.WriteLine("Rol modificado");
+            List<Employees> employeesList = new List<Employees>();
+            string fileName = "DataBase/employees.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            employeesList = JsonSerializer.Deserialize<List<Employees>>(jsonString);
+
+            bool validation = false;
+
+            for (int i = 0; i < employeesList.Count; i++)
+            {
+                if (employeesList[i].id == employee.id)
+                {
+                    employeesList[i] = employee;
+                    Debug.WriteLine("Employee modified");
+                    validation = true;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                jsonString = JsonSerializer.Serialize(employeesList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+            }
+            else
+            {
+                Debug.WriteLine("Employee not found");
+            }
         }
 
         [Route("delete")]
         [HttpPost]
-        public void deletePost([FromBody] Employees employees)
+        public void deletePost([FromBody] Employees employee)
         {
-            Debug.WriteLine("Rol eliminado");
+            List<Employees> employeesList = new List<Employees>();
+            string fileName = "DataBase/employees.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            employeesList = JsonSerializer.Deserialize<List<Employees>>(jsonString);
+
+            bool validation = false;
+
+            for (int i = 0; i < employeesList.Count; i++)
+            {
+                if (employeesList[i].id == employee.id)
+                {
+                    employeesList.RemoveAt(i);
+                    Debug.WriteLine("Employee deleted");
+                    validation = true;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                jsonString = JsonSerializer.Serialize(employeesList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+            }
+            else
+            {
+                Debug.WriteLine("Employee not found");
+            }
         }
     }
 }

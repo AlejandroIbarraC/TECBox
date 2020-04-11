@@ -5,15 +5,6 @@
   
 }
 
-
-
-.title{
-    float: left;
-	height: 100px;
-    width : 100%;
-    
-}
-
 .title1 {
     
     left: 89px;
@@ -135,7 +126,15 @@
     
 }
 
+// FINAL STYLES
 
+.button {
+    font-weight: bold;
+    width: fit-content;
+    float: right;
+    font-size: 18px;
+    margin-top: 0px;
+}
 
 
 
