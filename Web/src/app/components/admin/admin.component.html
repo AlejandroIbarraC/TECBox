@@ -46,12 +46,12 @@
 
 
             <div class="addButton">
-                <input type="button" class="addData">
+                <input type="button" class="addData" onclick="addEmployee()">
             </div>
         </div>
         <div class="boton">
-            <input type="button" class="deleteData">
-            <input type="button" class="modifieData">
+            <input type="button" class="deleteData" onclick="deleteEmployee()">
+            <input type="button" class="modifieData" onclick="changeEmployee()">>
         </div>
         <div class="table">
             <div class = "TableView">
@@ -97,23 +97,23 @@
                 <br>
                 <p class = "textInput">Phone</p>
                 <br>
-                <input type="text" class="boxInput" placeholder="City" #userName required>
+                <input type="text" class="boxInput" placeholder="City" #userPlaceHolder required>
                 <br>
                 <p class = "textInput">City</p>
                 <br>
-                <input type="text" class="boxInput" placeholder="Boss" #userName required>
+                <input type="text" class="boxInput" placeholder="Boss" #userBoss required>
                 <br>
                 <p class = "textInput">Boss</p>
             </div>
 
 
             <div class="addButton">
-                <input type="button" class="addData">
+                <input type="button" class="addData" onclick="addBranch()">>
             </div>
         </div>
         <div class="boton">
-            <input type="button" class="deleteData">
-            <input type="button" class="modifieData">
+            <input type="button" class="deleteData"onclick="deleteBranch()">>
+            <input type="button" class="modifieData" onclick="changeBranch()">>
         </div>
         <div class="table">
             <div class = "TableView">
@@ -143,43 +143,43 @@
             </div>
             <div class="formData">
                 <h5 class="boxTitle">Write the information of the worker below, please</h5>
-                <input type="text" class="boxInput" placeholder="ID number" #userName required>
+                <input type="text" class="boxInput" placeholder="ID number" #userName required id = 'uno'>
                 <br>
                 <p class = "textInput">ID number</p>
                 <br>
-                <input type="text" class="boxInput" placeholder="Full Name" #userAddress required>
+                <input type="text" class="boxInput" placeholder="Full Name" #userAddress required id = 'dos'>
                 <br>
                 <p class = "textInput">Full name</p>
                 <br>
-                <input type="text" class="boxInput" placeholder="Birthday" #userAddress required>
+                <input type="text" class="boxInput" placeholder="Birthday" #userAddress required id ='tres'>
                 <br>
                 <p class = "textInput">Birthday</p>
                 <br>
-                <input type="text" class="boxInput" placeholder="Entry Day" #userPhone required>
+                <input type="text" class="boxInput" placeholder="Entry Day" #userPhone required id = 'cuatro'>
                 <br>
                 <p class = "textInput">Entry Day</p>
                 <br>
-                <input type="text" class="boxInput" placeholder="Branch" #userName required>
+                <input type="text" class="boxInput" placeholder="Branch" #userName required id = 'cinco'>
                 <br>
                 <p class = "textInput">Branch</p>
                 <br>
-                <input type="text" class="boxInput" placeholder="Hourly Wage" #userName required>
+                <input type="text" class="boxInput" placeholder="Hourly Wage" #userName required id ='seis'>
                 <br>
                 <p class = "textInput">Hourly Wage</p>
                 <br>
-                <input type="text" class="boxInput" placeholder="Monthly Wage" #userName required>
+                <input type="text" class="boxInput" placeholder="Monthly Wage" #userName required id = 'siete'>
                 <br>
                 <p class = "textInput">Monthly Wage</p>
             </div>
 
 
             <div class="addButton">
-                <input type="button" class="addData">
+                <input type="button" class="addData" onclick="addWorker()">>
             </div>
         </div>
         <div class="boton">
-            <input type="button" class="deleteData">
-            <input type="button" class="modifieData">
+            <input type="button" class="deleteData" onclick="deleteWorker()">>
+            <input type="button" class="modifieData" onclick="changeWorker()">>
         </div>
         <div class="table">
             <div class = "TableView">
@@ -208,22 +208,22 @@
                 </div>
                 <div class="formData">
                     <h5 class="boxTitle">Write the Seller information below, please</h5>
-                    <input type="text" class="boxInput" placeholder="Name" #userName required>
+                    <input type="text" class="boxInput" placeholder="Name" #userName required id = 'ocho'>
                     <br>
                     <p class = "textInput">Name</p>
                     <br>
-                    <input type="text" class="boxInput" placeholder="ID Number" #userName required>
+                    <input type="text" class="boxInput" placeholder="ID Number" #userName required id = 'nueve'>
                     <p class = "textInput">ID Number</p>
                 </div>
     
     
                 <div class="addButton">
-                    <input type="button" class="addData">
+                    <input type="button" class="addData" onclick="addSeller()">>
                 </div>
             </div>
             <div class="boton">
-                <input type="button" class="deleteData">
-                <input type="button" class="modifieData">
+                <input type="button" class="deleteData" onclick="deleteSeller()">>
+                <input type="button" class="modifieData" onclick="changeSeller()">>
             </div>
             <div class="table">
                 <div class = "TableView">
@@ -251,39 +251,39 @@
                 </div>
                 <div class="formData">
                     <h5 class="boxTitle">Write the information of the Products below, please</h5>
-                    <input type="text" class="boxInput" placeholder="Name" #userName required>
+                    <input type="text" class="boxInput" placeholder="Name" #userName required id = 'diez'>
                     <p class = "textInput">Name</p>
                     <br>
-                    <input type="text" class="boxInput" placeholder="Description" #userAddress required>
+                    <input type="text" class="boxInput" placeholder="Description" #userAddress required id = 'once'>
                     <br>
                     <p class = "textInput">Description</p>
                     <br>
-                    <input type="text" class="boxInput" placeholder="Barcode" #userAddress required>
+                    <input type="text" class="boxInput" placeholder="Barcode" #userAddress required id = 'doce'>
                     <br>
                     <p class = "textInput">Barcode</p>
                     <br>
-                    <input type="text" class="boxInput" placeholder="Seller" #userPhone required>
+                    <input type="text" class="boxInput" placeholder="Seller" #userPhone required id = 'trece'>
                     <br>
                     <p class = "textInput">Seller</p>
                     <br>
-                    <input type="text" class="boxInput" placeholder="Prince" #userName required>
+                    <input type="text" class="boxInput" placeholder="Prince" #userPrice required id = 'catorce'>
                     <p class = "textInput">Prince</p>
-                    <input type="text" class="boxInput" placeholder="Pay Taxes?" #userName required>
+                    <input type="text" class="boxInput" placeholder="Pay Taxes?" #userTaxes required id = 'quience'>
                     <p class = "textInput">Pay Taxes?</p>
-                    <input type="text" class="boxInput" placeholder="Percentage Discount" #userName required>
+                    <input type="text" class="boxInput" placeholder="Percentage Discount" #userPercentage required id = 'dieciseis'>
                     <p class = "textInput">Percentage Discount</p>
-                    <input type="text" class="boxInput" placeholder="Entry Date" #userName required>
+                    <input type="text" class="boxInput" placeholder="Entry Date" #userDate required>
                     <p class = "textInput">Entry Date</p>
                 </div>
     
     
                 <div class="addButton">
-                    <input type="button" class="addData p type here /p>">
+                    <input type="button" class="addData " onclick="addProduct()">
                 </div>
             </div>
             <div class="boton">
-                <input type="button" class="deleteData">
-                <input type="button" class="modifieData">
+                <input type="button" class="deleteData" onclick="deleteProduct()">
+                <input type="button" class="modifieData" onclick="changeProduct()">
             </div>
             <div class="table">
                 <div class = "TableView">
@@ -302,8 +302,6 @@
                 </div>
             </div>
         </div>
-
-        
 </div>
 
 
