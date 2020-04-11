@@ -2,6 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import axios from 'axios' // Este import es importante, es con lo que se hacen los gets
 import {Workers} from 'src/app/components/admin/worker';
+import {SingleSeller} from 'src/app/components/admin/singleSeller';
+import { SingleProduct } from './singleProduct';
+import { BADRESP } from 'dns';
+import { singleBranch } from './singleBranch';
+import { singleEmployee } from './singleEmployee';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+
 
 @Component({
   selector: 'app-admin',
@@ -11,8 +21,12 @@ import {Workers} from 'src/app/components/admin/worker';
 export class AdminComponent implements OnInit {
 
   constructor(
-    public authService: AuthService
+    public authService: AuthService,
+    private httpClient: HttpClient
     ) { }
+    
+
+
 
 
   //Archivos usados para proyectar en las tablas
@@ -26,6 +40,7 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
     
   }
+  //Esto es para hacer gets y guarda lo que obtenga en la var json, de una vez parseado
   async getDataFromServer(){
     let url = 'meta el url aqui'// Usar el url como una variable para mantener el orden
     let response = await fetch(url); // Await espera la respuesta y fetch es una vara propia de JS
@@ -35,6 +50,13 @@ export class AdminComponent implements OnInit {
       alert("HTTP-Error: " + response.status);//Este Else es en caso de que pegue algún error
     }
   }
+
+  //Esta vara define el formato HTTP que se va a usar para hacer todos los post al server, como tal es un formato permanente(Tampoco tocar y no borrar ningun import de los que hice)
+  sendPostRequest(data: any): Observable<any> {
+    return this.httpClient.post<any>('meta el url aqui', data);
+}
+//Esta otra vara es la que hace post como tal(No tocar, paso un error y tuve que borrarla, son las 6 a.m y tengo suen, ahora la corrijo)
+  
 
 //Metodos de los botones para los workers
   addWorker(){ //Metodo para agrergar un nuevo trabajador
@@ -50,7 +72,7 @@ export class AdminComponent implements OnInit {
 
 
     //Instancia incial de la clase molde workers
-    let worker = new  Workers()
+    let worker = new  Workers();
 
     //Este segmento agrega los datos obtenidos de los entries directo a la instancia
     worker.idName = idName;
@@ -70,8 +92,138 @@ export class AdminComponent implements OnInit {
     document.getElementById('seis').nodeValue = null;
     document.getElementById('siete').nodeValue = null;
 
-    //Este segmento serializa la instancia worker a Json
-    var jsonToKevin = JSON.parse('{ "ID":"idName", "Name": "fullName", "Birth-day":"birthday", "Entry":"entryDay, "Branchh":"branch", "Hourly-Wage":"hourlyWage", "Monthly-Wage":"monthlyWage"}');
+    //Este segmento serializa la instancia worker a Json, primero de objeto a string y luego de string a Json
+    var dataWorker = { "ID":worker.idName, "Name": worker.fullName, "BirthDay": worker.birthday, "Entry":worker.entryDay, 'Branch': worker.branch, "HourlyWage":worker.hourlyWage, "MonthlyWage":worker.monthlyWage};
+    var jsonStringWorker = JSON.stringify(dataWorker);
+    var jsonWorker = JSON.parse(jsonStringWorker);
+
   }
 
+//Este metodo es para agregar sellers
+  addSeller(){//Metodo llamado por el boton
+
+    //Esta parte obtiene los valores de los entries
+    let name = document.getElementById('ocho').nodeValue;
+    let idNumber = document.getElementById('nueve').nodeValue;
+
+    //Creo una instancia de seller
+    let seller = new SingleSeller();
+
+    //le agrego valores a dicha instancia de seller
+    seller.name = name;
+    seller.idNumber = idNumber;
+
+    //Vacio los entries
+    document.getElementById('ocho').nodeValue = null;
+    document.getElementById('nueve').nodeValue = null;
+
+    //Creo el json de seller
+    var dataSeller = {"firstName":name, "Id":idNumber};
+    var jsonStringSeller = JSON.stringify(dataSeller);
+    var jsonSeller = JSON.parse(jsonStringSeller);
+  }
+
+
+//Este metodo agrega productos
+  addProduct(){
+    let name = document.getElementById('diez').nodeValue
+    let description = document.getElementById('once').nodeValue;
+    let barcode = document.getElementById('doce').nodeValue;
+    let seller = document.getElementById('trece').nodeValue;
+    let price = document.getElementById('catorce').nodeValue;
+    let payTaxes = document.getElementById('quince').nodeValue;
+    let percentageDiscount = document.getElementById('dieciseis').nodeValue;
+    let entryDate = document.getElementById('dieciseite').nodeValue;
+
+    //Instancio product
+    let product = new SingleProduct();
+
+    //Le agrego valores a la instancia
+    product.name = name;
+    product.description = description;
+    product.barcode = barcode;
+    product.seller = seller;
+    product.price = price;
+    product.payTaxes = payTaxes;
+    product.percentageDiscount = percentageDiscount;
+    product.entryDate = entryDate;
+
+    //Vacio los entries
+    document.getElementById('diez').nodeValue = null;
+    document.getElementById('once').nodeValue = null;
+    document.getElementById('doce').nodeValue = null;
+    document.getElementById('trece').nodeValue = null;
+    document.getElementById('catorce').nodeValue = null;
+    document.getElementById('quince').nodeValue = null;
+    document.getElementById('dieciseis').nodeValue = null;
+    document.getElementById('diecisiete').nodeValue = null;
+
+    //Creo el Json de products
+    var dataProduct = { "Name":product.name, "description": product.description, "Barcode": product.barcode, "Seller":product.seller, 'Price': product.price, "PayTaxes": product.payTaxes, "PercentageDiscount":product.percentageDiscount, "EntryDate": product.entryDate};
+    var jsonStringProduct = JSON.stringify(dataProduct);
+    var jsonWorker = JSON.parse(jsonStringProduct);
+  }
+
+//Este metodo agrega nuevas branch
+  addBranch(){
+    //Esta parte obtiene los valores de los entries
+    let name = document.getElementById('b1').nodeValue;
+    let address = document.getElementById('b2').nodeValue;
+    let province = document.getElementById('b3').nodeValue;
+    let phone = document.getElementById('b4').nodeValue;
+    let city = document.getElementById('b5').nodeValue;
+    let boss = document.getElementById('b6').nodeValue;
+
+    //Creo una instancia de branch
+    let branch = new singleBranch();
+
+    //Le agrego valores a la instancia
+    branch.name = name;
+    branch.address = address;
+    branch.province = province;
+    branch.phone = phone;
+    branch.city = city;
+    branch.boss = boss;
+
+    //Vacio los entries
+    document.getElementById('b1').nodeValue = null;
+    document.getElementById('b2').nodeValue = null;
+    document.getElementById('b3').nodeValue = null;
+    document.getElementById('b4').nodeValue = null;
+    document.getElementById('b5').nodeValue = null;
+    document.getElementById('b6').nodeValue = null;
+    document.getElementById('b7').nodeValue = null;
+    document.getElementById('b8').nodeValue = null;
+
+    //Creo el Json de product
+    var dataSeller = { "Name":branch.name, "Address": branch.address, "Province": branch.province, "Phone":branch.phone, 'City': branch.city, "Boss": branch.boss};
+    var jsonStringSeller = JSON.stringify(dataSeller);
+    var jsonSeller = JSON.parse(jsonStringSeller);
+    
+  }
+
+//Este metodo agrega empleados
+  addEmployee(){
+
+    //Esta parte obtiene los valores de los entries
+    let name = document.getElementById('e1').nodeValue;
+    let deparment = document.getElementById('e2').nodeValue;
+
+    //Creo una instancia de seller
+    let employee = new singleEmployee();
+
+    //Le agrego valores a la instancia
+    employee.name = name;
+    employee.deparment = deparment;
+
+     //Vacio los entries
+     document.getElementById('e1').nodeValue = null;
+     document.getElementById('e2').nodeValue = null;
+
+    //Creo el Json de product
+    var dataEmployee = { "Name":employee.name, "Deparment": employee.deparment};
+    var jsonStringEmployee = JSON.stringify(dataEmployee);
+    var jsonEmployee = JSON.parse(jsonStringEmployee);
+
+}
 }

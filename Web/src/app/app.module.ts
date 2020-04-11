@@ -16,6 +16,7 @@ import { KeysPipe } from './components/admin/keys.pipe';
 import { AdminComponent } from './components/admin/admin.component';
 import { CartProductComponent } from './components/cartProduct/cartProduct.component';
 import { ProductService } from './services/product.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -38,6 +39,7 @@ import { ProductService } from './services/product.service';
     AngularFireAuthModule,
     AngularFirestoreModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [
     AuthService,
