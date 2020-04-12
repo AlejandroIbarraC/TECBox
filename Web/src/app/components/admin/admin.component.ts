@@ -11,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { ViewChild } from '@angular/core';
+import { json } from 'body-parser';
 
 @Component({
   selector: 'app-admin',
@@ -22,6 +23,7 @@ export class AdminComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private httpClient: HttpClient
+    
     ) { }
     
 
@@ -44,30 +46,24 @@ export class AdminComponent implements OnInit {
     let url = 'meta el url aqui'// Usar el url como una variable para mantener el orden
     let response = await fetch(url); // Await espera la respuesta y fetch es una vara propia de JS
     if (response.ok) { 
-      let json = await response.json();// Parsea lo que sea que me mande como un Json sin importar que sea
+      let json = await response.json();// Parsea lo que sea que me mande como un Json sin importar que sea y lo guarda aqui
     } else {
       alert("HTTP-Error: " + response.status);//Este Else es en caso de que pegue algún error
     }
   }
 
-  //Esta vara define el formato HTTP que se va a usar para hacer todos los post al server, como tal es un formato permanente(Tampoco tocar y no borrar ningun import de los que hice)
-  sendPostRequest(data: any): Observable<any> {
-    return this.httpClient.post<any>('meta el url aqui', data);
-}
-//Esta otra vara es la que hace post como tal(No tocar, paso un error y tuve que borrarla, son las 6 a.m y tengo suen, ahora la corrijo)
-  
 
 //Metodos de los botones para los workers
-  addWorker(){ //Metodo para agrergar un nuevo trabajador
+  addWorker(idValue){ //Metodo para agrergar un nuevo trabajador
 
     //Variables que recojen los datos directamente del entry
-    let idName = document.getElementById('uno').nodeValue
-    let fullName = document.getElementById('dos').nodeValue;
-    let birthday = document.getElementById('tres').nodeValue;
-    let entryDay = document.getElementById('cuatro').nodeValue;
-    let branch = document.getElementById('cinco').nodeValue;
-    let hourlyWage = document.getElementById('seis').nodeValue;
-    let monthlyWage = document.getElementById('siete').nodeValue;
+    let idName = (<HTMLInputElement>document.getElementById('uno')).value
+    let fullName = (<HTMLInputElement>document.getElementById('dos')).value;
+    let birthday = (<HTMLInputElement>document.getElementById('tres')).value;
+    let entryDay = (<HTMLInputElement>document.getElementById('cuatro')).value;
+    let branch = (<HTMLInputElement>document.getElementById('cinco')).value;
+    let hourlyWage = (<HTMLInputElement>document.getElementById('seis')).value;
+    let monthlyWage = (<HTMLInputElement>document.getElementById('siete')).value;
 
 
     //Instancia incial de la clase molde workers
@@ -83,27 +79,28 @@ export class AdminComponent implements OnInit {
     worker.monthlyWage = monthlyWage;
 
     //Este segmento vacia los entries
-    document.getElementById('uno').nodeValue = null;
-    document.getElementById('dos').nodeValue = null;
-    document.getElementById('tres').nodeValue = null;
-    document.getElementById('cuatro').nodeValue = null;
-    document.getElementById('cinco').nodeValue = null;
-    document.getElementById('seis').nodeValue = null;
-    document.getElementById('siete').nodeValue = null;
+    (<HTMLInputElement>document.getElementById('uno')).value = '';
+    (<HTMLInputElement>document.getElementById('dos')).value = '';
+    (<HTMLInputElement>document.getElementById('tres')).value = '';
+    (<HTMLInputElement>document.getElementById('cuatro')).value = '';
+    (<HTMLInputElement>document.getElementById('cinco')).value = '';
+    (<HTMLInputElement>document.getElementById('seis')).value = '';
+    (<HTMLInputElement>document.getElementById('siete')).value = '';
 
     //Este segmento serializa la instancia worker a Json, primero de objeto a string y luego de string a Json
     var dataWorker = { "ID":worker.idName, "Name": worker.fullName, "BirthDay": worker.birthday, "Entry":worker.entryDay, 'Branch': worker.branch, "HourlyWage":worker.hourlyWage, "MonthlyWage":worker.monthlyWage};
     var jsonStringWorker = JSON.stringify(dataWorker);
-    var jsonWorker = JSON.parse(jsonStringWorker);
+    var jsonWorker = JSON.parse(jsonWorker);
+    axios.post('el Url va aqui', JSON.parse(jsonWorker))
 
   }
 
 //Este metodo es para agregar sellers
-  addSeller(){//Metodo llamado por el boton
+  addSeller(idValue){//Metodo llamado por el boton
 
     //Esta parte obtiene los valores de los entries
-    let name = document.getElementById('ocho').nodeValue;
-    let idNumber = document.getElementById('nueve').nodeValue;
+    let name = (<HTMLInputElement>document.getElementById('ocho')).value;
+    let idNumber = (<HTMLInputElement>document.getElementById('nueve')).value;
 
     //Creo una instancia de seller
     let seller = new SingleSeller();
@@ -113,26 +110,27 @@ export class AdminComponent implements OnInit {
     seller.idNumber = idNumber;
 
     //Vacio los entries
-    document.getElementById('ocho').nodeValue = null;
-    document.getElementById('nueve').nodeValue = null;
+    (<HTMLInputElement>document.getElementById('ocho')).value = '';
+    (<HTMLInputElement>document.getElementById('nueve')).value = '';
 
     //Creo el json de seller
     var dataSeller = {"firstName":name, "Id":idNumber};
     var jsonStringSeller = JSON.stringify(dataSeller);
     var jsonSeller = JSON.parse(jsonStringSeller);
+    axios.post('el Url va aqui', JSON.parse(jsonSeller))
   }
 
 
 //Este metodo agrega productos
-  addProduct(){
-    let name = document.getElementById('diez').nodeValue
-    let description = document.getElementById('once').nodeValue;
-    let barcode = document.getElementById('doce').nodeValue;
-    let seller = document.getElementById('trece').nodeValue;
-    let price = document.getElementById('catorce').nodeValue;
-    let payTaxes = document.getElementById('quince').nodeValue;
-    let percentageDiscount = document.getElementById('dieciseis').nodeValue;
-    let entryDate = document.getElementById('dieciseite').nodeValue;
+  addProduct(idValue){
+    let name = (<HTMLInputElement>document.getElementById('diez')).value;
+    let description = (<HTMLInputElement>document.getElementById('once')).value;
+    let barcode = (<HTMLInputElement>document.getElementById('doce')).value;
+    let seller = (<HTMLInputElement>document.getElementById('trece')).value;
+    let price = (<HTMLInputElement>document.getElementById('catorce')).value;
+    let payTaxes = (<HTMLInputElement>document.getElementById('quince')).value;
+    let percentageDiscount = (<HTMLInputElement>document.getElementById('dieciseis')).value;
+    let entryDate = (<HTMLInputElement>document.getElementById('dieciseite')).value;
 
     //Instancio product
     let product = new SingleProduct();
@@ -148,30 +146,31 @@ export class AdminComponent implements OnInit {
     product.entryDate = entryDate;
 
     //Vacio los entries
-    document.getElementById('diez').nodeValue = null;
-    document.getElementById('once').nodeValue = null;
-    document.getElementById('doce').nodeValue = null;
-    document.getElementById('trece').nodeValue = null;
-    document.getElementById('catorce').nodeValue = null;
-    document.getElementById('quince').nodeValue = null;
-    document.getElementById('dieciseis').nodeValue = null;
-    document.getElementById('diecisiete').nodeValue = null;
+    (<HTMLInputElement>document.getElementById('diez')).value = '';
+    (<HTMLInputElement>document.getElementById('once')).value = '';
+    (<HTMLInputElement>document.getElementById('doce')).value = '';
+    (<HTMLInputElement>document.getElementById('trece')).value = '';
+    (<HTMLInputElement>document.getElementById('catorce')).value = '';
+    (<HTMLInputElement>document.getElementById('quince')).value = '';
+    (<HTMLInputElement>document.getElementById('dieciseis')).value = '';
+    (<HTMLInputElement>document.getElementById('diecisiete')).value = '';
 
     //Creo el Json de products
-    var dataProduct = { "Name":product.name, "description": product.description, "Barcode": product.barcode, "Seller":product.seller, 'Price': product.price, "PayTaxes": product.payTaxes, "PercentageDiscount":product.percentageDiscount, "EntryDate": product.entryDate};
+    var dataProduct = { "Name":name, "description": description, "Barcode": barcode, "Seller":seller, 'Price': price, "PayTaxes": payTaxes, "PercentageDiscount":product.percentageDiscount, "EntryDate": entryDate};
     var jsonStringProduct = JSON.stringify(dataProduct);
-    var jsonWorker = JSON.parse(jsonStringProduct);
+    var jsonProduct = JSON.parse(jsonStringProduct);
+    axios.post('el Url va aqui', JSON.parse(jsonProduct))
   }
 
 //Este metodo agrega nuevas branch
-  addBranch(){
+  addBranch(idValue){
     //Esta parte obtiene los valores de los entries
-    let name = document.getElementById('b1').nodeValue;
-    let address = document.getElementById('b2').nodeValue;
-    let province = document.getElementById('b3').nodeValue;
-    let phone = document.getElementById('b4').nodeValue;
-    let city = document.getElementById('b5').nodeValue;
-    let boss = document.getElementById('b6').nodeValue;
+    let name = (<HTMLInputElement>document.getElementById('b1')).value;
+    let address = (<HTMLInputElement>document.getElementById('b2')).value;
+    let province = (<HTMLInputElement>document.getElementById('b3')).value;
+    let phone = (<HTMLInputElement>document.getElementById('b4')).value;
+    let city = (<HTMLInputElement>document.getElementById('b5')).value;
+    let boss = (<HTMLInputElement>document.getElementById('b6')).value;
 
     //Creo una instancia de branch
     let branch = new singleBranch();
@@ -185,45 +184,45 @@ export class AdminComponent implements OnInit {
     branch.boss = boss;
 
     //Vacio los entries
-    document.getElementById('b1').nodeValue = null;
-    document.getElementById('b2').nodeValue = null;
-    document.getElementById('b3').nodeValue = null;
-    document.getElementById('b4').nodeValue = null;
-    document.getElementById('b5').nodeValue = null;
-    document.getElementById('b6').nodeValue = null;
-    document.getElementById('b7').nodeValue = null;
-    document.getElementById('b8').nodeValue = null;
+    (<HTMLInputElement>document.getElementById('b1')).value = '';
+    (<HTMLInputElement>document.getElementById('b2')).value = '';
+    (<HTMLInputElement>document.getElementById('b3')).value = '';
+    (<HTMLInputElement>document.getElementById('b4')).value = '';
+    (<HTMLInputElement>document.getElementById('b5')).value = '';
+    (<HTMLInputElement>document.getElementById('b6')).value = '';
 
     //Creo el Json de product
-    var dataSeller = { "Name":branch.name, "Address": branch.address, "Province": branch.province, "Phone":branch.phone, 'City': branch.city, "Boss": branch.boss};
-    var jsonStringSeller = JSON.stringify(dataSeller);
-    var jsonSeller = JSON.parse(jsonStringSeller);
+    var dataSeller = { "Name":name, "Address": address, "Province": province, "Phone":phone, 'City': city, "Boss": boss};
+    var jsonStringBranch = JSON.stringify(dataSeller);
+    var jsonBranch = JSON.parse(jsonStringBranch);
+    console.log(jsonBranch);
+    axios.post('el Url va aqui', JSON.parse(jsonBranch))
     
   }
 
 //Este metodo agrega empleados
- addEmployee(){
+ addEmployee(idValue){
 
     //Esta parte obtiene los valores de los entries
-    let name = document.getElementById('e1').nodeValue;
-    let deparment = document.getElementById('e2').nodeValue;
+    let name = (<HTMLInputElement>document.getElementById('e1')).value;
+    let deparment = (<HTMLInputElement>document.getElementById('e2')).value;
 
     //Creo una instancia de seller
     let employee = new singleEmployee();
 
-    //Le agrego valores a la instancia
+    // //Le agrego valores a la instancia
     employee.name = name;
     employee.deparment = deparment;
 
-     //Vacio los entries
-     document.getElementById('e1').nodeValue = null;
-     document.getElementById('e2').nodeValue = null;
+    //Vacio los entries
+    (<HTMLInputElement>document.getElementById('e1')).value = '';
+    (<HTMLInputElement>document.getElementById('e2')).value = '';
 
     //Creo el Json de product
-    var dataEmployee = { "Name":employee.name, "Deparment": employee.deparment};
+    var dataEmployee = { "Name":name, "Deparment": deparment};
     var jsonStringEmployee = JSON.stringify(dataEmployee);
     var jsonEmployee = JSON.parse(jsonStringEmployee);
-    console.log("Hola");
-
-}
+    console.log(jsonEmployee);
+    axios.post('el Url va aqui', JSON.parse(jsonEmployee))
+ }
 }

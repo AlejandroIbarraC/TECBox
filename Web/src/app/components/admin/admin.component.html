@@ -50,7 +50,9 @@
 
 
             <div class="addButton">
-                <input type="button" class="addData" onclick = "authService.addEmployee()">
+              <div class="button" (click)="addEmployee()">
+                Add
+                <img src="assets/user-access/rightArrowIcon.svg">
             </div>
         </div>
         <div class="boton">
@@ -112,12 +114,22 @@
 
 
             <div class="addButton">
-                <input type="button" class="addData" onclick="addBranch()">
+              <div class="button" (click)="addBranch()">
+                AddB
+                <img src="assets/user-access/rightArrowIcon.svg">
             </div>
-        </div>
+              
+            </div>
+         <!-- </div>
         <div class="boton">
-            <input type="button" class="deleteData"onclick="deleteBranch()">
-            <input type="button" class="modifieData" onclick="changeBranch()">
+          <div class="button" (click)="deleteBranch()">
+            delete
+            <img src="assets/user-access/rightArrowIcon.svg">
+        </div>
+        <div class="button" (click)="modifieEmployee()">
+            modifie
+            <img src="assets/user-access/rightArrowIcon.svg">
+      </div>  -->
         </div>
         <div class="table">
             <div class = "TableView">
