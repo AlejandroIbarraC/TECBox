@@ -4,14 +4,13 @@ import axios from 'axios' // Este import es importante, es con lo que se hacen l
 import {Workers} from 'src/app/components/admin/worker';
 import {SingleSeller} from 'src/app/components/admin/singleSeller';
 import { SingleProduct } from './singleProduct';
-import { BADRESP } from 'dns';
 import { singleBranch } from './singleBranch';
 import { singleEmployee } from './singleEmployee';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-admin',
@@ -203,7 +202,7 @@ export class AdminComponent implements OnInit {
   }
 
 //Este metodo agrega empleados
-  addEmployee(){
+ addEmployee(){
 
     //Esta parte obtiene los valores de los entries
     let name = document.getElementById('e1').nodeValue;
@@ -224,6 +223,7 @@ export class AdminComponent implements OnInit {
     var dataEmployee = { "Name":employee.name, "Deparment": employee.deparment};
     var jsonStringEmployee = JSON.stringify(dataEmployee);
     var jsonEmployee = JSON.parse(jsonStringEmployee);
+    console.log("Hola");
 
 }
 }
