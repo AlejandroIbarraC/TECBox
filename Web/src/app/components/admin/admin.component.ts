@@ -54,7 +54,7 @@ export class AdminComponent implements OnInit {
 
 
 //Metodos de los botones para los workers
-  addWorker(idValue){ //Metodo para agrergar un nuevo trabajador
+  addWorker(){ //Metodo para agrergar un nuevo trabajador
 
     //Variables que recojen los datos directamente del entry
     let idName = (<HTMLInputElement>document.getElementById('uno')).value
@@ -96,7 +96,7 @@ export class AdminComponent implements OnInit {
   }
 
 //Este metodo es para agregar sellers
-  addSeller(idValue){//Metodo llamado por el boton
+  addSeller(){//Metodo llamado por el boton
 
     //Esta parte obtiene los valores de los entries
     let name = (<HTMLInputElement>document.getElementById('ocho')).value;
@@ -122,7 +122,7 @@ export class AdminComponent implements OnInit {
 
 
 //Este metodo agrega productos
-  addProduct(idValue){
+  addProduct(){
     let name = (<HTMLInputElement>document.getElementById('diez')).value;
     let description = (<HTMLInputElement>document.getElementById('once')).value;
     let barcode = (<HTMLInputElement>document.getElementById('doce')).value;
@@ -163,7 +163,7 @@ export class AdminComponent implements OnInit {
   }
 
 //Este metodo agrega nuevas branch
-  addBranch(idValue){
+  addBranch(){
     //Esta parte obtiene los valores de los entries
     let name = (<HTMLInputElement>document.getElementById('b1')).value;
     let address = (<HTMLInputElement>document.getElementById('b2')).value;
@@ -201,7 +201,7 @@ export class AdminComponent implements OnInit {
   }
 
 //Este metodo agrega empleados
- addEmployee(idValue){
+ addEmployee(){
 
     //Esta parte obtiene los valores de los entries
     let name = (<HTMLInputElement>document.getElementById('e1')).value;
@@ -225,4 +225,9 @@ export class AdminComponent implements OnInit {
     console.log(jsonEmployee);
     axios.post('el Url va aqui', JSON.parse(jsonEmployee))
  }
+
+
+ get dataKeys() { return Object.keys(this.items); }
+
+
 }
