@@ -1,4 +1,20 @@
-<p>warehouse-console works!</p>
-<button style="background-color: rgba(0, 0, 0, 0);" class="btn" (click)="authService.SignOut()">
-    <img src="../../../assets/logOutButton.svg" alt="">
-</button>
+<body>
+    <div class="container">
+      <div class="card">
+        <div class="content">
+          <div class="title">
+            Warehouse Console
+            <div class="button" (click)="authService.SignOut()">
+              Log Out
+              <img src="assets/xIcon.svg">
+            </div>
+          </div>
+          <div class="card-secondary">
+            <div class="content">
+              Tables go here
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>

@@ -1,40 +1,4 @@
-<h3>
-    All set? Here's the run down:
-</h3>
-<div>
-  <table border="1">
-    <tr>
-        <th>Option</th>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Photo</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Sub Total</th>
-    </tr>
-    <tr *ngFor="let item of items">
-        <td align="center">
-            <a (click)="remove(item.product.id)">X</a>
-        </td>
-        <td>{{item.product.id}}</td>
-        <td>{{item.product.name}}</td>
-        <td>
-            <img src="assets/http://learningprogramming.net/wp-content/uploads/mean_stack/angular/{{item.product.photo}}" width="50">
-        </td>
-        <td>{{item.product.price}}</td>
-        <td>{{item.quantity}}</td>
-        <td>{{item.product.price * item.quantity}}</td>
-    </tr>
-    <tr>
-        <td colspan="6" align="right">Total</td>
-        <td>{{total}}</td>
-    </tr>
-</table>
-</div>
-
-<!-- FINAL TABLE -->
-
- <body>
+<body>
      <div class="container">
         <div class="card">
             <div class="content">
@@ -42,7 +6,36 @@
                 <div class="column left">
                     <div class="card-secondary main">
                         <div class="content">
-                            Table goes here
+
+                            <table border="1">
+                                <tr>
+                                    <th>Option</th>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Photo</th>
+                                    <th>Price</th>
+                                    <th>Quantity</th>
+                                    <th>Sub Total</th>
+                                </tr>
+                                <tr *ngFor="let item of items">
+                                    <td align="center">
+                                        <a (click)="remove(item.product.id)">X</a>
+                                    </td>
+                                    <td>{{item.product.id}}</td>
+                                    <td>{{item.product.name}}</td>
+                                    <td>
+                                        <img src="assets/http://learningprogramming.net/wp-content/uploads/mean_stack/angular/{{item.product.photo}}" width="50">
+                                    </td>
+                                    <td>{{item.product.price}}</td>
+                                    <td>{{item.quantity}}</td>
+                                    <td>{{item.product.price * item.quantity}}</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6" align="right">Total</td>
+                                    <td>{{total}}</td>
+                                </tr>
+                            </table>
+
                         </div>
                     </div>
                 </div>

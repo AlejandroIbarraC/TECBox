@@ -2,16 +2,7 @@
     height: 100%;
     width: 100%;
     float: left;
-    background-color: green; 
-}
-
-
-
-.title{
-    float: left;
-	height: 100px;
-    width : 100%;
-    
+  
 }
 
 .title1 {
@@ -24,14 +15,12 @@
     font-weight: 900;
     font-size: 80px;
     
-    color: #515F6A;
 }
 
 .grayBox{
     float: left;
     width : 93.5%;
-    background-color: gray;
-    border: 2px solid yellow;
+    border: 2px solid blueviolet;
     border-radius: 12px;
     margin-top: 30px;
     margin-left: 30px;
@@ -43,51 +32,52 @@
     float: left;
     height: 40%;
     width : 50%;
-    background-color:yellow;
+ 
 }
 
 .boton{
     float: left;
     height: 100%;
     width : 50%;
-    background-color: purple
+   
 }
 
 .table{
     float: left;
     width : 100%;
-    background-color:skyblue;
+    background-color: darkslategray;
+ 
 }
 
 
 .formData{
     float: left;
     width: 88%;
-    background-color:red;
+
 }
 
 .addButton{
     float: left;
     height: 100%;
     width: 12%;
-    background-color: white;
+
 }
 
 .boxTitle{
     float: right;
     height: 18%;
     width: 100%;
-    background-color: blue;
+ 
 }
 .boxInput{
     float: right;
     width: 40%;
-    background-color: orange;
+
 }
 .textInput{
     float: left;
     width: 60%;
-    background-color:pink;
+ 
 }
 .addData{
     float: left;
@@ -125,7 +115,7 @@
     float: left;
 	height: 100px;
     width : 100%;
-    background-color: peru;
+
 
 }
 .title2{
@@ -134,10 +124,17 @@
     font-weight: 900;
     font-size: 50px;
     
-    color: #515F6A;
 }
 
+// FINAL STYLES
 
+.button {
+    font-weight: bold;
+    width: fit-content;
+    float: right;
+    font-size: 18px;
+    margin-top: 0px;
+}
 
 
 
