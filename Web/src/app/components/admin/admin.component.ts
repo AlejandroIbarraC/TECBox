@@ -25,6 +25,28 @@ export class AdminComponent implements OnInit {
     private httpClient: HttpClient
     
     ) { }
+
+    //Este fragmento es para el pop up de modify
+ popUpOpen = false;
+
+ openPopUp() {
+   this.popUpOpen = true;
+ }
+
+ deleteOption() {
+   this.popUpOpen = false;
+ }
+
+ cancelOption() {
+   this.popUpOpen = false;
+ }
+
+//Todo este bloque es para los botones de modificacion
+deleteEmployee(){
+ this.popUpOpen = true;
+ 
+
+}
     
 
 
@@ -225,9 +247,4 @@ export class AdminComponent implements OnInit {
     console.log(jsonEmployee);
     axios.post('el Url va aqui', JSON.parse(jsonEmployee))
  }
-
-
- get dataKeys() { return Object.keys(this.items); }
-
-
 }

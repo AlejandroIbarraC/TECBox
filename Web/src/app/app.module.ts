@@ -17,6 +17,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { CartProductComponent } from './components/cartProduct/cartProduct.component';
 import { ProductService } from './shared/services/product.service';
 import { HttpClientModule } from '@angular/common/http';
+import { PopUpModule } from 'src/app/components/pop-up/pop-up.module'
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFireAuthModule,
     AngularFirestoreModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    PopUpModule
   ],
   providers: [
     AuthService,

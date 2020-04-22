@@ -46,19 +46,38 @@
                 <br>
                 <input type="text" class="boxInput" placeholder="Department" #userDeparment required id = 'e2'>
                 <p class = "textInput">Deparment</p>
+                <br>
+                <input type="text" class="boxInput" placeholder="ID" #userDeparment required id = 'e3'>
+                <p class = "textInput">ID</p>
+                <br>
+                <input type="text" class="boxInput" placeholder="Email" #userDeparment required id = 'e4'>
+                <p class = "textInput">Email</p>
+                <br>
+                <input type="text" class="boxInput" placeholder="Password" #userDeparment required id = 'e5'>
+                <p class = "textInput">Password</p>
             </div>
 
 
             <div class="addButton">
-              <div class="button" (click)="addEmployee()">
+              <div class="addData" (click)="addEmployee()">
                 Add
-                <img src="assets/user-access/rightArrowIcon.svg">
             </div>
         </div>
         <div class="boton">
             <input type="button" class="deleteData" onclick="deleteEmployee()">
             <input type="button" class="modifieData" onclick="changeEmployee()">
+            
+
+
+
+
+
         </div>
+      </div>
+
+        
+
+
         <div class="table">
             <div class = "TableView">
                 <table class="table">
@@ -190,12 +209,12 @@
 
 
             <div class="addButton">
-                <input type="button" class="addData" onclick="addWorker()">>
+                <input type="button" class="addData" onclick="addWorker()">
             </div>
         </div>
         <div class="boton">
-            <input type="button" class="deleteData" onclick="deleteWorker()">>
-            <input type="button" class="modifieData" onclick="changeWorker()">>
+            <input type="button" class="deleteData" onclick="deleteWorker()">
+            <input type="button" class="modifieData" onclick="changeWorker()">
         </div>
         <div class="table">
             <div class = "TableView">
@@ -234,12 +253,12 @@
     
     
                 <div class="addButton">
-                    <input type="button" class="addData" onclick="addSeller()">>
+                    <input type="button" class="addData" onclick="addSeller()">
                 </div>
             </div>
             <div class="boton">
-                <input type="button" class="deleteData" onclick="deleteSeller()">>
-                <input type="button" class="modifieData" onclick="changeSeller()">>
+                <input type="button" class="deleteData" onclick="deleteSeller()">
+                <input type="button" class="modifieData" onclick="changeSeller()">
             </div>
             <div class="table">
                 <div class = "TableView">
@@ -318,7 +337,88 @@
                 </div>
             </div>
         </div>
+
+        <div class="grayBox">
+          <div class="form">
+              <div class = "referenceTittle">
+                  <p class="title2">
+                      Routes
+                  </p>
+      
+              </div>
+              <div class="formData">
+                  <h5 class="boxTitle">Write the Route information below, please</h5>
+                  <input type="text" class="boxInput" placeholder="Number" #userName required id = 'r1'>
+                  <br>
+                  <p class = "textInput">Number</p>
+                  <br>
+                  <input type="text" class="boxInput" placeholder="Districs" #userName required id = 'r2'>
+                  <p class = "textInput">Districs</p>
+              </div>
+  
+  
+              <div class="addButton">
+                  <input type="button" class="addData" onclick="addSeller()">
+              </div>
+          </div>
+          <div class="boton">
+              <input type="button" class="deleteData" onclick="deleteSeller()">
+              <input type="button" class="modifieData" onclick="changeSeller()">
+          </div>
+          <div class="table">
+              <div class = "TableView">
+                  <table class="table">
+                    <thead>
+                      <tr>           
+                        <th *ngFor="let head of sellers[0] | keys">{{head}}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of sellers">           
+                        <td *ngFor="let list of item | keys">{{item[list]}}</td>
+                      </tr>
+                    </tbody>
+                    </table>
+              </div>
+          </div>
+      </div>
+
+
+
+      <div class="grayBox">
+        <div class="form">
+            <div class = "referenceTittle">
+                <p class="title2">
+                    Users
+                </p>
+    
+            </div>
+        </div>
+        <div class="boton">
+            <input type="button" class="deleteData" onclick="deleteSeller()">
+            <input type="button" class="modifieData" onclick="changeSeller()">
+        </div>
+        <div class="table">
+            <div class = "TableView">
+                <table class="table">
+                  <thead>
+                    <tr>           
+                      <th *ngFor="let head of sellers[0] | keys">{{head}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of sellers">          
+                      <input type="button" class="deleteData" onclick="deleteSeller()"> 
+                      <td *ngFor="let list of item | keys">{{item[list]}}</td>
+                    </tr>
+                  </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+
 </div>
+
 
 
         
