@@ -64,8 +64,10 @@
             </div>
         </div>
         <div class="boton">
-            <input type="button" class="deleteData" onclick="deleteEmployee()">
-            <input type="button" class="modifieData" onclick="changeEmployee()">
+          <div class="deleteData" (click)="deleteEmployee()">
+            Delete
+        </div>
+            <button routerLink="/employees">modifyEmployees</button>
             
 
 
@@ -139,16 +141,13 @@
             </div>
               
             </div>
-         <!-- </div>
+         </div>
         <div class="boton">
-          <div class="button" (click)="deleteBranch()">
+          <div class="button" (click)="deleteBranches()">
             delete
             <img src="assets/user-access/rightArrowIcon.svg">
         </div>
-        <div class="button" (click)="modifieEmployee()">
-            modifie
-            <img src="assets/user-access/rightArrowIcon.svg">
-      </div>  -->
+          <button routerLink="/employees">modifyBranches</button>
         </div>
         <div class="table">
             <div class = "TableView">
@@ -209,12 +208,18 @@
 
 
             <div class="addButton">
-                <input type="button" class="addData" onclick="addWorker()">
+              <div class="button" (click)="addWorker()">
+                AddC
+                <img src="assets/user-access/rightArrowIcon.svg">
+            </div>
             </div>
         </div>
         <div class="boton">
-            <input type="button" class="deleteData" onclick="deleteWorker()">
-            <input type="button" class="modifieData" onclick="changeWorker()">
+          <div class="button" (click)="deleteWorker()">
+            Delete
+            <img src="assets/user-access/rightArrowIcon.svg">
+        </div>
+        <button routerLink="/employees">modifyWorkers</button>
         </div>
         <div class="table">
             <div class = "TableView">
@@ -253,12 +258,20 @@
     
     
                 <div class="addButton">
-                    <input type="button" class="addData" onclick="addSeller()">
+                  <div class="button" (click)="addSeller()">
+                    AddD
+                    <img src="assets/user-access/rightArrowIcon.svg">
+                  </div>
                 </div>
             </div>
             <div class="boton">
-                <input type="button" class="deleteData" onclick="deleteSeller()">
-                <input type="button" class="modifieData" onclick="changeSeller()">
+              <div class="button" (click)="deleteSeller()">
+                Delete
+                <img src="assets/user-access/rightArrowIcon.svg">
+              </div>
+
+              <button routerLink="/employees">modifySeller</button>
+
             </div>
             <div class="table">
                 <div class = "TableView">
@@ -313,12 +326,18 @@
     
     
                 <div class="addButton">
-                    <input type="button" class="addData " onclick="addProduct()">
+                  <div class="button" (click)="addProduct()">
+                    AddE
+                    <img src="assets/user-access/rightArrowIcon.svg">
+                  </div>
                 </div>
             </div>
             <div class="boton">
-                <input type="button" class="deleteData" onclick="deleteProduct()">
-                <input type="button" class="modifieData" onclick="changeProduct()">
+              <div class="button" (click)="deleteProduct()">
+                Delete
+                <img src="assets/user-access/rightArrowIcon.svg">
+              </div>
+                <button routerLink="/employees">modifyProduct</button>
             </div>
             <div class="table">
                 <div class = "TableView">
@@ -358,12 +377,18 @@
   
   
               <div class="addButton">
-                  <input type="button" class="addData" onclick="addSeller()">
+                <div class="button" (click)="addRoute()">
+                  AddF
+                  <img src="assets/user-access/rightArrowIcon.svg">
+                </div>
               </div>
           </div>
           <div class="boton">
-              <input type="button" class="deleteData" onclick="deleteSeller()">
-              <input type="button" class="modifieData" onclick="changeSeller()">
+            <div class="button" (click)="deleteRoute()">
+              Delete
+              <img src="assets/user-access/rightArrowIcon.svg">
+            </div>
+              <button routerLink="/">modifyRoute</button>
           </div>
           <div class="table">
               <div class = "TableView">
@@ -407,8 +432,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let item of sellers">          
-                      <input type="button" class="deleteData" onclick="deleteSeller()"> 
+                    <tr *ngFor="let item of sellers">           
                       <td *ngFor="let list of item | keys">{{item[list]}}</td>
                     </tr>
                   </tbody>

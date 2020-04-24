@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { json } from 'body-parser';
+import { singleRoute } from './singleRoute';
 
 @Component({
   selector: 'app-admin',
@@ -26,28 +27,7 @@ export class AdminComponent implements OnInit {
     
     ) { }
 
-    //Este fragmento es para el pop up de modify
- popUpOpen = false;
 
- openPopUp() {
-   this.popUpOpen = true;
- }
-
- deleteOption() {
-   this.popUpOpen = false;
- }
-
- cancelOption() {
-   this.popUpOpen = false;
- }
-
-//Todo este bloque es para los botones de modificacion
-deleteEmployee(){
- this.popUpOpen = true;
- 
-
-}
-    
 
 
 
@@ -228,23 +208,250 @@ deleteEmployee(){
     //Esta parte obtiene los valores de los entries
     let name = (<HTMLInputElement>document.getElementById('e1')).value;
     let deparment = (<HTMLInputElement>document.getElementById('e2')).value;
+    let ID = (<HTMLInputElement>document.getElementById('e3')).value;
+    let email = (<HTMLInputElement>document.getElementById('e4')).value;
+    let password = (<HTMLInputElement>document.getElementById('e5')).value;
 
-    //Creo una instancia de seller
+    //Creo una instancia de employee
     let employee = new singleEmployee();
 
     // //Le agrego valores a la instancia
     employee.name = name;
     employee.deparment = deparment;
+    employee.id = ID;
+    employee.email = email;
+    employee.password = password;
+
 
     //Vacio los entries
     (<HTMLInputElement>document.getElementById('e1')).value = '';
     (<HTMLInputElement>document.getElementById('e2')).value = '';
+    (<HTMLInputElement>document.getElementById('e3')).value = '';
+    (<HTMLInputElement>document.getElementById('e4')).value = '';
+    (<HTMLInputElement>document.getElementById('e5')).value = '';
 
     //Creo el Json de product
-    var dataEmployee = { "Name":name, "Deparment": deparment};
+    var dataEmployee = { "Name":name, "Deparment": deparment, "ID": ID, 'Email':email,"Password":password};
     var jsonStringEmployee = JSON.stringify(dataEmployee);
     var jsonEmployee = JSON.parse(jsonStringEmployee);
     console.log(jsonEmployee);
     axios.post('el Url va aqui', JSON.parse(jsonEmployee))
  }
+
+ addRoute(){
+   //Esta parte obtiene los valores de los entries
+   let number = (<HTMLInputElement>document.getElementById('r1')).value;
+   let districs = (<HTMLInputElement>document.getElementById('r2')).value;
+
+   //Creo una instancia de routes
+   let route = new singleRoute();
+
+   //le agrego valores a dicha instancia de route
+   route.number = number;
+   route.districs = districs;
+
+   //Vacio los entries
+   (<HTMLInputElement>document.getElementById('r1')).value = '';
+   (<HTMLInputElement>document.getElementById('r2')).value = '';
+
+   //Creo el json de route
+   var dataRoute = {"Number":number, "Districs":districs};
+   var jsonStringRoute = JSON.stringify(dataRoute);
+   var jsonRoute = JSON.parse(jsonStringRoute);
+   axios.post('el Url va aqui', JSON.parse(jsonRoute))
+
+ }
+
+
+////////////////////////////////////////////Aqui empieza el fragmento de codigo para eliminar datos////////////////////////////////////////////////////////////
+deleteEmployee(){
+  //Esta parte obtiene los valores de los entries
+  let name = (<HTMLInputElement>document.getElementById('e1')).value;
+  let deparment = (<HTMLInputElement>document.getElementById('e2')).value;
+
+  //Creo una instancia de employee
+  let employee = new singleEmployee();
+
+  // //Le agrego valores a la instancia
+  employee.name = name;
+  employee.deparment = deparment;
+
+  //Vacio los entries
+  (<HTMLInputElement>document.getElementById('e1')).value = '';
+  (<HTMLInputElement>document.getElementById('e2')).value = '';
+
+  //Creo el Json de product
+  var dataEmployee = { "Name":name, "Deparment": deparment};
+  var jsonStringEmployee = JSON.stringify(dataEmployee);
+  var jsonEmployeeDelete = JSON.parse(jsonStringEmployee);
+  console.log(jsonEmployeeDelete);
+  axios.post('el Url va aqui', JSON.parse(jsonEmployeeDelete))
+
+}
+
+deleteBranches(){
+  //Esta parte obtiene los valores de los entries
+  let name = (<HTMLInputElement>document.getElementById('b1')).value;
+  let address = (<HTMLInputElement>document.getElementById('b2')).value;
+  let province = (<HTMLInputElement>document.getElementById('b3')).value;
+  let phone = (<HTMLInputElement>document.getElementById('b4')).value;
+  let city = (<HTMLInputElement>document.getElementById('b5')).value;
+  let boss = (<HTMLInputElement>document.getElementById('b6')).value;
+
+  //Creo una instancia de branch
+  let branch = new singleBranch();
+
+  //Le agrego valores a la instancia
+  branch.name = name;
+  branch.address = address;
+  branch.province = province;
+  branch.phone = phone;
+  branch.city = city;
+  branch.boss = boss;
+
+  //Vacio los entries
+  (<HTMLInputElement>document.getElementById('b1')).value = '';
+  (<HTMLInputElement>document.getElementById('b2')).value = '';
+  (<HTMLInputElement>document.getElementById('b3')).value = '';
+  (<HTMLInputElement>document.getElementById('b4')).value = '';
+  (<HTMLInputElement>document.getElementById('b5')).value = '';
+  (<HTMLInputElement>document.getElementById('b6')).value = '';
+
+  //Creo el Json de product
+  var dataSeller = { "Name":name, "Address": address, "Province": province, "Phone":phone, 'City': city, "Boss": boss};
+  var jsonStringBranch = JSON.stringify(dataSeller);
+  var jsonBranchDelete = JSON.parse(jsonStringBranch);
+  console.log(jsonBranchDelete);
+  axios.post('el Url va aqui', JSON.parse(jsonBranchDelete))
+
+}
+
+deleteWorker(){
+  //Variables que recojen los datos directamente del entry
+  let idName = (<HTMLInputElement>document.getElementById('uno')).value
+  let fullName = (<HTMLInputElement>document.getElementById('dos')).value;
+  let birthday = (<HTMLInputElement>document.getElementById('tres')).value;
+  let entryDay = (<HTMLInputElement>document.getElementById('cuatro')).value;
+  let branch = (<HTMLInputElement>document.getElementById('cinco')).value;
+  let hourlyWage = (<HTMLInputElement>document.getElementById('seis')).value;
+  let monthlyWage = (<HTMLInputElement>document.getElementById('siete')).value;
+
+
+  //Instancia incial de la clase molde workers
+  let worker = new  Workers();
+
+  //Este segmento agrega los datos obtenidos de los entries directo a la instancia
+  worker.idName = idName;
+  worker.fullName = fullName;
+  worker.birthday = birthday;
+  worker.entryDay = entryDay;
+  worker.branch = branch;
+  worker.hourlyWage = hourlyWage;
+  worker.monthlyWage = monthlyWage;
+
+  //Este segmento vacia los entries
+  (<HTMLInputElement>document.getElementById('uno')).value = '';
+  (<HTMLInputElement>document.getElementById('dos')).value = '';
+  (<HTMLInputElement>document.getElementById('tres')).value = '';
+  (<HTMLInputElement>document.getElementById('cuatro')).value = '';
+  (<HTMLInputElement>document.getElementById('cinco')).value = '';
+  (<HTMLInputElement>document.getElementById('seis')).value = '';
+  (<HTMLInputElement>document.getElementById('siete')).value = '';
+
+  //Este segmento serializa la instancia worker a Json, primero de objeto a string y luego de string a Json
+  var dataWorker = { "ID":worker.idName, "Name": worker.fullName, "BirthDay": worker.birthday, "Entry":worker.entryDay, 'Branch': worker.branch, "HourlyWage":worker.hourlyWage, "MonthlyWage":worker.monthlyWage};
+  var jsonStringWorker = JSON.stringify(dataWorker);
+  var jsonWorkerDelete = JSON.parse(jsonStringWorker);
+  axios.post('el Url va aqui', JSON.parse(jsonWorkerDelete))
+}
+
+deleteSeller(){
+  //Esta parte obtiene los valores de los entries
+  let name = (<HTMLInputElement>document.getElementById('ocho')).value;
+  let idNumber = (<HTMLInputElement>document.getElementById('nueve')).value;
+
+  //Creo una instancia de seller
+  let seller = new SingleSeller();
+
+  //le agrego valores a dicha instancia de seller
+  seller.name = name;
+  seller.idNumber = idNumber;
+
+  //Vacio los entries
+  (<HTMLInputElement>document.getElementById('ocho')).value = '';
+  (<HTMLInputElement>document.getElementById('nueve')).value = '';
+
+  //Creo el json de seller
+  var dataSeller = {"firstName":name, "Id":idNumber};
+  var jsonStringSeller = JSON.stringify(dataSeller);
+  var jsonSellerDelete = JSON.parse(jsonStringSeller);
+  axios.post('el Url va aqui', JSON.parse(jsonSellerDelete))
+}
+
+deleteProduct(){
+  let name = (<HTMLInputElement>document.getElementById('diez')).value;
+    let description = (<HTMLInputElement>document.getElementById('once')).value;
+    let barcode = (<HTMLInputElement>document.getElementById('doce')).value;
+    let seller = (<HTMLInputElement>document.getElementById('trece')).value;
+    let price = (<HTMLInputElement>document.getElementById('catorce')).value;
+    let payTaxes = (<HTMLInputElement>document.getElementById('quince')).value;
+    let percentageDiscount = (<HTMLInputElement>document.getElementById('dieciseis')).value;
+    let entryDate = (<HTMLInputElement>document.getElementById('dieciseite')).value;
+
+    //Instancio product
+    let product = new SingleProduct();
+
+    //Le agrego valores a la instancia
+    product.name = name;
+    product.description = description;
+    product.barcode = barcode;
+    product.seller = seller;
+    product.price = price;
+    product.payTaxes = payTaxes;
+    product.percentageDiscount = percentageDiscount;
+    product.entryDate = entryDate;
+
+    //Vacio los entries
+    (<HTMLInputElement>document.getElementById('diez')).value = '';
+    (<HTMLInputElement>document.getElementById('once')).value = '';
+    (<HTMLInputElement>document.getElementById('doce')).value = '';
+    (<HTMLInputElement>document.getElementById('trece')).value = '';
+    (<HTMLInputElement>document.getElementById('catorce')).value = '';
+    (<HTMLInputElement>document.getElementById('quince')).value = '';
+    (<HTMLInputElement>document.getElementById('dieciseis')).value = '';
+    (<HTMLInputElement>document.getElementById('diecisiete')).value = '';
+
+    //Creo el Json de products
+    var dataProduct = { "Name":name, "description": description, "Barcode": barcode, "Seller":seller, 'Price': price, "PayTaxes": payTaxes, "PercentageDiscount":product.percentageDiscount, "EntryDate": entryDate};
+    var jsonStringProduct = JSON.stringify(dataProduct);
+    var jsonProductDelete = JSON.parse(jsonStringProduct);
+    axios.post('el Url va aqui', JSON.parse(jsonProductDelete))
+}
+deleteRoute(){
+  //Esta parte obtiene los valores de los entries
+  let number = (<HTMLInputElement>document.getElementById('r1')).value;
+  let districs = (<HTMLInputElement>document.getElementById('r2')).value;
+
+  //Creo una instancia de routes
+  let route = new singleRoute();
+
+  //le agrego valores a dicha instancia de route
+  route.number = number;
+  route.districs = districs;
+
+  //Vacio los entries
+  (<HTMLInputElement>document.getElementById('r1')).value = '';
+  (<HTMLInputElement>document.getElementById('r2')).value = '';
+
+  //Creo el json de route
+  var dataRoute = {"Number":number, "Districs":districs};
+  var jsonStringRoute = JSON.stringify(dataRoute);
+  var jsonRouteDelete = JSON.parse(jsonStringRoute);
+  axios.post('el Url va aqui', JSON.parse(jsonRouteDelete))
+
+}
+
+
+
+
 }
