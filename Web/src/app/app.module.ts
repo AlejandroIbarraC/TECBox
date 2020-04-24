@@ -17,7 +17,13 @@ import { AdminComponent } from './components/admin/admin.component';
 import { CartProductComponent } from './components/cartProduct/cartProduct.component';
 import { ProductService } from './shared/services/product.service';
 import { HttpClientModule } from '@angular/common/http';
-import { PopUpModule } from 'src/app/components/pop-up/pop-up.module'
+import { PopUpModule } from 'src/app/components/pop-up/pop-up.module';
+import { ModifyProductComponent } from './modify-product/modify-product.component';
+import { ModifyEmployeeComponent } from './modify-employee/modify-employee.component';
+import { ModifyWorkerComponent } from './modify-worker/modify-worker.component';
+import { ModifySellerComponent } from './modify-seller/modify-seller.component';
+import { ModifyRouteComponent } from './modify-route/modify-route.component';
+import { ModifyBranchComponent } from './modify-branch/modify-branch.component'
 
 
 @NgModule({
@@ -31,6 +37,12 @@ import { PopUpModule } from 'src/app/components/pop-up/pop-up.module'
     AdminComponent,
     CartComponent,
     CartProductComponent,
+    ModifyProductComponent,
+    ModifyEmployeeComponent,
+    ModifyWorkerComponent,
+    ModifySellerComponent,
+    ModifyRouteComponent,
+    ModifyBranchComponent,
   ],
   imports: [
     BrowserModule,
