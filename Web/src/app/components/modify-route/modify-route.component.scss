@@ -1,18 +1,35 @@
 .column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 500px;
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.card-secondary {
+  width: 100%;
+
+  .content {
+      text-align: left;
+      padding-top: 50px;
+      padding-left: 50px;
+
+      .button {
+          float: left;
+      }
+
+      .entry {
+          float: right;
+      }
   }
+}
   
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
   }
-  
-  @media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-    }
-  }
+}

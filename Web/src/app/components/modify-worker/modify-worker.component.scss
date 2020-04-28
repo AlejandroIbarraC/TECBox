@@ -2,7 +2,24 @@
   float: left;
   width: 50%;
   padding: 10px;
-  height: 500px;
+}
+
+.card-secondary {
+  width: 100%;
+
+  .content {
+      text-align: left;
+      padding-top: 50px;
+      padding-left: 50px;
+
+      .button {
+          float: left;
+      }
+
+      .entry {
+          float: right;
+      }
+  }
 }
 
 .row:after {

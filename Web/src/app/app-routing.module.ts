@@ -69,5 +69,11 @@ export const routingComponents = [
   PageNotFoundComponent,
   UserProfileComponent,
   WarehouseConsoleComponent,
-  DeliveryConsoleComponent
+  DeliveryConsoleComponent,
+  ModifyBranchComponent,
+  ModifyEmployeeComponent,
+  ModifyProductComponent,
+  ModifyRouteComponent,
+  ModifySellerComponent,
+  ModifyWorkerComponent
 ]
