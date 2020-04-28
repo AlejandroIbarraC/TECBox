@@ -18,6 +18,12 @@ import { DeliveryConsoleComponent } from './components/delivery-console/delivery
 import { CartComponent } from './components/cart/cart.component';
 import { SecureInnerPagesGuard } from './shared/guard/secure-inner-pages.guard';
 import { AuthGuard } from './shared/guard/auth.guard';
+import { ModifyBranchComponent } from './components/modify-branch/modify-branch.component';
+import { ModifyEmployeeComponent } from './components/modify-employee/modify-employee.component';
+import { ModifyProductComponent } from './components/modify-product/modify-product.component';
+import { ModifyRouteComponent } from './components/modify-route/modify-route.component';
+import { ModifySellerComponent } from './components/modify-seller/modify-seller.component';
+import { ModifyWorkerComponent } from './components/modify-worker/modify-worker.component';
 
 // Auth Guard
 
@@ -36,6 +42,12 @@ const routes: Routes = [
   { path: 'delivery-console', component: DeliveryConsoleComponent },
   { path: 'cart', component: CartComponent },
   { path: 'cartProduct', component: CartProductComponent },
+  { path: 'modify-branch', component: ModifyBranchComponent },
+  { path: 'modify-employee', component: ModifyEmployeeComponent },
+  { path: 'modify-product', component: ModifyProductComponent },
+  { path: 'modify-route', component: ModifyRouteComponent },
+  { path: 'modify-seller', component: ModifySellerComponent },
+  { path: 'modify-worker', component: ModifyWorkerComponent },
 
   { path: '**', component: PageNotFoundComponent}
 ];

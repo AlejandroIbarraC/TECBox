@@ -11,7 +11,315 @@
         </div>
         <div class="card-secondary">
           <div class="content">
-            Tables go here
+            <div class="subtitle">Employees</div>
+            <div class="formData">
+              <input type="text" class="entry" placeholder="Name" #userName required id = 'e1'>
+              <div class="textInput">Name</div>
+              <br>
+              <input type="text" class="entry" placeholder="Department" #userDeparment required id = 'e2'>
+              <div class="textInput">Department</div>
+              <br>
+              <input type="text" class="entry" placeholder="ID" #userDeparment required id = 'e3'>
+              <div class="textInput">ID</div>
+              <br>
+              <input type="text" class="entry" placeholder="Email" #userDeparment required id = 'e4'>
+              <div class="textInput">Email</div>
+              <br>
+              <input type="text" class="entry" placeholder="Password" #userDeparment required id = 'e5'>
+              <div class="textInput">Password</div>
+            </div>
+            <br><br>
+            <div class="button" (click)="addEmployee()">
+              Add
+              <img src="assets/admin/addButton.svg">
+            </div>
+            <div class="button" (click)="deleteEmployee()">
+              Delete
+              <img src="assets/admin/deleteButton.svg">
+            </div>
+            <div class="button" routerLink="/modify-employee">
+              Edit
+              <img src="assets/admin/editButton.svg">
+            </div>
+            <br><br><br>
+            <div class="table">
+              <div class = "TableView">
+                  <table class="table">
+                    <thead>
+                      <tr>           
+                        <th *ngFor="let head of employees[0] | keys">{{head}}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of employees">
+                        <td *ngFor="let list of item | keys">{{item[list]}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-secondary">
+          <div class="content">
+            <div class="subtitle">Branches</div>
+            <div class="formData">
+              <input type="text" class="entry" placeholder="Name" #userName required id = 'b1'>
+              <div class="textInput">Name</div>
+              <br>
+              <input type="text" class="entry" placeholder="Address" #userAddress required id = 'b2'>
+              <div class="textInput">Address</div>
+              <br>
+              <input type="text" class="entry" placeholder="Province" #userAddress required id = 'b3'>
+              <div class="textInput">Province</div>
+              <br>
+              <input type="text" class="entry" placeholder="Phone" #userPhone required id = 'b4'>
+              <div class="textInput">Phone</div>
+              <br>
+              <input type="text" class="entry" placeholder="City" #userPlaceHolder required id = 'b5'>
+              <div class="textInput">City</div>
+              <br>
+              <input type="text" class="entry" placeholder="Boss" #userBoss required id = 'b6'>
+              <div class="textInput">Boss</div>
+            </div>
+            <br><br>
+            <div class="button" (click)="addBranch()">
+              Add
+              <img src="assets/admin/addButton.svg">
+            </div>
+            <div class="button" (click)="deleteBranches()">
+              Delete
+              <img src="assets/admin/deleteButton.svg">
+            </div>
+            <div class="button" routerLink="/modify-branch">
+              Edit
+              <img src="assets/admin/editButton.svg">
+            </div>
+            <br><br><br>
+            <div class="table">
+              <div class = "TableView">
+                <table class="table">
+                  <thead>
+                    <tr>           
+                      <th *ngFor="let head of items[0] | keys">{{head}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of items">           
+                      <td *ngFor="let list of item | keys">{{item[list]}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-secondary">
+          <div class="content">
+            <div class="subtitle">Workers</div>
+            <div class="formData">
+              <input type="text" class="entry" placeholder="ID number" #userName required id = 'uno'>
+              <p class = "textInput">ID number</p>
+              <br>
+              <input type="text" class="entry" placeholder="Full Name" #userAddress required id = 'dos'>
+              <p class = "textInput">Full name</p>
+              <br>
+              <input type="text" class="entry" placeholder="Birthday" #userAddress required id ='tres'>
+              <p class = "textInput">Birthday</p>
+              <br>
+              <input type="text" class="entry" placeholder="Entry Day" #userPhone required id = 'cuatro'>
+              <p class = "textInput">Entry Day</p>
+              <br>
+              <input type="text" class="entry" placeholder="Branch" #userName required id = 'cinco'>
+              <p class = "textInput">Branch</p>
+              <br>
+              <input type="text" class="entry" placeholder="Hourly Wage" #userName required id ='seis'>
+              <p class = "textInput">Hourly Wage</p>
+              <br>
+              <input type="text" class="entry" placeholder="Monthly Wage" #userName required id = 'siete'>
+              <p class = "textInput">Monthly Wage</p>
+            </div>
+            <br><br>
+            <div class="button" (click)="addWorker()">
+              Add
+              <img src="assets/admin/addButton.svg">
+            </div>
+            <div class="button" (click)="deleteWorker()">
+              Delete
+              <img src="assets/admin/deleteButton.svg">
+            </div>
+            <div class="button" routerLink="/modify-worker">
+              Edit
+              <img src="assets/admin/editButton.svg">
+            </div>
+            <br><br><br>
+            <div class="table">
+              <div class = "TableView">
+                <table class="table">
+                  <thead>
+                    <tr>           
+                      <th *ngFor="let head of workers[0] | keys">{{head}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of workers">           
+                      <td *ngFor="let list of item | keys">{{item[list]}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-secondary">
+          <div class="content">
+            <div class="subtitle">Sellers</div>
+            <div class="formData">
+              <input type="text" class="entry" placeholder="Name" #userName required id = 'ocho'>
+              <p class = "textInput">Name</p>
+              <br>
+              <input type="text" class="entry" placeholder="ID Number" #userName required id = 'nueve'>
+              <p class = "textInput">ID Number</p>
+            </div>
+            <br><br>
+            <div class="button" (click)="addSeller()">
+              Add
+              <img src="assets/admin/addButton.svg">
+            </div>
+            <div class="button" (click)="deleteSeller()">
+              Delete
+              <img src="assets/admin/deleteButton.svg">
+            </div>
+            <div class="button" routerLink="/modify-seller">
+              Edit
+              <img src="assets/admin/editButton.svg">
+            </div>
+            <br><br><br>
+            <div class="table">
+              <div class = "TableView">
+                <table class="table">
+                  <thead>
+                    <tr>           
+                      <th *ngFor="let head of sellers[0] | keys">{{head}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of sellers">           
+                      <td *ngFor="let list of item | keys">{{item[list]}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-secondary">
+          <div class="content">
+            <div class="subtitle">Products</div>
+            <div class="formData">
+              <h5 class="boxTitle">Write the information of the Products below, please</h5>
+              <input type="text" class="entry" placeholder="Name" #userName required id = 'diez'>
+              <p class = "textInput">Name</p>
+              <br>
+              <input type="text" class="entry" placeholder="Description" #userAddress required id = 'once'>
+              <p class = "textInput">Description</p>
+              <br>
+              <input type="text" class="entry" placeholder="Barcode" #userAddress required id = 'doce'>
+              <p class = "textInput">Barcode</p>
+              <br>
+              <input type="text" class="entry" placeholder="Seller" #userPhone required id = 'trece'>
+              <p class = "textInput">Seller</p>
+              <br>
+              <input type="text" class="entry" placeholder="Price" #userPrice required id = 'catorce'>
+              <p class = "textInput">Price</p>
+              <br>
+              <input type="text" class="entry" placeholder="Pay Taxes?" #userTaxes required id = 'quience'>
+              <p class = "textInput">Pay Taxes?</p>
+              <br>
+              <input type="text" class="entry" placeholder="Percentage Discount" #userPercentage required id = 'dieciseis'>
+              <p class = "textInput">Percentage Discount</p>
+              <br>
+              <input type="text" class="entry" placeholder="Entry Date" #userDate required id = 'diecisiete'>
+              <p class = "textInput">Entry Date</p>
+            </div>
+            <br><br>
+            <div class="button" (click)="addProduct()">
+              Add
+              <img src="assets/admin/addButton.svg">
+            </div>
+            <div class="button" (click)="deleteProduct()">
+              Delete
+              <img src="assets/admin/deleteButton.svg">
+            </div>
+            <div class="button" routerLink="/modify-product">
+              Edit
+              <img src="assets/admin/editButton.svg">
+            </div>
+            <br><br><br>
+            <div class="table">
+              <div class = "TableView">
+                  <table class="table">
+                    <thead>
+                      <tr>           
+                        <th *ngFor="let head of products[0] | keys">{{head}}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of products">           
+                        <td *ngFor="let list of item | keys">{{item[list]}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-secondary">
+          <div class="content">
+            <div class="subtitle">Routes</div>
+            <div class="formData">
+              <input type="text" class="entry" placeholder="Number" #userName required id = 'r1'>
+              <p class = "textInput">Number</p>
+              <br>
+              <input type="text" class="entry" placeholder="Districts" #userName required id = 'r2'>
+              <p class = "textInput">Districts</p>
+            </div>
+            <br><br>
+            <div class="button" (click)="addRoute()">
+              Add
+              <img src="assets/admin/addButton.svg">
+            </div>
+            <div class="button" (click)="deleteRoute()">
+              Delete
+              <img src="assets/admin/deleteButton.svg">
+            </div>
+            <div class="button" routerLink="/modify-route">
+              Edit
+              <img src="assets/admin/editButton.svg">
+            </div>
+            <br><br><br>
+            <div class="table">
+              <div class = "TableView">
+                  <table class="table">
+                    <thead>
+                      <tr>           
+                        <th *ngFor="let head of sellers[0] | keys">{{head}}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of sellers">           
+                        <td *ngFor="let list of item | keys">{{item[list]}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-secondary">
+          <div class="content">
+            <div class="subtitle">Users</div>
+
           </div>
         </div>
       </div>
@@ -19,8 +327,7 @@
   </div>
 </body> 
 
-<script src = "admin.component.ts">
-</script>
+<script src = "admin.component.ts"></script>
 
 
 
@@ -96,6 +403,7 @@
                   </table>
             </div>
         </div>
+
     </div>
     <br>
     <br>
