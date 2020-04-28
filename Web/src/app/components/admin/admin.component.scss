@@ -148,6 +148,13 @@ img {
     height: 30px;
 }
 
+@media (prefers-color-scheme: dark) {
+    .table {
+        background-color: rgb(50, 50, 50);
+        color: white;
+    }
+}
+
 
 //Este bloque es para el pop-up y sus contenidos
 :host {
