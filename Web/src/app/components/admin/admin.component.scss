@@ -38,56 +38,28 @@
 .boton{
     float: left;
     height: 100%;
-    width : 50%;
+    width : 100%;
    
 }
 
-.table{
-    float: left;
-    width : 100%;
-    background-color: darkslategray;
- 
-}
 
-
-.formData{
-    float: left;
-    width: 88%;
-
-}
 
 .addButton{
     float: left;
-    height: 100%;
-    width: 12%;
+    height: 80%;
+    width: 10%;
 
 }
 
-.boxTitle{
-    float: right;
-    height: 18%;
-    width: 100%;
- 
-}
-.boxInput{
-    float: right;
-    width: 40%;
-
-}
-.textInput{
-    float: left;
-    width: 60%;
- 
-}
 .addData{
     float: left;
-    height: 30%;
-    width: 100%;
+    height: 70%;
+    width: 50%;
     background: #F61067;
     border: 2px solid #FFFFFF;
     box-sizing: border-box;
     box-shadow: 0px -12px 16px #FFFFFF, 0px 12px 16px rgba(0, 0, 0, 0.3);
-    border-radius: 20px;
+    border-radius: 10px;
 }
 .deleteData{
     float: right;
@@ -128,13 +100,100 @@
 
 // FINAL STYLES
 
+.card-secondary {
+    width: 100%;
+    margin-bottom: 50px;
+
+    .content {
+        text-align: left;
+        padding-top: 50px;
+        padding-left: 50px;
+
+        .button {
+            float: left;
+        }
+
+        .entry {
+            float: right;
+        }
+    }
+}
+
 .button {
     font-weight: bold;
     width: fit-content;
     float: right;
     font-size: 18px;
     margin-top: 0px;
+    margin-right: 30px;
 }
+
+.table {
+    width: 100%;
+    float: inherit;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.formData {
+    width: 40%;
+}
+
+.textInput {
+    width: 80%;
+}
+
+img {
+    height: 30px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .table {
+        background-color: rgb(50, 50, 50);
+        color: white;
+    }
+}
+
+
+//Este bloque es para el pop-up y sus contenidos
+:host {
+    .my-prompt {
+      .box {
+        text-align: center;
+        border: 1px solid white;
+        padding: 3ch;
+        position: relative;
+        min-width: 30ch;
+      }
+      header {
+        position: absolute;
+        display: inline-block;
+        left: 0;
+        right: 0;
+        top: -.65em;
+        .title {
+          background: #180099;
+          padding: 0 1ch;
+        }
+      }
+      footer {
+        padding-top: 2ch;
+      }
+      button {
+        -webkit-tap-highlight-color: transparent;
+        background: transparent;
+        border: 0;
+        color: #ffffff;
+        font-family: 'Roboto Mono', monospace;
+        margin: 1ch;
+        &:focus {
+          background: #000000;
+          outline: 0;
+        }
+      }
+    }
+  }
 
 
 

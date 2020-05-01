@@ -1,7 +1,43 @@
+.card-secondary {
+    width: 100%;
+    margin-bottom: 50px;
+
+    .content {
+        text-align: left;
+        padding-top: 50px;
+        padding-left: 50px;
+
+        .button {
+            float: left;
+        }
+
+        .entry {
+            float: right;
+        }
+    }
+}
+
 .button {
     font-weight: bold;
     width: fit-content;
     float: right;
     font-size: 18px;
     margin-top: 0px;
+    margin-right: 30px;
+}
+
+.table {
+    width: 100%;
+    float: inherit;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.formData {
+    width: 40%;
+}
+
+.textInput {
+    width: 80%;
 }

@@ -1,0 +1,35 @@
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+  
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.card-secondary {
+  width: 100%;
+
+  .content {
+      text-align: left;
+      padding-top: 50px;
+      padding-left: 50px;
+
+      .button {
+          float: left;
+      }
+
+      .entry {
+          float: right;
+      }
+  }
+}
+  
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}

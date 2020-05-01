@@ -17,6 +17,13 @@ import { AdminComponent } from './components/admin/admin.component';
 import { CartProductComponent } from './components/cartProduct/cartProduct.component';
 import { ProductService } from './shared/services/product.service';
 import { HttpClientModule } from '@angular/common/http';
+import { PopUpModule } from 'src/app/components/pop-up/pop-up.module';
+import { ModifyProductComponent } from './components/modify-product/modify-product.component';
+import { ModifyEmployeeComponent } from './components/modify-employee/modify-employee.component';
+import { ModifyWorkerComponent } from './components/modify-worker/modify-worker.component';
+import { ModifySellerComponent } from './components/modify-seller/modify-seller.component';
+import { ModifyRouteComponent } from './components/modify-route/modify-route.component';
+import { ModifyBranchComponent } from './components/modify-branch/modify-branch.component'
 
 
 @NgModule({
@@ -30,6 +37,12 @@ import { HttpClientModule } from '@angular/common/http';
     AdminComponent,
     CartComponent,
     CartProductComponent,
+    ModifyProductComponent,
+    ModifyEmployeeComponent,
+    ModifyWorkerComponent,
+    ModifySellerComponent,
+    ModifyRouteComponent,
+    ModifyBranchComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +51,8 @@ import { HttpClientModule } from '@angular/common/http';
     AngularFireAuthModule,
     AngularFirestoreModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    PopUpModule
   ],
   providers: [
     AuthService,
