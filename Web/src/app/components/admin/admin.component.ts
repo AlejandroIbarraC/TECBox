@@ -133,6 +133,7 @@ export class AdminComponent implements OnInit {
     let payTaxes = (<HTMLInputElement>document.getElementById('quince')).value;
     let percentageDiscount = (<HTMLInputElement>document.getElementById('dieciseis')).value;
     let entryDate = (<HTMLInputElement>document.getElementById('dieciseite')).value;
+    let sales = (<HTMLInputElement>document.getElementById('dieciocho')).value;
 
     //Instancio product
     let product = new SingleProduct();
@@ -146,6 +147,7 @@ export class AdminComponent implements OnInit {
     product.payTaxes = payTaxes;
     product.percentageDiscount = percentageDiscount;
     product.entryDate = entryDate;
+    product.sales = sales;
 
     //Vacio los entries
     (<HTMLInputElement>document.getElementById('diez')).value = '';
@@ -156,9 +158,10 @@ export class AdminComponent implements OnInit {
     (<HTMLInputElement>document.getElementById('quince')).value = '';
     (<HTMLInputElement>document.getElementById('dieciseis')).value = '';
     (<HTMLInputElement>document.getElementById('diecisiete')).value = '';
+    (<HTMLInputElement>document.getElementById('dieciocho')).value = '';
 
     //Creo el Json de products
-    var dataProduct = { "Name":name, "description": description, "Barcode": barcode, "Seller":seller, 'Price': price, "PayTaxes": payTaxes, "PercentageDiscount":product.percentageDiscount, "EntryDate": entryDate};
+    var dataProduct = { "Name":name, "description": description, "Barcode": barcode, "Seller":seller, 'Price': price, "PayTaxes": payTaxes, "PercentageDiscount":product.percentageDiscount, "EntryDate": entryDate, "Sales": sales};
     var jsonStringProduct = JSON.stringify(dataProduct);
     var jsonProduct = JSON.parse(jsonStringProduct);
     axios.post('el Url va aqui', JSON.parse(jsonProduct))
@@ -173,6 +176,7 @@ export class AdminComponent implements OnInit {
     let phone = (<HTMLInputElement>document.getElementById('b4')).value;
     let city = (<HTMLInputElement>document.getElementById('b5')).value;
     let boss = (<HTMLInputElement>document.getElementById('b6')).value;
+    let id = (<HTMLInputElement>document.getElementById('b7')).value;
 
     //Creo una instancia de branch
     let branch = new singleBranch();
@@ -184,6 +188,7 @@ export class AdminComponent implements OnInit {
     branch.phone = phone;
     branch.city = city;
     branch.boss = boss;
+    branch.id = id;
 
     //Vacio los entries
     (<HTMLInputElement>document.getElementById('b1')).value = '';
@@ -192,9 +197,10 @@ export class AdminComponent implements OnInit {
     (<HTMLInputElement>document.getElementById('b4')).value = '';
     (<HTMLInputElement>document.getElementById('b5')).value = '';
     (<HTMLInputElement>document.getElementById('b6')).value = '';
+    (<HTMLInputElement>document.getElementById('b7')).value = '';
 
     //Creo el Json de product
-    var dataSeller = { "Name":name, "Address": address, "Province": province, "Phone":phone, 'City': city, "Boss": boss};
+    var dataSeller = { "Name":name, "Address": address, "Province": province, "Phone":phone, 'City': city, "Boss": boss, "ID": id };
     var jsonStringBranch = JSON.stringify(dataSeller);
     var jsonBranch = JSON.parse(jsonStringBranch);
     console.log(jsonBranch);
@@ -297,6 +303,7 @@ deleteBranches(){
   let phone = (<HTMLInputElement>document.getElementById('b4')).value;
   let city = (<HTMLInputElement>document.getElementById('b5')).value;
   let boss = (<HTMLInputElement>document.getElementById('b6')).value;
+  let id = (<HTMLInputElement>document.getElementById('b7')).value;
 
   //Creo una instancia de branch
   let branch = new singleBranch();
@@ -308,6 +315,7 @@ deleteBranches(){
   branch.phone = phone;
   branch.city = city;
   branch.boss = boss;
+  branch.id = id;
 
   //Vacio los entries
   (<HTMLInputElement>document.getElementById('b1')).value = '';
@@ -316,9 +324,10 @@ deleteBranches(){
   (<HTMLInputElement>document.getElementById('b4')).value = '';
   (<HTMLInputElement>document.getElementById('b5')).value = '';
   (<HTMLInputElement>document.getElementById('b6')).value = '';
+  (<HTMLInputElement>document.getElementById('b7')).value = '';
 
   //Creo el Json de product
-  var dataSeller = { "Name":name, "Address": address, "Province": province, "Phone":phone, 'City': city, "Boss": boss};
+  var dataSeller = { "Name":name, "Address": address, "Province": province, "Phone":phone, 'City': city, "Boss": boss, "ID": id};
   var jsonStringBranch = JSON.stringify(dataSeller);
   var jsonBranchDelete = JSON.parse(jsonStringBranch);
   console.log(jsonBranchDelete);
@@ -397,6 +406,7 @@ deleteProduct(){
     let payTaxes = (<HTMLInputElement>document.getElementById('quince')).value;
     let percentageDiscount = (<HTMLInputElement>document.getElementById('dieciseis')).value;
     let entryDate = (<HTMLInputElement>document.getElementById('dieciseite')).value;
+    let sales = (<HTMLInputElement>document.getElementById('dieciocho')).value;
 
     //Instancio product
     let product = new SingleProduct();
@@ -410,6 +420,7 @@ deleteProduct(){
     product.payTaxes = payTaxes;
     product.percentageDiscount = percentageDiscount;
     product.entryDate = entryDate;
+    product.sales = sales;
 
     //Vacio los entries
     (<HTMLInputElement>document.getElementById('diez')).value = '';
@@ -420,9 +431,10 @@ deleteProduct(){
     (<HTMLInputElement>document.getElementById('quince')).value = '';
     (<HTMLInputElement>document.getElementById('dieciseis')).value = '';
     (<HTMLInputElement>document.getElementById('diecisiete')).value = '';
+    (<HTMLInputElement>document.getElementById('dieciocho')).value = '';
 
     //Creo el Json de products
-    var dataProduct = { "Name":name, "description": description, "Barcode": barcode, "Seller":seller, 'Price': price, "PayTaxes": payTaxes, "PercentageDiscount":product.percentageDiscount, "EntryDate": entryDate};
+    var dataProduct = { "Name":name, "description": description, "Barcode": barcode, "Seller":seller, 'Price': price, "PayTaxes": payTaxes, "PercentageDiscount":product.percentageDiscount, "EntryDate": entryDate, "Sales": sales};
     var jsonStringProduct = JSON.stringify(dataProduct);
     var jsonProductDelete = JSON.parse(jsonStringProduct);
     axios.post('el Url va aqui', JSON.parse(jsonProductDelete))

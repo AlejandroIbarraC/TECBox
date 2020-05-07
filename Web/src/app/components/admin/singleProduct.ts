@@ -7,5 +7,5 @@ export class SingleProduct{
     payTaxes;
     percentageDiscount;
     entryDate;
-    
+    sales;
 }
