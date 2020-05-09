@@ -7,14 +7,14 @@ namespace Server.Source
 {
     public class Routes
     {
-        public int number { get; set; }
+        public string number { get; set; }
         public string districts { get; set; }
 
         public Routes()
         {
         }
 
-        public Routes(int routeNumber, string productDistricts)
+        public Routes(string routeNumber, string productDistricts)
         {
             number = routeNumber;
             districts = productDistricts;

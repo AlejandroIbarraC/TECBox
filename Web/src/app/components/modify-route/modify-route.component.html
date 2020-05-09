@@ -8,22 +8,17 @@
             <p>Please write the data you want to modify in the left form and the new data in the right form. Be sure to not leave blank entries</p>
             <div class="row">
               <div class="column">
-                <div class="subheader">Data to modify</div>
+                <div class="subheader">Route</div>
                 <form action="/action_page.php">
-                  <label for="number">Number:</label>
+                  <label>Number:</label>
                   <input type="text" class="entry" id="mr1" name="Number"><br><br>
-                  <label for="districs">Districts:</label>
-                  <input type="text" class="entry" id="mr2" name="Districs"><br><br>
-                  <input type="submit" class="button" value="Submit">
-                </form> 
+                </form>
               </div>
               <div class="column">
                 <div class="subheader">New data</div>
-                <label for="number">Number:</label>
-                <input type="text" class="entry" id="mr3" name="Number"><br><br>
-                <label for="districs">Districts:</label>
-                <input type="text" class="entry" id="mr4" name="Districs"><br><br>
-                <input type="submit" class="button" value="Submit">
+                <label>Districts:</label>
+                <input type="text" class="entry" id="mr2" name="Districs"><br><br>
+                <input type="submit" class="button" value="Submit" (click)="modifyRoute()">
               </div>
             </div>
           </div>

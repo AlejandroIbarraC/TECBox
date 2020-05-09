@@ -8,10 +8,10 @@ namespace Server.Source
     public class Users
     {
         public string name { get; set; }
-        public int idNumber { get; set; }
+        public string idNumber { get; set; }
         public string eMail { get; set; }
         public string password { get; set; }
-        public int phone { get; set; }
+        public string phone { get; set; }
         public string address { get; set; }
         public string province { get; set; }
         public string city { get; set; }
@@ -20,7 +20,7 @@ namespace Server.Source
         {
         }
 
-        public Users(string clientName, int clientIDNumber, string clientEMail, string clientPassword, int clientPhone, string clientAddress, string clientProvince, string clientCity)
+        public Users(string clientName, string clientIDNumber, string clientEMail, string clientPassword, string clientPhone, string clientAddress, string clientProvince, string clientCity)
         {
             name = clientName;
             idNumber = clientIDNumber;

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Server.Source;
@@ -14,6 +15,7 @@ namespace Server.Controllers
     [ApiController]
     public class PackagesController : ControllerBase
     {
+        [EnableCors("AnotherPolicy")]
         [HttpGet]
         public List<Packages> getPackages()
         {
@@ -27,6 +29,7 @@ namespace Server.Controllers
         }
 
         [Route("tracking")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public Packages getInfoFromTrackingNumber([FromBody] Packages searchPackage)
         {
@@ -50,12 +53,13 @@ namespace Server.Controllers
             }
             else
             {
-                package = new Packages(-1, "null", "null", "null", "null", -1, "null");
+                package = new Packages("null", "null", "null", "null", "null", "null", "null");
                 return package;
             }
         }
 
         [Route("delivered")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public List<Packages> getDeliveredPackages([FromBody] Packages dates)
         {
@@ -190,6 +194,7 @@ namespace Server.Controllers
         }
 
         [Route("insert")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void insertPost([FromBody] Packages package)
         {
@@ -272,6 +277,7 @@ namespace Server.Controllers
         }
 
         [Route("modify")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void modifyPost([FromBody] Packages package)
         {
@@ -306,6 +312,7 @@ namespace Server.Controllers
         }
 
         [Route("delete")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void deletePost([FromBody] Packages package)
         {

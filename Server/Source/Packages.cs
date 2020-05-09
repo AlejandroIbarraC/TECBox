@@ -7,19 +7,19 @@ namespace Server.Source
 {
     public class Packages
     {
-        public int trackingID { get; set; }
+        public string trackingID { get; set; }
         public string client { get; set; }
         public string description { get; set; }
         public string deliveryDate { get; set; }
         public string status { get; set; }
-        public int route { get; set; }
+        public string route { get; set; }
         public string deliveryMan { get; set; }
 
         public Packages()
         {
         }
 
-        public Packages(int packageTrackingID, string packageClient, string packageDescription, string packageDeliveryDate, string packagesStatus, int packageRoute, string packageDeliveryMan)
+        public Packages(string packageTrackingID, string packageClient, string packageDescription, string packageDeliveryDate, string packagesStatus, string packageRoute, string packageDeliveryMan)
         {
             trackingID = packageTrackingID;
             client = packageClient;

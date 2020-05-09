@@ -9,19 +9,19 @@ namespace Server.Source
     {
         public string name { get; set; }
         public string description { get; set; }
-        public int barcode { get; set; }
+        public string barcode { get; set; }
         public string seller { get; set; }
-        public int price { get; set; }
-        public bool paysTax { get; set; }
-        public int discount { get; set; }
+        public string price { get; set; }
+        public string paysTax { get; set; }
+        public string discount { get; set; }
         public string entryDate { get; set; }
-        public int sales { get; set; }
+        public string sales { get; set; }
 
         public Products()
         {
         }
 
-        public Products(string productName, string productDescription, int productBarcode, string productSeller, int productPrice, bool productTax, int productDiscount, string productEntryDate, int productSales)
+        public Products(string productName, string productDescription, string productBarcode, string productSeller, string productPrice, string productTax, string productDiscount, string productEntryDate, string productSales)
         {
             name = productName;
             description = productDescription;

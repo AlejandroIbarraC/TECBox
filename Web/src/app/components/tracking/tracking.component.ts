@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import axios from 'axios';
 
 @Component({
   selector: 'app-tracking',
@@ -12,8 +13,32 @@ export class TrackingComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  track(trackingNumber: number) {
+  track() {
 
+    const trackNumber = (document.getElementById('tnumber') as HTMLInputElement).value;
+
+    (document.getElementById('tnumber') as HTMLInputElement).value = '';
+
+    axios.post('https://localhost:5001/warehouse/packages/tracking', {
+      trackingID: trackNumber,
+      client: 'null',
+      description: 'null',
+      deliveryDate: 'null',
+      status: 'null',
+      route: 'null',
+      deliveryMan: 'null'
+    }, {
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8'
+      }
+    })
+      .then(response => {
+        console.log(response);
+        document.getElementById('pstatus').textContent = response.data.status;
+      })
+      .catch(error => {
+        console.log(error.response);
+      });
   }
 
 }

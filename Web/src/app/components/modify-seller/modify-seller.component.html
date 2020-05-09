@@ -8,22 +8,17 @@
             <p>Please write the data you want to modify in the left form and the new data in the right form. Be sure to not leave blank entries</p>
             <div class="row">
               <div class="column">
-                <div class="subheader">Data to modify</div>
+                <div class="subheader">Seller</div>
                 <form action="/action_page.php">
-                  <label for="fname">Name:</label>
-                  <input type="text" class="entry" id="ms1" name="Name"><br><br>
-                  <label for="ID">ID</label>
-                  <input type="text" class="entry" id="ms2" name="ID"><br><br>
-                  <input type="submit" class="button" value="Submit">
-                </form> 
+                  <label>ID</label>
+                  <input type="text" class="entry" id="ms1" name="ID"><br><br>
+                </form>
               </div>
               <div class="column">
                 <div class="subheader">New data</div>
-                <label for="fname">Name:</label>
-                <input type="text" class="entry" id="ms3" name="Name"><br><br>
-                <label for="ID">ID</label>
-                <input type="text" class="entry" id="ms4" name="ID"><br><br>
-                <input type="submit" class="button" value="Submit">
+                <label>Name:</label>
+                <input type="text" class="entry" id="ms2" name="Name"><br><br>
+                <input type="submit" class="button" value="Submit" (click)="modifySeller()">
               </div>
             </div>
           </div>

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Text.Json;
+using Microsoft.AspNetCore.Cors;
 
 namespace Server.Controllers
 {
@@ -14,6 +15,7 @@ namespace Server.Controllers
     [ApiController]
     public class WorkersController : ControllerBase
     {
+        [EnableCors("AnotherPolicy")]
         [HttpGet]
         public List<Workers> getWorkers()
         {
@@ -27,6 +29,7 @@ namespace Server.Controllers
         }
 
         [Route("insert")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void insertPost([FromBody] Workers worker)
         {
@@ -89,6 +92,7 @@ namespace Server.Controllers
         }
 
         [Route("modify")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void modifyPost([FromBody] Workers worker)
         {
@@ -123,6 +127,7 @@ namespace Server.Controllers
         }
 
         [Route("delete")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void deletePost([FromBody] Workers worker)
         {

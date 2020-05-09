@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Server.Source;
@@ -14,6 +15,7 @@ namespace Server.Controllers
     [ApiController]
     public class SellersController : ControllerBase
     {
+        [EnableCors("AnotherPolicy")]
         [HttpGet]
         public List<Sellers> getSellers()
         {
@@ -27,6 +29,7 @@ namespace Server.Controllers
         }
 
         [Route("insert")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void insertPost([FromBody] Sellers seller)
         {
@@ -63,6 +66,7 @@ namespace Server.Controllers
         }
 
         [Route("modify")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void modifyPost([FromBody] Sellers seller)
         {
@@ -97,6 +101,7 @@ namespace Server.Controllers
         }
 
         [Route("delete")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void deletePost([FromBody] Sellers seller)
         {

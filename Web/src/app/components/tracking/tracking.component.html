@@ -7,12 +7,12 @@
                     <div class="content">
                         <div class="formGroup">
                             Tracking Number:
-                            <input type="text" class="formControl" #trackingNumber class="entry">
+                            <input type="text" #trackingNumber class="entry" required id = 'tnumber'>
                         </div>
                     </div>
                 </div>
                 <div class="centerer">
-                    <button class="button" (click)="track(trackingNumber)">
+                    <button class="button" (click)="track()">
                         Check status
                         <img src="assets/tracking/packageIcon.svg">
                     </button>
@@ -21,8 +21,8 @@
                     <div class="content">
                         <img src="assets/tracking/infoIcon.svg" id="infoIcon">
                         Status:
-                        <div class="label-status">
-                            $STATUS
+                        <div class="label-status" id = 'pstatus'>
+
                         </div>
                     </div>
                 </div>

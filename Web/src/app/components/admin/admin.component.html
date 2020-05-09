@@ -46,7 +46,7 @@
               <div class = "TableView">
                   <table class="table">
                     <thead>
-                      <tr>           
+                      <tr>
                         <th *ngFor="let head of employees[0] | keys">{{head}}</th>
                       </tr>
                     </thead>
@@ -103,12 +103,12 @@
               <div class = "TableView">
                 <table class="table">
                   <thead>
-                    <tr>           
-                      <th *ngFor="let head of items[0] | keys">{{head}}</th>
+                    <tr>
+                      <th *ngFor="let head of branches[0] | keys">{{head}}</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let item of items">           
+                    <tr *ngFor="let item of branches">
                       <td *ngFor="let list of item | keys">{{item[list]}}</td>
                     </tr>
                   </tbody>
@@ -121,25 +121,25 @@
           <div class="content">
             <div class="subtitle">Workers</div>
             <div class="formData">
-              <input type="text" class="entry" placeholder="ID number" #userName required id = 'uno'>
+              <input type="text" class="entry" placeholder="ID number" #userName required id = 'w1'>
               <p class = "textInput">ID number</p>
               <br>
-              <input type="text" class="entry" placeholder="Full Name" #userAddress required id = 'dos'>
+              <input type="text" class="entry" placeholder="Full Name" #userAddress required id = 'w2'>
               <p class = "textInput">Full name</p>
               <br>
-              <input type="text" class="entry" placeholder="Birthday" #userAddress required id ='tres'>
+              <input type="text" class="entry" placeholder="Birthday" #userAddress required id ='w3'>
               <p class = "textInput">Birthday</p>
               <br>
-              <input type="text" class="entry" placeholder="Entry Day" #userPhone required id = 'cuatro'>
+              <input type="text" class="entry" placeholder="Entry Day" #userPhone required id = 'w4'>
               <p class = "textInput">Entry Day</p>
               <br>
-              <input type="text" class="entry" placeholder="Branch" #userName required id = 'cinco'>
+              <input type="text" class="entry" placeholder="Branch" #userName required id = 'w5'>
               <p class = "textInput">Branch</p>
               <br>
-              <input type="text" class="entry" placeholder="Hourly Wage" #userName required id ='seis'>
+              <input type="text" class="entry" placeholder="Hourly Wage" #userName required id ='w6'>
               <p class = "textInput">Hourly Wage</p>
               <br>
-              <input type="text" class="entry" placeholder="Monthly Wage" #userName required id = 'siete'>
+              <input type="text" class="entry" placeholder="Monthly Wage" #userName required id = 'w7'>
               <p class = "textInput">Monthly Wage</p>
             </div>
             <br><br>
@@ -160,12 +160,12 @@
               <div class = "TableView">
                 <table class="table">
                   <thead>
-                    <tr>           
+                    <tr>
                       <th *ngFor="let head of workers[0] | keys">{{head}}</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let item of workers">           
+                    <tr *ngFor="let item of workers">
                       <td *ngFor="let list of item | keys">{{item[list]}}</td>
                     </tr>
                   </tbody>
@@ -178,10 +178,10 @@
           <div class="content">
             <div class="subtitle">Sellers</div>
             <div class="formData">
-              <input type="text" class="entry" placeholder="Name" #userName required id = 'ocho'>
+              <input type="text" class="entry" placeholder="Name" #userName required id = 's1'>
               <p class = "textInput">Name</p>
               <br>
-              <input type="text" class="entry" placeholder="ID Number" #userName required id = 'nueve'>
+              <input type="text" class="entry" placeholder="ID Number" #userName required id = 's2'>
               <p class = "textInput">ID Number</p>
             </div>
             <br><br>
@@ -202,12 +202,12 @@
               <div class = "TableView">
                 <table class="table">
                   <thead>
-                    <tr>           
+                    <tr>
                       <th *ngFor="let head of sellers[0] | keys">{{head}}</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr *ngFor="let item of sellers">           
+                    <tr *ngFor="let item of sellers">
                       <td *ngFor="let list of item | keys">{{item[list]}}</td>
                     </tr>
                   </tbody>
@@ -220,31 +220,31 @@
           <div class="content">
             <div class="subtitle">Products</div>
             <div class="formData">
-              <input type="text" class="entry" placeholder="Name" #userName required id = 'diez'>
+              <input type="text" class="entry" placeholder="Name" #userName required id = 'p1'>
               <p class = "textInput">Name</p>
               <br>
-              <input type="text" class="entry" placeholder="Description" #userAddress required id = 'once'>
+              <input type="text" class="entry" placeholder="Description" #userAddress required id = 'p2'>
               <p class = "textInput">Description</p>
               <br>
-              <input type="text" class="entry" placeholder="Barcode" #userAddress required id = 'doce'>
+              <input type="text" class="entry" placeholder="Barcode" #userAddress required id = 'p3'>
               <p class = "textInput">Barcode</p>
               <br>
-              <input type="text" class="entry" placeholder="Seller" #userPhone required id = 'trece'>
+              <input type="text" class="entry" placeholder="Seller" #userPhone required id = 'p4'>
               <p class = "textInput">Seller</p>
               <br>
-              <input type="text" class="entry" placeholder="Price" #userPrice required id = 'catorce'>
+              <input type="text" class="entry" placeholder="Price" #userPrice required id = 'p5'>
               <p class = "textInput">Price</p>
               <br>
-              <input type="text" class="entry" placeholder="Pay Taxes?" #userTaxes required id = 'quience'>
+              <input type="text" class="entry" placeholder="Pay Taxes?" #userTaxes required id = 'p6'>
               <p class = "textInput">Pay Taxes?</p>
               <br>
-              <input type="text" class="entry" placeholder="Percentage Discount" #userPercentage required id = 'dieciseis'>
+              <input type="text" class="entry" placeholder="Percentage Discount" #userPercentage required id = 'p7'>
               <p class = "textInput">Percentage Discount</p>
               <br>
-              <input type="text" class="entry" placeholder="Entry Date" #userDate required id = 'diecisiete'>
+              <input type="text" class="entry" placeholder="Entry Date" #userDate required id = 'p8'>
               <p class = "textInput">Entry Date</p>
               <br>
-              <input type="text" class="entry" placeholder="Sales" #userDate required id = 'dieciocho'>
+              <input type="text" class="entry" placeholder="Sales" #userDate required id = 'p9'>
               <p class = "textInput">Sales</p>
             </div>
             <br><br>
@@ -265,12 +265,12 @@
               <div class = "TableView">
                   <table class="table">
                     <thead>
-                      <tr>           
+                      <tr>
                         <th *ngFor="let head of products[0] | keys">{{head}}</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let item of products">           
+                      <tr *ngFor="let item of products">
                         <td *ngFor="let list of item | keys">{{item[list]}}</td>
                       </tr>
                     </tbody>
@@ -307,12 +307,12 @@
               <div class = "TableView">
                   <table class="table">
                     <thead>
-                      <tr>           
-                        <th *ngFor="let head of sellers[0] | keys">{{head}}</th>
+                      <tr>
+                        <th *ngFor="let head of routes[0] | keys">{{head}}</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr *ngFor="let item of sellers">           
+                      <tr *ngFor="let item of routes">
                         <td *ngFor="let list of item | keys">{{item[list]}}</td>
                       </tr>
                     </tbody>
@@ -324,441 +324,30 @@
         <div class="card-secondary">
           <div class="content">
             <div class="subtitle">Users</div>
-
+            <div class="table">
+              <div class = "TableView">
+                <table class="table">
+                  <thead>
+                  <tr>
+                    <th *ngFor="let head of users[0] | keys">{{head}}</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let item of users">
+                    <td *ngFor="let list of item | keys">{{item[list]}}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</body> 
+</body>
 
 <script src = "admin.component.ts"></script>
 
-
-
-
-<div class="main">
-    <div class="title">
-        <p class="title1">
-            Administration Console:
-        </p>
-    </div>
-    <div class="grayBox">
-        <div class="form">
-            <div class = "referenceTittle">
-                <p class="title2">
-                    Employees
-                </p>
-
-            </div>
-            <div class="formData">
-                <h5 class="boxTitle">Write the worker information below, please</h5>
-                <input type="text" class="boxInput" placeholder="Name" #userName required id = 'e1'>
-                <p class = "textInput">Name</p>
-                <br>
-                <input type="text" class="boxInput" placeholder="Department" #userDeparment required id = 'e2'>
-                <p class = "textInput">Deparment</p>
-                <br>
-                <input type="text" class="boxInput" placeholder="ID" #userDeparment required id = 'e3'>
-                <p class = "textInput">ID</p>
-                <br>
-                <input type="text" class="boxInput" placeholder="Email" #userDeparment required id = 'e4'>
-                <p class = "textInput">Email</p>
-                <br>
-                <input type="text" class="boxInput" placeholder="Password" #userDeparment required id = 'e5'>
-                <p class = "textInput">Password</p>
-            </div>
-
-
-            <div class="addButton">
-              <div class="addData" (click)="addEmployee()">
-                Add
-            </div>
-        </div>
-        <div class="boton">
-          <div class="deleteData" (click)="deleteEmployee()">
-            Delete
-        </div>
-            <button routerLink="/employees">modifyEmployees</button>
-            
-
-
-
-
-
-        </div>
-      </div>
-
-        
-
-
-        <div class="table">
-            <div class = "TableView">
-                <table class="table">
-                    <thead>
-                            <tr>           
-                              <th *ngFor="let head of employees[0] | keys">{{head}}</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr *ngFor="let item of employees">           
-                              <td *ngFor="let list of item | keys">{{item[list]}}</td>
-                            </tr>
-                          </tbody>
-                  </table>
-            </div>
-        </div>
-
-    </div>
-    <br>
-    <br>
-    <div class="grayBox">
-        <div class="form">
-            <div class = "referenceTittle">
-                <p class="title2">
-                    Branches
-                </p>
-            </div>
-            <div class="formData">
-                <h5 class="boxTitle">Write the information of the branches below, please</h5>
-                <input type="text" class="boxInput" placeholder="Name" #userName required id = 'b1'>
-                <br>
-                <p class = "textInput">Name</p>
-                <br>
-                <input type="text" class="boxInput" placeholder="Address" #userAddress required id = 'b2'>
-                <br>
-                <p class = "textInput">Address</p>
-                <br>
-                <input type="text" class="boxInput" placeholder="Province" #userAddress required id = 'b3'>
-                <br>
-                <p class = "textInput">Province</p>
-                <br>
-                <input type="text" class="boxInput" placeholder="Phone" #userPhone required id = 'b4'>
-                <br>
-                <p class = "textInput">Phone</p>
-                <br>
-                <input type="text" class="boxInput" placeholder="City" #userPlaceHolder required id = 'b5'>
-                <br>
-                <p class = "textInput">City</p>
-                <br>
-                <input type="text" class="boxInput" placeholder="Boss" #userBoss required id = 'b6'>
-                <br>
-                <p class = "textInput">Boss</p>
-            </div>
-
-
-            <div class="addButton">
-              <div class="button" (click)="addBranch()">
-                AddB
-                <img src="assets/user-access/rightArrowIcon.svg">
-            </div>
-              
-            </div>
-         </div>
-        <div class="boton">
-          <div class="button" (click)="deleteBranches()">
-            delete
-            <img src="assets/user-access/rightArrowIcon.svg">
-        </div>
-          <button routerLink="/">modifyBranches</button>
-        </div>
-        <div class="table">
-            <div class = "TableView">
-                <table class="table">
-                  <thead>
-                    <tr>           
-                      <th *ngFor="let head of items[0] | keys">{{head}}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let item of items">           
-                      <td *ngFor="let list of item | keys">{{item[list]}}</td>
-                    </tr>
-                  </tbody>
-                  </table>
-            </div>
-        </div>
-        <br>
-    <br>
-</div>
-    <div class="grayBox">
-        <div class="form">
-            <div class = "referenceTittle">
-                <p class="title2">
-                    Workers
-                </p>
-            </div>
-            <div class="formData">
-                <h5 class="boxTitle">Write the information of the worker below, please</h5>
-                <input type="text" class="boxInput" placeholder="ID number" #userName required id = 'uno'>
-                <br>
-                <p class = "textInput">ID number</p>
-                <br>
-                <input type="text" class="boxInput" placeholder="Full Name" #userAddress required id = 'dos'>
-                <br>
-                <p class = "textInput">Full name</p>
-                <br>
-                <input type="text" class="boxInput" placeholder="Birthday" #userAddress required id ='tres'>
-                <br>
-                <p class = "textInput">Birthday</p>
-                <br>
-                <input type="text" class="boxInput" placeholder="Entry Day" #userPhone required id = 'cuatro'>
-                <br>
-                <p class = "textInput">Entry Day</p>
-                <br>
-                <input type="text" class="boxInput" placeholder="Branch" #userName required id = 'cinco'>
-                <br>
-                <p class = "textInput">Branch</p>
-                <br>
-                <input type="text" class="boxInput" placeholder="Hourly Wage" #userName required id ='seis'>
-                <br>
-                <p class = "textInput">Hourly Wage</p>
-                <br>
-                <input type="text" class="boxInput" placeholder="Monthly Wage" #userName required id = 'siete'>
-                <br>
-                <p class = "textInput">Monthly Wage</p>
-            </div>
-
-
-            <div class="addButton">
-              <div class="button" (click)="addWorker()">
-                AddC
-                <img src="assets/user-access/rightArrowIcon.svg">
-            </div>
-            </div>
-        </div>
-        <div class="boton">
-          <div class="button" (click)="deleteWorker()">
-            Delete
-            <img src="assets/user-access/rightArrowIcon.svg">
-        </div>
-        <button routerLink="/employees">modifyWorkers</button>
-        </div>
-        <div class="table">
-            <div class = "TableView">
-                <table class="table">
-                  <thead>
-                    <tr>           
-                      <th *ngFor="let head of workers[0] | keys">{{head}}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let item of workers">           
-                      <td *ngFor="let list of item | keys">{{item[list]}}</td>
-                    </tr>
-                  </tbody>
-                  </table>
-            </div>
-        </div>
-    </div>
-        <div class="grayBox">
-            <div class="form">
-                <div class = "referenceTittle">
-                    <p class="title2">
-                        Seller
-                    </p>
-
-                </div>
-                <div class="formData">
-                    <h5 class="boxTitle">Write the Seller information below, please</h5>
-                    <input type="text" class="boxInput" placeholder="Name" #userName required id = 'ocho'>
-                    <br>
-                    <p class = "textInput">Name</p>
-                    <br>
-                    <input type="text" class="boxInput" placeholder="ID Number" #userName required id = 'nueve'>
-                    <p class = "textInput">ID Number</p>
-                </div>
-
-
-                <div class="addButton">
-                  <div class="button" (click)="addSeller()">
-                    AddD
-                    <img src="assets/user-access/rightArrowIcon.svg">
-                  </div>
-                </div>
-            </div>
-            <div class="boton">
-              <div class="button" (click)="deleteSeller()">
-                Delete
-                <img src="assets/user-access/rightArrowIcon.svg">
-              </div>
-
-              <button routerLink="/">modifySeller</button>
-
-            </div>
-            <div class="table">
-                <div class = "TableView">
-                    <table class="table">
-                      <thead>
-                        <tr>           
-                          <th *ngFor="let head of sellers[0] | keys">{{head}}</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr *ngFor="let item of sellers">           
-                          <td *ngFor="let list of item | keys">{{item[list]}}</td>
-                        </tr>
-                      </tbody>
-                      </table>
-                </div>
-            </div>
-        </div>
-        <div class="grayBox">
-            <div class="form">
-                <div class = "referenceTittle">
-                    <p class="title2">
-                        Products
-                    </p>
-                </div>
-                <div class="formData">
-                    <h5 class="boxTitle">Write the information of the Products below, please</h5>
-                    <input type="text" class="boxInput" placeholder="Name" #userName required id = 'diez'>
-                    <p class = "textInput">Name</p>
-                    <br>
-                    <input type="text" class="boxInput" placeholder="Description" #userAddress required id = 'once'>
-                    <br>
-                    <p class = "textInput">Description</p>
-                    <br>
-                    <input type="text" class="boxInput" placeholder="Barcode" #userAddress required id = 'doce'>
-                    <br>
-                    <p class = "textInput">Barcode</p>
-                    <br>
-                    <input type="text" class="boxInput" placeholder="Seller" #userPhone required id = 'trece'>
-                    <br>
-                    <p class = "textInput">Seller</p>
-                    <br>
-                    <input type="text" class="boxInput" placeholder="Prince" #userPrice required id = 'catorce'>
-                    <p class = "textInput">Prince</p>
-                    <input type="text" class="boxInput" placeholder="Pay Taxes?" #userTaxes required id = 'quience'>
-                    <p class = "textInput">Pay Taxes?</p>
-                    <input type="text" class="boxInput" placeholder="Percentage Discount" #userPercentage required id = 'dieciseis'>
-                    <p class = "textInput">Percentage Discount</p>
-                    <input type="text" class="boxInput" placeholder="Entry Date" #userDate required id = 'diecisiete'>
-                    <p class = "textInput">Entry Date</p>
-                </div>
-
-
-                <div class="addButton">
-                  <div class="button" (click)="addProduct()">
-                    AddE
-                    <img src="assets/user-access/rightArrowIcon.svg">
-                  </div>
-                </div>
-            </div>
-            <div class="boton">
-              <div class="button" (click)="deleteProduct()">
-                Delete
-                <img src="assets/user-access/rightArrowIcon.svg">
-              </div>
-                <button routerLink="/">modifyProduct</button>
-            </div>
-            <div class="table">
-                <div class = "TableView">
-                    <table class="table">
-                        <thead>
-                            <tr>           
-                              <th *ngFor="let head of products[0] | keys">{{head}}</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr *ngFor="let item of products">           
-                              <td *ngFor="let list of item | keys">{{item[list]}}</td>
-                            </tr>
-                          </tbody>
-                      </table>
-                </div>
-            </div>
-        </div>
-
-        <div class="grayBox">
-          <div class="form">
-              <div class = "referenceTittle">
-                  <p class="title2">
-                      Routes
-                  </p>
-      
-              </div>
-              <div class="formData">
-                  <h5 class="boxTitle">Write the Route information below, please</h5>
-                  <input type="text" class="boxInput" placeholder="Number" #userName required id = 'r1'>
-                  <br>
-                  <p class = "textInput">Number</p>
-                  <br>
-                  <input type="text" class="boxInput" placeholder="Districs" #userName required id = 'r2'>
-                  <p class = "textInput">Districs</p>
-              </div>
-  
-  
-              <div class="addButton">
-                <div class="button" (click)="addRoute()">
-                  AddF
-                  <img src="assets/user-access/rightArrowIcon.svg">
-                </div>
-              </div>
-          </div>
-          <div class="boton">
-            <div class="button" (click)="deleteRoute()">
-              Delete
-              <img src="assets/user-access/rightArrowIcon.svg">
-            </div>
-              <button routerLink="/">modifyRoute</button>
-          </div>
-          <div class="table">
-              <div class = "TableView">
-                  <table class="table">
-                    <thead>
-                      <tr>           
-                        <th *ngFor="let head of sellers[0] | keys">{{head}}</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr *ngFor="let item of sellers">           
-                        <td *ngFor="let list of item | keys">{{item[list]}}</td>
-                      </tr>
-                    </tbody>
-                    </table>
-              </div>
-          </div>
-      </div>
-
-
-
-      <div class="grayBox">
-        <div class="form">
-            <div class = "referenceTittle">
-                <p class="title2">
-                    Users
-                </p>
-    
-            </div>
-        </div>
-        <div class="boton">
-            <input type="button" class="deleteData" onclick="deleteSeller()">
-            <input type="button" class="modifieData" onclick="changeSeller()">
-        </div>
-        <div class="table">
-            <div class = "TableView">
-                <table class="table">
-                  <thead>
-                    <tr>           
-                      <th *ngFor="let head of sellers[0] | keys">{{head}}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let item of sellers">           
-                      <td *ngFor="let list of item | keys">{{item[list]}}</td>
-                    </tr>
-                  </tbody>
-                  </table>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-
-
-        
-        
 
 

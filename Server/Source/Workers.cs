@@ -7,19 +7,19 @@ namespace Server.Source
 {
     public class Workers
     {
-        public int idNumber { get; set; }
+        public string idNumber { get; set; }
         public string fullName { get; set; }
         public string birthday { get; set; }
         public string entryDate { get; set; }
         public string branch { get; set; }
-        public int hourlyWage { get; set; }
-        public int monthlyWage { get; set; }
+        public string hourlyWage { get; set; }
+        public string monthlyWage { get; set; }
 
         public Workers()
         {
         }
 
-        public Workers(int workerID, string workerName, string workerBirthday, string workerEntryDate, string workerBranch, int workerHourlyWage, int workerMonthlyWage)
+        public Workers(string workerID, string workerName, string workerBirthday, string workerEntryDate, string workerBranch, string workerHourlyWage, string workerMonthlyWage)
         {
             idNumber = workerID;
             fullName = workerName;

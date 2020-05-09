@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Server.Source;
@@ -14,6 +15,7 @@ namespace Server.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
+        [EnableCors("AnotherPolicy")]
         [HttpGet]
         public List<Users> getUsers()
         {
@@ -28,6 +30,7 @@ namespace Server.Controllers
 
 
         [Route("information")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public Users getUserInformation([FromBody] Users searchUser)
         {
@@ -51,12 +54,13 @@ namespace Server.Controllers
             }
             else
             {
-                user = new Users("null", -1, "null", "null", -1, "null", "null", "null");
+                user = new Users("null", "null", "null", "null", "null", "null", "null", "null");
                 return user;
             }
         }
 
         [Route("insert")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void insertPost([FromBody] Users user)
         {
@@ -93,6 +97,7 @@ namespace Server.Controllers
         }
 
         [Route("modify")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void modifyPost([FromBody] Users user)
         {
@@ -127,6 +132,7 @@ namespace Server.Controllers
         }
 
         [Route("delete")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void deletePost([FromBody] Users user)
         {

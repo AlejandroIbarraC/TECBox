@@ -8,50 +8,31 @@
             <p>Please write the data you want to modify in the left form and the new data in the right form. Be sure to not leave blank entries</p>
             <div class="row">
               <div class="column">
-                <div class="subheader">Data to modify</div>
+                <div class="subheader">Product</div>
                 <form action="/action_page.php">
-                  <label for="fname">Name:</label>
-                  <input type="text" class="entry" id="mp1" name="fname" ><br><br>
-                  <label for="Description">Description:</label>
-                  <input type="text" class="entry" id="mp2" name="Description"><br><br>
-                  <label for="Barcode">Barcode:</label>
-                  <input type="text" class="entry" id="mp3" name="Barcode" ><br><br>
-                  <label for="Seller">Seller:</label>
-                  <input type="text" class="entry" id="mp4" name="Seller"><br><br>
-                  <label for="Price">Price:</label>
-                  <input type="text" class="entry" id="mp5" name="Price"><br><br>
-                  <label for="PayTaxes">PayTaxes:</label>
-                  <input type="text" class="entry" id="mp6" name="PayTaxes"><br><br>
-                  <label for="PercentageDisccount">PercentageDisccount:</label>
-                  <input type="text" class="entry" id="mp7" name="PercentageDisccount"><br><br>
-                  <label for="EntryDate">EntryDate:</label>
-                  <input type="text" class="entry" id="mp8" name="EntryDate"><br><br>
-                  <label for="EntryDate">Sales:</label>
-                  <input type="text" class="entry" id="mp8.1" name="Sales"><br><br>
-                  <input type="submit" class="button" value="Submit">
-                </form> 
+                  <label>Barcode:</label>
+                  <input type="text" class="entry" id="mp1" name="Barcode" ><br><br>
+                </form>
               </div>
               <div class="column">
                 <div class="subheader">New data</div>
-                <label for="fname">Name:</label>
-                <input type="text" class="entry" id="mp9" name="fname" ><br><br>
-                <label for="Description">Description:</label>
-                <input type="text" class="entry" id="mp10" name="Description"><br><br>
-                <label for="Barcode">Barcode:</label>
-                <input type="text" class="entry" id="mp11" name="Barcode" ><br><br>
-                <label for="Seller">Seller:</label>
-                <input type="text" class="entry" id="mp12" name="Seller"><br><br>
-                <label for="Price">Price:</label>
-                <input type="text" class="entry" id="mp13" name="Price"><br><br>
-                <label for="PayTaxes">PayTaxes:</label>
-                <input type="text" class="entry" id="mp14" name="PayTaxes"><br><br>
-                <label for="PercentageDisccount">PercentageDisccount:</label>
-                <input type="text" class="entry" id="mp15" name="PercentageDisccount"><br><br>
-                <label for="EntryDate">EntryDate:</label>
-                <input type="text" class="entry" id="mp16" name="EntryDate"><br><br>
-                <label for="EntryDate">Sales:</label>
-                <input type="text" class="entry" id="mp17" name="Sales"><br><br>
-                <input type="submit" class="button" value="Submit">
+                <label>Name:</label>
+                <input type="text" class="entry" id="mp2" name="fname" ><br><br>
+                <label>Description:</label>
+                <input type="text" class="entry" id="mp3" name="Description"><br><br>
+                <label>Seller:</label>
+                <input type="text" class="entry" id="mp4" name="Seller"><br><br>
+                <label>Price:</label>
+                <input type="text" class="entry" id="mp5" name="Price"><br><br>
+                <label>PayTaxes:</label>
+                <input type="text" class="entry" id="mp6" name="PayTaxes"><br><br>
+                <label>PercentageDisccount:</label>
+                <input type="text" class="entry" id="mp7" name="PercentageDisccount"><br><br>
+                <label>EntryDate:</label>
+                <input type="text" class="entry" id="mp8" name="EntryDate"><br><br>
+                <label>Sales:</label>
+                <input type="text" class="entry" id="mp9" name="Sales"><br><br>
+                <input type="submit" class="button" value="Submit" (click)="modifyProduct()">
               </div>
             </div>
           </div>

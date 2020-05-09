@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using AutoFixture.Kernel;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Server.Source;
@@ -15,6 +16,7 @@ namespace Server.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
+        [EnableCors("AnotherPolicy")]
         [HttpGet]
         public List<Products> getProducts()
         {
@@ -28,6 +30,7 @@ namespace Server.Controllers
         }
 
         [Route("popularity")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public List<Products> getProductsByPopularity([FromBody] Products dates)
         {
@@ -104,6 +107,7 @@ namespace Server.Controllers
         }
 
         [Route("insert")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void insertPost([FromBody] Products product)
         {
@@ -166,6 +170,7 @@ namespace Server.Controllers
         }
 
         [Route("modify")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void modifyPost([FromBody] Products product)
         {
@@ -200,6 +205,7 @@ namespace Server.Controllers
         }
 
         [Route("delete")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void deletePost([FromBody] Products product)
         {

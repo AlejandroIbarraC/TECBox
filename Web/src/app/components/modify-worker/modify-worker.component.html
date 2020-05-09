@@ -8,42 +8,27 @@
             <p>Please write the data you want to modify in the left form and the new data in the right form. Be sure to not leave blank entries</p>
             <div class="row">
               <div class="column">
-                <div class="subheader">Data to modify</div>
+                <div class="subheader">Worker</div>
                 <form action="/action_page.php">
-                  <label for="fname">Name:</label>
-                  <input type="text" class="entry" id="mw1" name="fname" ><br><br>
-                  <label for="ID">ID:</label>
-                  <input type="text" class="entry" id="mw2" name="ID"><br><br>
-                  <label for="Birthday">Birthday:</label>
-                  <input type="text" class="entry" id="mw3" name="Birthday" ><br><br>
-                  <label for="EntryDate">EntryDate:</label>
-                  <input type="text" class="entry" id="mw4" name="EntryDate"><br><br>
-                  <label for="Branch">Branch:</label>
-                  <input type="text" class="entry" id="mw5" name="Branch"><br><br>
-                  <label for="HourlyWage">HourlyWage:</label>
-                  <input type="text" class="entry" id="mw6" name="HourlyWage"><br><br>
-                  <label for="MonthlyWage">MonthlyWage:</label>
-                  <input type="text" class="entry" id="mw7" name="MonthlyWage"><br><br>
-                  <input type="submit" class="button" value="Submit">
-                </form> 
+                  <label>ID:</label>
+                  <input type="text" class="entry" id="mw1" name="ID"><br><br>
+                </form>
               </div>
               <div class="column">
                 <div class="subheader">New data</div>
-                <label for="fname">Name:</label>
-                <input type="text" class="entry" id="mw8" name="fname" ><br><br>
-                <label for="ID">ID:</label>
-                <input type="text" class="entry" id="mw9" name="ID"><br><br>
-                <label for="Birthday">Birthday:</label>
-                <input type="text" class="entry" id="mw10" name="Birthday" ><br><br>
-                <label for="EntryDate">EntryDate:</label>
-                <input type="text" class="entry" id="mw11" name="EntryDate"><br><br>
-                <label for="Branch">Branch:</label>
-                <input type="text" class="entry" id="mw12" name="Branch"><br><br>
-                <label for="HourlyWage">HourlyWage:</label>
-                <input type="text" class="entry" id="mw13" name="HourlyWage"><br><br>
-                <label for="MonthlyWage">MonthlyWage:</label>
-                <input type="text" class="entry" id="mw14" name="MonthlyWage"><br><br>
-                <input type="submit" class="button" value="Submit">
+                <label>Name:</label>
+                <input type="text" class="entry" id="mw2" name="fname" ><br><br>
+                <label>Birthday:</label>
+                <input type="text" class="entry" id="mw3" name="Birthday" ><br><br>
+                <label>EntryDate:</label>
+                <input type="text" class="entry" id="mw4" name="EntryDate"><br><br>
+                <label>Branch:</label>
+                <input type="text" class="entry" id="mw5" name="Branch"><br><br>
+                <label>HourlyWage:</label>
+                <input type="text" class="entry" id="mw6" name="HourlyWage"><br><br>
+                <label>MonthlyWage:</label>
+                <input type="text" class="entry" id="mw7" name="MonthlyWage"><br><br>
+                <input type="submit" class="button" value="Submit" (click)="modifyWorker()">
               </div>
             </div>
           </div>

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Server.Source;
@@ -14,6 +15,7 @@ namespace Server.Controllers
     [ApiController]
     public class RoutesController : ControllerBase
     {
+        [EnableCors("AnotherPolicy")]
         [HttpGet]
         public List<Routes> getRoutes()
         {
@@ -27,6 +29,7 @@ namespace Server.Controllers
         }
 
         [Route("search")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public List<Packages> getPackagesFromRoute([FromBody] Routes packagesRoute)
         {
@@ -38,7 +41,7 @@ namespace Server.Controllers
             routesList = JsonSerializer.Deserialize<List<Routes>>(jsonString);
 
             bool validation = false;
-            Packages package = new Packages(-1, "null", "null", "null", "null", -1, "null");
+            Packages package = new Packages("null", "null", "null", "null", "null", "null", "null");
 
             for (int i = 0; i < routesList.Count; i++)
             {
@@ -103,6 +106,7 @@ namespace Server.Controllers
         }
 
         [Route("insert")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void insertPost([FromBody] Routes route)
         {
@@ -139,6 +143,7 @@ namespace Server.Controllers
         }
 
         [Route("modify")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void modifyPost([FromBody] Routes route)
         {
@@ -173,6 +178,7 @@ namespace Server.Controllers
         }
 
         [Route("delete")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void deletePost([FromBody] Routes route)
         {
