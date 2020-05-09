@@ -5,5 +5,6 @@ export class singleBranch{
     phone;
     city;
     boss;
+    id;
 
 }
