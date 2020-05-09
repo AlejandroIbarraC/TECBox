@@ -13,6 +13,7 @@ import { Injectable } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { json } from 'body-parser';
 import { singleRoute } from './singleRoute';
+import {stringify} from "querystring";
 
 @Component({
   selector: 'app-admin',
@@ -24,13 +25,8 @@ export class AdminComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private httpClient: HttpClient
-    
+
     ) { }
-
-
-
-
-
 
   //Archivos usados para proyectar en las tablas
   items = [{"trackingID":123321,"client":"Ale","description":"Pandora\u0027s Box","deliveryDate":"4/5/2020","status":"On the way"},{"trackingID":456654,"client":"Kevin","description":"Chest","deliveryDate":"3/12/2020","status":"Customs"},{"trackingID":963366,"client":"Kevin","description":"Chest","deliveryDate":"3/12/2020","status":"Customs"},{"trackingID":489987,"client":"Jose","description":"Box Concept","deliveryDate":"8/8/2030","status":"Customs"}]
@@ -47,7 +43,7 @@ export class AdminComponent implements OnInit {
   async getDataFromServer(){
     let url = 'meta el url aqui'// Usar el url como una variable para mantener el orden
     let response = await fetch(url); // Await espera la respuesta y fetch es una vara propia de JS
-    if (response.ok) { 
+    if (response.ok) {
       let json = await response.json();// Parsea lo que sea que me mande como un Json sin importar que sea y lo guarda aqui
     } else {
       alert("HTTP-Error: " + response.status);//Este Else es en caso de que pegue algún error
@@ -199,29 +195,18 @@ export class AdminComponent implements OnInit {
     var jsonBranch = JSON.parse(jsonStringBranch);
     console.log(jsonBranch);
     axios.post('el Url va aqui', JSON.parse(jsonBranch))
-    
+
   }
 
 //Este metodo agrega empleados
  addEmployee(){
 
     //Esta parte obtiene los valores de los entries
-    let name = (<HTMLInputElement>document.getElementById('e1')).value;
-    let deparment = (<HTMLInputElement>document.getElementById('e2')).value;
-    let ID = (<HTMLInputElement>document.getElementById('e3')).value;
-    let email = (<HTMLInputElement>document.getElementById('e4')).value;
-    let password = (<HTMLInputElement>document.getElementById('e5')).value;
-
-    //Creo una instancia de employee
-    let employee = new singleEmployee();
-
-    // //Le agrego valores a la instancia
-    employee.name = name;
-    employee.deparment = deparment;
-    employee.id = ID;
-    employee.email = email;
-    employee.password = password;
-
+    let empName = (<HTMLInputElement>document.getElementById('e1')).value;
+    let empDepartment = (<HTMLInputElement>document.getElementById('e2')).value;
+    let empId = (<HTMLInputElement>document.getElementById('e3')).value;
+    let empEMail = (<HTMLInputElement>document.getElementById('e4')).value;
+    let empPassword = (<HTMLInputElement>document.getElementById('e5')).value;
 
     //Vacio los entries
     (<HTMLInputElement>document.getElementById('e1')).value = '';
@@ -230,12 +215,24 @@ export class AdminComponent implements OnInit {
     (<HTMLInputElement>document.getElementById('e4')).value = '';
     (<HTMLInputElement>document.getElementById('e5')).value = '';
 
-    //Creo el Json de product
-    var dataEmployee = { "Name":name, "Deparment": deparment, "ID": ID, 'Email':email,"Password":password};
-    var jsonStringEmployee = JSON.stringify(dataEmployee);
-    var jsonEmployee = JSON.parse(jsonStringEmployee);
-    console.log(jsonEmployee);
-    axios.post('el Url va aqui', JSON.parse(jsonEmployee))
+
+    axios.post('https://localhost:5001/administrator/employees/insert', {
+      name: empName,
+      department: empDepartment,
+      eMail: empEMail,
+      password: empPassword,
+      id: empId
+      }, {
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8'
+      }
+    })
+      .then(response => {
+        console.log(response)
+      })
+      .catch(error => {
+        console.log(error.response)
+      });
  }
 
  addRoute(){

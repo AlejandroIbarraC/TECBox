@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Server.Source;
@@ -14,6 +15,7 @@ namespace Server.Controllers
     [ApiController]
     public class BranchesController : ControllerBase
     {
+        [EnableCors("AnotherPolicy")]
         [HttpGet]
         public List<Branches> getBranches()
         {
@@ -27,6 +29,7 @@ namespace Server.Controllers
         }
 
         [Route("insert")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void insertPost([FromBody] Branches branch)
         {
@@ -63,6 +66,7 @@ namespace Server.Controllers
         }
 
         [Route("modify")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void modifyPost([FromBody] Branches branch)
         {
@@ -97,6 +101,7 @@ namespace Server.Controllers
         }
 
         [Route("delete")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void deletePost([FromBody] Branches branch)
         {

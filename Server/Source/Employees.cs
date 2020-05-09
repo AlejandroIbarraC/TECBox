@@ -11,13 +11,13 @@ namespace Server.Source
         public string department { get; set; }
         public string eMail { get; set; }
         public string password { get; set; }
-        public int id { get; set; }
+        public string id { get; set; }
 
         public Employees()
         {
         }
 
-        public Employees(string employeeName, string employeeDepartment, string employeeEMail, string employeePassword, int employeeID)
+        public Employees(string employeeName, string employeeDepartment, string employeeEMail, string employeePassword, string employeeID)
         {
             name = employeeName;
             department = employeeDepartment;

@@ -2,8 +2,6 @@ export class singleEmployee{
     name;
     deparment;
     id;
-    email;
+    eMail;
     password;
-    
-
 }

@@ -10,16 +10,16 @@ namespace Server.Source
         public string name { get; set; }
         public string address { get; set; }
         public string province { get; set; }
-        public int phone { get; set; }
+        public string phone { get; set; }
         public string boss { get; set; }
         public string city { get; set; }
-        public int id { get; set; }
+        public string id { get; set; }
 
         public Branches()
         {
         }
 
-        public Branches(string branchName, string branchAddress, string branchProvince, int branchPhone, string branchBoss, string branchCity, int branchID)
+        public Branches(string branchName, string branchAddress, string branchProvince, string branchPhone, string branchBoss, string branchCity, string branchID)
         {
             name = branchName;
             address = branchAddress;

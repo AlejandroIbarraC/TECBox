@@ -8,6 +8,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Server.Source;
+using Microsoft.AspNetCore.Cors;
 
 namespace Server.Controllers
 {
@@ -15,7 +16,8 @@ namespace Server.Controllers
     [ApiController]
     public class EmployeesController : ControllerBase
     {
-   
+
+        [EnableCors("AnotherPolicy")]
         [HttpGet]
         public List<Employees> getEmployees()
         {
@@ -29,6 +31,7 @@ namespace Server.Controllers
         }
 
         [Route("check")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public Employees searchEmployee([FromBody] Employees employeeToSearch)
         {
@@ -54,12 +57,13 @@ namespace Server.Controllers
             }
             else
             {
-                employee = new Employees("null", "null", "null", "null", -1);
+                employee = new Employees("null", "null", "null", "null", "null");
                 return employee;
             }
         }
 
         [Route("insert")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void insertPost([FromBody] Employees employee)
         {
@@ -96,6 +100,7 @@ namespace Server.Controllers
         }
 
         [Route("modify")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void modifyPost([FromBody] Employees employee)
         {
@@ -130,6 +135,7 @@ namespace Server.Controllers
         }
 
         [Route("delete")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void deletePost([FromBody] Employees employee)
         {
