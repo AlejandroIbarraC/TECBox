@@ -45,4 +45,25 @@ export class LoginComponent implements OnInit {
     this.authService.SignUp(email, password)
   }
 
+
+  getsingleAdminData(){
+    const email = (document.getElementById('tres') as HTMLInputElement).value;
+    const password = (document.getElementById('cuatro') as HTMLInputElement).value;
+  }
+
+  getsingleMemberData(){
+    const email = (document.getElementById('uno') as HTMLInputElement).value;
+    const password = (document.getElementById('dos') as HTMLInputElement).value;
+  }
+
+  getsingleRegisterData(){
+    const name = (document.getElementById('cinco') as HTMLInputElement).value;
+    const id = (document.getElementById('seis') as HTMLInputElement).value;
+    const email = (document.getElementById('siete') as HTMLInputElement).value;
+    const password = (document.getElementById('ocho') as HTMLInputElement).value;
+    const phone = (document.getElementById('nueve') as HTMLInputElement).value;
+    const address = (document.getElementById('diez') as HTMLInputElement).value;
+    const province = (document.getElementById('once') as HTMLInputElement).value;
+    const city = (document.getElementById('doce') as HTMLInputElement).value;
+  }
 }
