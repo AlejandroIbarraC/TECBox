@@ -45,18 +45,35 @@ export class LoginComponent implements OnInit {
     this.authService.SignUp(email, password)
   }
 
-
+//Methods created for get the data in the entries {Jesus Sandoval 10/05/2020}
   getsingleAdminData(){
+
+    //Getting the information and stored it in a const
     const email = (document.getElementById('tres') as HTMLInputElement).value;
     const password = (document.getElementById('cuatro') as HTMLInputElement).value;
+
+    //This part will empty all the entries after the method is called
+    (document.getElementById('tres') as HTMLInputElement).value = '';
+    (document.getElementById('cuatro') as HTMLInputElement).value = '';
+
   }
 
   getsingleMemberData(){
+
+    //Getting the information and stored it in a const
     const email = (document.getElementById('uno') as HTMLInputElement).value;
     const password = (document.getElementById('dos') as HTMLInputElement).value;
+
+    //This part will empty all the entries after the method is called
+    (document.getElementById('uno') as HTMLInputElement).value = '';
+    (document.getElementById('dos') as HTMLInputElement).value = '';
+
+
   }
 
   getsingleRegisterData(){
+
+    //Getting the information and stored it in a const
     const name = (document.getElementById('cinco') as HTMLInputElement).value;
     const id = (document.getElementById('seis') as HTMLInputElement).value;
     const email = (document.getElementById('siete') as HTMLInputElement).value;
@@ -65,5 +82,16 @@ export class LoginComponent implements OnInit {
     const address = (document.getElementById('diez') as HTMLInputElement).value;
     const province = (document.getElementById('once') as HTMLInputElement).value;
     const city = (document.getElementById('doce') as HTMLInputElement).value;
+
+    //This part will empty all the entries after the method is called
+    (document.getElementById('cinco') as HTMLInputElement).value = '';
+    (document.getElementById('seis') as HTMLInputElement).value = '';
+    (document.getElementById('siete') as HTMLInputElement).value = '';
+    (document.getElementById('ocho') as HTMLInputElement).value = '';
+    (document.getElementById('nueve') as HTMLInputElement).value = '';
+    (document.getElementById('diez') as HTMLInputElement).value = '';
+    (document.getElementById('once') as HTMLInputElement).value = '';
+    (document.getElementById('doce') as HTMLInputElement).value = '';
+
   }
 }
