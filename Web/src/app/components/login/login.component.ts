@@ -21,15 +21,18 @@ export class LoginComponent implements OnInit {
 
   logInTeam(email: string, password: string) {
     // ADD SERVER VERIFICATION HERE
-    if (this.userType == "admin") {
+    // tslint:disable-next-line:triple-equals
+    if (this.userType == 'admin') {
       this.router.navigateByUrl('/admin');
-      localStorage.setItem('userType', 'admin')
-    } else if (this.userType == "warehouse") {
+      localStorage.setItem('userType', 'admin');
+      // tslint:disable-next-line:triple-equals
+    } else if (this.userType == 'warehouse') {
       this.router.navigateByUrl('/warehouse-console');
-      localStorage.setItem('userType', 'warehouse')
-    } else if (this.userType == "delivery") {
+      localStorage.setItem('userType', 'warehouse');
+      // tslint:disable-next-line:triple-equals
+    } else if (this.userType == 'delivery') {
       this.router.navigateByUrl('/delivery-console');
-      localStorage.setItem('userType', 'delivery')
+      localStorage.setItem('userType', 'delivery');
     }
   }
 
@@ -42,38 +45,38 @@ export class LoginComponent implements OnInit {
   }
 
   register(email: string, password: string) {
-    this.authService.SignUp(email, password)
+    this.authService.SignUp(email, password);
   }
 
-//Methods created for get the data in the entries {Jesus Sandoval 10/05/2020}
-  getsingleAdminData(){
+// Methods created for get the data in the entries {Jesus Sandoval 10/05/2020}
+  getsingleAdminData() {
 
-    //Getting the information and stored it in a const
+    // Getting the information and stored it in a const
     const email = (document.getElementById('tres') as HTMLInputElement).value;
     const password = (document.getElementById('cuatro') as HTMLInputElement).value;
 
-    //This part will empty all the entries after the method is called
+    // This part will empty all the entries after the method is called
     (document.getElementById('tres') as HTMLInputElement).value = '';
     (document.getElementById('cuatro') as HTMLInputElement).value = '';
 
   }
 
-  getsingleMemberData(){
+  getsingleMemberData() {
 
-    //Getting the information and stored it in a const
+    // Getting the information and stored it in a const
     const email = (document.getElementById('uno') as HTMLInputElement).value;
     const password = (document.getElementById('dos') as HTMLInputElement).value;
 
-    //This part will empty all the entries after the method is called
+    // This part will empty all the entries after the method is called
     (document.getElementById('uno') as HTMLInputElement).value = '';
     (document.getElementById('dos') as HTMLInputElement).value = '';
 
 
   }
 
-  getsingleRegisterData(){
+  getsingleRegisterData() {
 
-    //Getting the information and stored it in a const
+    // Getting the information and stored it in a const
     const name = (document.getElementById('cinco') as HTMLInputElement).value;
     const id = (document.getElementById('seis') as HTMLInputElement).value;
     const email = (document.getElementById('siete') as HTMLInputElement).value;
@@ -83,7 +86,7 @@ export class LoginComponent implements OnInit {
     const province = (document.getElementById('once') as HTMLInputElement).value;
     const city = (document.getElementById('doce') as HTMLInputElement).value;
 
-    //This part will empty all the entries after the method is called
+    // This part will empty all the entries after the method is called
     (document.getElementById('cinco') as HTMLInputElement).value = '';
     (document.getElementById('seis') as HTMLInputElement).value = '';
     (document.getElementById('siete') as HTMLInputElement).value = '';
