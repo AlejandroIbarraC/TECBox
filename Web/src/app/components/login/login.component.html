@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="label-red">Forgot password?</div>
-                    <div class="button" (click)="logIn(userEmail.value, userPassword.value, 'user')">
+                    <div class="button" (click)="logInUser(userEmail.value, userPassword.value)">
                         Log In
                         <img src="assets/user-access/rightArrowIcon.svg">
                     </div>
@@ -31,7 +31,7 @@
                         <div class="content">
                             <div class="formGroup">
                                 Email:
-                                <input type="email" class="formControl" #employeeEmail required class="entry">
+                                <input type="email" class="formControl" #teamEmail required class="entry">
                             </div>
                         </div>
                     </div>
@@ -39,7 +39,7 @@
                         <div class="content">
                             <div class="formGroup">
                                 Password:
-                                <input type="password" class="formControl" #employeePassword required class="entry">
+                                <input type="password" class="formControl" #teamPassword required class="entry">
                             </div>
                         </div>
                     </div>
@@ -48,17 +48,17 @@
                         I work in:
                         <br><br>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="radioButton" id="adminRadio" value="admin" checked>
+                            <input class="form-check-input" type="radio" name="radioButton" id="adminRadio" value="admin" [(ngModel)]="userType" (change)="onItemChange($event.target.value)" [checked]="true">
                             <label class="form-check-label" for="adminRadio">Admin</label>
                             <br>
-                            <input class="form-check-input" type="radio" name="radioButton" id="warehouseRadio" value="warehouse">
+                            <input class="form-check-input" type="radio" name="radioButton" id="warehouseRadio" value="warehouse" [(ngModel)]="userType" (change)="onItemChange($event.target.value)">
                             <label class="form-check-label" for="warehouseRadio">Warehouse</label>
                             <br>
-                            <input class="form-check-input" type="radio" name="radioButton" id="deliveryRadio" value="delivery">
+                            <input class="form-check-input" type="radio" name="radioButton" id="deliveryRadio" value="delivery" [(ngModel)]="userType" (change)="onItemChange($event.target.value)">
                             <label class="form-check-label" for="deliveryRadio">Delivery</label>
                         </div>
                     </div>
-                    <div class="button grey" (click)="logIn(userEmail.value, userPassword.value, 'user')">
+                    <div class="button grey" (click)="logInTeam(teamEmail.value, teamPassword.value)">
                         Team Log In
                         <img src="assets/user-access/badgeIcon.svg">
                     </div>
@@ -132,7 +132,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="button grey" (click)="authService.SignUp(email.value, password.value)" id="register-button">
+                    <div class="button grey" (click)="register(email.value, password.value)" id="register-button">
                         Register
                         <img src="assets/user-access/arrowDownIcon.svg">
                     </div>

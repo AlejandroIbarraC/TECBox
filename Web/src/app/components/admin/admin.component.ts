@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from 'src/app/shared/services/auth.service';
 import axios from 'axios'; // Este import es importante, es con lo que se hacen los gets
 import {HttpClient} from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -12,8 +13,8 @@ export class AdminComponent implements OnInit {
 
   constructor(
     public authService: AuthService,
-    private httpClient: HttpClient
-
+    private httpClient: HttpClient,
+    private router: Router
     ) { }
 
   // Archivos usados para proyectar en las tablas
@@ -33,6 +34,11 @@ export class AdminComponent implements OnInit {
     this.getProductsFromServer();
     this.getRoutesFromServer();
     this.getUsersFromServer();
+  }
+
+  logOut() {
+    localStorage.setItem('userType', 'none');
+    this.router.navigate(['/login']);
   }
 
   // Esto es para hacer gets y guarda lo que obtenga en la var json, de una vez parseado

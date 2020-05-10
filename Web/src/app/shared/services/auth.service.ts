@@ -4,6 +4,7 @@ import { auth } from 'firebase/app';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from "@angular/router";
+import { typeWithParameters } from '@angular/compiler/src/render3/util';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import { Router } from "@angular/router";
 
 export class AuthService {
   userData: any; // Save logged in user data
-
+  
   constructor(
     public afs: AngularFirestore,   // Inject Firestore service
     public afAuth: AngularFireAuth, // Inject Firebase auth service
@@ -33,21 +34,14 @@ export class AuthService {
   }
 
   // Sign in with email/password
-  SignIn(email, password, userType) {
+  SignIn(email, password) {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
-          if (userType=="user") {
-            this.router.navigate(['user-profile']);
-          } else if (userType=="admin") {
-            this.router.navigate(['admin']);
-          } else if (userType=="warehouse") {
-            this.router.navigate(['warehouse-console']);
-          } else if (userType=="delivery") {
-            this.router.navigate(['delivery-console']);
-          }
+          this.router.navigate(['user-profile']);
         });
         this.SetUserData(result.user);
+        localStorage.setItem('userType', 'user');
       }).catch((error) => {
         window.alert(error.message)
       })
@@ -74,7 +68,7 @@ export class AuthService {
     })
   }
 
-  // Reset Forggot password
+  // Reset password
   ForgotPassword(passwordResetEmail) {
     return this.afAuth.auth.sendPasswordResetEmail(passwordResetEmail)
     .then(() => {

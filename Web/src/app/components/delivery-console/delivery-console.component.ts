@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-delivery-console',
@@ -9,10 +10,16 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 export class DeliveryConsoleComponent implements OnInit {
 
   constructor(
-    public authService: AuthService
+    public authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
+  }
+
+  logOut() {
+    localStorage.setItem('userType', 'none');
+    this.router.navigate(['/login']);
   }
 
 }
