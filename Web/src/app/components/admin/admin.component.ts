@@ -147,6 +147,7 @@ export class AdminComponent implements OnInit {
       .catch(error => {
         console.log(error.response);
       });
+    window.location.reload();
   }
 
   // Este metodo agrega nuevas branch
@@ -189,7 +190,7 @@ export class AdminComponent implements OnInit {
       .catch(error => {
         console.log(error.response);
       });
-
+    window.location.reload();
   }
 
 // Metodos de los botones para los workers
@@ -232,7 +233,7 @@ export class AdminComponent implements OnInit {
       .catch(error => {
         console.log(error.response);
       });
-
+    window.location.reload();
   }
 
 // Este metodo es para agregar sellers
@@ -260,6 +261,7 @@ export class AdminComponent implements OnInit {
       .catch(error => {
         console.log(error.response);
       });
+    window.location.reload();
   }
 
 
@@ -308,6 +310,7 @@ export class AdminComponent implements OnInit {
       .catch(error => {
         console.log(error.response);
       });
+    window.location.reload();
   }
 
  addRoute() {
@@ -333,6 +336,7 @@ export class AdminComponent implements OnInit {
      .catch(error => {
        console.log(error.response);
      });
+   window.location.reload();
  }
 
  deleteEmployee() {
@@ -368,7 +372,7 @@ export class AdminComponent implements OnInit {
       .catch(error => {
         console.log(error.response);
       });
-
+   window.location.reload();
   }
 
   deleteBranches() {
@@ -409,7 +413,7 @@ export class AdminComponent implements OnInit {
       .catch(error => {
         console.log(error.response);
       });
-
+    window.location.reload();
   }
 
   deleteWorker() {
@@ -450,6 +454,7 @@ export class AdminComponent implements OnInit {
       .catch(error => {
         console.log(error.response);
       });
+    window.location.reload();
   }
 
   deleteSeller() {
@@ -475,6 +480,7 @@ export class AdminComponent implements OnInit {
       .catch(error => {
         console.log(error.response);
       });
+    window.location.reload();
   }
 
   deleteProduct() {
@@ -520,6 +526,7 @@ export class AdminComponent implements OnInit {
       .catch(error => {
         console.log(error.response);
       });
+    window.location.reload();
   }
   deleteRoute() {
     // Esta parte obtiene los valores de los entries
@@ -544,6 +551,6 @@ export class AdminComponent implements OnInit {
       .catch(error => {
         console.log(error.response);
       });
-
+    window.location.reload();
   }
 }
