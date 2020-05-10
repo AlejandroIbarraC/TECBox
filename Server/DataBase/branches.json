@@ -1,1 +1,38 @@
-[{"name":"Gollo","address":"200 m south from La Fiesta del Maiz, El Bosque residential","province":"Alajuela","phone":"87654321","boss":"Ale","city":"La Garita","id":"987"},{"name":"El Verdugo","address":"250 m north from the TEC","province":"Cartago","phone":"132435678","boss":"Jesus","city":"Cartago","id":"123"},{"name":"Artelec","address":"100 m north from Ale\u0027s house","province":"Alejuela","phone":"90909090","boss":"Kevin","city":"Grecia","id":"564"},{"name":"Monge","address":"500 m south from La Basilica","province":"Cartago","phone":"12345678","boss":"Acuna","city":"Limon","id":"675"}]
+[
+  {
+    "name": "Gollo",
+    "address": "200 m south from La Fiesta del Maiz, El Bosque residential",
+    "province": "Alajuela",
+    "phone": "87654321",
+    "boss": "Ale",
+    "city": "La Garita",
+    "id": "987"
+  },
+  {
+    "name": "El Verdugo",
+    "address": "250 m north from the TEC",
+    "province": "Cartago",
+    "phone": "132435678",
+    "boss": "Jesus",
+    "city": "Cartago",
+    "id": "123"
+  },
+  {
+    "name": "Artelec",
+    "address": "100 m north from Ale\u0027s house",
+    "province": "Alejuela",
+    "phone": "90909090",
+    "boss": "Kevin",
+    "city": "Grecia",
+    "id": "564"
+  },
+  {
+    "name": "Monge",
+    "address": "500 m south from La Basilica",
+    "province": "Cartago",
+    "phone": "12345678",
+    "boss": "Acuna",
+    "city": "Limon",
+    "id": "675"
+  }
+]

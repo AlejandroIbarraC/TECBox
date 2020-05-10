@@ -11,57 +11,22 @@
           </div>
           <div class="card-secondary">
             <div class="content">
-              
-              <!-- <div class="formData">
-                <input type="text" class="entry" placeholder="Tracking ID" #trackingID required id = '1'>
-                <p class = "textInput">Tracking ID</p>
-                <br>
-                <input type="text" class="entry" placeholder="Client" #client required id = '2'>
-                <p class = "textInput">Client</p>
-                <br>
-                <input type="text" class="entry" placeholder="Description" #description required id = '3'>
-                <p class = "textInput">Description</p>
-                <br>
-                <input type="text" class="entry" placeholder="Delivery date" #deliverydate required id = '4'>
-                <p class = "textInput">Delivery date</p>
-                <br>
-                <input type="text" class="entry" placeholder="Route" #route required id = '5'>
-                <p class = "textInput">Route</p>
-                <br>
-                <input type="text" class="entry" placeholder="Deliverer" #deliverer required id = '6'>
-                <p class = "textInput">Deliverer</p>
-              </div>
-              <br><br>
-              <div class="button" (click)="addPackage()">
-                Add
-                <img src="assets/admin/addButton.svg">
-              </div>
-              <div class="button" (click)="deletePackage()">
-                Delete
-                <img src="assets/admin/deleteButton.svg">
-              </div>
-              <div class="button" routerLink="/modify-package">
-                Edit
-                <img src="assets/admin/editButton.svg">
-              </div>
-              <br><br><br>
               <div class="table">
                 <div class = "TableView">
-                    <table class="table">
-                      <thead>
-                        <tr>           
-                          <th *ngFor="let head of packages[0] | keys">{{head}}</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr *ngFor="let item of packages">           
-                          <td *ngFor="let list of item | keys">{{item[list]}}</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                  <table class="table">
+                    <thead>
+                    <tr>
+                      <th *ngFor="let head of packages[0] | keys">{{head}}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let item of packages">
+                      <td *ngFor="let list of item | keys">{{item[list]}}</td>
+                    </tr>
+                    </tbody>
+                  </table>
                 </div>
-              </div> -->
-
+              </div>
             </div>
           </div>
         </div>

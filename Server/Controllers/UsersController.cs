@@ -43,7 +43,7 @@ namespace Server.Controllers
             Users user = null;
             for (int i = 0; i < usersList.Count; i++)
             {
-                if (usersList[i].eMail == searchUser.eMail)
+                if (usersList[i].eMail == searchUser.eMail && usersList[i].password == searchUser.password)
                 {
                     user = usersList[i];
                 }

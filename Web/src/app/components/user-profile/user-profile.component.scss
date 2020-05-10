@@ -25,7 +25,20 @@ body {
 }
 
 .card-secondary {
+  width: 100%;
+  margin-bottom: 50px;
+
+  .content {
     text-align: left;
-    width: auto;
-    margin-bottom: 40px;
+    padding-top: 50px;
+    padding-left: 50px;
+
+    .button {
+      float: left;
+    }
+
+    .entry {
+      float: right;
+    }
+  }
 }

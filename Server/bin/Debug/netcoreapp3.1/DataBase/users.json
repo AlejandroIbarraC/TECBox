@@ -38,5 +38,15 @@
     "address": "San Rafael",
     "province": "Alajuela",
     "city": "San Ramon"
+  },
+  {
+    "name": "Test",
+    "idNumber": "1212",
+    "eMail": "test@testo.com",
+    "password": "123456",
+    "phone": "89898",
+    "address": "test",
+    "province": "test",
+    "city": "test"
   }
 ]

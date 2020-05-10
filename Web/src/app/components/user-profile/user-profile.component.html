@@ -1,8 +1,11 @@
 <body>
-  <div class="container" *ngIf="authService.userData as user">
+  <div class="container">
     <div class="card">
       <div class="content">
-        <div class="title">Welcome, {{(user.displayName) ? user.displayName : 'User'}}
+        <div class="title">Welcome,
+          <div class="label-status" id = 'usr0'>
+
+          </div>
           <div class="button" (click)="authService.SignOut()">
             Log Out
             <img src="assets/xIcon.svg">
@@ -14,21 +17,36 @@
               <div class="subtitle">
                 Your info:
               </div>
-              ID Number: 
-              <br><br>
-              Email: {{user.email}}
-              <br><br>
-              Phone:
-              <br><br>
-              Address:
-              <br><br>
-              Province:
-              <br><br>
-              City:
-              <br><br>
-              <div class="label-red">
-                Courier Number:
+              ID Number:
+              <div class="label-status" id = 'usr1'>
+
               </div>
+              <br>
+              Email:
+              <div class="label-status" id = 'usr2'>
+
+              </div>
+              <br>
+              Phone:
+              <div class="label-status" id = 'usr3'>
+
+              </div>
+              <br>
+              Address:
+              <div class="label-status" id = 'usr4'>
+
+              </div>
+              <br>
+              Province:
+              <div class="label-status" id = 'usr5'>
+
+              </div>
+              <br>
+              City:
+              <div class="label-status" id = 'usr6'>
+
+              </div>
+              <br>
             </div>
           </div>
         </div>
@@ -36,6 +54,22 @@
           <div class="card-secondary">
             <div class="content">
               <div class="subtitle">Packages:</div>
+              <div class="table">
+                <div class = "TableView">
+                  <table class="table">
+                    <thead>
+                    <tr>
+                      <th *ngFor="let head of packages[0] | keys">{{head}}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let item of packages">
+                      <td *ngFor="let list of item | keys">{{item[list]}}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
         </div>
