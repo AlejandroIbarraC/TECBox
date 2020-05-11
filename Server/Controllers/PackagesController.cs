@@ -221,6 +221,29 @@ namespace Server.Controllers
             return finalPackagesList;
         }
 
+        [Route("employeePackages")]
+        [EnableCors("AnotherPolicy")]
+        [HttpPost]
+        public List<Packages> getEmployeePackages([FromBody] Employees employee)
+        {
+            List<Packages> packagesList = new List<Packages>();
+            List<Packages> finalPackagesList = new List<Packages>();
+            string fileName = "DataBase/packages.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            packagesList = JsonSerializer.Deserialize<List<Packages>>(jsonString);
+
+            for (int i = 0; i < packagesList.Count; i++)
+            {
+                if (employee.name == packagesList[i].deliveryMan)
+                {
+                    finalPackagesList.Add(packagesList[i]);
+                }
+            }
+
+            return finalPackagesList;
+        }
+
         [Route("insert")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
