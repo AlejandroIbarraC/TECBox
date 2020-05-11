@@ -24,8 +24,7 @@ import { ModifyProductComponent } from './components/modify-product/modify-produ
 import { ModifyRouteComponent } from './components/modify-route/modify-route.component';
 import { ModifySellerComponent } from './components/modify-seller/modify-seller.component';
 import { ModifyWorkerComponent } from './components/modify-worker/modify-worker.component';
-
-// Auth Guard
+import { WarehouseModifyComponent } from './components/warehouse-modify/warehouse-modify.component';
 
 
 const routes: Routes = [
@@ -48,6 +47,7 @@ const routes: Routes = [
   { path: 'modify-route', component: ModifyRouteComponent },
   { path: 'modify-seller', component: ModifySellerComponent },
   { path: 'modify-worker', component: ModifyWorkerComponent },
+  { path: 'warehouse-modify', component: WarehouseModifyComponent },
 
   { path: '**', component: PageNotFoundComponent}
 ];

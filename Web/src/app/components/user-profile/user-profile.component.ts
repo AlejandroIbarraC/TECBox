@@ -8,13 +8,14 @@ import axios from 'axios';
   styleUrls: ['./user-profile.component.scss']
 })
 export class UserProfileComponent implements OnInit {
+  welcomeMessage: string;
 
   constructor(public authService: AuthService) { }
 
   packages = [{}];
 
   ngOnInit(): void {
-    document.getElementById('usr0').textContent = localStorage.getItem('userName');
+    this.welcomeMessage = "Welcome, " + localStorage.getItem('userName');
     document.getElementById('usr1').textContent = localStorage.getItem('userID');
     document.getElementById('usr2').textContent = localStorage.getItem('userEmail');
     document.getElementById('usr3').textContent = localStorage.getItem('userPhone');

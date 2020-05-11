@@ -6,47 +6,58 @@
                 <div class="column left">
                     <div class="card-secondary main">
                         <div class="content">
-
-                            <table border="1">
-                                <tr>
-                                    <th>Option</th>
-                                    <th>Id</th>
-                                    <th>Name</th>
-                                    <th>Photo</th>
-                                    <th>Price</th>
-                                    <th>Quantity</th>
-                                    <th>Sub Total</th>
-                                </tr>
-                                <tr *ngFor="let item of items">
-                                    <td align="center">
-                                        <a (click)="remove(item.product.id)">X</a>
-                                    </td>
-                                    <td>{{item.product.id}}</td>
-                                    <td>{{item.product.name}}</td>
-                                    <td>
-                                        <img src="assets/http://learningprogramming.net/wp-content/uploads/mean_stack/angular/{{item.product.photo}}" width="50">
-                                    </td>
-                                    <td>{{item.product.price}}</td>
-                                    <td>{{item.quantity}}</td>
-                                    <td>{{item.product.price * item.quantity}}</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="6" align="right">Total</td>
-                                    <td>{{total}}</td>
-                                </tr>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th><div class="label-red no-padding">Remove</div></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of items">
+                                        <td>{{item.product.id}}</td>
+                                        <td>{{item.product.name}}</td>
+                                        <td>{{item.product.price}}</td>
+                                        <td>{{item.quantity}}</td>
+                                        <td>
+                                            <div class="xButton label-red no-padding" (click)="remove(item.product.id)">X</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
                             </table>
-
                         </div>
                     </div>
                 </div>
                 <div class="column right">
                     <div class="card-secondary">
                         <div class="content">
-                            <div class="label small">Subtotal: $SUBTOTAL</div>
+                            <div class="label small">Subtotal: $ {{subtotal}}</div>
                             <div class="label smaller">+ Shipping & Tax: $ $S&T</div>
                             <div class="label smaller">- Discounts: $ $DISCOUNT</div>
                             <div class="red-divider"></div>
                             <div class="label bold">= Total: $ $TOTAL</div>
+                            <br><br>
+                            <div class="shipping-info">
+                                Ships to:
+                                <br>
+                                <div class="label-red">
+                                    $NAME,
+                                    <br>
+                                    $ADDRESS,
+                                    <br>
+                                    $PROVINCE, 
+                                    <br>
+                                    $CITY
+                                    <br>
+                                </div>
+                                Estimated delivery date: 
+                                <div class="label-red">
+                                    $DELIVERY_DATE
+                                </div>
+                            </div>
                             <div class="button">
                                 <div class="content">
                                     Buy with credit card

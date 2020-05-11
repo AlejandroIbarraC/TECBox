@@ -149,6 +149,10 @@ body {
     padding-bottom: 10px;
 }
 
+.no-padding {
+    padding: 0px;
+}
+
 .subtitle {
     font-size: 24px;
     font-weight: 500;
@@ -173,6 +177,14 @@ body {
 ::placeholder {
     color: $terciary;
     opacity: 0.7;
+}
+
+.table {
+    width: 100%;
+    float: inherit;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -214,5 +226,10 @@ body {
     
     #mainLogo {
         filter: invert(1);
+    }
+
+    .table {
+        background-color: rgb(50, 50, 50);
+        color: white;
     }
 }

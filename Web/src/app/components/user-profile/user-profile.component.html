@@ -2,10 +2,8 @@
   <div class="container">
     <div class="card">
       <div class="content">
-        <div class="title">Welcome,
-          <div class="label-status" id = 'usr0'>
-
-          </div>
+        <div class="title">
+          {{welcomeMessage}}
           <div class="button" (click)="authService.SignOut()">
             Log Out
             <img src="assets/xIcon.svg">
@@ -17,35 +15,23 @@
               <div class="subtitle">
                 Your info:
               </div>
-              ID Number:
-              <div class="label-status" id = 'usr1'>
-
-              </div>
+              ID / Courier Number:
+              <div class="label-status" id = 'usr1'></div>
               <br>
               Email:
-              <div class="label-status" id = 'usr2'>
-
-              </div>
+              <div class="label-status" id = 'usr2'></div>
               <br>
               Phone:
-              <div class="label-status" id = 'usr3'>
-
-              </div>
+              <div class="label-status" id = 'usr3'></div>
               <br>
               Address:
-              <div class="label-status" id = 'usr4'>
-
-              </div>
+              <div class="label-status" id = 'usr4'></div>
               <br>
               Province:
-              <div class="label-status" id = 'usr5'>
-
-              </div>
+              <div class="label-status" id = 'usr5'></div>
               <br>
               City:
-              <div class="label-status" id = 'usr6'>
-
-              </div>
+              <div class="label-status" id = 'usr6'></div>
               <br>
             </div>
           </div>
