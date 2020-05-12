@@ -9,15 +9,17 @@
 import SwiftUI
 
 struct PackageRow: View {
-    var package: Package
+    @State var package: Package
     
     var body: some View {
         NavigationLink(destination: PackageDetail(package: package)) {
             HStack {
                 VStack(alignment: .leading) {
-                    Text(package.name)
+                    Text(package.trackingID)
                         .font(.headline)
-                    Text("ID: \(package.price)")
+                    Text("Description: \(package.description)")
+                    Text("Status: \(package.status)")
+                    Text("Client: \(package.client)")
                 }
             }
         }
@@ -27,7 +29,7 @@ struct PackageRow: View {
 struct PackageRow_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            PackageRow(package: Package.example)
+            Text("Test")
         }
     }
 }

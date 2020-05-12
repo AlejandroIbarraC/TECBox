@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct MotherView : View {
-    @EnvironmentObject var viewRouter: Session
+    @EnvironmentObject var viewRouter: AppSession
     
     func getUser() {
         viewRouter.listen()
@@ -29,6 +29,6 @@ struct MotherView : View {
 
 struct MotherView_Previews : PreviewProvider {
     static var previews: some View {
-        MotherView().environmentObject(Session())
+        MotherView().environmentObject(AppSession())
     }
 }

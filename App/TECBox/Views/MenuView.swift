@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct MenuView: View {
-    @EnvironmentObject var session: Session
+    @EnvironmentObject var session: AppSession
     
     var body: some View {
         ZStack {
@@ -32,6 +32,6 @@ struct MenuView: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView().environmentObject(Session())
+        MenuView().environmentObject(AppSession())
     }
 }

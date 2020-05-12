@@ -8,15 +8,10 @@
 
 import Foundation
 
-class User {
-    var uid: String
-    var email: String?
-    var displayName: String?
-
-    init(uid: String, displayName: String?, email: String?) {
-        self.uid = uid
-        self.email = email
-        self.displayName = displayName
-    }
-
+struct User: Codable {
+    var name: String
+    var department: String
+    var eMail: String
+    var password: String
+    var id: String
 }

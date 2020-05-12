@@ -18,7 +18,7 @@ struct LogInView: View {
     @State var authenticationDidSucceed: Bool = false
     
     @ObservedObject var keyBoardResponder = KeyboardResponder()
-    @EnvironmentObject var session: Session
+    @EnvironmentObject var session: AppSession
     
     /// Communicates log in form with session authentication server
     func logIn() {
@@ -81,7 +81,7 @@ struct LogInView: View {
 
 struct LogInView_Previews: PreviewProvider {
     static var previews: some View {
-        LogInView().environmentObject(Session())
+        LogInView().environmentObject(AppSession())
     }
 }
 
