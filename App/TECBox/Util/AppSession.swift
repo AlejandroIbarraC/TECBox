@@ -10,9 +10,10 @@ import Foundation
 import Combine
 import SwiftUI
 import Firebase
+import Alamofire
 
-class Session: ObservableObject {
-    let objectWillChange = PassthroughSubject<Session,Never>()
+class AppSession: ObservableObject {
+    let objectWillChange = PassthroughSubject<AppSession,Never>()
     var session: User? { didSet { self.objectWillChange.send(self) }}
     var handle: AuthStateDidChangeListenerHandle?
     var currentPage: String = "menu" {
@@ -22,6 +23,17 @@ class Session: ObservableObject {
             }
         }
     }
+    // Initialize custom Alamofire session without server evaluators for testing
+    private let AlamoSession: Session = {
+        let manager = ServerTrustManager(evaluators: ["192.168.0.15": DisabledEvaluator()])
+        let configuration = URLSessionConfiguration.af.default
+
+        return Session(configuration: configuration, serverTrustManager: manager)
+    }()
+    // User data
+    var name = ""
+    var password = ""
+    var id = ""
     
     func listen () {
         // Monitor authentication changes using Firebase
@@ -29,11 +41,16 @@ class Session: ObservableObject {
             if let user = user {
                 // If we have a user, create a new user model
                 print("Got user: \(user)")
-                self.session = User(
-                    uid: user.uid,
-                    displayName: user.displayName,
-                    email: user.email
-                )
+                
+                // Check own REST-API database
+                print("Connecting to own REST-API...")
+                let userToSend = User(name: "null", department: "Delivery", eMail: user.email!, password: "null", id: "null")
+                self.AlamoSession.request("https://192.168.0.15:5001/administrator/employees/check", method: .post, parameters: userToSend, encoder: JSONParameterEncoder.prettyPrinted)
+                    .validate()
+                    .responseDecodable(of: User.self) { (response) in
+                        guard let data = response.value else { return self.session = nil }
+                        self.session = User(name: data.name, department: "Delivery", eMail: user.email ?? "mp@mp.com", password: data.password, id: data.id)
+                    }
             } else {
                 // If we don't have a user, set our session to nil
                 self.session = nil
@@ -54,6 +71,7 @@ class Session: ObservableObject {
         password: String,
         handler: @escaping AuthDataResultCallback
         ) {
+        // Check Firebase databse
         Auth.auth().signIn(withEmail: email, password: password, completion: handler)
     }
 

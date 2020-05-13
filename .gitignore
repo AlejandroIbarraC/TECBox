@@ -92,3 +92,11 @@ iOSInjectionProject/
 Web/node_modules/
 
 .DS_Store
+
+Server/.vs/
+
+Server/bin/
+
+Server/obj/
+
+Server/Properties/

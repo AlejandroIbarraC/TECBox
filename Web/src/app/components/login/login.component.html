@@ -9,7 +9,7 @@
                         <div class="content">
                             <div class="formGroup">
                                 Email:
-                                <input type="email" class="formControl" #userEmail required class="entry">
+                                <input type="email" class="formControl" id="userEmail" required class="entry">
                             </div>
                         </div>
                     </div>
@@ -17,12 +17,13 @@
                         <div class="content">
                             <div class="formGroup">
                                 Password:
-                                <input type="password" class="formControl" #userPassword required class="entry">
+                                <input type="password" class="formControl" id="userPassword" required class="entry">
                             </div>
                         </div>
                     </div>
                     <div class="label-red">Forgot password?</div>
-                    <div class="button" (click)="logInUser(userEmail.value, userPassword.value)">
+                    <div class="errorLabel" id="errorLabelUser"></div>
+                    <div class="button" (click)="logInUser()">
                         Log In
                         <img src="assets/user-access/rightArrowIcon.svg">
                     </div>
@@ -43,7 +44,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="checkbox-align">
                         I work in:
                         <br><br>
@@ -58,6 +58,7 @@
                             <label class="form-check-label" for="deliveryRadio">Delivery</label>
                         </div>
                     </div>
+                    <div class="errorLabel" id="errorLabelTeam"></div>
                     <div class="button grey" (click)="logInTeam(teamEmail.value, teamPassword.value)">
                         Team Log In
                         <img src="assets/user-access/badgeIcon.svg">
@@ -72,7 +73,7 @@
                         <div class="content">
                             <div class="formGroup">
                                 Name:
-                                <input type="text" class="formControl" #name required class="entry">
+                                <input type="text" class="formControl" #name required class="entry" id="r1">
                             </div>
                         </div>
                     </div>
@@ -80,7 +81,7 @@
                         <div class="content">
                             <div class="formGroup">
                                 ID:
-                                <input type="number" class="formControl" #id required class="entry">
+                                <input type="number" class="formControl" #id required class="entry" id="r2">
                             </div>
                         </div>
                     </div>
@@ -88,7 +89,7 @@
                         <div class="content">
                             <div class="formGroup">
                                 Email:
-                                <input type="email" class="formControl" #email required class="entry">
+                                <input type="email" class="formControl" #email required class="entry" id="r3">
                             </div>
                         </div>
                     </div>
@@ -96,7 +97,7 @@
                         <div class="content">
                             <div class="formGroup">
                                 Password:
-                                <input type="password" class="formControl" #password required class="entry">
+                                <input type="password" class="formControl" #password required class="entry" id="r4">
                             </div>
                         </div>
                     </div>
@@ -104,7 +105,7 @@
                         <div class="content">
                             <div class="formGroup">
                                 Phone:
-                                <input type="number" class="formControl" #phone required class="entry">
+                                <input type="number" class="formControl" #phone required class="entry" id="r5">
                             </div>
                         </div>
                     </div>
@@ -112,7 +113,7 @@
                         <div class="content">
                             <div class="formGroup">
                                 Address:
-                                <input type="text" class="formControl" #address required class="entry">
+                                <input type="text" class="formControl" #address required class="entry" id="r6">
                             </div>
                         </div>
                     </div>
@@ -120,7 +121,7 @@
                         <div class="content">
                             <div class="formGroup">
                                 Province:
-                                <input type="text" class="formControl" #province required class="entry">
+                                <input type="text" class="formControl" #province required class="entry" id="r7">
                             </div>
                         </div>
                     </div>
@@ -128,11 +129,11 @@
                         <div class="content">
                             <div class="formGroup">
                                 City:
-                                <input type="text" class="formControl" #city required class="entry">
+                                <input type="text" class="formControl" #city required class="entry" id="r8">
                             </div>
                         </div>
                     </div>
-                    <div class="button grey" (click)="register(email.value, password.value)" id="register-button">
+                    <div class="button grey" (click)="register()" id="register-button">
                         Register
                         <img src="assets/user-access/arrowDownIcon.svg">
                     </div>

@@ -9,10 +9,8 @@
 /* Begin PBXBuildFile section */
 		20EB863C147484185D84F13D /* Pods_TECBox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70896B201D956A8BA16F1ADF /* Pods_TECBox.framework */; };
 		A901B3EB241353C000242EAA /* MotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901B3EA241353C000242EAA /* MotherView.swift */; };
-		A901B3ED241354B100242EAA /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901B3EC241354B100242EAA /* Session.swift */; };
+		A901B3ED241354B100242EAA /* AppSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901B3EC241354B100242EAA /* AppSession.swift */; };
 		A901B3EF2413566F00242EAA /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A901B3EE2413566F00242EAA /* MenuView.swift */; };
-		A908EE0D2414241C00050401 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A908EE0C2414241C00050401 /* Connection.swift */; };
-		A908EE132414246600050401 /* Holder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A908EE122414246600050401 /* Holder.swift */; };
 		A908EE15241432A000050401 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A908EE14241432A000050401 /* GoogleService-Info.plist */; };
 		A908EE1B24143EA300050401 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A908EE1A24143EA300050401 /* User.swift */; };
 		A908EE1D2414551D00050401 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A908EE1C2414551D00050401 /* SettingsView.swift */; };
@@ -34,7 +32,6 @@
 		A92B13F52420266C00F48B3A /* WatchPackageDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92B13F42420266C00F48B3A /* WatchPackageDetail.swift */; };
 		A92B13F72420272400F48B3A /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = A961657724145CF5004569BF /* Package.swift */; };
 		A961657424145AA3004569BF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A961657324145AA3004569BF /* Extensions.swift */; };
-		A961657624145B61004569BF /* packages.json in Resources */ = {isa = PBXBuildFile; fileRef = A961657524145B61004569BF /* packages.json */; };
 		A961657824145CF6004569BF /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = A961657724145CF5004569BF /* Package.swift */; };
 		A961657E24145DBE004569BF /* PackageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A961657D24145DBE004569BF /* PackageRow.swift */; };
 		A961658024146AFB004569BF /* PackageDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A961657F24146AFB004569BF /* PackageDetail.swift */; };
@@ -95,10 +92,8 @@
 		594403D342C3546A2D31C27A /* Pods-TECBox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TECBox.release.xcconfig"; path = "Target Support Files/Pods-TECBox/Pods-TECBox.release.xcconfig"; sourceTree = "<group>"; };
 		70896B201D956A8BA16F1ADF /* Pods_TECBox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TECBox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A901B3EA241353C000242EAA /* MotherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherView.swift; sourceTree = "<group>"; };
-		A901B3EC241354B100242EAA /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		A901B3EC241354B100242EAA /* AppSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSession.swift; sourceTree = "<group>"; };
 		A901B3EE2413566F00242EAA /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		A908EE0C2414241C00050401 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
-		A908EE122414246600050401 /* Holder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Holder.swift; sourceTree = "<group>"; };
 		A908EE14241432A000050401 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A908EE1A24143EA300050401 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A908EE1C2414551D00050401 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -120,7 +115,6 @@
 		A92B13E2242022B400F48B3A /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		A92B13F42420266C00F48B3A /* WatchPackageDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPackageDetail.swift; sourceTree = "<group>"; };
 		A961657324145AA3004569BF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		A961657524145B61004569BF /* packages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = packages.json; sourceTree = "<group>"; };
 		A961657724145CF5004569BF /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		A961657D24145DBE004569BF /* PackageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageRow.swift; sourceTree = "<group>"; };
 		A961657F24146AFB004569BF /* PackageDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageDetail.swift; sourceTree = "<group>"; };
@@ -175,20 +169,10 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		A908EE0B241422F800050401 /* Server */ = {
-			isa = PBXGroup;
-			children = (
-				A908EE0C2414241C00050401 /* Connection.swift */,
-				A908EE122414246600050401 /* Holder.swift */,
-			);
-			path = Server;
-			sourceTree = "<group>";
-		};
 		A908EE1924143E9600050401 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				A908EE1A24143EA300050401 /* User.swift */,
-				A961657524145B61004569BF /* packages.json */,
 				A961657724145CF5004569BF /* Package.swift */,
 			);
 			path = Data;
@@ -272,7 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				A908EE1924143E9600050401 /* Data */,
-				A908EE0B241422F800050401 /* Server */,
 				A901B3F02413568B00242EAA /* Views */,
 				A9EFB99F2412ED4F005BDB25 /* Util */,
 				A9C7CAE32411D30D000F1CD7 /* AppDelegate.swift */,
@@ -299,7 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				A9EFB99D2412E9A1005BDB25 /* KeyboardResponder.swift */,
-				A901B3EC241354B100242EAA /* Session.swift */,
+				A901B3EC241354B100242EAA /* AppSession.swift */,
 				A961657324145AA3004569BF /* Extensions.swift */,
 				A961658124148020004569BF /* Styles.swift */,
 				A92B13BD2420190A00F48B3A /* PullToRefresh.swift */,
@@ -444,7 +427,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A961657624145B61004569BF /* packages.json in Resources */,
 				A9C7CAF02411D30E000F1CD7 /* LaunchScreen.storyboard in Resources */,
 				A908EE15241432A000050401 /* GoogleService-Info.plist in Resources */,
 				A9C7CAED2411D30E000F1CD7 /* Preview Assets.xcassets in Resources */,
@@ -517,13 +499,11 @@
 			files = (
 				A901B3EF2413566F00242EAA /* MenuView.swift in Sources */,
 				A9C7CAE42411D30D000F1CD7 /* AppDelegate.swift in Sources */,
-				A908EE132414246600050401 /* Holder.swift in Sources */,
 				A961657E24145DBE004569BF /* PackageRow.swift in Sources */,
 				A908EE1F2414573C00050401 /* PackageView.swift in Sources */,
 				A9EFB99E2412E9A1005BDB25 /* KeyboardResponder.swift in Sources */,
-				A908EE0D2414241C00050401 /* Connection.swift in Sources */,
 				A9C7CAE62411D30D000F1CD7 /* SceneDelegate.swift in Sources */,
-				A901B3ED241354B100242EAA /* Session.swift in Sources */,
+				A901B3ED241354B100242EAA /* AppSession.swift in Sources */,
 				A961657424145AA3004569BF /* Extensions.swift in Sources */,
 				A9C7CAE82411D30D000F1CD7 /* LogInView.swift in Sources */,
 				A961657824145CF6004569BF /* Package.swift in Sources */,

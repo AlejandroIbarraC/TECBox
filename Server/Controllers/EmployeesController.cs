@@ -44,7 +44,7 @@ namespace Server.Controllers
 
             for (int i = 0; i < employeesList.Count; i++)
             {
-                if (employeesList[i].eMail == employeeToSearch.eMail & employeesList[i].password == employeeToSearch.password & employeesList[i].department == employeeToSearch.department)
+                if (employeesList[i].eMail == employeeToSearch.eMail & employeesList[i].department == employeeToSearch.department)
                 {
                     employee = employeesList[i];
                     break;

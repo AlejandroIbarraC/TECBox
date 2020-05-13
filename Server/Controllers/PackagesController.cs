@@ -79,6 +79,11 @@ namespace Server.Controllers
                 int[] beginDate = Auxiliar.getDateInArray(dates.client);
                 int[] endDate = Auxiliar.getDateInArray(dates.deliveryDate);
 
+                if (beginDate[0] > 31 | beginDate[0] < 1 | beginDate[1] > 12 | beginDate[1] < 1 | endDate[0] > 31 | endDate[0] < 1 | endDate[1] > 12 | endDate[1] < 1)
+                {
+                    return finalList;
+                }
+
                 for (int i = 0; i < packagesList.Count; i++)
                 {
                     int[] packageDate = Auxiliar.getDateInArray(packagesList[i].deliveryDate);
@@ -191,6 +196,52 @@ namespace Server.Controllers
             {
                 return finalList;
             }
+        }
+
+        [Route("userPackages")]
+        [EnableCors("AnotherPolicy")]
+        [HttpPost]
+        public List<Packages> getUserPackages([FromBody] Users user)
+        {
+            List<Packages> packagesList = new List<Packages>();
+            List<Packages> finalPackagesList = new List<Packages>();
+            string fileName = "DataBase/packages.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            packagesList = JsonSerializer.Deserialize<List<Packages>>(jsonString);
+
+            for (int i = 0; i < packagesList.Count; i++)
+            {
+                if (user.name == packagesList[i].client)
+                {
+                    finalPackagesList.Add(packagesList[i]);
+                }
+            }
+
+            return finalPackagesList;
+        }
+
+        [Route("employeePackages")]
+        [EnableCors("AnotherPolicy")]
+        [HttpPost]
+        public List<Packages> getEmployeePackages([FromBody] Employees employee)
+        {
+            List<Packages> packagesList = new List<Packages>();
+            List<Packages> finalPackagesList = new List<Packages>();
+            string fileName = "DataBase/packages.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            packagesList = JsonSerializer.Deserialize<List<Packages>>(jsonString);
+
+            for (int i = 0; i < packagesList.Count; i++)
+            {
+                if (employee.name == packagesList[i].deliveryMan)
+                {
+                    finalPackagesList.Add(packagesList[i]);
+                }
+            }
+
+            return finalPackagesList;
         }
 
         [Route("insert")]

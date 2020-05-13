@@ -2,8 +2,8 @@
   {
     "idNumber": "101",
     "fullName": "Ale Ibarra",
-    "birthday": "13/7/2000",
-    "entryDate": "3/12/2018",
+    "birthday": "2000-07-13",
+    "entryDate": "2018-12-03",
     "branch": "Monge",
     "hourlyWage": "5000",
     "monthlyWage": "500000"
@@ -11,8 +11,8 @@
   {
     "idNumber": "102",
     "fullName": "Jose David Sanchez",
-    "birthday": "5/4/1998",
-    "entryDate": "10/1/2019",
+    "birthday": "1998-04-05",
+    "entryDate": "2019-01-10",
     "branch": "Gollo",
     "hourlyWage": "1000",
     "monthlyWage": "100000"
@@ -20,8 +20,8 @@
   {
     "idNumber": "103",
     "fullName": "Jesus Sandoval",
-    "birthday": "7/12/1999",
-    "entryDate": "4/3/2015",
+    "birthday": "1999-12-07",
+    "entryDate": "2015-03-04",
     "branch": "Gollo",
     "hourlyWage": "10000",
     "monthlyWage": "1000000"
@@ -29,8 +29,8 @@
   {
     "idNumber": "100",
     "fullName": "Kevin Cordero",
-    "birthday": "3/12/1999",
-    "entryDate": "5/10/2018",
+    "birthday": "1999-12-03",
+    "entryDate": "2018-10-05",
     "branch": "Monge",
     "hourlyWage": "10000",
     "monthlyWage": "100000"

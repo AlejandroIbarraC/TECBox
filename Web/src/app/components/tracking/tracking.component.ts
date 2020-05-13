@@ -34,7 +34,12 @@ export class TrackingComponent implements OnInit {
     })
       .then(response => {
         console.log(response);
-        document.getElementById('pstatus').textContent = response.data.status;
+        // tslint:disable-next-line:triple-equals
+        if (response.data.status == 'null') {
+          document.getElementById('pstatus').textContent = 'Package not found';
+        } else {
+          document.getElementById('pstatus').textContent = response.data.status;
+        }
       })
       .catch(error => {
         console.log(error.response);

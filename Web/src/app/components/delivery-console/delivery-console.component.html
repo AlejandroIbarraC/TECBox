@@ -1,5 +1,5 @@
 <body>
-    <div class="container"> 
+    <div class="container">
         <div class="card">
             <div class="content">
                 <div class="title">
@@ -14,7 +14,7 @@
                         <div class="subtitle">Report generation:</div>
                         Best sellers by date
                         <br>
-                        <div class="button generate">
+                        <div class="button generate" (click)="bestSellers()">
                             Generate
                             <img src="assets/gearIcon.svg">
                         </div>
@@ -28,7 +28,7 @@
                         <br>
                         Delivery list by route
                         <br>
-                        <div class="button generate">
+                        <div class="button generate" (click)="deliveryListByRoute()">
                             Generate
                             <img src="assets/gearIcon.svg">
                         </div>
@@ -40,21 +40,36 @@
                         <br>
                         Delivered packages by date:
                         <br>
-                        <div class="button generate">
+                        <div class="button generate" (click)="deliveredPackages()">
                             Generate
                             <img src="assets/gearIcon.svg">
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="fromreport3">From:</label>
-                            <input type="date" class="formControl" #fromreport1 required class="entry" id="from-report1">
+                            <label for="from-report3">From:</label>
+                            <input type="date" class="formControl" #fromreport1 required class="entry" id="from-report3">
                             <label for="to-report3">To:</label>
-                            <input type="date" class="formControl" #toreport1 required class="entry" id="to-report1">
+                            <input type="date" class="formControl" #toreport1 required class="entry" id="to-report3">
                         </div>
                     </div>
                 </div>
-                <!-- INSERT TABLE HERE -->
-                
+              <div class="table">
+                <div class = "TableView">
+                  <table class="table">
+                    <thead>
+                    <tr>
+                      <th *ngFor="let head of data[0] | keys">{{head}}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let item of data">
+                      <td *ngFor="let list of item | keys">{{item[list]}}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
             </div>
         </div>
     </div>

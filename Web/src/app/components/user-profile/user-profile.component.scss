@@ -3,12 +3,17 @@ body {
     font-weight: 300;
 }
 
+.container {
+  max-width: 90%;
+}
+
 .button {
     font-weight: bold;
     width: fit-content;
     float: right;
     font-size: 18px;
     margin-top: 0px;
+    margin-right: 30px;
 }
 
 .column {
@@ -16,16 +21,36 @@ body {
 }
 
 .left {
-    width: 40%;
-    margin-right: 5%;
+    width: 25%;
+    margin-right: 2%;
 }
 
 .right {
-    width: 55%;
+    width: 70%;
+}
+
+.card {
+  .content {
+    padding-right: 0px;
+  }
 }
 
 .card-secondary {
+  width: 100%;
+  margin-bottom: 50px;
+
+  .content {
     text-align: left;
-    width: auto;
-    margin-bottom: 40px;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    .button {
+      float: left;
+    }
+
+    .entry {
+      float: right;
+    }
+  }
 }

@@ -10,9 +10,7 @@ import SwiftUI
 
 struct WatchPackageDetail: View {
     var body: some View {
-        List {
-            
-        }
+        Text("Hello World")
     }
 }
 

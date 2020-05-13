@@ -47,6 +47,11 @@ namespace Server.Controllers
                 int[] beginDate = Auxiliar.getDateInArray(dates.entryDate);
                 int[] endDate = Auxiliar.getDateInArray(dates.name);
 
+                if (beginDate[0] > 31 | beginDate[0] < 1 | beginDate[1] > 12 | beginDate[1] < 1 | endDate[0] > 31 | endDate[0] < 1 | endDate[1] > 12 | endDate[1] < 1)
+                {
+                    return finalList;
+                }
+
                 for (int i = 0; i < productsList.Count; i++)
                 {
                     int[] productDate = Auxiliar.getDateInArray(productsList[i].entryDate);

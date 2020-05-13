@@ -1,10 +1,10 @@
 [
   {
     "trackingID": "456654",
-    "client": "Kevin",
+    "client": "Test",
     "description": "Chest",
-    "deliveryDate": "12/12/2020",
-    "status": "Delivered",
+    "deliveryDate": "2020-12-12",
+    "status": "Ready for Delivery",
     "route": "1",
     "deliveryMan": "Jesus"
   },
@@ -12,27 +12,54 @@
     "trackingID": "963366",
     "client": "Kevin",
     "description": "Chest",
-    "deliveryDate": "12/12/2020",
-    "status": "Delivered",
+    "deliveryDate": "2020-12-12",
+    "status": "Ready for Delivery",
     "route": "1",
     "deliveryMan": "Jose"
   },
   {
     "trackingID": "489987",
-    "client": "Jose",
+    "client": "Test",
     "description": "Box Concept",
-    "deliveryDate": "8/8/2030",
+    "deliveryDate": "2030-08-08",
     "status": "Delivered",
-    "route": "1",
+    "route": "2",
     "deliveryMan": "Jose"
   },
   {
     "trackingID": "123321",
-    "client": "Roger",
+    "client": "Jose",
     "description": "Pandora\u0027s Box",
-    "deliveryDate": "4/5/2020",
+    "deliveryDate": "2020-05-04",
     "status": "Delivered",
-    "route": "2",
+    "route": "1",
+    "deliveryMan": "Jesus"
+  },
+  {
+    "trackingID": "123322",
+    "client": "Tim Cook",
+    "description": "Pandora\u0027s Box",
+    "deliveryDate": "2020-05-04",
+    "status": "Delivered",
+    "route": "1",
+    "deliveryMan": "Jesus"
+  },
+  {
+    "trackingID": "123323",
+    "client": "Tim Cook",
+    "description": "Chest",
+    "deliveryDate": "2020-05-04",
+    "status": "Ready to deliver",
+    "route": "1",
+    "deliveryMan": "Jose"
+  },
+  {
+    "trackingID": "123324",
+    "client": "Tim Cook",
+    "description": "Apple TV 4K",
+    "deliveryDate": "2020-05-04",
+    "status": "Failed to Deliver",
+    "route": "1",
     "deliveryMan": "Jesus"
   }
 ]

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @EnvironmentObject var session: Session
+    @EnvironmentObject var session: AppSession
     
     /// Logs out with Firebase authentication
     func logOut() {
@@ -29,10 +29,17 @@ struct SettingsView: View {
                 WelcomeText()
                     .frame(width: 150.0)
                 WelcomeSubText()
+                    .foregroundColor(Color("Terciary"))
+                
+                Text("Login information:")
+                    .padding(.bottom, 25.0)
+                Text("Name: \(session.session!.name)")
+                Text("Email: \(session.session!.eMail)")
+                Text("Employee ID: \(session.session!.id)")
                 
                 Text("Schlafenhase. 2020\nMade in Costa Rica")
                     .font(.footnote)
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 70, trailing: 0))
+                    .padding(EdgeInsets(top: 70, leading: 0, bottom: 70, trailing: 0))
                 
                 Button(action: logOut) {
                     NeomorphicButtonContent(text: "Log Out")
@@ -44,6 +51,6 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView().environmentObject(Session())
+        SettingsView().environmentObject(AppSession())
     }
 }

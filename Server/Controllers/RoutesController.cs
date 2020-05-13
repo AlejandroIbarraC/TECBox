@@ -41,7 +41,6 @@ namespace Server.Controllers
             routesList = JsonSerializer.Deserialize<List<Routes>>(jsonString);
 
             bool validation = false;
-            Packages package = new Packages("null", "null", "null", "null", "null", "null", "null");
 
             for (int i = 0; i < routesList.Count; i++)
             {
@@ -87,20 +86,17 @@ namespace Server.Controllers
                     }
                     else
                     {
-                        finalList.Add(package);
                         return finalList;
                     }
                 }
                 else
                 {
-                    finalList.Add(package);
                     return finalList;
                 }
 
             }
             else
             {
-                finalList.Add(package);
                 return finalList;
             }
         }
