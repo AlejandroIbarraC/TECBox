@@ -25,6 +25,17 @@ export class UserProfileComponent implements OnInit {
     this.getUserPackagesFromServer();
   }
 
+  logOut() {
+    this.authService.SignOut();
+    localStorage.setItem("userName", "Log in to see information")
+    localStorage.setItem("userID", "")
+    localStorage.setItem("userEmail", "")
+    localStorage.setItem("userPhone", "")
+    localStorage.setItem("userAddress", "")
+    localStorage.setItem("userProvince", "")
+    localStorage.setItem("userCity", "")
+  }
+
   async getUserPackagesFromServer() {
     axios.post('https://localhost:5001/warehouse/packages/userPackages', {
       name: localStorage.getItem('userName'),

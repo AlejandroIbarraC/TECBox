@@ -40,8 +40,9 @@ export class LoginComponent implements OnInit {
           if (response.data.name != 'null') {
             this.router.navigateByUrl('/admin');
             localStorage.setItem('userType', 'admin');
+            document.getElementById("errorLabelTeam").textContent = ""
           } else {
-            console.log('Something happened, try again');
+            document.getElementById("errorLabelTeam").textContent = "Wrong email, password or department"
           }
         })
         .catch(error => {
@@ -66,8 +67,9 @@ export class LoginComponent implements OnInit {
           if (response.data.name != 'null') {
             this.router.navigateByUrl('/warehouse-console');
             localStorage.setItem('userType', 'warehouse');
+            document.getElementById("errorLabelTeam").textContent = ""
           } else {
-            console.log('Something happened, try again');
+            document.getElementById("errorLabelTeam").textContent = "Wrong email, password or department"
           }
         })
         .catch(error => {
@@ -92,8 +94,9 @@ export class LoginComponent implements OnInit {
           if (response.data.name != 'null') {
             this.router.navigateByUrl('/delivery-console');
             localStorage.setItem('userType', 'delivery');
+            document.getElementById("errorLabelTeam").textContent = ""
           } else {
-            console.log('Something happened, try again');
+            document.getElementById("errorLabelTeam").textContent = "Wrong email, password or department"
           }
         })
         .catch(error => {
@@ -140,9 +143,10 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('userProvince', response.data.province);
           localStorage.setItem('userCity', response.data.city);
           this.authService.SignIn(usrEmail, usrPassword);
+          document.getElementById("errorLabeluUser").textContent = ""
         } else {
           // SHOW ERROR MESSAGE
-          console.log('Something happened, the user could not be found');
+          document.getElementById("errorLabelUser").textContent = "Wrong email or password"
         }
       })
       .catch(error => {

@@ -12,6 +12,10 @@ import { ProductService } from '../../shared/services/product.service';
 })
 
 export class CartComponent implements OnInit {
+	name: String = "Log in to see information";
+	address: String = "";
+	province: String = "";
+	city: String = "";
 
 	public items: Item[] = [];
 	public subtotal: number = 0;
@@ -59,6 +63,10 @@ export class CartComponent implements OnInit {
 				this.loadCart();
 			}
 		});
+		this.name = localStorage.getItem('userName');
+		this.address = localStorage.getItem('userAddress');
+		this.province = localStorage.getItem('userProvince');
+		this.city = localStorage.getItem('userCity');
 	}
 
 	loadCart(): void {
