@@ -1,68 +1,15 @@
-.title1 {
-    
-    left: 89px;
-    top: 237px;
-    
-    font-family: Nunito;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 60px;
-    
-    color: rgb(37, 45, 51);
-}
-
-.base {
-
-    display: flex;
-    background: #EAF0F8;
-    box-shadow: 0px -30px 60px rgba(248, 252, 255, 0.5), 0px 30px 60px rgba(0, 0, 0, 0.35);
-    border-radius: 20px;
-}
-
-.class1 {
-
-    width: 256px;
-    height: 256px;
-    
-    background: url(src\images\Papel.PNG) no-repeat top left;
-    border: 2px solid #FFFFFF;
-    box-sizing: border-box;
-    box-shadow: 0px -12px 16px #FFFFFF, 0px 12px 16px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-}
-
-.class2 {
-
-    width: 256px;
-    height: 256px;
-
-    background: url(src\images\Animal.PNG) no-repeat top left;
-    border: 2px solid #FFFFFF;
-    box-sizing: border-box;
-    box-shadow: 0px -12px 16px #FFFFFF, 0px 12px 16px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-}
-
-.class3 {
-
-    width: 256px;
-    height: 256px;
-
-    background: url(src\images\Gorro.PNG) no-repeat top left;
-    border: 2px solid #FFFFFF;
-    box-sizing: border-box;
-    box-shadow: 0px -12px 16px #FFFFFF, 0px 12px 16px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-}
-
-// FINAL STYLES
-
 .card {
-    min-height: 700px;
+    height: auto;
 }
 
 .card-secondary {
-    width: auto;
+    .content {
+        padding-top: 20%;
+        
+        img {
+            height: 300px;
+        }
+    }
 }
 
 .column {
@@ -80,6 +27,30 @@
 .title {
     text-align: center;
     font-weight: normal;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.controls {
+    padding-left: 60px;
+}
+
+.description {
+    padding-left: 60px;
+}
+
+.aligner {
+    padding-top: 35px;
+    letter-spacing: 2px;
+}
+
+.button {
+    float: right;
+}
+
+.label-red {
+    padding-top: 0px;
+    padding-left: 55px;
 }
 
 .half {
@@ -90,6 +61,7 @@
     width: 30px;
 }
 
-img {
-    height: 300px;
+.squared {
+    height: 500px;
+    width: 500px;
 }

@@ -3,42 +3,34 @@
         <div class="card">
             <div class="content">
                 <div class="column left">
-                    <div class="card-secondary">
-                        <img src="assets/products/{{productBarcode}}.png">
+                    <div class="card-secondary squared">
+                        <div class="content">
+                            <img src="assets/products/{{productBarcode}}.png">
+                        </div>
                     </div>
                 </div>
                 <div class="column right">
-                <div class="title">
-                        {{productName}}
+                    <div class="title">{{ productName }}</div>
+                    <div class="description">
+                        {{ productDescription }}
                     </div>
-                    {{productDescription}}
-                    <button class="button">
-                        Add To Cart
-                        <img src="assets/addToCartButton.svg" id="cart-icon">
-                    </button>
+                    <div class= "controls">
+                        <div class="column half">
+                            <div class="aligner">
+                                <img src="assets/product/deliveryIcon.svg">
+                                Ships in:
+                                <div class="label-red">3 Days</div>
+                            </div>
+                        </div>
+                        <div class="column half">
+                            <button class="button">
+                                Add To Cart
+                                <img src="assets/addToCartButton.svg" id="cart-icon">
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
-
-
-<h3 class="title1">{{productName}}</h3>
-
-<div class="base">
-    <br>
-    <br>
-    <h3 class="class{{productBarcode}}">
-    </h3>
-    &nbsp;
-    <p>
-        hola
-    </p>
-
-</div>
-
-<div>
-    <button>
-        ADD TO CART {{productPrice}}
-    </button>
-</div>
