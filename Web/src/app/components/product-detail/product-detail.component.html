@@ -4,12 +4,14 @@
             <div class="content">
                 <div class="column left">
                     <div class="card-secondary">
-                        Image goes here
+                        <img src="assets/products/{{productBarcode}}.png">
                     </div>
                 </div>
                 <div class="column right">
-                    <div class="title">{{productName}}</div>
-                    Description goes here
+                <div class="title">
+                        {{productName}}
+                    </div>
+                    {{productDescription}}
                     <button class="button">
                         Add To Cart
                         <img src="assets/addToCartButton.svg" id="cart-icon">
@@ -26,7 +28,7 @@
 <div class="base">
     <br>
     <br>
-    <h3 class="class{{productId}}">
+    <h3 class="class{{productBarcode}}">
     </h3>
     &nbsp;
     <p>
