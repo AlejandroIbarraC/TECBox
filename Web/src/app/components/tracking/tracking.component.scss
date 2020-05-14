@@ -23,6 +23,10 @@ img {
     padding-left: 20px;
 }
 
+.errorLabel {
+    padding-top: 20px;
+}
+
 @media (prefers-color-scheme: dark) {
     #infoIcon {
         filter: invert(1);

@@ -14,11 +14,8 @@
                 <div class="column padded">
                     <div class="card-product">
                         <div class="content">
-                            <img src="assets/products/1.png">
+                            <img src="assets/products/10001.png" routerLink="/products/10001">
                             <div class="label">Pandora's Box</div>
-                            <a routerLink="/products/1">
-                                <div class="card-price">$799</div>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -26,11 +23,8 @@
                     <div class="card-product">
                         <div class="card-product">
                             <div class="content">
-                                <img src="assets/products/6.png" class="dark-ready">
+                                <img src="assets/products/6.png" class="dark-ready" routerLink="/products/6">
                                 <div class="label">Box Concept</div>
-                                <a routerLink="/products/1">
-                                    <div class="card-price">$20</div>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -39,11 +33,8 @@
                     <div class="card-product">
                         <div class="card-product">
                             <div class="content">
-                                <img src="assets/products/3.png">
+                                <img src="assets/products/10111.png" routerLink="/products/10111">
                                 <div class="label">Apple TV 4K</div>
-                                <a routerLink="/products/3">
-                                    <div class="card-price">$199</div>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -52,11 +43,8 @@
                     <div class="card-product">
                         <div class="card-product">
                             <div class="content">
-                                <img src="assets/products/4.png">
+                                <img src="assets/products/4.png" routerLink="/products/4">
                                 <div class="label">Dropbox</div>
-                                <a routerLink="/products/4">
-                                    <div class="card-price">$9</div>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -107,26 +95,3 @@
             </div>
         </div>
     </div>
-
-
-    <!-- END -->
-
-    <div class="homebg">
-        <br>
-        <h3 class="title2">&nbsp;Top 3 selling products.</h3>
-        <br>
-        &nbsp;
-        <div>
-            &nbsp;
-            <ul>
-                <button class="product{{product.id}}" (click)="onSelect(product)" *ngFor="let product of products">
-                </button>
-                &nbsp;
-            </ul>
-        </div>
-        <br>
-        <br>
-    </div>
-
-</body>
-

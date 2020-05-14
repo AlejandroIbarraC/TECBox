@@ -23,7 +23,7 @@
                             </div>
                         </div>
                         <div class="column half">
-                            <button class="button">
+                            <button class="button" [routerLink]="['/cart', { id:productBarcode }]">
                                 Add To Cart
                                 <img src="assets/addToCartButton.svg" id="cart-icon">
                             </button>

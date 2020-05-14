@@ -7,22 +7,23 @@
                     <div class="content">
                         <div class="formGroup">
                             Tracking Number:
-                            <input type="text" #trackingNumber class="entry" required id = 'tnumber'>
+                            <input type="text" #trackingNumber class="entry" required id='tnumber'>
                         </div>
                     </div>
                 </div>
                 <div class="centerer">
+                    <div class="errorLabel">{{ errorLabel }}</div>
                     <button class="button" (click)="track()">
                         Check status
                         <img src="assets/tracking/packageIcon.svg">
                     </button>
                 </div>
-                <div class="card-secondary">
-                    <div class="content">
-                        <img src="assets/tracking/infoIcon.svg" id="infoIcon">
-                        Status:
-                        <div class="label-status" id = 'pstatus'>
-
+                <div *ngIf="showStatus">
+                    <div class="card-secondary">
+                        <div class="content">
+                            <img src="assets/tracking/infoIcon.svg" id="infoIcon">
+                            Status:
+                            {{ pStatus }}
                         </div>
                     </div>
                 </div>

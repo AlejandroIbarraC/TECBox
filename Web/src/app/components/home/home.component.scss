@@ -1,3 +1,5 @@
+$terciary: #F61067;
+
 .title {
     font-weight: bold;
     font-size: 36px;
@@ -52,67 +54,13 @@ a img {
     padding-bottom: 60px;
 }
 
+.card-product {
+    border: 2px solid $terciary;
 
-
-
-
-
-
-.title2 {
-    
-    left: 89px;
-    top: 237px;
-    
-    font-family: Nunito;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 80px;
-    
-    color: #515F6A;
+    .content {
+        padding-top: 40px;
+        img {
+            cursor: pointer;
+        }
+    }
 }
-
-ul{
-    display: flex;
-}
-
-.product1 {
-
-    width: 256px;
-    height: 256px;
-    
-    background: url(src\images\Papel.PNG) no-repeat top left;
-    border: 2px solid #FFFFFF;
-    box-sizing: border-box;
-    box-shadow: 0px -12px 16px #FFFFFF, 0px 12px 16px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-}
-
-.product2 {
-
-    width: 256px;
-    height: 256px;
-
-    background: url(src\images\Animal.PNG) no-repeat top left;
-    border: 2px solid #FFFFFF;
-    box-sizing: border-box;
-    box-shadow: 0px -12px 16px #FFFFFF, 0px 12px 16px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-}
-
-.product3 {
-
-    width: 256px;
-    height: 256px;
-
-    background: url(src\images\Gorro.PNG) no-repeat top left;
-    border: 2px solid #FFFFFF;
-    box-sizing: border-box;
-    box-shadow: 0px -12px 16px #FFFFFF, 0px 12px 16px rgba(0, 0, 0, 0.3);
-    border-radius: 5px;
-}
-
-
-
-
-
-

@@ -6,28 +6,35 @@
                 <div class="column left">
                     <div class="card-secondary main">
                         <div class="content">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Name</th>
-                                        <th>Price</th>
-                                        <th>Quantity</th>
-                                        <th><div class="label-red no-padding">Remove</div></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let item of items">
-                                        <td>{{item.product.id}}</td>
-                                        <td>{{item.product.name}}</td>
-                                        <td>{{item.product.price}}</td>
-                                        <td>{{item.quantity}}</td>
-                                        <td>
-                                            <div class="xButton label-red no-padding" (click)="remove(item.product.id)">X</div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <div *ngIf="items.length != 0; else emptyCart">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Name</th>
+                                            <th>Price</th>
+                                            <th>Quantity</th>
+                                            <th><div class="label-red no-padding">Remove</div></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of items">
+                                            <td>{{item.product.id}}</td>
+                                            <td>{{item.product.name}}</td>
+                                            <td>{{item.product.price}}</td>
+                                            <td>{{item.quantity}}</td>
+                                            <td>
+                                                <div class="xButton label-red no-padding" (click)="remove(item.product.id)">X</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <ng-template #emptyCart>
+                                <div class="emptyLabel">
+                                    Your cart is empty. Add some products to start the fun!
+                                </div>
+                            </ng-template>
                         </div>
                     </div>
                 </div>
@@ -40,28 +47,30 @@
                             <div class="red-divider"></div>
                             <div class="label bold">= Total: $ $TOTAL</div>
                             <br><br>
-                            <div class="shipping-info">
-                                Ships to:
-                                <br>
-                                <div class="label-red">
-                                    {{name}}
+                            <div *ngIf="isLoggedIn">
+                                <div class="shipping-info">
+                                    Ships to:
                                     <br>
-                                    {{address}}
-                                    <br>
-                                    {{province}} {{city}}
-                                    <br>
-                                </div>
-                                Estimated delivery date: 
-                                <div class="label-red">
-                                    $DELIVERY_DATE
+                                    <div class="label-red">
+                                        {{name}}
+                                        <br>
+                                        {{address}}
+                                        <br>
+                                        {{province}} {{city}}
+                                        <br>
+                                    </div>
+                                    Estimated delivery date: 
+                                    <div class="label-red">
+                                        $DELIVERY_DATE
+                                    </div>
                                 </div>
                             </div>
-                            <div class="button">
+                            <button class="button" (click)="buyProducts()">
                                 <div class="content">
                                     Buy with credit card
                                     <img src="assets/cart/cardIcon.svg">
                                 </div>
-                            </div>
+                            </button>
                             <img src="assets/cart/applePayButton.png">
                             <img src="assets/cart/paypalButton.png">
                             <img src="assets/cart/googlePayButton.png">

@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../entities/product.entity';
 import { Item } from '../../entities/item.entity';
 import { ProductService } from '../../shared/services/product.service';
+import { isLoweredSymbol } from '@angular/compiler';
 
 @Component({
   selector: 'app-cart',
@@ -16,6 +17,7 @@ export class CartComponent implements OnInit {
 	address: String = "";
 	province: String = "";
 	city: String = "";
+	isLoggedIn: boolean = true;
 
 	public items: Item[] = [];
 	public subtotal: number = 0;
@@ -63,10 +65,21 @@ export class CartComponent implements OnInit {
 				this.loadCart();
 			}
 		});
+
+		// Check for user information if logged in
 		this.name = localStorage.getItem('userName');
 		this.address = localStorage.getItem('userAddress');
 		this.province = localStorage.getItem('userProvince');
 		this.city = localStorage.getItem('userCity');
+
+		if (this.address == "") {
+			this.isLoggedIn = false;
+		}
+	}
+
+	// Connects to server and sends new order
+	buyProducts() {
+
 	}
 
 	loadCart(): void {

@@ -3,30 +3,19 @@
         <div class="card">
             <div class="content">
                 <div class="title">Products</div>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Photo</th>
-                            <th>Buy</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr (click)="onSelect(cartProduct)" *ngFor="let cartProduct of cartProducts">
-                            <td>{{cartProduct.id}}</td>
-                            <td>{{cartProduct.name}}</td>
-                            <td>{{cartProduct.price}}</td>
-                            <td>
-                                <img src="assets/http://learningprogramming.net/wp-content/uploads/mean_stack/angular/{{cartProduct.photo}}" width="50">
-                            </td>
-                            <td>
-                                <a [routerLink]="['/cart', { id:cartProduct.id }]">Buy Now</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div *ngFor="let product of cartProducts">
+                    <div class="column padded">
+                        <div class="card-product">
+                            <div class="content">
+                                <img src="assets/products/{{ product.photo }}" (click)="onSelect(product)">
+                                <div class="label">{{ product.name }}</div>
+                                <a [routerLink]="['/cart', { id:product.id }]">
+                                    <div class="card-price">${{ product.price }}</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>    

@@ -1,0 +1,19 @@
+.column {
+    float: left;
+    width: 25%;
+}
+
+.padded {
+    padding: 0px 40px 40px 0px;
+}
+
+.card-product {
+    cursor: default;
+    letter-spacing: 2px;
+
+    img {
+        cursor: pointer;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
