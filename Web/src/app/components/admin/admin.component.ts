@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from 'src/app/shared/services/auth.service';
-import axios from 'axios'; // Este import es importante, es con lo que se hacen los gets
+import axios from 'axios';
 import {HttpClient} from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -17,119 +17,133 @@ export class AdminComponent implements OnInit {
     private router: Router
     ) { }
 
-  // Archivos usados para proyectar en las tablas
-  employees = [{}];
-  branches = [{}];
-  workers = [{}];
-  sellers = [{}];
-  products = [{}];
-  routes = [{}];
-  users = [{}];
+    employees = [{}];
+    branches = [{}];
+    workers = [{}];
+    sellers = [{}];
+    products = [{}];
+    routes = [{}];
+    users = [{}];
 
-  ngOnInit(): void {
-    this.getEmployeesFromServer();
-    this.getBranchesFromServer();
-    this.getWorkersFromServer();
-    this.getSellersFromServer();
-    this.getProductsFromServer();
-    this.getRoutesFromServer();
-    this.getUsersFromServer();
-  }
-
-  logOut() {
-    localStorage.setItem('userType', 'none');
-    this.router.navigate(['/login']);
-  }
-
-  // Esto es para hacer gets y guarda lo que obtenga en la var json, de una vez parseado
-  async getEmployeesFromServer() {
-    const url = 'https://localhost:5001/administrator/employees'; // Usar el url como una variable para mantener el orden
-    const response = await fetch(url); // Await espera la respuesta y fetch es una vara propia de JS
-    if (response.ok) {
-       // Parsea lo que sea que me mande como un Json sin importar que sea y lo guarda aqui
-      this.employees = await response.json();
-    } else {
-      alert('HTTP-Error: ' + response.status); // Este Else es en caso de que pegue algún error
+    ngOnInit(): void {
+      this.getEmployeesFromServer();
+      this.getBranchesFromServer();
+      this.getWorkersFromServer();
+      this.getSellersFromServer();
+      this.getProductsFromServer();
+      this.getRoutesFromServer();
+      this.getUsersFromServer();
     }
-  }
 
+  /**
+   * Function in charge of logging out of the session
+   */
+  logOut() {
+      localStorage.setItem('userType', 'none');
+      this.router.navigate(['/login']);
+    }
+
+  /**
+   * Function in charge of retrieving the employees list from the database
+   */
+  async getEmployeesFromServer() {
+      const url = 'https://localhost:5001/administrator/employees';
+      const response = await fetch(url);
+      if (response.ok) {
+        this.employees = await response.json();
+      } else {
+        alert('HTTP-Error: ' + response.status);
+      }
+    }
+
+  /**
+   * Function in charge of retrieving the branches list from the database
+   */
   async getBranchesFromServer() {
-    const url = 'https://localhost:5001/administrator/branches'; // Usar el url como una variable para mantener el orden
-    const response = await fetch(url); // Await espera la respuesta y fetch es una vara propia de JS
+    const url = 'https://localhost:5001/administrator/branches';
+    const response = await fetch(url);
     if (response.ok) {
-       // Parsea lo que sea que me mande como un Json sin importar que sea y lo guarda aqui
       this.branches = await response.json();
     } else {
-      alert('HTTP-Error: ' + response.status); // Este Else es en caso de que pegue algún error
+      alert('HTTP-Error: ' + response.status);
     }
   }
 
+  /**
+   * Function in charge of retrieving the workers list from the database
+   */
   async getWorkersFromServer() {
-    const url = 'https://localhost:5001/administrator/workers'; // Usar el url como una variable para mantener el orden
-    const response = await fetch(url); // Await espera la respuesta y fetch es una vara propia de JS
+    const url = 'https://localhost:5001/administrator/workers';
+    const response = await fetch(url);
     if (response.ok) {
-       // Parsea lo que sea que me mande como un Json sin importar que sea y lo guarda aqui
       this.workers = await response.json();
     } else {
-      alert('HTTP-Error: ' + response.status); // Este Else es en caso de que pegue algún error
+      alert('HTTP-Error: ' + response.status);
     }
   }
 
+  /**
+   * Function in charge of retrieving the sellers list from the database
+   */
   async getSellersFromServer() {
-    const url = 'https://localhost:5001/administrator/sellers'; // Usar el url como una variable para mantener el orden
-    const response = await fetch(url); // Await espera la respuesta y fetch es una vara propia de JS
+    const url = 'https://localhost:5001/administrator/sellers';
+    const response = await fetch(url);
     if (response.ok) {
-      // Parsea lo que sea que me mande como un Json sin importar que sea y lo guarda aqui
       this.sellers = await response.json();
     } else {
-      alert('HTTP-Error: ' + response.status); // Este Else es en caso de que pegue algún error
+      alert('HTTP-Error: ' + response.status);
     }
   }
 
+  /**
+   * Function in charge of retrieving the products list from the database
+   */
   async getProductsFromServer() {
-    const url = 'https://localhost:5001/administrator/products'; // Usar el url como una variable para mantener el orden
-    const response = await fetch(url); // Await espera la respuesta y fetch es una vara propia de JS
+    const url = 'https://localhost:5001/administrator/products';
+    const response = await fetch(url);
     if (response.ok) {
-      // Parsea lo que sea que me mande como un Json sin importar que sea y lo guarda aqui
       this.products = await response.json();
     } else {
-      alert('HTTP-Error: ' + response.status); // Este Else es en caso de que pegue algún error
+      alert('HTTP-Error: ' + response.status);
     }
   }
 
+  /**
+   * Function in charge of retrieving the routes list from the database
+   */
   async getRoutesFromServer() {
-    const url = 'https://localhost:5001/administrator/routes'; // Usar el url como una variable para mantener el orden
-    const response = await fetch(url); // Await espera la respuesta y fetch es una vara propia de JS
+    const url = 'https://localhost:5001/administrator/routes';
+    const response = await fetch(url);
     if (response.ok) {
-      // Parsea lo que sea que me mande como un Json sin importar que sea y lo guarda aqui
       this.routes = await response.json();
     } else {
-      alert('HTTP-Error: ' + response.status); // Este Else es en caso de que pegue algún error
+      alert('HTTP-Error: ' + response.status);
     }
   }
 
+  /**
+   * Function in charge of retrieving the users list from the database
+   */
   async getUsersFromServer() {
-    const url = 'https://localhost:5001/client/users'; // Usar el url como una variable para mantener el orden
-    const response = await fetch(url); // Await espera la respuesta y fetch es una vara propia de JS
+    const url = 'https://localhost:5001/client/users';
+    const response = await fetch(url);
     if (response.ok) {
-      // Parsea lo que sea que me mande como un Json sin importar que sea y lo guarda aqui
       this.users = await response.json();
     } else {
-      alert('HTTP-Error: ' + response.status); // Este Else es en caso de que pegue algún error
+      alert('HTTP-Error: ' + response.status);
     }
   }
 
-  // Este metodo agrega empleados
+  /**
+   * Function in charge of inserting an employee to the database
+   */
   addEmployee() {
-
-    // Esta parte obtiene los valores de los entries
     const empName = (document.getElementById('e1') as HTMLInputElement).value;
     const empDepartment = (document.getElementById('e2') as HTMLInputElement).value;
     const empId = (document.getElementById('e3') as HTMLInputElement).value;
     const empEMail = (document.getElementById('e4') as HTMLInputElement).value;
     const empPassword = (document.getElementById('e5') as HTMLInputElement).value;
 
-    // Vacio los entries
     (document.getElementById('e1') as HTMLInputElement).value = '';
     (document.getElementById('e2') as HTMLInputElement).value = '';
     (document.getElementById('e3') as HTMLInputElement).value = '';
@@ -149,17 +163,17 @@ export class AdminComponent implements OnInit {
     })
       .then(response => {
         console.log(response);
+        window.location.reload();
       })
       .catch(error => {
         console.log(error.response);
       });
-    window.location.reload();
   }
 
-  // Este metodo agrega nuevas branch
+  /**
+   * Function in charge of inserting a branch to the database
+   */
   addBranch() {
-
-    // Esta parte obtiene los valores de los entries
     const brchName = (document.getElementById('b1') as HTMLInputElement).value;
     const brchAddress = (document.getElementById('b2') as HTMLInputElement).value;
     const brchProvince = (document.getElementById('b3') as HTMLInputElement).value;
@@ -168,7 +182,6 @@ export class AdminComponent implements OnInit {
     const brchBoss = (document.getElementById('b6') as HTMLInputElement).value;
     const brchId = (document.getElementById('b7') as HTMLInputElement).value;
 
-    // Vacio los entries
     (document.getElementById('b1') as HTMLInputElement).value = '';
     (document.getElementById('b2') as HTMLInputElement).value = '';
     (document.getElementById('b3') as HTMLInputElement).value = '';
@@ -192,17 +205,17 @@ export class AdminComponent implements OnInit {
     })
       .then(response => {
         console.log(response);
+        window.location.reload();
       })
       .catch(error => {
         console.log(error.response);
       });
-    window.location.reload();
   }
 
-// Metodos de los botones para los workers
-  addWorker() { // Metodo para agrergar un nuevo trabajador
-
-    // Variables que recojen los datos directamente del entry
+  /**
+   * Function in charge of inserting a worker to the database
+   */
+  addWorker() {
     const wrkrIdName = (document.getElementById('w1') as HTMLInputElement).value;
     const wrkrFullName = (document.getElementById('w2') as HTMLInputElement).value;
     const wrkrBirthday = (document.getElementById('w3') as HTMLInputElement).value;
@@ -211,7 +224,6 @@ export class AdminComponent implements OnInit {
     const wrkrHourlyWage = (document.getElementById('w6') as HTMLInputElement).value;
     const wrkrMonthlyWage = (document.getElementById('w7') as HTMLInputElement).value;
 
-    // Este segmento vacia los entries
     (document.getElementById('w1') as HTMLInputElement).value = '';
     (document.getElementById('w2') as HTMLInputElement).value = '';
     (document.getElementById('w3') as HTMLInputElement).value = '';
@@ -235,21 +247,20 @@ export class AdminComponent implements OnInit {
     })
       .then(response => {
         console.log(response);
+        window.location.reload();
       })
       .catch(error => {
         console.log(error.response);
       });
-    window.location.reload();
   }
 
-// Este metodo es para agregar sellers
-  addSeller() {// Metodo llamado por el boton
-
-    // Esta parte obtiene los valores de los entries
+  /**
+   * Function in charge of inserting a seller to the database
+   */
+  addSeller() {
     const selName = (document.getElementById('s1') as HTMLInputElement).value;
     const selIdNumber = (document.getElementById('s2') as HTMLInputElement).value;
 
-    // Vacio los entries
     (document.getElementById('s1') as HTMLInputElement).value = '';
     (document.getElementById('s2') as HTMLInputElement).value = '';
 
@@ -263,17 +274,17 @@ export class AdminComponent implements OnInit {
     })
       .then(response => {
         console.log(response);
+        window.location.reload();
       })
       .catch(error => {
         console.log(error.response);
       });
-    window.location.reload();
   }
 
-
-// Este metodo agrega productos
+  /**
+   * Function in charge of inserting a product to the database
+   */
   addProduct() {
-
     const prodName = (document.getElementById('p1') as HTMLInputElement).value;
     const prodDescription = (document.getElementById('p2') as HTMLInputElement).value;
     const prodBarcode = (document.getElementById('p3') as HTMLInputElement).value;
@@ -284,7 +295,6 @@ export class AdminComponent implements OnInit {
     const prodEntryDate = (document.getElementById('p8') as HTMLInputElement).value;
     const prodSales = (document.getElementById('p9') as HTMLInputElement).value;
 
-    // Vacio los entries
     (document.getElementById('p1') as HTMLInputElement).value = '';
     (document.getElementById('p2') as HTMLInputElement).value = '';
     (document.getElementById('p3') as HTMLInputElement).value = '';
@@ -312,19 +322,20 @@ export class AdminComponent implements OnInit {
     })
       .then(response => {
         console.log(response);
+        window.location.reload();
       })
       .catch(error => {
         console.log(error.response);
       });
-    window.location.reload();
   }
 
+  /**
+   * Function in charge of inserting a route to the database
+   */
  addRoute() {
-   // Esta parte obtiene los valores de los entries
    const rtNumber = (document.getElementById('r1') as HTMLInputElement).value;
    const rtDistrics = (document.getElementById('r2') as HTMLInputElement).value;
 
-   // Vacio los entries
    (document.getElementById('r1') as HTMLInputElement).value = '';
    (document.getElementById('r2') as HTMLInputElement).value = '';
 
@@ -338,15 +349,17 @@ export class AdminComponent implements OnInit {
    })
      .then(response => {
        console.log(response);
+       window.location.reload();
      })
      .catch(error => {
        console.log(error.response);
      });
-   window.location.reload();
  }
 
+  /**
+   * Function in charge of inserting an user to the database
+   */
   addUser() {
-    // Esta parte obtiene los valores de los entries
     const usrName = (document.getElementById('u1') as HTMLInputElement).value;
     const usrID = (document.getElementById('u2') as HTMLInputElement).value;
     const usrEMail = (document.getElementById('u3') as HTMLInputElement).value;
@@ -356,7 +369,6 @@ export class AdminComponent implements OnInit {
     const usrProvince = (document.getElementById('u7') as HTMLInputElement).value;
     const usrCity = (document.getElementById('u8') as HTMLInputElement).value;
 
-    // Vacio los entries
     (document.getElementById('u1') as HTMLInputElement).value = '';
     (document.getElementById('u2') as HTMLInputElement).value = '';
     (document.getElementById('u3') as HTMLInputElement).value = '';
@@ -382,28 +394,28 @@ export class AdminComponent implements OnInit {
     })
       .then(response => {
         console.log(response);
+        window.location.reload();
       })
       .catch(error => {
         console.log(error.response);
       });
-    window.location.reload();
   }
 
+  /**
+   * Function in charge of deleting an employee from the database
+   */
  deleteEmployee() {
-    // Esta parte obtiene los valores de los entries
    const empName = (document.getElementById('e1') as HTMLInputElement).value;
    const empDepartment = (document.getElementById('e2') as HTMLInputElement).value;
    const empId = (document.getElementById('e3') as HTMLInputElement).value;
    const empEMail = (document.getElementById('e4') as HTMLInputElement).value;
    const empPassword = (document.getElementById('e5') as HTMLInputElement).value;
 
-    // Vacio los entries
    (document.getElementById('e1') as HTMLInputElement).value = '';
    (document.getElementById('e2') as HTMLInputElement).value = '';
    (document.getElementById('e3') as HTMLInputElement).value = '';
    (document.getElementById('e4') as HTMLInputElement).value = '';
    (document.getElementById('e5') as HTMLInputElement).value = '';
-
 
    axios.post('https://localhost:5001/administrator/employees/delete', {
       name: empName,
@@ -418,15 +430,17 @@ export class AdminComponent implements OnInit {
     })
       .then(response => {
         console.log(response);
+        window.location.reload();
       })
       .catch(error => {
         console.log(error.response);
       });
-   window.location.reload();
   }
 
+  /**
+   * Function in charge of deleting a branch from the database
+   */
   deleteBranches() {
-    // Esta parte obtiene los valores de los entries
     const brchName = (document.getElementById('b1') as HTMLInputElement).value;
     const brchAddress = (document.getElementById('b2') as HTMLInputElement).value;
     const brchProvince = (document.getElementById('b3') as HTMLInputElement).value;
@@ -435,7 +449,6 @@ export class AdminComponent implements OnInit {
     const brchBoss = (document.getElementById('b6') as HTMLInputElement).value;
     const brchId = (document.getElementById('b7') as HTMLInputElement).value;
 
-    // Vacio los entries
     (document.getElementById('b1') as HTMLInputElement).value = '';
     (document.getElementById('b2') as HTMLInputElement).value = '';
     (document.getElementById('b3') as HTMLInputElement).value = '';
@@ -459,15 +472,17 @@ export class AdminComponent implements OnInit {
     })
       .then(response => {
         console.log(response);
+        window.location.reload();
       })
       .catch(error => {
         console.log(error.response);
       });
-    window.location.reload();
   }
 
+  /**
+   * Function in charge of deleting a worker from the database
+   */
   deleteWorker() {
-    // Variables que recojen los datos directamente del entry
     const wrkrIdName = (document.getElementById('w1') as HTMLInputElement).value;
     const wrkrFullName = (document.getElementById('w2') as HTMLInputElement).value;
     const wrkrBirthday = (document.getElementById('w3') as HTMLInputElement).value;
@@ -476,7 +491,6 @@ export class AdminComponent implements OnInit {
     const wrkrHourlyWage = (document.getElementById('w6') as HTMLInputElement).value;
     const wrkrMonthlyWage = (document.getElementById('w7') as HTMLInputElement).value;
 
-    // Este segmento vacia los entries
     (document.getElementById('w1') as HTMLInputElement).value = '';
     (document.getElementById('w2') as HTMLInputElement).value = '';
     (document.getElementById('w3') as HTMLInputElement).value = '';
@@ -500,19 +514,20 @@ export class AdminComponent implements OnInit {
     })
       .then(response => {
         console.log(response);
+        window.location.reload();
       })
       .catch(error => {
         console.log(error.response);
       });
-    window.location.reload();
   }
 
+  /**
+   * Function in charge of deleting a seller from the database
+   */
   deleteSeller() {
-    // Esta parte obtiene los valores de los entries
     const selName = (document.getElementById('s1') as HTMLInputElement).value;
     const selIdNumber = (document.getElementById('s2') as HTMLInputElement).value;
 
-    // Vacio los entries
     (document.getElementById('s1') as HTMLInputElement).value = '';
     (document.getElementById('s2') as HTMLInputElement).value = '';
 
@@ -526,13 +541,16 @@ export class AdminComponent implements OnInit {
     })
       .then(response => {
         console.log(response);
+        window.location.reload();
       })
       .catch(error => {
         console.log(error.response);
       });
-    window.location.reload();
   }
 
+  /**
+   * Function in charge of deleting a product from the database
+   */
   deleteProduct() {
     const prodName = (document.getElementById('p1') as HTMLInputElement).value;
     const prodDescription = (document.getElementById('p2') as HTMLInputElement).value;
@@ -544,7 +562,6 @@ export class AdminComponent implements OnInit {
     const prodEntryDate = (document.getElementById('p8') as HTMLInputElement).value;
     const prodSales = (document.getElementById('p9') as HTMLInputElement).value;
 
-    // Vacio los entries
     (document.getElementById('p1') as HTMLInputElement).value = '';
     (document.getElementById('p2') as HTMLInputElement).value = '';
     (document.getElementById('p3') as HTMLInputElement).value = '';
@@ -572,18 +589,20 @@ export class AdminComponent implements OnInit {
     })
       .then(response => {
         console.log(response);
+        window.location.reload();
       })
       .catch(error => {
         console.log(error.response);
       });
-    window.location.reload();
   }
+
+  /**
+   * Function in charge of deleting a route from the database
+   */
   deleteRoute() {
-    // Esta parte obtiene los valores de los entries
     const rtNumber = (document.getElementById('r1') as HTMLInputElement).value;
     const rtDistrics = (document.getElementById('r2') as HTMLInputElement).value;
 
-    // Vacio los entries
     (document.getElementById('r1') as HTMLInputElement).value = '';
     (document.getElementById('r2') as HTMLInputElement).value = '';
 
@@ -597,15 +616,17 @@ export class AdminComponent implements OnInit {
     })
       .then(response => {
         console.log(response);
+        window.location.reload();
       })
       .catch(error => {
         console.log(error.response);
       });
-    window.location.reload();
   }
 
+  /**
+   * Function in charge of deleting an user from the database
+   */
   deleteUser() {
-    // Esta parte obtiene los valores de los entries
     const usrName = (document.getElementById('u1') as HTMLInputElement).value;
     const usrID = (document.getElementById('u2') as HTMLInputElement).value;
     const usrEMail = (document.getElementById('u3') as HTMLInputElement).value;
@@ -615,7 +636,6 @@ export class AdminComponent implements OnInit {
     const usrProvince = (document.getElementById('u7') as HTMLInputElement).value;
     const usrCity = (document.getElementById('u8') as HTMLInputElement).value;
 
-    // Vacio los entries
     (document.getElementById('u1') as HTMLInputElement).value = '';
     (document.getElementById('u2') as HTMLInputElement).value = '';
     (document.getElementById('u3') as HTMLInputElement).value = '';
@@ -641,10 +661,10 @@ export class AdminComponent implements OnInit {
     })
       .then(response => {
         console.log(response);
+        window.location.reload();
       })
       .catch(error => {
         console.log(error.response);
       });
-    window.location.reload();
   }
 }

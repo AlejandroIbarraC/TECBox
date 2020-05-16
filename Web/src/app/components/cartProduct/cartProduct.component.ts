@@ -21,19 +21,24 @@ export class CartProductComponent implements OnInit {
     this.getProductsFromServer();
   }
 
+  /**
+   * Function in charge of retrieving the products list from the database
+   */
   async getProductsFromServer() {
-    const url = 'https://localhost:5001/administrator/products'; // Usar el url como una variable para mantener el orden
-    const response = await fetch(url); // Await espera la respuesta y fetch es una vara propia de JS
+    const url = 'https://localhost:5001/administrator/products';
+    const response = await fetch(url);
     if (response.ok) {
-      // Parsea lo que sea que me mande como un Json sin importar que sea y lo guarda aqui
       this.cartProducts = await response.json();
     } else {
-      alert('HTTP-Error: ' + response.status); // Este Else es en caso de que pegue algún error
+      alert('HTTP-Error: ' + response.status);
     }
   }
 
+  /**
+   * Function in charge of redirecting the user to a product
+   * @param product barcode of the product
+   */
   onSelect(product) {
-    console.log(product);
     this.router.navigate(['/products', product.barcode]);
   }
 }

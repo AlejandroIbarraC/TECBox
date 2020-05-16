@@ -9,6 +9,9 @@ import axios from 'axios';
 export class AppComponent {
   title = 'TECBox';
 
+  /**
+   * Function in charge of searching a product based on it's name
+   */
   searchProduct() {
     const productName = (document.getElementById('prod') as HTMLInputElement).value;
 

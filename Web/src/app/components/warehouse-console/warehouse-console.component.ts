@@ -21,24 +21,31 @@ export class WarehouseConsoleComponent implements OnInit {
     this.getPackagesFromServer();
   }
 
+  /**
+   * Function in charge of logging out of the session
+   */
   logOut() {
     localStorage.setItem('userType', 'none');
     this.router.navigate(['/login']);
   }
 
+  /**
+   * Function in charge of retrieving the packages list from the database
+   */
   async getPackagesFromServer() {
-    const url = 'https://localhost:5001/warehouse/packages'; // Usar el url como una variable para mantener el orden
-    const response = await fetch(url); // Await espera la respuesta y fetch es una vara propia de JS
+    const url = 'https://localhost:5001/warehouse/packages';
+    const response = await fetch(url);
     if (response.ok) {
-      // Parsea lo que sea que me mande como un Json sin importar que sea y lo guarda aqui
       this.packages = await response.json();
     } else {
-      alert('HTTP-Error: ' + response.status); // Este Else es en caso de que pegue algún error
+      alert('HTTP-Error: ' + response.status);
     }
   }
 
+  /**
+   * Function in charge of inserting a package to the database
+   */
   addData() {
-    // Get the data from the entries using the id
     const pkgTrackId = (document.getElementById('w1') as HTMLInputElement).value;
     const pkgClient = (document.getElementById('w2') as HTMLInputElement).value;
     const pkgDescription = (document.getElementById('w3') as HTMLInputElement).value;
@@ -47,7 +54,6 @@ export class WarehouseConsoleComponent implements OnInit {
     const pkgRoute = (document.getElementById('w6') as HTMLInputElement).value;
     const pkgDeliveryMan = (document.getElementById('w7') as HTMLInputElement).value;
 
-    // This part empties the entries
     (document.getElementById('w1') as HTMLInputElement).value = '';
     (document.getElementById('w2') as HTMLInputElement).value = '';
     (document.getElementById('w3') as HTMLInputElement).value = '';
@@ -71,16 +77,17 @@ export class WarehouseConsoleComponent implements OnInit {
     })
       .then(response => {
         console.log(response);
+        window.location.reload();
       })
       .catch(error => {
         console.log(error.response);
       });
-    window.location.reload();
   }
 
-
-  deleteData(){
-     // Get the data from the entries using the id
+  /**
+   * Function in charge of deleting a package from the database
+   */
+  deleteData() {
      const pkgTrackId = (document.getElementById('w1') as HTMLInputElement).value;
      const pkgClient = (document.getElementById('w2') as HTMLInputElement).value;
      const pkgDescription = (document.getElementById('w3') as HTMLInputElement).value;
@@ -89,7 +96,6 @@ export class WarehouseConsoleComponent implements OnInit {
      const pkgRoute = (document.getElementById('w6') as HTMLInputElement).value;
      const pkgDeliveryMan = (document.getElementById('w7') as HTMLInputElement).value;
 
-     // This part empties the entries
      (document.getElementById('w1') as HTMLInputElement).value = '';
      (document.getElementById('w2') as HTMLInputElement).value = '';
      (document.getElementById('w2') as HTMLInputElement).value = '';
@@ -113,6 +119,7 @@ export class WarehouseConsoleComponent implements OnInit {
     })
       .then(response => {
         console.log(response);
+        window.location.reload();
       })
       .catch(error => {
         console.log(error.response);

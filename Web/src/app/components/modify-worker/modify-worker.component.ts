@@ -13,6 +13,9 @@ export class ModifyWorkerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Function in charge of modifying a work in the database
+   */
   modifyWorker() {
     const wrkrIdName = (document.getElementById('mw1') as HTMLInputElement).value;
     const wrkrFullName = (document.getElementById('mw2') as HTMLInputElement).value;
@@ -22,7 +25,6 @@ export class ModifyWorkerComponent implements OnInit {
     const wrkrHourlyWage = (document.getElementById('mw6') as HTMLInputElement).value;
     const wrkrMonthlyWage = (document.getElementById('mw7') as HTMLInputElement).value;
 
-    // Este segmento vacia los entries
     (document.getElementById('mw1') as HTMLInputElement).value = '';
     (document.getElementById('mw2') as HTMLInputElement).value = '';
     (document.getElementById('mw3') as HTMLInputElement).value = '';

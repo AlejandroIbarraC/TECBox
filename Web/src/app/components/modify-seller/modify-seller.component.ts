@@ -13,11 +13,13 @@ export class ModifySellerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Function in charge of modifying a seller in the database
+   */
   modifySeller() {
     const selName = (document.getElementById('ms2') as HTMLInputElement).value;
     const selIdNumber = (document.getElementById('ms1') as HTMLInputElement).value;
 
-    // Vacio los entries
     (document.getElementById('ms1') as HTMLInputElement).value = '';
     (document.getElementById('ms2') as HTMLInputElement).value = '';
 

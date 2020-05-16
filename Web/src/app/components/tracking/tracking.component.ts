@@ -7,20 +7,24 @@ import axios from 'axios';
   styleUrls: ['./tracking.component.scss']
 })
 export class TrackingComponent implements OnInit {
-  showStatus: boolean = false;
-  pStatus: string = "";
-  errorLabel: string = " ";
+  showStatus = false;
+  pStatus = '';
+  errorLabel = '';
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  /**
+   * Function in charge of sending a package tracking number to the database and receive the current info of it
+   */
   track() {
     const trackNumber = (document.getElementById('tnumber') as HTMLInputElement).value;
     (document.getElementById('tnumber') as HTMLInputElement).value = '';
 
-    if (trackNumber != "") {
+    // tslint:disable-next-line:triple-equals
+    if (trackNumber != '') {
       axios.post('https://localhost:5001/warehouse/packages/tracking', {
         trackingID: trackNumber,
         client: 'null',
@@ -37,27 +41,22 @@ export class TrackingComponent implements OnInit {
         .then(response => {
           console.log(response);
           // tslint:disable-next-line:triple-equals
-
           if (response.data.status == 'null') {
             this.pStatus = 'Package not found';
           } else {
             this.pStatus = response.data.status;
           }
-
-          // Show status label in UI
           this.showStatus = true;
         })
         .catch(error => {
           console.log(error.response);
           this.pStatus = 'Error. Offline';
-
-          // Show status label in UI
           this.showStatus = true;
         });
-        this.errorLabel = " "
+      this.errorLabel = '';
     } else {
       this.showStatus = false;
-      this.errorLabel = "Please enter valid package tracking number"
+      this.errorLabel = 'Please enter valid package tracking number';
     }
   }
 

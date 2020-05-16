@@ -9,7 +9,7 @@ import { AppComponent } from 'src/app/app.component';
 export class AboutComponent implements OnInit {
   title: string;
 
-  constructor() { 
+  constructor() {
   }
 
   ngOnInit(): void {

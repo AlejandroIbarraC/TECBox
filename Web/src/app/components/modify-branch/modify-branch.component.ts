@@ -13,6 +13,9 @@ export class ModifyBranchComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Function in charge of modifying a branch in the database
+   */
   modifyBranch() {
     const brchName = (document.getElementById('mb2') as HTMLInputElement).value;
     const brchAddress = (document.getElementById('mb3') as HTMLInputElement).value;
@@ -22,7 +25,6 @@ export class ModifyBranchComponent implements OnInit {
     const brchBoss = (document.getElementById('mb7') as HTMLInputElement).value;
     const brchId = (document.getElementById('mb1') as HTMLInputElement).value;
 
-    // Vacio los entries
     (document.getElementById('mb1') as HTMLInputElement).value = '';
     (document.getElementById('mb2') as HTMLInputElement).value = '';
     (document.getElementById('mb3') as HTMLInputElement).value = '';

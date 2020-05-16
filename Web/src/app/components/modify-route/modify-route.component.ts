@@ -13,11 +13,13 @@ export class ModifyRouteComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Function in charge of modifying a route in the database
+   */
   modifyRoute() {
     const rtNumber = (document.getElementById('mr1') as HTMLInputElement).value;
     const rtDistrics = (document.getElementById('mr2') as HTMLInputElement).value;
 
-    // Vacio los entries
     (document.getElementById('mr1') as HTMLInputElement).value = '';
     (document.getElementById('mr2') as HTMLInputElement).value = '';
 

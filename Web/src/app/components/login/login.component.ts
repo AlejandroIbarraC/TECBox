@@ -20,6 +20,11 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Function in charge of logging in a team member
+   * @param empEmail email of the team member
+   * @param empPassword password of the team member
+   */
   logInTeam(empEmail: string, empPassword: string) {
     // tslint:disable-next-line:triple-equals
     if (this.userType == 'admin') {
@@ -40,9 +45,9 @@ export class LoginComponent implements OnInit {
           if (response.data.name != 'null') {
             this.router.navigateByUrl('/admin');
             localStorage.setItem('userType', 'admin');
-            document.getElementById("errorLabelTeam").textContent = ""
+            document.getElementById('errorLabelTeam').textContent = '';
           } else {
-            document.getElementById("errorLabelTeam").textContent = "Wrong email, password or department"
+            document.getElementById('errorLabelTeam').textContent = 'Wrong email, password or department';
           }
         })
         .catch(error => {
@@ -67,9 +72,9 @@ export class LoginComponent implements OnInit {
           if (response.data.name != 'null') {
             this.router.navigateByUrl('/warehouse-console');
             localStorage.setItem('userType', 'warehouse');
-            document.getElementById("errorLabelTeam").textContent = ""
+            document.getElementById('errorLabelTeam').textContent = '';
           } else {
-            document.getElementById("errorLabelTeam").textContent = "Wrong email, password or department"
+            document.getElementById('errorLabelTeam').textContent = 'Wrong email, password or department';
           }
         })
         .catch(error => {
@@ -94,9 +99,9 @@ export class LoginComponent implements OnInit {
           if (response.data.name != 'null') {
             this.router.navigateByUrl('/delivery-console');
             localStorage.setItem('userType', 'delivery');
-            document.getElementById("errorLabelTeam").textContent = ""
+            document.getElementById('errorLabelTeam').textContent = '';
           } else {
-            document.getElementById("errorLabelTeam").textContent = "Wrong email, password or department"
+            document.getElementById('errorLabelTeam').textContent = 'Wrong email, password or department';
           }
         })
         .catch(error => {
@@ -105,16 +110,16 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  /**
+   * Function in charge of logging in a user
+   */
   logInUser() {
-    // Get information and store it in a const
     const usrEmail = (document.getElementById('userEmail') as HTMLInputElement).value;
     const usrPassword = (document.getElementById('userPassword') as HTMLInputElement).value;
 
-    // Empty all entries
     (document.getElementById('userEmail') as HTMLInputElement).value = '';
     (document.getElementById('userPassword') as HTMLInputElement).value = '';
 
-    // CONNECT TO SERVER AND VERIFY IF USER EXISTS
     axios.post('https://localhost:5001/client/users/information', {
       name: 'null',
       idNumber: 'null',
@@ -133,7 +138,6 @@ export class LoginComponent implements OnInit {
         console.log(response);
         // tslint:disable-next-line:triple-equals
         if (response.data.name != 'null') {
-          // Log in using Firebase (ONLY IF USER EXISTS IN SERVER)
           localStorage.setItem('userName', response.data.name);
           localStorage.setItem('userID', response.data.idNumber);
           localStorage.setItem('userEmail', response.data.eMail);
@@ -143,10 +147,9 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('userProvince', response.data.province);
           localStorage.setItem('userCity', response.data.city);
           this.authService.SignIn(usrEmail, usrPassword);
-          document.getElementById("errorLabeluUser").textContent = ""
+          document.getElementById('errorLabeluUser').textContent = '';
         } else {
-          // SHOW ERROR MESSAGE
-          document.getElementById("errorLabelUser").textContent = "Wrong email or password"
+          document.getElementById('errorLabelUser').textContent = 'Wrong email or password';
         }
       })
       .catch(error => {
@@ -154,12 +157,18 @@ export class LoginComponent implements OnInit {
       });
   }
 
+  /**
+   * Function in charge of detecting the type of employee trying to logging in
+   * @param value department where the employee works
+   */
   onItemChange(value) {
     this.userType = value;
   }
 
+  /**
+   * Function in charge of registering a user
+   */
   register() {
-    // Get information and store it in a const
     const usrName = (document.getElementById('r1') as HTMLInputElement).value;
     const usrId = (document.getElementById('r2') as HTMLInputElement).value;
     const usrEmail = (document.getElementById('r3') as HTMLInputElement).value;
@@ -169,7 +178,6 @@ export class LoginComponent implements OnInit {
     const usrProvince = (document.getElementById('r7') as HTMLInputElement).value;
     const usrCity = (document.getElementById('r8') as HTMLInputElement).value;
 
-    // Empty all entries
     (document.getElementById('r1') as HTMLInputElement).value = '';
     (document.getElementById('r2') as HTMLInputElement).value = '';
     (document.getElementById('r3') as HTMLInputElement).value = '';
@@ -180,7 +188,6 @@ export class LoginComponent implements OnInit {
     (document.getElementById('r8') as HTMLInputElement).value = '';
 
     if (usrPassword.length > 5 && usrEmail.includes('@')) {
-      // CONNECT TO SERVER AND POST NEW REGISTERED USER DATA
       axios.post('https://localhost:5001/client/users/insert', {
         name: usrName,
         idNumber: usrId,
@@ -197,15 +204,12 @@ export class LoginComponent implements OnInit {
       })
         .then(response => {
           console.log(response);
+          this.authService.SignUp(usrEmail, usrPassword);
         })
         .catch(error => {
           console.log(error.response);
         });
-
-      // Register user in Firebase
-      this.authService.SignUp(usrEmail, usrPassword);
     } else {
-      // SHOW ERROR MESSAGE
       console.log('Something happened, try again with a longer password or a valid email');
     }
   }
