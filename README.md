@@ -13,13 +13,13 @@ Products                        |Product Detail                      |
 :------------------------------:|:------------------------------:
 ![](Docs/readme-images/r3.png)  |  ![](Docs/readme-images/r4.png)
 
-Cart                       |Administrator Console              |
+Administrator Console                       |Cart              |
 :-------------------------:|:-------------------------:
-![](Docs/readme-images/r5.png)  |  ![](Docs/readme-images/r2.png)
+![](Docs/readme-images/r2.png)  |  ![](Docs/readme-images/r5.png)
 
 Tracking                       |About              |
 :-------------------------:|:-------------------------:
-![](Docs/readme-images/r8.png)  |  ![](Docs/readme-images/r9.png)
+![](Docs/readme-images/r9.png)  |  ![](Docs/readme-images/r8.png)
 
 Mobile App Package List         |Mobile App Package Detail              |
 :-------------------------:|:-------------------------:
@@ -66,10 +66,6 @@ We include a mobile app for deliverers to update their assigned package status q
 You need to replace the IP of the server in all of the Alamofire POST methods, located in the files **AppSession.swift** (Util folder), **PackageView.swift** (Views folder) and **PackageDetail.swift** (Views/Subviews folder) with the IP of your the machine the server is running on. If you're using a personal computer, then the IP of that machine will do. Make sure to have both devices connected to the same network.
 
 Our tests were made on an iPhone 11 Pro Max running iOS 13.5.
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
