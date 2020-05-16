@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\skryf\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\skryf\\.nuget\\packages"
+      "/Users/alejandro/.dotnet/store/|arch|/|tfm|",
+      "/Users/alejandro/.nuget/packages"
     ]
   }
 }
