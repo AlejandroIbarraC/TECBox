@@ -10,6 +10,15 @@ namespace Server.Source
 {
     public class Auxiliar
     {
+        /// <summary>
+        /// Function in charge of receiving a date in string and separating it in a list of integers base on year, month and day
+        /// </summary>
+        /// <param name="date">
+        /// String with the date to be separated
+        /// </param>
+        /// <returns>
+        /// A list of integers organized in year, month and day
+        /// </returns>
         public static int[] getDateInArray(string date)
         {
             int day = 0;

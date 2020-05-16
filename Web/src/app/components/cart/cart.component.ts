@@ -114,7 +114,6 @@ export class CartComponent implements OnInit {
       }
     });
 
-    // Check for user information if logged in
     this.name = localStorage.getItem('userName');
     this.address = localStorage.getItem('userAddress');
     this.province = localStorage.getItem('userProvince');
@@ -126,10 +125,11 @@ export class CartComponent implements OnInit {
     }
   }
 
-  // Connects to server and sends new order
+  /**
+   * Function in charge of creating packages from the bought products and send them to the database
+   */
   buyProducts() {
     if (this.isLoggedIn) {
-      console.log('hola');
       const cart = JSON.parse(localStorage.getItem('cart'));
       const allData = [];
       let data;
@@ -164,6 +164,9 @@ export class CartComponent implements OnInit {
     }
   }
 
+  /**
+   * Function in charge of loading the cart to be shown on screen
+   */
   loadCart(): void {
     this.subtotal = 0;
     this.tax = 0;
@@ -195,6 +198,10 @@ export class CartComponent implements OnInit {
     }
   }
 
+  /**
+   * Function in charge of removing an item from the cart
+   * @param id from the item to be removed
+   */
   remove(id: number): void {
     const cart: any = JSON.parse(localStorage.getItem('cart'));
     const index = -1;

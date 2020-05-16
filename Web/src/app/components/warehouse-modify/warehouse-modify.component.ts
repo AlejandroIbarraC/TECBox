@@ -13,8 +13,10 @@ export class WarehouseModifyComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Function in charge of modifying a package in the database
+   */
   modifyWareHouse() {
-     // Get the data from the entries using the id
      const pkgTrackId = (document.getElementById('mw1') as HTMLInputElement).value;
      const pkgClient = (document.getElementById('mw2') as HTMLInputElement).value;
      const pkgDescription = (document.getElementById('mw3') as HTMLInputElement).value;
@@ -23,7 +25,6 @@ export class WarehouseModifyComponent implements OnInit {
      const pkgRoute = (document.getElementById('mw6') as HTMLInputElement).value;
      const pkgDeliveryMan = (document.getElementById('mw7') as HTMLInputElement).value;
 
-     // This part empties the entries
      (document.getElementById('mw1') as HTMLInputElement).value = '';
      (document.getElementById('mw2') as HTMLInputElement).value = '';
      (document.getElementById('mw3') as HTMLInputElement).value = '';

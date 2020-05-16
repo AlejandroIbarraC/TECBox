@@ -13,8 +13,10 @@ export class ModifyUserComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Function in charge of modifying an user in the database
+   */
   modifyUser() {
-    // Esta parte obtiene los valores de los entries
     const usrName = (document.getElementById('mu2') as HTMLInputElement).value;
     const usrID = (document.getElementById('mu1') as HTMLInputElement).value;
     const usrEMail = (document.getElementById('mu3') as HTMLInputElement).value;
@@ -24,7 +26,6 @@ export class ModifyUserComponent implements OnInit {
     const usrProvince = (document.getElementById('mu7') as HTMLInputElement).value;
     const usrCity = (document.getElementById('mu8') as HTMLInputElement).value;
 
-    // Vacio los entries
     (document.getElementById('mu1') as HTMLInputElement).value = '';
     (document.getElementById('mu2') as HTMLInputElement).value = '';
     (document.getElementById('mu3') as HTMLInputElement).value = '';

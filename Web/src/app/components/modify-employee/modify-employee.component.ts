@@ -13,8 +13,10 @@ export class ModifyEmployeeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Function in charge of modifying an employee in the database
+   */
   modifyEmployee() {
-
     const newName = (document.getElementById('me2') as HTMLInputElement).value;
     const newDepartment = (document.getElementById('me3') as HTMLInputElement).value;
     const empId = (document.getElementById('me1') as HTMLInputElement).value;

@@ -13,6 +13,9 @@ export class ModifyProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Function in charge of modifying a product in the database
+   */
   modifyProduct() {
     const prodName = (document.getElementById('mp2') as HTMLInputElement).value;
     const prodDescription = (document.getElementById('mp3') as HTMLInputElement).value;
@@ -24,7 +27,6 @@ export class ModifyProductComponent implements OnInit {
     const prodEntryDate = (document.getElementById('mp8') as HTMLInputElement).value;
     const prodSales = (document.getElementById('mp9') as HTMLInputElement).value;
 
-    // Vacio los entries
     (document.getElementById('mp1') as HTMLInputElement).value = '';
     (document.getElementById('mp2') as HTMLInputElement).value = '';
     (document.getElementById('mp3') as HTMLInputElement).value = '';

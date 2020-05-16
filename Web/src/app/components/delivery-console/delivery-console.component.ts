@@ -20,11 +20,17 @@ export class DeliveryConsoleComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Function in charge of logging out of a session
+   */
   logOut() {
     localStorage.setItem('userType', 'none');
     this.router.navigate(['/login']);
   }
 
+  /**
+   * Function in charge of sending the server two dates chosen by the user and receive the best seller products between those dates
+   */
   bestSellers() {
     const fromDate = (document.getElementById('from-report1') as HTMLInputElement).value;
     const toDate = (document.getElementById('to-report1') as HTMLInputElement).value;
@@ -56,6 +62,9 @@ export class DeliveryConsoleComponent implements OnInit {
       });
   }
 
+  /**
+   * Function in charge of sending the server a route number and receive a list of packages the are designated to that route
+   */
   deliveryListByRoute() {
     const routeNumber = (document.getElementById('route-number') as HTMLInputElement).value;
 
@@ -78,6 +87,9 @@ export class DeliveryConsoleComponent implements OnInit {
       });
   }
 
+  /**
+   * Function in charge of sending the server two dates chosen by the user and receive the delivered packages between those dates
+   */
   deliveredPackages() {
     const fromDate = (document.getElementById('from-report3') as HTMLInputElement).value;
     const toDate = (document.getElementById('to-report3') as HTMLInputElement).value;

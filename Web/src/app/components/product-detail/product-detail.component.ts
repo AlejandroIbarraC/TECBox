@@ -19,13 +19,17 @@ export class ProductDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    let barcode = parseInt(this.route.snapshot.paramMap.get('id'));
+    // tslint:disable-next-line:radix
+    const barcode = parseInt(this.route.snapshot.paramMap.get('id'));
     this.productBarcode = barcode;
     this.getProduct(barcode);
   }
 
-  getProduct(prodBarcode) {// Metodo llamado por el boton
-    // Esta parte obtiene los valores de los entries
+  /**
+   * Function in charge of sending a product barcode to the database and receives the product data
+   * @param prodBarcode barcode of the product
+   */
+  getProduct(prodBarcode) {
     axios.post('https://localhost:5001/administrator/products/getProduct', {
       name: 'null',
       description: 'null',

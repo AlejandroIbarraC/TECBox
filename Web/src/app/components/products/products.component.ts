@@ -9,21 +9,17 @@ import { Router } from '@angular/router';
 export class ProductsComponent implements OnInit {
 
   products = [
-    {"id": 1, "name": "Papel higénico", "price": "$100"},
-    {"id": 2, "name": "Animalcrossing", "price": "$500"},
-    {"id": 3, "name": "Gorro de lana", "price": "$90"}
-  ]
-
-  cartProducts = [
-    {"id": null, "name": null, "price":null}
-  ]
+    {id: 1, name: 'Papel higénico', price: '$100'},
+    {id: 2, name: 'Animalcrossing', price: '$500'},
+    {id: 3, name: 'Gorro de lana', price: '$90'}
+  ];
 
   constructor(public router: Router) { }
 
-  ngOnInit(){
+  ngOnInit() {
   }
 
-  onSelect(product){
+  onSelect(product) {
     this.router.navigate(['/products', product.id]);
   }
 
