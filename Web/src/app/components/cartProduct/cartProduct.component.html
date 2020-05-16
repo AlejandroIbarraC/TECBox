@@ -7,9 +7,9 @@
                     <div class="column padded">
                         <div class="card-product">
                             <div class="content">
-                                <img src="assets/products/{{ product.photo }}" (click)="onSelect(product)">
+                                <img src="assets/products/{{ product.barcode }}.png" (click)="onSelect(product)">
                                 <div class="label">{{ product.name }}</div>
-                                <a [routerLink]="['/cart', { id:product.id }]">
+                                <a [routerLink]="['/cart', { id:product.barcode }]">
                                     <div class="card-price">${{ product.price }}</div>
                                 </a>
                             </div>
@@ -18,5 +18,5 @@
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
 </body>

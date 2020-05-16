@@ -345,6 +345,50 @@ export class AdminComponent implements OnInit {
    window.location.reload();
  }
 
+  addUser() {
+    // Esta parte obtiene los valores de los entries
+    const usrName = (document.getElementById('u1') as HTMLInputElement).value;
+    const usrID = (document.getElementById('u2') as HTMLInputElement).value;
+    const usrEMail = (document.getElementById('u3') as HTMLInputElement).value;
+    const usrPassword = (document.getElementById('u4') as HTMLInputElement).value;
+    const usrPhone = (document.getElementById('u5') as HTMLInputElement).value;
+    const usrAddress = (document.getElementById('u6') as HTMLInputElement).value;
+    const usrProvince = (document.getElementById('u7') as HTMLInputElement).value;
+    const usrCity = (document.getElementById('u8') as HTMLInputElement).value;
+
+    // Vacio los entries
+    (document.getElementById('u1') as HTMLInputElement).value = '';
+    (document.getElementById('u2') as HTMLInputElement).value = '';
+    (document.getElementById('u3') as HTMLInputElement).value = '';
+    (document.getElementById('u4') as HTMLInputElement).value = '';
+    (document.getElementById('u5') as HTMLInputElement).value = '';
+    (document.getElementById('u6') as HTMLInputElement).value = '';
+    (document.getElementById('u7') as HTMLInputElement).value = '';
+    (document.getElementById('u8') as HTMLInputElement).value = '';
+
+    axios.post('https://localhost:5001/client/users/insert', {
+      name: usrName,
+      idNumber: usrID,
+      eMail: usrEMail,
+      password: usrPassword,
+      phone: usrPhone,
+      address: usrAddress,
+      province: usrProvince,
+      city: usrCity
+    }, {
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8'
+      }
+    })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error.response);
+      });
+    window.location.reload();
+  }
+
  deleteEmployee() {
     // Esta parte obtiene los valores de los entries
    const empName = (document.getElementById('e1') as HTMLInputElement).value;
@@ -546,6 +590,50 @@ export class AdminComponent implements OnInit {
     axios.post('https://localhost:5001/administrator/routes/delete', {
       number: rtNumber,
       districts: rtDistrics
+    }, {
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8'
+      }
+    })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error.response);
+      });
+    window.location.reload();
+  }
+
+  deleteUser() {
+    // Esta parte obtiene los valores de los entries
+    const usrName = (document.getElementById('u1') as HTMLInputElement).value;
+    const usrID = (document.getElementById('u2') as HTMLInputElement).value;
+    const usrEMail = (document.getElementById('u3') as HTMLInputElement).value;
+    const usrPassword = (document.getElementById('u4') as HTMLInputElement).value;
+    const usrPhone = (document.getElementById('u5') as HTMLInputElement).value;
+    const usrAddress = (document.getElementById('u6') as HTMLInputElement).value;
+    const usrProvince = (document.getElementById('u7') as HTMLInputElement).value;
+    const usrCity = (document.getElementById('u8') as HTMLInputElement).value;
+
+    // Vacio los entries
+    (document.getElementById('u1') as HTMLInputElement).value = '';
+    (document.getElementById('u2') as HTMLInputElement).value = '';
+    (document.getElementById('u3') as HTMLInputElement).value = '';
+    (document.getElementById('u4') as HTMLInputElement).value = '';
+    (document.getElementById('u5') as HTMLInputElement).value = '';
+    (document.getElementById('u6') as HTMLInputElement).value = '';
+    (document.getElementById('u7') as HTMLInputElement).value = '';
+    (document.getElementById('u8') as HTMLInputElement).value = '';
+
+    axios.post('https://localhost:5001/client/users/delete', {
+      name: usrName,
+      idNumber: usrID,
+      eMail: usrEMail,
+      password: usrPassword,
+      phone: usrPhone,
+      address: usrAddress,
+      province: usrProvince,
+      city: usrCity
     }, {
       headers: {
         'Content-Type': 'application/json; charset=UTF-8'

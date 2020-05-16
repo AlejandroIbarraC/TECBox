@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductsComponent } from '../products/products.component';
+import axios from 'axios';
 
 @Component({
   selector: 'app-product-detail',
@@ -9,11 +10,7 @@ import { ProductsComponent } from '../products/products.component';
 })
 export class ProductDetailComponent implements OnInit {
 
-  products = [
-    {"name": "Producto 1", "description": "Vamos a ver si esto sirve 1", "barcode": 10001, "seller": "Kevin", "price": "$100", "payTaxes": "10", "percentageDiscount": "20", "entryDate": "11/10/19", "sales": "50"},
-    {"name": "Producto 2", "description": "Vamos a ver si esto sirve 2", "barcode": 10011, "seller": "Kevin", "price": "$200", "payTaxes": "10", "percentageDiscount": "20", "entryDate": "11/10/19", "sales": "50"},
-    {"name": "Producto 3", "description": "Vamos a ver si esto sirve 3", "barcode": 10111, "seller": "Kevin", "price": "$90", "payTaxes": "10", "percentageDiscount": "20", "entryDate": "11/10/19", "sales": "50"}
-  ]
+  product;
 
   public productBarcode;
   public productName;
@@ -24,33 +21,35 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit(): void {
     let barcode = parseInt(this.route.snapshot.paramMap.get('id'));
     this.productBarcode = barcode;
-    this.productName = this.getProductName(barcode);
-    this.productPrice = this.getProductPrice(barcode);
-    this.productDescription = this.getProductDescription(barcode);
+    this.getProduct(barcode);
   }
 
-  getProductName(index){
-    for (let product of this.products) {
-      if (index == product.barcode){
-        return product.name;
+  getProduct(prodBarcode) {// Metodo llamado por el boton
+    // Esta parte obtiene los valores de los entries
+    axios.post('https://localhost:5001/administrator/products/getProduct', {
+      name: 'null',
+      description: 'null',
+      barcode: prodBarcode.toString(),
+      seller: 'null',
+      price: 'null',
+      paysTax: 'null',
+      discount: 'null',
+      entryDate: 'null',
+      sales: 'null'
+    }, {
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8'
       }
-    }
-  }
-
-  getProductPrice(index){
-    for (let product of this.products) {
-      if (index == product.barcode){
-        return product.price;
-      }
-    }
-  }
-
-  getProductDescription(index){
-    for (let product of this.products) {
-      if (index == product.barcode){
-        return product.description;
-      }
-    }
+    })
+      .then(response => {
+        console.log(response);
+        this.productName = response.data.name;
+        this.productPrice = response.data.price;
+        this.productDescription = response.data.description;
+      })
+      .catch(error => {
+        console.log(error.response);
+      });
   }
 
 }

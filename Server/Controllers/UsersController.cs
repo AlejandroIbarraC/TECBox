@@ -15,6 +15,12 @@ namespace Server.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
+        /// <summary>
+        /// Function in charge of recopilating all the users in the database
+        /// </summary>
+        /// <returns>
+        /// A JSON with the list of users in the database
+        /// </returns>
         [EnableCors("AnotherPolicy")]
         [HttpGet]
         public List<Users> getUsers()
@@ -28,7 +34,15 @@ namespace Server.Controllers
             return usersList;
         }
 
-
+        /// <summary>
+        /// Function in charge of finding a user by it's email and password
+        /// </summary>
+        /// <param name="searchUser">
+        /// User with the email and password to be found
+        /// </param>
+        /// <returns>
+        /// A JSON with the found user
+        /// </returns>
         [Route("information")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -59,6 +73,12 @@ namespace Server.Controllers
             }
         }
 
+        /// <summary>
+        /// Function in charge of inserting a user in the database
+        /// </summary>
+        /// <param name="user">
+        /// User to be added
+        /// </param>
         [Route("insert")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -96,6 +116,12 @@ namespace Server.Controllers
             }
         }
 
+        /// <summary>
+        /// Function in charge of modifying a user in the database
+        /// </summary>
+        /// <param name="user">
+        /// User to be modified
+        /// </param>
         [Route("modify")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -131,6 +157,12 @@ namespace Server.Controllers
             }
         }
 
+        /// <summary>
+        /// Function in charge of deleting a user in the database
+        /// </summary>
+        /// <param name="user">
+        /// User to be deleted
+        /// </param>
         [Route("delete")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]

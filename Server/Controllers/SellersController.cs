@@ -15,6 +15,12 @@ namespace Server.Controllers
     [ApiController]
     public class SellersController : ControllerBase
     {
+        /// <summary>
+        /// Function in charge of recopilating all the sellers in the database
+        /// </summary>
+        /// <returns>
+        /// A JSON with the list of sellers in the database
+        /// </returns>
         [EnableCors("AnotherPolicy")]
         [HttpGet]
         public List<Sellers> getSellers()
@@ -28,6 +34,12 @@ namespace Server.Controllers
             return sellersList;
         }
 
+        /// <summary>
+        /// Function in charge of inserting a seller in the database
+        /// </summary>
+        /// <param name="seller">
+        /// Seller to be added
+        /// </param>
         [Route("insert")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -65,6 +77,12 @@ namespace Server.Controllers
             }
         }
 
+        /// <summary>
+        /// Function in charge of modifying a seller in the database
+        /// </summary>
+        /// <param name="seller">
+        /// Seller to be modified
+        /// </param>
         [Route("modify")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -100,6 +118,12 @@ namespace Server.Controllers
             }
         }
 
+        /// <summary>
+        /// Function in charge of deleting a seller in the database
+        /// </summary>
+        /// <param name="seller">
+        /// Seller to be deleted
+        /// </param>
         [Route("delete")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]

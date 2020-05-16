@@ -15,6 +15,12 @@ namespace Server.Controllers
     [ApiController]
     public class BranchesController : ControllerBase
     {
+        /// <summary>
+        /// Function in charge of recopilating all the branches in the database
+        /// </summary>
+        /// <returns>
+        /// A JSON with the list of branches in the database
+        /// </returns>
         [EnableCors("AnotherPolicy")]
         [HttpGet]
         public List<Branches> getBranches()
@@ -28,6 +34,12 @@ namespace Server.Controllers
             return branchesList;
         }
 
+        /// <summary>
+        /// Function in charge of inserting a branch in the database
+        /// </summary>
+        /// <param name="branch">
+        /// Branch to be added
+        /// </param>
         [Route("insert")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -65,6 +77,12 @@ namespace Server.Controllers
             }
         }
 
+        /// <summary>
+        /// Function in charge of modifying a branch in the database
+        /// </summary>
+        /// <param name="branch">
+        /// Branch to be modified
+        /// </param>
         [Route("modify")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -100,6 +118,12 @@ namespace Server.Controllers
             }
         }
 
+        /// <summary>
+        /// Function in charge of deleting a branch in the database
+        /// </summary>
+        /// <param name="branch">
+        /// Branch to be deleted
+        /// </param>
         [Route("delete")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]

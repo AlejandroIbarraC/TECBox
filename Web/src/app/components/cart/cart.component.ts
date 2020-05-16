@@ -5,6 +5,9 @@ import { Product } from '../../entities/product.entity';
 import { Item } from '../../entities/item.entity';
 import { ProductService } from '../../shared/services/product.service';
 import { isLoweredSymbol } from '@angular/compiler';
+import {getLocaleDateTimeFormat} from '@angular/common';
+import axios from 'axios';
+import {delay} from 'rxjs/operators';
 
 @Component({
   selector: 'app-cart',
@@ -13,101 +16,198 @@ import { isLoweredSymbol } from '@angular/compiler';
 })
 
 export class CartComponent implements OnInit {
-	name: String = "Log in to see information";
-	address: String = "";
-	province: String = "";
-	city: String = "";
-	isLoggedIn: boolean = true;
 
-	public items: Item[] = [];
-	public subtotal: number = 0;
-	carThings= [{"Option":1,"ID":"123","Name":"Box","Photo":"BoxImage","Price":"Low", "Quantity": "5", "Sub Total": "500"},{"Option":2,"ID":"234","Name":"Better Box","Photo":"BetterBoxImage","Price":"Not Very Low", "Quantity": "5", "Sub Total": "50000"},{"Option":3,"ID":"345","Name":"The Best Fucking Box","Photo":"TheBestFuckingBoxImage","Price":"You Are Being Robbe", "Quantity": "5", "Sub Total": "5000000"}]
+  name = 'Log in to see information';
+  address = '';
+  province = '';
+  city = '';
+  isLoggedIn = true;
 
-	constructor(
-		private activatedRoute: ActivatedRoute,
-		private productService: ProductService
-	) { }
+  public items: Item[] = [];
+  public subtotal = 0;
+  public tax = 0;
+  public discount = 0;
+  public total = 0;
+  public deliveryDate = '';
 
-	ngOnInit() {
-		this.activatedRoute.params.subscribe(params => {
-			var id = params['id'];
-			if (id) {
-				var item: Item = {
-					product: this.productService.find(id),
-					quantity: 1
-				};
-				if (localStorage.getItem('cart') == null) {
-					let cart: any = [];
-					cart.push(JSON.stringify(item));
-					localStorage.setItem('cart', JSON.stringify(cart));
-				} else {
-					let cart: any = JSON.parse(localStorage.getItem('cart'));
-					let index: number = -1;
-					for (var i = 0; i < cart.length; i++) {
-						let item: Item = JSON.parse(cart[i]);
-						if (item.product.id == id) {
-							index = i;
-							break;
-						}
-					}
-					if (index == -1) {
-						cart.push(JSON.stringify(item));
-						localStorage.setItem('cart', JSON.stringify(cart));
-					} else {
-						let item: Item = JSON.parse(cart[index]);
-						item.quantity += 1;
-						cart[index] = JSON.stringify(item);
-						localStorage.setItem("cart", JSON.stringify(cart));
-					}
-				}
-				this.loadCart();
-			} else {
-				this.loadCart();
-			}
-		});
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private productService: ProductService
+  ) { }
 
-		// Check for user information if logged in
-		this.name = localStorage.getItem('userName');
-		this.address = localStorage.getItem('userAddress');
-		this.province = localStorage.getItem('userProvince');
-		this.city = localStorage.getItem('userCity');
+  ngOnInit() {
+    const today = new Date();
+    const dd = String(today.getDate() + 3).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const yyyy = today.getFullYear();
+    this.deliveryDate = yyyy + '-' + mm + '-' + dd;
 
-		if (this.address == "") {
-			this.isLoggedIn = false;
-		}
-	}
+    this.activatedRoute.params.subscribe(params => {
+      const prodId = params.id;
+      if (prodId) {
 
-	// Connects to server and sends new order
-	buyProducts() {
+        axios.post('https://localhost:5001/administrator/products/getProduct', {
+          name: 'null',
+          description: 'null',
+          barcode: prodId.toString(),
+          seller: 'null',
+          price: 'null',
+          paysTax: 'null',
+          discount: 'null',
+          entryDate: 'null',
+          sales: 'null'
+        }, {
+          headers: {
+            'Content-Type': 'application/json; charset=UTF-8'
+          }
+        })
+          .then(response => {
+            console.log(response);
 
-	}
+            const item: Item = {
+              id: prodId,
+              quantity: 1,
+              name: response.data.name,
+              description: response.data.description,
+              seller: response.data.seller,
+              price: response.data.price,
+              tax: response.data.paysTax,
+              discount: response.data.discount,
+              entryDate: response.data.entryDate,
+              sales: response.data.sales
+            };
+            if (localStorage.getItem('cart') == null) {
+              const cart: any = [];
+              cart.push(JSON.stringify(item));
+              localStorage.setItem('cart', JSON.stringify(cart));
+            } else {
+              const cart: any = JSON.parse(localStorage.getItem('cart'));
+              let index = -1;
+              for (let i = 0; i < cart.length; i++) {
+                // tslint:disable-next-line:no-shadowed-variable
+                const item: Item = JSON.parse(cart[i]);
+                // tslint:disable-next-line:triple-equals
+                if (item.id == prodId) {
+                  index = i;
+                  break;
+                }
+              }
+              // tslint:disable-next-line:triple-equals
+              if (index == -1) {
+                cart.push(JSON.stringify(item));
+                localStorage.setItem('cart', JSON.stringify(cart));
+              } else {
+                // tslint:disable-next-line:no-shadowed-variable
+                const item: Item = JSON.parse(cart[index]);
+                item.quantity += 1;
+                cart[index] = JSON.stringify(item);
+                localStorage.setItem('cart', JSON.stringify(cart));
+              }
+            }
+            this.loadCart();
+          })
+          .catch(error => {
+            console.log(error.response);
+          });
+      } else {
+        this.loadCart();
+      }
+    });
 
-	loadCart(): void {
-		this.subtotal = 0;
-		this.items = [];
-		let cart = JSON.parse(localStorage.getItem('cart'));
-		for (var i = 0; i < cart.length; i++) {
-			let item = JSON.parse(cart[i]);
-			this.items.push({
-				product: item.product,
-				quantity: item.quantity
-			});
-			this.subtotal += item.product.price * item.quantity;
-		}
-	}
+    // Check for user information if logged in
+    this.name = localStorage.getItem('userName');
+    this.address = localStorage.getItem('userAddress');
+    this.province = localStorage.getItem('userProvince');
+    this.city = localStorage.getItem('userCity');
 
-	remove(id: string): void {
-		let cart: any = JSON.parse(localStorage.getItem('cart'));
-		let index: number = -1;
-		for (var i = 0; i < cart.length; i++) {
-			let item: Item = JSON.parse(cart[i]);
-			if (item.product.id == id) {
-				cart.splice(i, 1);
-				break;
-			}
-		}
-		localStorage.setItem("cart", JSON.stringify(cart));
-		this.loadCart();
-	}
+    // tslint:disable-next-line:triple-equals
+    if (this.address == '') {
+      this.isLoggedIn = false;
+    }
+  }
+
+  // Connects to server and sends new order
+  buyProducts() {
+    if (this.isLoggedIn) {
+      console.log('hola');
+      const cart = JSON.parse(localStorage.getItem('cart'));
+      const allData = [];
+      let data;
+      // tslint:disable-next-line:prefer-for-of
+      for (let i = 0; i < cart.length; i++) {
+        const item = JSON.parse(cart[i]);
+        data = {
+          trackingID: 'null',
+          client: this.name,
+          description: item.name,
+          deliveryDate: this.deliveryDate,
+          status: 'Ready for Delivery',
+          route: 'null',
+          deliveryMan: 'null'
+        };
+        allData.push(data);
+      }
+      axios.post('https://localhost:5001/warehouse/packages/boughtPackages',  allData, {
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8'
+        }
+      })
+        .then(response => {
+          console.log(response);
+        })
+        .catch(error => {
+          console.log(error.response);
+        });
+      const newCart: any = [];
+      localStorage.setItem('cart', JSON.stringify(newCart));
+      window.location.replace('/cart');
+    }
+  }
+
+  loadCart(): void {
+    this.subtotal = 0;
+    this.tax = 0;
+    this.discount = 0;
+    this.total = 0;
+    this.items = [];
+    const cart = JSON.parse(localStorage.getItem('cart'));
+    // tslint:disable-next-line:prefer-for-of
+    for (let i = 0; i < cart.length; i++) {
+      const item = JSON.parse(cart[i]);
+      this.items.push({
+        id: item.id,
+        quantity: item.quantity,
+        name: item.name,
+        description: item.description,
+        seller: item.seller,
+        price: item.price,
+        tax: item.tax,
+        discount: item.discount,
+        entryDate: item.entryDate,
+        sales: item.sales
+      });
+      this.subtotal += item.price * item.quantity;
+      if (item.tax) {
+        this.tax += 15;
+      }
+      this.discount += item.discount;
+      this.total = this.subtotal + this.tax - this.discount;
+    }
+  }
+
+  remove(id: number): void {
+    const cart: any = JSON.parse(localStorage.getItem('cart'));
+    const index = -1;
+    for (let i = 0; i < cart.length; i++) {
+      const item: Item = JSON.parse(cart[i]);
+      // tslint:disable-next-line:triple-equals
+      if (item.id == id) {
+        cart.splice(i, 1);
+        break;
+      }
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    this.loadCart();
+  }
 
 }

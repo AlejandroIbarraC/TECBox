@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import axios from 'axios';
 
 @Component({
   selector: 'app-warehouse-modify',
@@ -12,28 +13,44 @@ export class WarehouseModifyComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  modifyWareHouse(){
-     //Get the data from the entries using the id
-     const trackId = (document.getElementById('w1') as HTMLInputElement).value;
-     const client = (document.getElementById('w2') as HTMLInputElement).value;
-     const description = (document.getElementById('w3') as HTMLInputElement).value;
-     const deliveryDate = (document.getElementById('w4') as HTMLInputElement).value;
-     const status = (document.getElementById('w5') as HTMLInputElement).value;
-     const route = (document.getElementById('w6') as HTMLInputElement).value;
-     const deliveryMan = (document.getElementById('w7') as HTMLInputElement).value;
-   
- 
-     // This part empties the entries
-     (document.getElementById('w1') as HTMLInputElement).value = '';
-     (document.getElementById('w2') as HTMLInputElement).value = '';
-     (document.getElementById('w3') as HTMLInputElement).value = '';
-     (document.getElementById('w4') as HTMLInputElement).value = '';
-     (document.getElementById('w5') as HTMLInputElement).value = '';
-     (document.getElementById('w6') as HTMLInputElement).value = '';
-     (document.getElementById('w7') as HTMLInputElement).value = '';
-     (document.getElementById('w8') as HTMLInputElement).value = '';
-     (document.getElementById('w9') as HTMLInputElement).value = '';
+  modifyWareHouse() {
+     // Get the data from the entries using the id
+     const pkgTrackId = (document.getElementById('mw1') as HTMLInputElement).value;
+     const pkgClient = (document.getElementById('mw2') as HTMLInputElement).value;
+     const pkgDescription = (document.getElementById('mw3') as HTMLInputElement).value;
+     const pgkDeliveryDate = (document.getElementById('mw4') as HTMLInputElement).value;
+     const pkgStatus = (document.getElementById('mw5') as HTMLInputElement).value;
+     const pkgRoute = (document.getElementById('mw6') as HTMLInputElement).value;
+     const pkgDeliveryMan = (document.getElementById('mw7') as HTMLInputElement).value;
 
+     // This part empties the entries
+     (document.getElementById('mw1') as HTMLInputElement).value = '';
+     (document.getElementById('mw2') as HTMLInputElement).value = '';
+     (document.getElementById('mw3') as HTMLInputElement).value = '';
+     (document.getElementById('mw4') as HTMLInputElement).value = '';
+     (document.getElementById('mw5') as HTMLInputElement).value = '';
+     (document.getElementById('mw6') as HTMLInputElement).value = '';
+     (document.getElementById('mw7') as HTMLInputElement).value = '';
+
+     axios.post('https://localhost:5001/warehouse/packages/modify', {
+      trackingID: pkgTrackId,
+      client: pkgClient,
+      description: pkgDescription,
+      deliveryDate: pgkDeliveryDate,
+      status: pkgStatus,
+      route: pkgRoute,
+      deliveryMan: pkgDeliveryMan
+    }, {
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8'
+      }
+    })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error.response);
+      });
   }
 
 }

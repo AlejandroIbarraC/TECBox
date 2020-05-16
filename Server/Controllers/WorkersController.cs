@@ -15,6 +15,12 @@ namespace Server.Controllers
     [ApiController]
     public class WorkersController : ControllerBase
     {
+        /// <summary>
+        /// Function in charge of recopilating all the workers in the database
+        /// </summary>
+        /// <returns>
+        /// A JSON with the list of workers in the database
+        /// </returns>
         [EnableCors("AnotherPolicy")]
         [HttpGet]
         public List<Workers> getWorkers()
@@ -28,6 +34,12 @@ namespace Server.Controllers
             return workersList;
         }
 
+        /// <summary>
+        /// Function in charge of inserting a worker in the database
+        /// </summary>
+        /// <param name="worker">
+        /// Worker to be added
+        /// </param>
         [Route("insert")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -91,6 +103,12 @@ namespace Server.Controllers
             }
         }
 
+        /// <summary>
+        /// Function in charge of modifying a worker in the database
+        /// </summary>
+        /// <param name="worker">
+        /// Worker to be modified
+        /// </param>
         [Route("modify")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -126,6 +144,12 @@ namespace Server.Controllers
             }
         }
 
+        /// <summary>
+        /// Function in charge of deleting a worker in the database
+        /// </summary>
+        /// <param name="worker">
+        /// Worker to be deleted
+        /// </param>
         [Route("delete")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]

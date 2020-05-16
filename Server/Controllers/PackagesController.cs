@@ -15,6 +15,12 @@ namespace Server.Controllers
     [ApiController]
     public class PackagesController : ControllerBase
     {
+        /// <summary>
+        /// Function in charge of recopilating all the packages in the database
+        /// </summary>
+        /// <returns>
+        /// A JSON with the list of packages in the database
+        /// </returns>
         [EnableCors("AnotherPolicy")]
         [HttpGet]
         public List<Packages> getPackages()
@@ -28,6 +34,15 @@ namespace Server.Controllers
             return packagesList;
         }
 
+        /// <summary>
+        /// Function in charge of searching a package with it's tracking id
+        /// </summary>
+        /// <param name="searchPackage">
+        /// Package with the tracking id
+        /// </param>
+        /// <returns>
+        /// A JSON with the package found
+        /// </returns>
         [Route("tracking")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -58,6 +73,15 @@ namespace Server.Controllers
             }
         }
 
+        /// <summary>
+        /// Function in charge of recopilating all delivered packages between two different dates
+        /// </summary>
+        /// <param name="dates">
+        /// Package with the dates
+        /// </param>
+        /// <returns>
+        /// A JSON with the list of delivered packages between the dates
+        /// </returns>
         [Route("delivered")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -198,6 +222,15 @@ namespace Server.Controllers
             }
         }
 
+        /// <summary>
+        /// Function in charge of searching all the packages that belongs to an user
+        /// </summary>
+        /// <param name="user">
+        /// The user that is the owner of the packages
+        /// </param>
+        /// <returns>
+        /// A JSON with the list of packages that belong to the user
+        /// </returns>
         [Route("userPackages")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -221,6 +254,15 @@ namespace Server.Controllers
             return finalPackagesList;
         }
 
+        /// <summary>
+        /// Function in charge of searching all the packages that an employee is in charge to deliver
+        /// </summary>
+        /// <param name="employee">
+        /// Employee that is in charge of delivering the packages
+        /// </param>
+        /// <returns>
+        /// A JSON with the list of packages that are in charge of the employee
+        /// </returns>
         [Route("employeePackages")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -244,6 +286,12 @@ namespace Server.Controllers
             return finalPackagesList;
         }
 
+        /// <summary>
+        /// Function in charge of inserting a package in the database
+        /// </summary>
+        /// <param name="package">
+        /// Package to be added
+        /// </param>
         [Route("insert")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -327,6 +375,98 @@ namespace Server.Controllers
             }
         }
 
+        /// <summary>
+        /// Function in charge of adding a recently bought product to the packages database
+        /// </summary>
+        /// <param name="newPackages">
+        /// Package to be added
+        /// </param>
+        [Route("boughtPackages")]
+        [EnableCors("AnotherPolicy")]
+        [HttpPost]
+        public void newPackage([FromBody] List<Packages> newPackages)
+        {
+            List<Packages> packagesList = new List<Packages>();
+            string fileName = "DataBase/packages.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            packagesList = JsonSerializer.Deserialize<List<Packages>>(jsonString);
+
+            List<Routes> routesList = new List<Routes>();
+            fileName = "DataBase/routes.json";
+
+            jsonString = System.IO.File.ReadAllText(fileName);
+            routesList = JsonSerializer.Deserialize<List<Routes>>(jsonString);
+
+            List<Employees> employeesList = new List<Employees>();
+            fileName = "DataBase/employees.json";
+
+            jsonString = System.IO.File.ReadAllText(fileName);
+            employeesList = JsonSerializer.Deserialize<List<Employees>>(jsonString);
+
+            string employee = "";
+
+            if (routesList.Count > 0 & employeesList.Count > 0)
+            {
+                bool validation = false;
+
+                for (int i = 0; i < employeesList.Count; i++)
+                {
+                    if (employeesList[i].department == "Delivery")
+                    {
+                        validation = true;
+                        employee = employeesList[i].name;
+                        break;
+                    }
+
+                }
+
+                if (validation)
+                {
+                    for (int i = 0; i < newPackages.Count; i++)
+                    {
+                        int trackingID = 5000;
+                        for (int j = 0; j < packagesList.Count; j++)
+                        {
+                            if (packagesList[j].trackingID == trackingID.ToString())
+                            {
+                                trackingID += 100;
+                                j = 0;
+                            }
+                        }
+
+                        newPackages[i].trackingID = trackingID.ToString();
+                        Random random = new Random();
+                        int chosenNumber = random.Next(0, routesList.Count - 1);
+                        newPackages[i].route = routesList[chosenNumber].number;
+                        newPackages[i].deliveryMan = employee;
+
+                        addSale(newPackages[i].description);
+
+                        packagesList.Add(newPackages[i]);
+                    }
+                    fileName = "DataBase/packages.json";
+
+                    jsonString = JsonSerializer.Serialize(packagesList);
+                    System.IO.File.WriteAllText(fileName, jsonString);
+                }
+                else
+                {
+                    Debug.WriteLine("There are no delivery men available at the moment");
+                }
+            }
+            else
+            {
+                Debug.WriteLine("There aren't routes or deliver men available at the moment");
+            }
+        }
+
+        /// <summary>
+        /// Function in charge of modifying a package in the database
+        /// </summary>
+        /// <param name="package">
+        /// Package to be modified
+        /// </param>
         [Route("modify")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -362,6 +502,12 @@ namespace Server.Controllers
             }
         }
 
+        /// <summary>
+        /// Function in charge of deleting a package in the database
+        /// </summary>
+        /// <param name="package">
+        /// Package to be deleted
+        /// </param>
         [Route("delete")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -394,6 +540,45 @@ namespace Server.Controllers
             else
             {
                 Debug.WriteLine("Package not found");
+            }
+        }
+
+        /// <summary>
+        /// Function in charge of increasing the sales of a product
+        /// </summary>
+        /// <param name="productName">
+        /// The name of the product
+        /// </param>
+        public static void addSale(String productName)
+        {
+            List<Products> productsList = new List<Products>();
+            string fileName = "DataBase/products.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            productsList = JsonSerializer.Deserialize<List<Products>>(jsonString);
+
+            bool validation = false;
+
+            for (int i = 0; i < productsList.Count; i++)
+            {
+                if (productsList[i].name == productName)
+                {
+                    int sales = int.Parse(productsList[i].sales);
+                    sales += 1;
+                    productsList[i].sales = sales.ToString();
+                    validation = true;
+                    break;
+                }
+            }
+
+            if (validation)
+            {
+                jsonString = JsonSerializer.Serialize(productsList);
+                System.IO.File.WriteAllText(fileName, jsonString);
+            }
+            else
+            {
+                Debug.WriteLine("Product not found");
             }
         }
     }

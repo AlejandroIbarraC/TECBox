@@ -16,6 +16,12 @@ namespace Server.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
+        /// <summary>
+        /// Function in charge of recopilating all the products in the database
+        /// </summary>
+        /// <returns>
+        /// A JSON with the list of products in the database
+        /// </returns>
         [EnableCors("AnotherPolicy")]
         [HttpGet]
         public List<Products> getProducts()
@@ -29,6 +35,15 @@ namespace Server.Controllers
             return productsList;
         }
 
+        /// <summary>
+        /// Function in charge of recopilating the most popular products base on dates
+        /// </summary>
+        /// <param name="dates">
+        /// A product with the interval of dates
+        /// </param>
+        /// <returns>
+        /// A JSON with the list of popular products
+        /// </returns>
         [Route("popularity")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -111,6 +126,96 @@ namespace Server.Controllers
             }            
         }
 
+        /// <summary>
+        /// Function in charge of finding a product with it's barcode
+        /// </summary>
+        /// <param name="product">
+        /// A product with the barcode
+        /// </param>
+        /// <returns>
+        /// A JSON with the found product
+        /// </returns>
+        [Route("getProduct")]
+        [EnableCors("AnotherPolicy")]
+        [HttpPost]
+        public Products getProduct([FromBody] Products product)
+        {
+            List<Products> productsList = new List<Products>();
+            string fileName = "DataBase/products.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            productsList = JsonSerializer.Deserialize<List<Products>>(jsonString);
+
+            bool validation = false;
+
+            Products found = null;
+
+            for (int i = 0; i < productsList.Count; i++)
+            {
+                if (productsList[i].barcode == product.barcode)
+                {
+                    found = productsList[i];
+                    validation = true;
+                    break;
+                }
+            }
+            if (validation)
+            {
+                return found;
+            }
+            else
+            {
+                return new Products("null", "null", "null", "null", "null", "null", "null", "null", "null"); ;
+            }
+        }
+
+        /// <summary>
+        /// Function in charge of finding a product with it's name
+        /// </summary>
+        /// <param name="product"></param>
+        /// <returns>
+        /// A JSON with the found product
+        /// </returns>
+        [Route("getProductFromName")]
+        [EnableCors("AnotherPolicy")]
+        [HttpPost]
+        public Products getProductFromName([FromBody] Products product)
+        {
+            List<Products> productsList = new List<Products>();
+            string fileName = "DataBase/products.json";
+
+            string jsonString = System.IO.File.ReadAllText(fileName);
+            productsList = JsonSerializer.Deserialize<List<Products>>(jsonString);
+
+            bool validation = false;
+
+            Products found = null;
+
+            for (int i = 0; i < productsList.Count; i++)
+            {
+                if (productsList[i].name == product.name)
+                {
+                    found = productsList[i];
+                    validation = true;
+                    break;
+                }
+            }
+            if (validation)
+            {
+                return found;
+            }
+            else
+            {
+                return new Products("null", "null", "null", "null", "null", "null", "null", "null", "null"); ;
+            }
+        }
+
+        /// <summary>
+        /// Function in charge of inserting a product in the database
+        /// </summary>
+        /// <param name="product">
+        /// Product to be added
+        /// </param>
         [Route("insert")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -174,6 +279,12 @@ namespace Server.Controllers
             }
         }
 
+        /// <summary>
+        /// Function in charge of modifying a product in the database
+        /// </summary>
+        /// <param name="product">
+        /// Product to be modified
+        /// </param>
         [Route("modify")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -209,6 +320,12 @@ namespace Server.Controllers
             }
         }
 
+        /// <summary>
+        /// Function in charge of deleting a product in the database
+        /// </summary>
+        /// <param name="product">
+        /// Product to be deleted
+        /// </param>
         [Route("delete")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]

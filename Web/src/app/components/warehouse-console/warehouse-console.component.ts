@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { Router } from '@angular/router';
+import axios from 'axios';
 
 @Component({
   selector: 'app-warehouse-console',
@@ -17,7 +18,7 @@ export class WarehouseConsoleComponent implements OnInit {
   packages = [{}];
 
   ngOnInit(): void {
-    this.getEmployeesFromServer();
+    this.getPackagesFromServer();
   }
 
   logOut() {
@@ -25,7 +26,7 @@ export class WarehouseConsoleComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-  async getEmployeesFromServer() {
+  async getPackagesFromServer() {
     const url = 'https://localhost:5001/warehouse/packages'; // Usar el url como una variable para mantener el orden
     const response = await fetch(url); // Await espera la respuesta y fetch es una vara propia de JS
     if (response.ok) {
@@ -36,16 +37,15 @@ export class WarehouseConsoleComponent implements OnInit {
     }
   }
 
-  addData(){
-    //Get the data from the entries using the id
-    const trackId = (document.getElementById('w1') as HTMLInputElement).value;
-    const client = (document.getElementById('w2') as HTMLInputElement).value;
-    const description = (document.getElementById('w3') as HTMLInputElement).value;
-    const deliveryDate = (document.getElementById('w4') as HTMLInputElement).value;
-    const status = (document.getElementById('w5') as HTMLInputElement).value;
-    const route = (document.getElementById('w6') as HTMLInputElement).value;
-    const deliveryMan = (document.getElementById('w7') as HTMLInputElement).value;
-  
+  addData() {
+    // Get the data from the entries using the id
+    const pkgTrackId = (document.getElementById('w1') as HTMLInputElement).value;
+    const pkgClient = (document.getElementById('w2') as HTMLInputElement).value;
+    const pkgDescription = (document.getElementById('w3') as HTMLInputElement).value;
+    const pgkDeliveryDate = (document.getElementById('w4') as HTMLInputElement).value;
+    const pkgStatus = (document.getElementById('w5') as HTMLInputElement).value;
+    const pkgRoute = (document.getElementById('w6') as HTMLInputElement).value;
+    const pkgDeliveryMan = (document.getElementById('w7') as HTMLInputElement).value;
 
     // This part empties the entries
     (document.getElementById('w1') as HTMLInputElement).value = '';
@@ -55,22 +55,40 @@ export class WarehouseConsoleComponent implements OnInit {
     (document.getElementById('w5') as HTMLInputElement).value = '';
     (document.getElementById('w6') as HTMLInputElement).value = '';
     (document.getElementById('w7') as HTMLInputElement).value = '';
-    (document.getElementById('w8') as HTMLInputElement).value = '';
-    (document.getElementById('w9') as HTMLInputElement).value = '';
+
+    axios.post('https://localhost:5001/warehouse/packages/insert', {
+      trackingID: pkgTrackId,
+      client: pkgClient,
+      description: pkgDescription,
+      deliveryDate: pgkDeliveryDate,
+      status: pkgStatus,
+      route: pkgRoute,
+      deliveryMan: pkgDeliveryMan
+    }, {
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8'
+      }
+    })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error.response);
+      });
+    window.location.reload();
   }
 
 
   deleteData(){
-     //Get the data from the entries using the id
-     const trackId = (document.getElementById('w1') as HTMLInputElement).value;
-     const client = (document.getElementById('w2') as HTMLInputElement).value;
-     const description = (document.getElementById('w3') as HTMLInputElement).value;
-     const deliveryDate = (document.getElementById('w4') as HTMLInputElement).value;
-     const status = (document.getElementById('w5') as HTMLInputElement).value;
-     const route = (document.getElementById('w6') as HTMLInputElement).value;
-     const deliveryMan = (document.getElementById('w7') as HTMLInputElement).value;
-   
- 
+     // Get the data from the entries using the id
+     const pkgTrackId = (document.getElementById('w1') as HTMLInputElement).value;
+     const pkgClient = (document.getElementById('w2') as HTMLInputElement).value;
+     const pkgDescription = (document.getElementById('w3') as HTMLInputElement).value;
+     const pgkDeliveryDate = (document.getElementById('w4') as HTMLInputElement).value;
+     const pkgStatus = (document.getElementById('w5') as HTMLInputElement).value;
+     const pkgRoute = (document.getElementById('w6') as HTMLInputElement).value;
+     const pkgDeliveryMan = (document.getElementById('w7') as HTMLInputElement).value;
+
      // This part empties the entries
      (document.getElementById('w1') as HTMLInputElement).value = '';
      (document.getElementById('w2') as HTMLInputElement).value = '';
@@ -79,8 +97,26 @@ export class WarehouseConsoleComponent implements OnInit {
      (document.getElementById('w5') as HTMLInputElement).value = '';
      (document.getElementById('w6') as HTMLInputElement).value = '';
      (document.getElementById('w7') as HTMLInputElement).value = '';
-     (document.getElementById('w8') as HTMLInputElement).value = '';
-     (document.getElementById('w9') as HTMLInputElement).value = '';
+
+     axios.post('https://localhost:5001/warehouse/packages/delete', {
+       trackingID: pkgTrackId,
+       client: pkgClient,
+       description: pkgDescription,
+       deliveryDate: pgkDeliveryDate,
+       status: pkgStatus,
+       route: pkgRoute,
+       deliveryMan: pkgDeliveryMan
+    }, {
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8'
+      }
+    })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error.response);
+      });
   }
 
 }

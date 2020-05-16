@@ -3,7 +3,7 @@
     "name": "Jose",
     "department": "Delivery",
     "eMail": "joseda@gmail.com",
-    "password": "4321",
+    "password": "43214321",
     "id": "1"
   },
   {
@@ -24,7 +24,14 @@
     "name": "Jesus",
     "department": "Delivery",
     "eMail": "jesuita@gmail.com",
-    "password": "4321",
+    "password": "43214321",
     "id": "4"
+  },
+  {
+    "name": "Tim Cook",
+    "department": "Delivery",
+    "eMail": "apple@apple.com",
+    "password": "apple123",
+    "id": "999"
   }
 ]

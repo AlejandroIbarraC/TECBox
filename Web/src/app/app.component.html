@@ -41,10 +41,10 @@
       <div class="col">
         <div class="card">
           <div class="content">
-            <input type="text" class="formControl" #searchTerm class="entry" placeholder="Search">
-            <a routerLink="">
+            <input type="text" class="formControl" #searchTerm class="entry" placeholder="Search" id="prod">
+            <button routerLink="" (click)="searchProduct()">
               <img src="assets/navbar/searchIcon.svg">
-            </a>
+            </button>
           </div>
         </div>
       </div>

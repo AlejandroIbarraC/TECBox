@@ -16,7 +16,12 @@ namespace Server.Controllers
     [ApiController]
     public class EmployeesController : ControllerBase
     {
-
+        /// <summary>
+        /// Function in charge of recopilating all the employees in the database
+        /// </summary>
+        /// <returns>
+        /// A JSON with the list of employees in the database
+        /// </returns>
         [EnableCors("AnotherPolicy")]
         [HttpGet]
         public List<Employees> getEmployees()
@@ -30,6 +35,15 @@ namespace Server.Controllers
             return employeesList;
         }
 
+        /// <summary>
+        /// Function in charge of searching an employee by it's email and department
+        /// </summary>
+        /// <param name="employeeToSearch">
+        /// Employee with the email and the department to be found
+        /// </param>
+        /// <returns>
+        /// A JSON with the found employee
+        /// </returns>
         [Route("check")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -62,6 +76,12 @@ namespace Server.Controllers
             }
         }
 
+        /// <summary>
+        /// Function in charge of inserting an employee in the database
+        /// </summary>
+        /// <param name="employee">
+        /// Employee to be added
+        /// </param>
         [Route("insert")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -99,6 +119,12 @@ namespace Server.Controllers
             }
         }
 
+        /// <summary>
+        /// Function in charge of modifying an employee in the database
+        /// </summary>
+        /// <param name="employee">
+        /// Employee to be modified
+        /// </param>
         [Route("modify")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -134,6 +160,12 @@ namespace Server.Controllers
             }
         }
 
+        /// <summary>
+        /// Function in charge of deleting an employee in the database
+        /// </summary>
+        /// <param name="employee">
+        /// Branch to be deleted
+        /// </param>
         [Route("delete")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]

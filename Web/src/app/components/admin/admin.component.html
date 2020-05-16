@@ -324,6 +324,45 @@
         <div class="card-secondary">
           <div class="content">
             <div class="subtitle">Users</div>
+            <div class="formData">
+              <input type="text" class="entry" placeholder="Name" #userName required id = 'u1'>
+              <p class = "textInput">Name</p>
+              <br>
+              <input type="text" class="entry" placeholder="ID Number" #userName required id = 'u2'>
+              <p class = "textInput">ID Number</p>
+              <br>
+              <input type="text" class="entry" placeholder="eMail" #userName required id = 'u3'>
+              <p class = "textInput">eMail</p>
+              <br>
+              <input type="text" class="entry" placeholder="Password" #userName required id = 'u4'>
+              <p class = "textInput">Password</p>
+              <br>
+              <input type="text" class="entry" placeholder="Phone" #userName required id = 'u5'>
+              <p class = "textInput">Phone</p>
+              <br>
+              <input type="text" class="entry" placeholder="Address" #userName required id = 'u6'>
+              <p class = "textInput">Address</p>
+              <br>
+              <input type="text" class="entry" placeholder="Province" #userName required id = 'u7'>
+              <p class = "textInput">Province</p>
+              <br>
+              <input type="text" class="entry" placeholder="City" #userName required id = 'u8'>
+              <p class = "textInput">City</p>
+            </div>
+            <br><br>
+            <div class="button" (click)="addUser()">
+              Add
+              <img src="assets/admin/addButton.svg">
+            </div>
+            <div class="button" (click)="deleteUser()">
+              Delete
+              <img src="assets/admin/deleteButton.svg">
+            </div>
+            <div class="button" routerLink="/modify-user">
+              Edit
+              <img src="assets/admin/editButton.svg">
+            </div>
+            <br><br><br>
             <div class="table">
               <div class = "TableView">
                 <table class="table">

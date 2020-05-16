@@ -24,7 +24,8 @@ import { ModifyWorkerComponent } from './components/modify-worker/modify-worker.
 import { ModifySellerComponent } from './components/modify-seller/modify-seller.component';
 import { ModifyRouteComponent } from './components/modify-route/modify-route.component';
 import { ModifyBranchComponent } from './components/modify-branch/modify-branch.component';
-import { WarehouseModifyComponent } from './components/warehouse-modify/warehouse-modify.component'
+import { WarehouseModifyComponent } from './components/warehouse-modify/warehouse-modify.component';
+import { ModifyUserComponent } from './components/modify-user/modify-user.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { WarehouseModifyComponent } from './components/warehouse-modify/warehous
     ModifyRouteComponent,
     ModifyBranchComponent,
     WarehouseModifyComponent,
+    ModifyUserComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-
+import axios from 'axios';
 import { Product } from '../../entities/product.entity';
 
 @Injectable()
@@ -8,11 +8,19 @@ export class ProductService {
     private cartProducts: Product[];
 
     constructor() {
-        this.cartProducts = [
-            { id: '10001', name: 'name 1', price: 100, photo: '10001.png' },
-            { id: '10011', name: 'name 2', price: 200, photo: '10011.png' },
-            { id: '10111', name: 'name 3', price: 300, photo: '10111.png' }
-        ];
+        axios.get('https://localhost:5001/administrator/products')
+          .then(response => {
+            // this.cartProducts = response.data;
+            this.cartProducts = [
+              { id: '10001', name: 'name 1', price: 100, photo: '666.png' },
+              { id: '10011', name: 'name 2', price: 200, photo: '1001.png' },
+              { id: '10111', name: 'name 3', price: 300, photo: '998.png' }
+            ];
+          })
+          .catch(error => {
+            console.log(error.response);
+          });
+        /**/
     }
 
     findAll(): Product[] {
@@ -31,5 +39,4 @@ export class ProductService {
         }
         return -1;
     }
-
 }

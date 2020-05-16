@@ -19,12 +19,12 @@
                                     </thead>
                                     <tbody>
                                         <tr *ngFor="let item of items">
-                                            <td>{{item.product.id}}</td>
-                                            <td>{{item.product.name}}</td>
-                                            <td>{{item.product.price}}</td>
+                                            <td>{{item.id}}</td>
+                                            <td>{{item.name}}</td>
+                                            <td>{{item.price}}</td>
                                             <td>{{item.quantity}}</td>
                                             <td>
-                                                <div class="xButton label-red no-padding" (click)="remove(item.product.id)">X</div>
+                                                <div class="xButton label-red no-padding" (click)="remove(item.id)">X</div>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -42,10 +42,10 @@
                     <div class="card-secondary">
                         <div class="content">
                             <div class="label small">Subtotal: $ {{subtotal}}</div>
-                            <div class="label smaller">+ Shipping & Tax: $ $S&T</div>
-                            <div class="label smaller">- Discounts: $ $DISCOUNT</div>
+                            <div class="label smaller">+ Shipping & Tax: $ {{tax}}</div>
+                            <div class="label smaller">- Discounts: $ {{discount}}</div>
                             <div class="red-divider"></div>
-                            <div class="label bold">= Total: $ $TOTAL</div>
+                            <div class="label bold">= Total: $ {{total}}</div>
                             <br><br>
                             <div *ngIf="isLoggedIn">
                                 <div class="shipping-info">
@@ -59,9 +59,9 @@
                                         {{province}} {{city}}
                                         <br>
                                     </div>
-                                    Estimated delivery date: 
+                                    Estimated delivery date:
                                     <div class="label-red">
-                                        $DELIVERY_DATE
+                                        {{deliveryDate}}
                                     </div>
                                 </div>
                             </div>

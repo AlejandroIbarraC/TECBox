@@ -15,6 +15,12 @@ namespace Server.Controllers
     [ApiController]
     public class RoutesController : ControllerBase
     {
+        /// <summary>
+        /// Function in charge of recopilating all the routes in the database
+        /// </summary>
+        /// <returns>
+        /// A JSON with the list of routes in the database
+        /// </returns>
         [EnableCors("AnotherPolicy")]
         [HttpGet]
         public List<Routes> getRoutes()
@@ -28,6 +34,15 @@ namespace Server.Controllers
             return routesList;
         }
 
+        /// <summary>
+        /// Function in charge of finding all the packages in a specific route
+        /// </summary>
+        /// <param name="packagesRoute">
+        /// A route that contains the route that will be used to track the packages
+        /// </param>
+        /// <returns>
+        /// A JSON with the list of packages associated with the route
+        /// </returns>
         [Route("search")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -101,6 +116,12 @@ namespace Server.Controllers
             }
         }
 
+        /// <summary>
+        /// Function in charge of inserting a route in the database
+        /// </summary>
+        /// <param name="route">
+        /// Route to be added
+        /// </param>
         [Route("insert")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -138,6 +159,12 @@ namespace Server.Controllers
             }
         }
 
+        /// <summary>
+        /// Function in charge of modifying a route in the database
+        /// </summary>
+        /// <param name="route">
+        /// Route to be modified
+        /// </param>
         [Route("modify")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
@@ -173,6 +200,12 @@ namespace Server.Controllers
             }
         }
 
+        /// <summary>
+        /// Function in charge of deleting a route in the database
+        /// </summary>
+        /// <param name="route">
+        /// Route to be deleted
+        /// </param>
         [Route("delete")]
         [EnableCors("AnotherPolicy")]
         [HttpPost]
