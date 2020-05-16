@@ -7,11 +7,20 @@
                     <div class="column padded">
                         <div class="card-product">
                             <div class="content">
-                                <img src="assets/products/{{ product.barcode }}.png" (click)="onSelect(product)">
-                                <div class="label">{{ product.name }}</div>
-                                <a [routerLink]="['/cart', { id:product.barcode }]">
-                                    <div class="card-price">${{ product.price }}</div>
-                                </a>
+                                <div *ngIf="product.barcode != 404; else error">
+                                    <img src="assets/products/{{ product.barcode }}.png" (click)="onSelect(product)">
+                                    <div class="label">{{ product.name }}</div>
+                                    <a [routerLink]="['/cart', { id:product.barcode }]">
+                                        <div class="card-price">${{ product.price }}</div>
+                                    </a>
+                                </div>
+                                <ng-template #error>
+                                    <img src="assets/products/{{ product.barcode }}.png" routerLink="error">
+                                    <div class="label">{{ product.name }}</div>
+                                    <a [routerLink]="['/error']">
+                                        <div class="card-price">${{ product.price }}</div>
+                                    </a>
+                                </ng-template>
                             </div>
                         </div>
                     </div>

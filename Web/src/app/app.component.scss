@@ -64,6 +64,12 @@ $terciary: #F61067;
     margin-left: 15px;
 }
 
+.searchButton {
+    &:hover {
+        opacity: 70%;
+    }
+}
+
 @media (prefers-color-scheme: dark) {
     .button {
         &:hover {
