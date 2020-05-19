@@ -3,7 +3,7 @@
 
 <p align=center><img src="Docs/readme-images/l1.png" height="180"></p>
 
-TECBox is a mockup of an online store that sells various types of boxes. It was built using **Angular** for the webpage,  **ASP .NET Core** as an API/Database and **SwiftUI** for a mobile app component. It's the first time we worked with those technologies, so it was a very great experience to learn a bit about the world of web development and its quirks.
+TECBox is a mockup of an online store that sells various types of boxes. It was built using **Angular** for the web component,  **ASP .NET Core** as an API/Database and **SwiftUI** for a mobile app component. It's the first time we worked with those technologies, so it was a very great experience to learn a bit about the world of web development and its quirks.
 
 ## Photos 📷
 
@@ -29,10 +29,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites 👓
 
-What things you need to install the software and how to install them
+Software you need to install to run this project:
 
 ```
-Webpage - Angular CLI version 9 or higher
+Website - Angular CLI version 9 or higher
 API/Server - Visual Studio
 Mobile app - Xcode 11.5 or higher
 ```
@@ -108,6 +108,8 @@ Refer to the [**Docs**](https://github.com/AlejandroIbarraC/TECBox/tree/master/D
 
 ## Authors 👨🏻‍💻
 
+### *Schlafenhase Development Team* 🐰
+
 * **Kevin Cordero** - *Lead Developer on Back-end and Connections* - [Skryfall](https://github.com/Skryfall)
 * **Alejandro Ibarra** - *Lead Designer. Mobile App Developer* - [AlejandroIbarraC](https://github.com/AlejandroIbarraC)
 * **Jose D. Sánchez** - *Functionality Manager & Web Developer* - [JoseDavidSS](https://github.com/JoseDavidSS)
@@ -119,11 +121,13 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments 📎
 
-* Medium article [Neumorphism the right way — A 2020 Design Trend ](https://medium.com/@artofofiare/neumorphism-the-right-way-a-2020-design-trend-386e6a09040a)
+* Medium article - [Neumorphism the right way — A 2020 Design Trend ](https://medium.com/@artofofiare/neumorphism-the-right-way-a-2020-design-trend-386e6a09040a)
 * Costa Rica Institute of Technology
 * MP
 
 <p align="center">
-  <img src="https://s3.amazonaws.com/madewithangular.com/img/500.png" height="80"/>
+  <img src="https://s3.amazonaws.com/madewithangular.com/img/500.png" height="80">
+  <img src="Docs/readme-images/l2.png" height="80">                                                                           
 </p>
+<p align="center">This project was made with academical purposes. Schlafenhase. 2020</p
 ```
