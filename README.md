@@ -17,9 +17,9 @@ Administrator Console                       |Cart              |
 :-------------------------:|:-------------------------:
 ![](Docs/readme-images/r2.png)  |  ![](Docs/readme-images/r5.png)
 
-Tracking                       |About              |
-:-------------------------:|:-------------------------:
-![](Docs/readme-images/r9.png)  |  ![](Docs/readme-images/r8.png)
+About                       |Tracking              | Mobile App Package List         |Mobile App Package Detail |
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](Docs/readme-images/r8.png)  |  ![](Docs/readme-images/r9.png) | ![](Docs/readme-images/r6.jpg)  |  ![](Docs/readme-images/r7.jpg)
 
 Mobile App Package List         |Mobile App Package Detail              |
 :-------------------------:|:-------------------------:
@@ -28,7 +28,7 @@ Mobile App Package List         |Mobile App Package Detail              |
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
@@ -42,7 +42,13 @@ Mobile app - Xcode 11.5 or higher
 
 ### Installing
 
-First, copy the repository on your local machine to get started. The **Web** folder contains all webpage data. Navigate using Terminal to that directory or the equivalent app in your operating system that can access Angular commands and run the following:
+First, copy the repository on your local machine to get started. The **Web** folder contains all webpage data. Navigate to that directory using Terminal or the equivalent app in your operating system that can access Angular commands. Then, run the following:
+
+```
+npm i
+```
+
+This will install all required dependencies for the Angular web project, as denoted on the file "package.json". Once that's done, you may now run the local development server using the following command in the same directory.
 
 ```
 ng serve
@@ -63,9 +69,9 @@ Our tests were made on Windows and Mac computers running Angular 9 and Visual St
 
 We include a mobile app for deliverers to update their assigned package status quickly. It's built with Swift as an iOS standalone application. To get started, open the file **TECBox.xcworkspace** with Xcode 11.5 or higher. It uses CocoaPods for some features, but all pods are currently included in the repository, so there's no need to download them separately.
 
-You need to replace the IP of the server in all of the Alamofire POST methods, located in the files **AppSession.swift** (Util folder), **PackageView.swift** (Views folder) and **PackageDetail.swift** (Views/Subviews folder) with the IP of your the machine the server is running on. If you're using a personal computer, then the IP of that machine will do. Make sure to have both devices connected to the same network.
+You need to replace the IP of the server in all of the Alamofire POST methods, located in the files **AppSession.swift** (Util folder), **PackageView.swift** (Views folder) and **PackageDetail.swift** (Views/Subviews folder) with the IP of your the machine the server is running on. If you're using a personal computer, then look for the IPv4 (this step dependes on your operating system). Make sure to have both devices connected to the same network.
 
-Our tests were made on an iPhone 11 Pro Max running iOS 13.5.
+Our tests were made on an iPhone 11 Pro Max running iOS 13.5. Xcode only works on macOS at this time.
 
 ## Built With
 
