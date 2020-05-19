@@ -1,9 +1,11 @@
 
-# TECBox
+# TECBox 📦
+
+<p align=center><img src="Docs/readme-images/l1.png" height="180"></p>
 
 TECBox is a mockup of an online store that sells various types of boxes. It was built using **Angular** for the webpage,  **ASP .NET Core** as an API/Database and **SwiftUI** for a mobile app component. It's the first time we worked with those technologies, so it was a very great experience to learn a bit about the world of web development and its quirks.
 
-## Photos
+## Photos 📷
 
 Home                  |
 :-------------------------:|
@@ -21,11 +23,11 @@ About                       |Tracking              | Mobile App Package List    
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](Docs/readme-images/r8.png)  |  ![](Docs/readme-images/r9.png) | ![](Docs/readme-images/r6.jpg)  |  ![](Docs/readme-images/r7.jpg)
 
-## Getting Started
+## Getting Started 🚀
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
+### Prerequisites 👓
 
 What things you need to install the software and how to install them
 
@@ -35,7 +37,7 @@ API/Server - Visual Studio
 Mobile app - Xcode 11.5 or higher
 ```
 
-### Installing
+### Installing 💻
 
 First, copy the repository on your local machine to get started. The **Web** folder contains all webpage data. Navigate to that directory using Terminal or the equivalent app in your operating system that can access Angular commands. Then, run the following:
 
@@ -60,7 +62,7 @@ Finally, the web app will update with the server information. Refer to the **Doc
 
 Our tests were made on Windows and Mac computers running Angular 9 and Visual Studio for both parts at the same time.
 
-#### iOS SwiftUI Mobile App
+#### iOS SwiftUI Mobile App 📱
 
 We include a mobile app for deliverers to update their assigned package status quickly. It's built with Swift as an iOS standalone application. To get started, open the file **TECBox.xcworkspace** with Xcode 11.5 or higher. It uses CocoaPods for some features, but all pods are currently included in the repository, so there's no need to download them separately.
 
@@ -68,27 +70,60 @@ You need to replace the IP of the server in all of the Alamofire POST methods, l
 
 Our tests were made on an iPhone 11 Pro Max running iOS 13.5. Xcode only works on macOS at this time.
 
-## Built With
+## Built With 🛠
 
-* [Angular](https://angular.io) - Web Framework
-* [ASP .NET Core](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-3.1) - API Server & Database
-* [SwiftUI](https://swift.org) - Mobile app language and framework
+<table>
+  <tr>
+    <td>
+      <p align=center><img src="https://coryrylan.com/assets/images/posts/types/angular.svg" width="100" height="100"></p>
+    </td>
+    <td>
+      <p align=center><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/1200px-.NET_Core_Logo.svg.png" width="100" height="100"></p>
+    </td>
+    <td>
+      <p align=center><img src="https://developer.apple.com/assets/elements/icons/swiftui/swiftui-96x96_2x.png" width="100" height="100"></p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      <p align=center><a href="https://www.angular.io/"><b>Angular</b></a>
+      </br>Web Framework</p>
+    </td>
+    <td>
+      <p align=center><a href="https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-3.1"><b>ASP .NET Core</b></a>
+      </br>API & Database</p>
+    </td>
+    <td>
+      <p align=center>
+        <a href="https://developer.apple.com/xcode/swiftui/"><b>SwiftUI</b></a>
+      </br>Mobile App<br>Language and Framework</p>
+    </td>
+  </tr>
+</table>
 
+## Docs 📖
 
-## Authors
+Refer to the [**Docs**](https://github.com/AlejandroIbarraC/TECBox/tree/master/Docs) folder at the root of the project for more information about usage and organization.
+
+## Authors 👨🏻‍💻
 
 * **Kevin Cordero** - *Lead Developer on Back-end and Connections* - [Skryfall](https://github.com/Skryfall)
 * **Alejandro Ibarra** - *Lead Designer. Mobile App Developer* - [AlejandroIbarraC](https://github.com/AlejandroIbarraC)
 * **Jose D. Sánchez** - *Functionality Manager & Web Developer* - [JoseDavidSS](https://github.com/JoseDavidSS)
 * **Jesús Yamir Sandoval** - *Project Manager & Web Developer* - [shuzz22260427](https://github.com/shuzz22260427)
 
-## License
+## License 📄
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments
+## Acknowledgments 📎
 
 * Medium article [Neumorphism the right way — A 2020 Design Trend ](https://medium.com/@artofofiare/neumorphism-the-right-way-a-2020-design-trend-386e6a09040a)
 * Costa Rica Institute of Technology
 * MP
+
+<p align="center">
+  <img src="https://s3.amazonaws.com/madewithangular.com/img/500.png" height="80"/>
+</p>
 ```
