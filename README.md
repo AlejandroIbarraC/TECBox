@@ -21,11 +21,6 @@ About                       |Tracking              | Mobile App Package List    
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](Docs/readme-images/r8.png)  |  ![](Docs/readme-images/r9.png) | ![](Docs/readme-images/r6.jpg)  |  ![](Docs/readme-images/r7.jpg)
 
-Mobile App Package List         |Mobile App Package Detail              |
-:-------------------------:|:-------------------------:
-![](Docs/readme-images/r6.jpg)  |  ![](Docs/readme-images/r7.jpg)
-
-
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
