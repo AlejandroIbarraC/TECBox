@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPackages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Packages>
+    <trackingID>123321</trackingID>
+    <client>Jose</client>
+    <description>Pandora's Box</description>
+    <deliveryDate>2020-05-04</deliveryDate>
+    <status>Delivered</status>
+    <route>1</route>
+    <deliveryMan>Jesus</deliveryMan>
+  </Packages>
+  <Packages>
+    <trackingID>123322</trackingID>
+    <client>Tim Cook</client>
+    <description>Pandora's Box</description>
+    <deliveryDate>2020-05-04</deliveryDate>
+    <status>Delivered</status>
+    <route>1</route>
+    <deliveryMan>Jesus</deliveryMan>
+  </Packages>
+</ArrayOfPackages>

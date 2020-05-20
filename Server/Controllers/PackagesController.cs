@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -203,7 +205,7 @@ namespace Server.Controllers
                                 finalList.Add(package);
                             }
                         }
-
+                        createReport(finalList);
                         return finalList;
                     }
                     else
@@ -580,6 +582,19 @@ namespace Server.Controllers
             {
                 Debug.WriteLine("Product not found");
             }
+        }
+
+        /// <summary>
+        /// Function in charge of creating a xml from an array
+        /// </summary>
+        /// Array of delivered packages
+        /// <param name="packages"></param>
+        public void createReport(List<Packages> packages)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Packages>));
+            TextWriter writer = new StreamWriter("ReportsData/DeliveredPackages.xml");
+            serializer.Serialize(writer, packages);
+            writer.Close();
         }
     }
 }

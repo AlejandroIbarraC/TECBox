@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfProducts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Products>
+    <name>Dropbox</name>
+    <description>This box is ethereal. Here, you can store everything you could ever want, provided you use magical tools to abstract it into millions of 0’s and 1’s. You could eventually store yourself here, every memory, even that time he/she rejected your hand-made flower pot. No? Was it just me?</description>
+    <barcode>100</barcode>
+    <seller>Erick</seller>
+    <price>9</price>
+    <paysTax>false</paysTax>
+    <discount>0</discount>
+    <entryDate>2019-03-15</entryDate>
+    <sales>3</sales>
+  </Products>
+  <Products>
+    <name>Pandora's Box</name>
+    <description>Did you know that the original story from greek mythology mentions a large storage jar rather than a box? From the brilliant minds behind TECBox and the makers of overpriced silver jewelry, comes the most sinister box of all time, all in a nice tidy package that you can put wherever you want. Place it on your bedside table, kitchen, or use it as a step to reach the jar of cookies on your fridge. Just be careful not to open it, it will release much more evil into the world. Oh, look, there’s a small shiver of hope left. (Yes, you can put charms in it, just don’t overdo it)</description>
+    <barcode>666</barcode>
+    <seller>Esteban</seller>
+    <price>799</price>
+    <paysTax>true</paysTax>
+    <discount>10</discount>
+    <entryDate>2020-03-12</entryDate>
+    <sales>10000</sales>
+  </Products>
+  <Products>
+    <name>Box Concept</name>
+    <description>Someone recently asked me: “What is it that you do?”, and I replied with: “I sell boxes, bitch!”. Then, she looked at me with the face of an angry duck and said: “What’s a box?” The question made a sparky mess inside my tiny human mind until I took a step back (literally, I was about to fall into her deep blue eyes) and realized the truth. A box is whatever we want it to be. A box is everything, and nothing, at the same time. This concept changed the way I looked at the world, so of course, I decided to charge for it. That’d be $20. Right down, Sir/Ma’am.</description>
+    <barcode>99999</barcode>
+    <seller>Juancho</seller>
+    <price>20</price>
+    <paysTax>true</paysTax>
+    <discount>0</discount>
+    <entryDate>2020-01-01</entryDate>
+    <sales>100</sales>
+  </Products>
+</ArrayOfProducts>

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -97,6 +99,7 @@ namespace Server.Controllers
                     }
                     if (validation)
                     {
+                        createReport(finalList);
                         return finalList;
                     }
                     else
@@ -239,6 +242,20 @@ namespace Server.Controllers
             {
                 Debug.WriteLine("Route not found");
             }
+        }
+
+        /// <summary>
+        /// Function in charge of creating a xml from an array
+        /// </summary>
+        /// <param name="packages">
+        /// Array of packages ready for delivery
+        /// </param>
+        public void createReport(List<Packages> packages)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Packages>));
+            TextWriter writer = new StreamWriter("ReportsData/PackagesInRouteForDelivery.xml");
+            serializer.Serialize(writer, packages);
+            writer.Close();           
         }
     }
 }

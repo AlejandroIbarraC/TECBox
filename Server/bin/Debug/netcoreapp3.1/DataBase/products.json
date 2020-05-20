@@ -1,7 +1,18 @@
 [
   {
+    "name": "Pandora\u0027s Box",
+    "description": "Did you know that the original story from greek mythology mentions a large storage jar rather than a box? From the brilliant minds behind TECBox and the makers of overpriced silver jewelry, comes the most sinister box of all time, all in a nice tidy package that you can put wherever you want. Place it on your bedside table, kitchen, or use it as a step to reach the jar of cookies on your fridge. Just be careful not to open it, it will release much more evil into the world. Oh, look, there\u2019s a small shiver of hope left. (Yes, you can put charms in it, just don\u2019t overdo it)",
+    "barcode": "666",
+    "seller": "Esteban",
+    "price": "799",
+    "paysTax": "true",
+    "discount": "10",
+    "entryDate": "2020-03-12",
+    "sales": "10000"
+  },
+  {
     "name": "Chest",
-    "description": "Just another wooden chest to store your items in. If you buy two of them and place them next to each other, they will magically fuse and you\u2019ll get double the storage, talk about a deal! This chest ships in its crafted form, so you can get to storing all your diamonds and stacks of cobblestone right away. There\u2019s a random chance that your product will have a treasure inside.Arrr, matey!",
+    "description": "Just another wooden chest to store your items in. If you buy two of them and place them next to each other, they will magically fuse and you\u2019ll get double the storage, talk about a deal! This chest ships in its crafted form, so you can get to storing all your diamonds and stacks of cobblestone right away. There\u2019s a random chance that your product will have a treasure inside. Arrr, matey!",
     "barcode": "1001",
     "seller": "Sahid",
     "price": "19",
@@ -12,7 +23,7 @@
   },
   {
     "name": "Apple TV 4K",
-    "description": "It\u2019s technically a box, one of the most advanced boxes we have. It\u2019s not very popular, the remote sucks and tvOS could use some work, but it has cool screensavers of landscapes and cities, so it\u2019s 100% worth it. Now you can ask him / her out for some coffee \u2014ahem\u2014 and sit down(or however you like it) for some Netflix \u0026chill on your Apple TV.Everyone has a background playlist, anyway.",
+    "description": "It\u2019s technically a box, one of the most advanced boxes we have. It\u2019s not very popular, the remote sucks and tvOS could use some work, but it has cool screensavers of landscapes and cities, so it\u2019s 100% worth it. Now you can ask him/her out for some coffee \u2014ahem\u2014 and sit down (or however you like it) for some Netflix \u0026 Chill on your Apple TV. Everyone has a background playlist, anyway.",
     "barcode": "998",
     "seller": "Juancho",
     "price": "199",
@@ -34,7 +45,7 @@
   },
   {
     "name": "Box Braids",
-    "description": "Margaret, why is this here?! Well, umm\u2026 I don\u2019t really know much about hair, but my girlfriend insisted that I needed to take an interest in what she likes.Something about getting to know each other, blah blah blah\u2026 Then again, it\u2019s cool to learn new things for a change. That\u2019s probably what I love the most about her.",
+    "description": "Margaret, why is this here?! Well, umm\u2026 I don\u2019t really know much about hair, but my girlfriend insisted that I needed to take an interest in what she likes. Something about getting to know each other, blah blah blah\u2026 Then again, it\u2019s cool to learn new things for a change. That\u2019s probably what I love the most about her.",
     "barcode": "789",
     "seller": "Juancho",
     "price": "49",
@@ -45,7 +56,7 @@
   },
   {
     "name": "Box Concept",
-    "description": "Someone recently asked me: \u201CWhat is it that you do?\u201D, and I replied with: \u201CI sell boxes, bitch!\u201D. Then, she looked at me with the face of an angry duck and said: \u201CWhat\u2019s a box?\u201D The question made a sparky mess inside my tiny human mind until I took a step back(literally, I was about to fall into a river) and realized the truth. A box is whatever we want it to be.A box is everything, and nothing, at the same time. This concept changed the way I looked at the world, so of course, I decided to charge for it. That\u2019d be $20.Right down, Sir / Ma\u2019am.",
+    "description": "Someone recently asked me: \u201CWhat is it that you do?\u201D, and I replied with: \u201CI sell boxes, bitch!\u201D. Then, she looked at me with the face of an angry duck and said: \u201CWhat\u2019s a box?\u201D The question made a sparky mess inside my tiny human mind until I took a step back (literally, I was about to fall into her deep blue eyes) and realized the truth. A box is whatever we want it to be. A box is everything, and nothing, at the same time. This concept changed the way I looked at the world, so of course, I decided to charge for it. That\u2019d be $20. Right down, Sir/Ma\u2019am.",
     "barcode": "99999",
     "seller": "Juancho",
     "price": "20",
@@ -77,14 +88,91 @@
     "sales": "40"
   },
   {
-    "name": "Pandora\u0027s Box",
-    "description": "Did you know that the original story from greek mythology mentions a large storage jar rather than a box? From the brilliant minds behind TECBox and the makers of overpriced silver jewelry, comes the most sinister box of all time, all in a nice tidy package that you can put wherever you want. Place it on your bedside table, kitchen, or use it as a step to reach the jar of cookies on your fridge. Just be careful not to open it, it will release much more evil into the world. Oh, look, there\u2019s a small shiver of hope left. (Yes, you can put charms in it, just don\u2019t overdo it)",
-    "barcode": "666",
+    "name": "Ibarra Gifts Box",
+    "description": "We didn\u2019t have a budget to write all of the descriptions, so I suppose this is kind of like when somebody asks you to make a toast to fill in for time. Umm... well, who\u2019s hungry?",
+    "barcode": "9",
     "seller": "Esteban",
-    "price": "799",
+    "price": "19",
     "paysTax": "true",
-    "discount": "10",
-    "entryDate": "2020-03-12",
-    "sales": "10000"
+    "discount": "1",
+    "entryDate": "2014-10-02",
+    "sales": "40"
+  },
+  {
+    "name": "Knox in Box",
+    "description": "We didn\u2019t have a budget to write all of the descriptions, so I suppose this is kind of like when somebody asks you to make a toast to fill in for time. Umm... well, who\u2019s hungry?",
+    "barcode": "10",
+    "seller": "Esteban",
+    "price": "14",
+    "paysTax": "false",
+    "discount": "0",
+    "entryDate": "2014-10-02",
+    "sales": "40"
+  },
+  {
+    "name": "Ice Box",
+    "description": "We didn\u2019t have a budget to write all of the descriptions, so I suppose this is kind of like when somebody asks you to make a toast to fill in for time. Umm... well, who\u2019s hungry?",
+    "barcode": "11",
+    "seller": "Esteban",
+    "price": "29",
+    "paysTax": "true",
+    "discount": "1",
+    "entryDate": "2014-10-02",
+    "sales": "40"
+  },
+  {
+    "name": "Xbox one",
+    "description": "We didn\u2019t have a budget to write all of the descriptions, so I suppose this is kind of like when somebody asks you to make a toast to fill in for time. Umm... well, who\u2019s hungry?",
+    "barcode": "12",
+    "seller": "Esteban",
+    "price": "299",
+    "paysTax": "true",
+    "discount": "1",
+    "entryDate": "2014-10-02",
+    "sales": "40"
+  },
+  {
+    "name": "TARDIS",
+    "description": "We didn\u2019t have a budget to write all of the descriptions, so I suppose this is kind of like when somebody asks you to make a toast to fill in for time. Umm... well, who\u2019s hungry?",
+    "barcode": "13",
+    "seller": "Esteban",
+    "price": "999",
+    "paysTax": "true",
+    "discount": "1",
+    "entryDate": "2014-10-02",
+    "sales": "40"
+  },
+  {
+    "name": "Box of Chocolates",
+    "description": "We didn\u2019t have a budget to write all of the descriptions, so I suppose this is kind of like when somebody asks you to make a toast to fill in for time. Umm... well, who\u2019s hungry?",
+    "barcode": "14",
+    "seller": "Esteban",
+    "price": "9",
+    "paysTax": "true",
+    "discount": "1",
+    "entryDate": "2014-10-02",
+    "sales": "40"
+  },
+  {
+    "name": "Diamond Chest",
+    "description": "We didn\u2019t have a budget to write all of the descriptions, so I suppose this is kind of like when somebody asks you to make a toast to fill in for time. Umm... well, who\u2019s hungry?",
+    "barcode": "15",
+    "seller": "Esteban",
+    "price": "699",
+    "paysTax": "true",
+    "discount": "1",
+    "entryDate": "2014-10-02",
+    "sales": "40"
+  },
+  {
+    "name": "Her love and support",
+    "description": "We didn\u2019t have a budget to write all of the descriptions, so I suppose this is kind of like when somebody asks you to make a toast to fill in for time. Umm... well, who\u2019s hungry?",
+    "barcode": "404",
+    "seller": "Esteban",
+    "price": "???",
+    "paysTax": "true",
+    "discount": "1",
+    "entryDate": "2014-10-02",
+    "sales": "40"
   }
 ]

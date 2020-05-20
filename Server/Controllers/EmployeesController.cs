@@ -36,10 +36,10 @@ namespace Server.Controllers
         }
 
         /// <summary>
-        /// Function in charge of searching an employee by it's email and department
+        /// Function in charge of searching an employee by it's email, password and department
         /// </summary>
         /// <param name="employeeToSearch">
-        /// Employee with the email and the department to be found
+        /// Employee with the email, password and the department to be found
         /// </param>
         /// <returns>
         /// A JSON with the found employee
@@ -58,7 +58,7 @@ namespace Server.Controllers
 
             for (int i = 0; i < employeesList.Count; i++)
             {
-                if (employeesList[i].eMail == employeeToSearch.eMail & employeesList[i].department == employeeToSearch.department)
+                if (employeesList[i].eMail == employeeToSearch.eMail & employeesList[i].department == employeeToSearch.department & employeesList[i].password == employeeToSearch.password)
                 {
                     employee = employeesList[i];
                     break;

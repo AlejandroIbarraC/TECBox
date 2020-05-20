@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/alejandro/Documents/Development/Web/TECBox/Server/Server.csproj": {}
+    "C:\\Users\\skryf\\Source\\Repos\\AlejandroIbarraC\\TECBox\\Server\\Server.csproj": {}
   },
   "projects": {
-    "/Users/alejandro/Documents/Development/Web/TECBox/Server/Server.csproj": {
+    "C:\\Users\\skryf\\Source\\Repos\\AlejandroIbarraC\\TECBox\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/alejandro/Documents/Development/Web/TECBox/Server/Server.csproj",
+        "projectUniqueName": "C:\\Users\\skryf\\Source\\Repos\\AlejandroIbarraC\\TECBox\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "/Users/alejandro/Documents/Development/Web/TECBox/Server/Server.csproj",
-        "packagesPath": "/Users/alejandro/.nuget/packages/",
-        "outputPath": "/Users/alejandro/Documents/Development/Web/TECBox/Server/obj/",
+        "projectPath": "C:\\Users\\skryf\\Source\\Repos\\AlejandroIbarraC\\TECBox\\Server\\Server.csproj",
+        "packagesPath": "C:\\Users\\skryf\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\skryf\\Source\\Repos\\AlejandroIbarraC\\TECBox\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/alejandro/.config/NuGet/NuGet.Config"
+          "C:\\Users\\skryf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -42,7 +44,7 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[3.1.1, )"
+              "version": "[3.1.3, )"
             }
           },
           "imports": [
@@ -63,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

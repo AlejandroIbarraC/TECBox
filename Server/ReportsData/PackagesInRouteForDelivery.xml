@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPackages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Packages>
+    <trackingID>5000</trackingID>
+    <client>Tim Cook</client>
+    <description>Chest</description>
+    <deliveryDate>2020-05-18</deliveryDate>
+    <status>Ready for Delivery</status>
+    <route>3</route>
+    <deliveryMan>Jose</deliveryMan>
+  </Packages>
+</ArrayOfPackages>

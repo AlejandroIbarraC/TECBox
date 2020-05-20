@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Xml;
+using System.Xml.Serialization;
 using AutoFixture.Kernel;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
@@ -113,6 +116,7 @@ namespace Server.Controllers
                         finalList.Add(product);
                     }
                     finalList.Reverse();
+                    createReport(finalList);
                     return finalList;
                 }
                 else
@@ -359,6 +363,20 @@ namespace Server.Controllers
             {
                 Debug.WriteLine("Product not found");
             }
+        }
+
+        /// <summary>
+        /// Function in charge of creating a xml from an array
+        /// </summary>
+        /// <param name="products">
+        /// Array of the most popular products
+        /// </param>
+        public void createReport(List<Products> products)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Products>));
+            TextWriter writer = new StreamWriter("ReportsData/Popularity.xml");
+            serializer.Serialize(writer, products);
+            writer.Close();
         }
     }
 }
