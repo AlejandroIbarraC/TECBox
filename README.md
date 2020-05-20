@@ -58,8 +58,6 @@ Mobile app - Xcode 11.5 or higher
 
 ### Installing 💻
 
-The following summarized guide will help you get a development copy running on your local machine.
-
 First, copy the repository on your local machine to get started. The **Web** folder contains all webpage data. Navigate to that directory using Terminal or the equivalent app in your operating system that can access Angular commands. Then, run the following:
 
 ```
