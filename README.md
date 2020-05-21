@@ -3,7 +3,17 @@
 
 <p align=center><img src="Docs/readme-images/l1.png" height="180"></p>
 
-TECBox is a mockup of an online store that sells various types of boxes. It was built using **Angular** for the web component,  **ASP .NET Core** as an API/Database and **SwiftUI** for a mobile app component. It's the first time we worked with those technologies, so it was a very great experience to learn a bit about the world of web development and its quirks.
+TECBox is a mockup of an online store that sells various types of boxes. It was built using **Angular** for the web component,  **ASP .NET Core** as an API/Database and **SwiftUI** for a mobile app component. It's the first time we worked with those technologies, so it was a very great experience to learn a bit about the world of web development and its quirks. 
+
+Main features:
+
+* Beautiful neumorphic design
+* Dynamic table & product card generation
+* Fully integrated development stack
+* Modern iOS App for delivery updates
+* Full support for Dark Mode in compatible browsers
+* Unparalleled attention to detail
+* Authentication system for multiple roles
 
 ## Photos 📷
 
@@ -22,6 +32,15 @@ Administrator Console                       |Cart              |
 About                       |Tracking              | Mobile App Package List         |Mobile App Package Detail |
 :-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
 ![](Docs/readme-images/r8.png)  |  ![](Docs/readme-images/r9.png) | ![](Docs/readme-images/r6.jpg)  |  ![](Docs/readme-images/r7.jpg)
+
+Home (Dark Mode)                       |Products (Dark Mode)              |
+:-------------------------:|:-------------------------:
+![](Docs/readme-images/d1.png)  |  ![](Docs/readme-images/d2.png)
+
+User Access (Dark Mode)                       |Administrator Console (Dark Mode)              |
+:-------------------------:|:-------------------------:
+![](Docs/readme-images/d3.png)  |  ![](Docs/readme-images/d4.png)
+
 
 ## Getting Started 🚀
 
@@ -58,7 +77,7 @@ You can check out the general view of the store, but for the full experience you
 Next, you'll need to disable cross-origin restrictions in your browser. Check your browser's documentation or search how to do this online. 
 In Safari, it can be done by activating developer settings and going to **Develop -> Disable Cross-Origin Restrictions**.
 In Chrome, there's an extension on the Chrome Web Store called **Allow CORS** that offers a quick shortcut.
-Finally, the web app will update with the server information. Refer to the **Docs** folder for a detailed user guide and more information about usage.
+Finally, the web app will update with the server information. Refer to the  PDF document **TECBox User Guide** in the **Docs** folder for a detailed user guide and more information.
 
 Our tests were made on Windows and Mac computers running Angular 9 and Visual Studio for both parts at the same time.
 
@@ -69,6 +88,10 @@ We include a mobile app for deliverers to update their assigned package status q
 You need to replace the IP of the server in all of the Alamofire POST methods, located in the files **AppSession.swift** (Util folder), **PackageView.swift** (Views folder) and **PackageDetail.swift** (Views/Subviews folder) with the IP of your the machine the server is running on. If you're using a personal computer, then look for the IPv4 (this step dependes on your operating system). Make sure to have both devices connected to the same network.
 
 Our tests were made on an iPhone 11 Pro Max running iOS 13.5. Xcode only works on macOS at this time.
+
+## Deployment ✅
+
+For deployment on a live system, refer to the PDF document **TECBox Deployment Guide**, located on the **Docs** folder of this GitHub project.
 
 ## Built With 🛠
 
@@ -117,7 +140,7 @@ Refer to the [**Docs**](https://github.com/AlejandroIbarraC/TECBox/tree/master/D
 
 ## License 📄
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/AlejandroIbarraC/TECBox/tree/master/LICENSE.md) file for details
 
 ## Acknowledgments 📎
 
