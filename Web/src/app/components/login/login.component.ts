@@ -204,6 +204,14 @@ export class LoginComponent implements OnInit {
       })
         .then(response => {
           console.log(response);
+          localStorage.setItem('userName', usrName);
+          localStorage.setItem('userID', usrId);
+          localStorage.setItem('userEmail', usrEmail);
+          localStorage.setItem('userPassword', usrPassword);
+          localStorage.setItem('userPhone', usrPhone);
+          localStorage.setItem('userAddress', usrAddress);
+          localStorage.setItem('userProvince', usrProvince);
+          localStorage.setItem('userCity', usrCity);
           this.authService.SignUp(usrEmail, usrPassword);
         })
         .catch(error => {
